@@ -3,7 +3,7 @@
 </h1>
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Gogh-Co/Gogh/master/images/gogh/Gogh-logo-dark.png" alt="Gogh" width="100%">
+  <img src="https://raw.githubusercontent.com/Gogh-Co/Gogh/master/.images/gogh/Gogh-logo-dark.png" alt="Gogh" width="100%">
 </div>
 
 <div align="center">
@@ -50,7 +50,7 @@ The inspiration for Gogh came from the clean and minimalistic design of Elementa
 <br>
 <br>
 
-![gogh](https://raw.githubusercontent.com/Gogh-Co/Gogh/master/images/demos/themes.gif)
+![gogh](https://raw.githubusercontent.com/Gogh-Co/Gogh/master/.images/demos/themes.gif)
 
 </td>
 </table>
@@ -98,7 +98,7 @@ bash -c "$(curl -sLo- https://git.io/vQgMr)"
 
 **DEMO:**
 
-![gogh-demo-profile](https://raw.githubusercontent.com/Gogh-Co/Gogh/master/images/demos/gogh-demo-profile.gif)
+![gogh-demo-profile](https://raw.githubusercontent.com/Gogh-Co/Gogh/master/.images/demos/gogh-demo-profile.gif)
 
 <br/>
 <br/>
@@ -360,7 +360,7 @@ In comments variables is that of the console belongs each color.
 
 Here is a picture that explains a little better as colors are distributed.
 
-![Colors](https://raw.githubusercontent.com/Gogh-Co/Gogh/master/images/gogh/colors.png)
+![Colors](https://raw.githubusercontent.com/Gogh-Co/Gogh/master/.images/gogh/colors.png)
 
 <br>
 
