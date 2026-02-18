@@ -27,6 +27,9 @@ jobs:
       - name: 🏅 Generate JSON files
         run: python tools/pipe-generateJsonFiles.py
 
+      - name: 🏅 Generate TXT files
+        run: python tools/pipe-generateTxtFiles.py
+
       - name: 🏅 Generate CSV
         run: python tools/pipe-generateCsv.py
 
