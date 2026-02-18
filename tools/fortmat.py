@@ -1,3 +1,6 @@
+# Convert legacy YAML themes from themes_old/ to the new themes/ format.
+# Ensures required fields exist and writes standardized color comments.
+
 import os
 import yaml
 

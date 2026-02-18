@@ -1,3 +1,6 @@
+# Generate one TXT palette file per theme in data/txt.
+# Each output file contains 16 lines with color_01..color_16 in order.
+
 import json
 from pathlib import Path
 import re

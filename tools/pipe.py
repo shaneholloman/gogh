@@ -1,3 +1,6 @@
+# Write a pipeline run timestamp marker to tools/run.txt.
+# Used as a simple record of the last generator execution time.
+
 from datetime import datetime
 from pathlib import Path
 

@@ -1,3 +1,6 @@
+# Split data/themes.json into one JSON file per theme in data/json.
+# Normalizes file names and avoids collisions with numeric suffixes.
+
 import json
 from pathlib import Path
 import re

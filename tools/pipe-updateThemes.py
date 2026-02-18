@@ -1,3 +1,6 @@
+# Refresh the THEMES array in gogh.sh using names from data/themes.json.
+# Produces sorted and de-duplicated .sh entries.
+
 import json
 import re
 from unidecode import unidecode
