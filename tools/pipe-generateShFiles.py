@@ -1,3 +1,6 @@
+# Generate install shell scripts in installs/ from YAML themes in themes/.
+# Creates one script per theme and applies executable file permissions.
+
 from unidecode import unidecode
 import json
 import os

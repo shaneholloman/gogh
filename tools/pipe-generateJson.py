@@ -1,3 +1,6 @@
+# Build data/themes.json from YAML theme files in themes/.
+# Also writes a minified data/themes-min.json and includes a content hash.
+
 import json
 import hashlib
 from pathlib import Path
