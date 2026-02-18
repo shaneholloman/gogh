@@ -1,4 +1,4 @@
-name: Action Generator
+name: "🛠️ - Run Generators Manually"
 
 on:
   workflow_dispatch:
