@@ -1,4 +1,4 @@
-name: Run Generators
+name: "🛠️ - Run Generators"
 
 on:
   workflow_dispatch:
