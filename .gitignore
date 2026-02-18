@@ -14,3 +14,4 @@ bin/
 apply-colors-original.sh
 out.txt
 devbox.lock
+bun.lock
