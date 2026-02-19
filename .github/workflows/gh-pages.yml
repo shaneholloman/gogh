@@ -1,13 +1,21 @@
-name: "🚀 - Deploy to GitHub Pages"
+# ------------------------------------------------------------
+# Reusable deploy workflow
+# This workflow builds and deploys the website to GitHub Pages
+# It is not triggered directly, it is called by other workflows
+# ------------------------------------------------------------
+
+name: "🚀 - Deploy to GitHub Pages (branch: website)"
 
 on:
-  workflow_dispatch:
-  push:
-    branches:
-      - website
+  workflow_call:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  build:
+  build_and_deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout website branch
@@ -18,7 +26,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
-      - run: npm install
+
+      - run: npm ci
       - run: npm run generate
 
       - name: Upload artifact
@@ -26,20 +35,6 @@ jobs:
         with:
           path: .output/public
 
-
-  deploy:
-    needs: build
-
-    permissions:
-      pages: write
-      id-token: write
-
-    environment:
-      name: github_pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    runs-on: ubuntu-latest
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
