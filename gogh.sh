@@ -493,94 +493,180 @@ remove_file_extension (){
 }
 
 
+normalize_theme_selector() {
+  echo "$1" \
+    | tr '[:upper:]' '[:lower:]' \
+    | sed -e 's/\.sh$//' -e 's/[ _]/-/g' -e 's/--*/-/g' -e 's/^-//' -e 's/-$//'
+}
+
+
+get_theme_number_from_selector() {
+  local SELECTOR="$1"
+  local NORMALIZED_SELECTOR
+  local INDEX
+  local THEME_FILE
+
+  NORMALIZED_SELECTOR="$(normalize_theme_selector "${SELECTOR}")"
+
+  for INDEX in "${!THEMES[@]}"; do
+    THEME_FILE="$(remove_file_extension "${THEMES[$INDEX]}")"
+    if [[ "${NORMALIZED_SELECTOR}" = "${THEME_FILE}" ]]; then
+      echo $((INDEX+1))
+      return 0
+    fi
+  done
+
+  return 1
+}
+
+
+print_usage() {
+  echo "Usage: $0 [OPTION ...]"
+  echo
+  echo "When no options are provided, Gogh runs in interactive mode."
+  echo
+  echo "OPTION can be:"
+  echo "  - a theme name/slug (e.g. Dracula or dracula)"
+  echo "  - ALL (apply all themes)"
+  echo
+  echo "Examples:"
+  echo "  $0 Dracula"
+  echo "  $0 dracula nord-light"
+  echo "  $0 ALL"
+}
+
+
 ### Get length of an array
 ARRAYLENGTH=${#THEMES[@]}
+
+
+declare -a OPTION=()
+
+# Allow direct CLI selection by number/name/ALL
+if [[ "$1" = "--" ]]; then
+  shift
+fi
+
+if [[ $# -gt 0 ]]; then
+  for ARG in "$@"; do
+    if [[ "${ARG}" = "-h" ]] || [[ "${ARG}" = "--help" ]]; then
+      print_usage
+      exit 0
+    fi
+  done
+
+  for ARG in "$@"; do
+    ARG_UPPER=$(echo "${ARG}" | tr '[:lower:]' '[:upper:]')
+
+    if [[ "${ARG_UPPER}" = "ALL" ]]; then
+      OPTION=($(seq 1 "${ARRAYLENGTH}"))
+      break
+    elif [[ "${ARG}" =~ ^[0-9]+$ ]]; then
+      echo -e "${C1} ~ INVALID OPTION: '${ARG}' ~${CR}"
+      echo "CLI mode accepts theme names/slugs only."
+      echo "Use interactive mode for numbered selection."
+      print_usage
+      exit 1
+    else
+      ARG_THEME_NUMBER=$(get_theme_number_from_selector "${ARG}")
+      if [[ -n "${ARG_THEME_NUMBER}" ]]; then
+        OPTION+=("${ARG_THEME_NUMBER}")
+      else
+        echo -e "${C1} ~ INVALID OPTION: '${ARG}' ~${CR}"
+        print_usage
+        exit 1
+      fi
+    fi
+  done
+fi
 
 
 # |
 # | ::::::: Print logo
 # |
-tput clear
-if [[ ${COLUMNS:-$(tput cols)} -ge 80 ]]; then
-  gogh_str=""
-  gogh_str+="                                                                                \n"
-  gogh_str+="                    █████████                    █████                          \n"
-  gogh_str+="                   ███     ███                    ███                           \n"
-  gogh_str+="                  ███           ██████   ███████  ███████                       \n"
-  gogh_str+="                  ███          ███  ███ ███  ███  ███  ███                      \n"
-  gogh_str+="                  ███    █████ ███  ███ ███  ███  ███  ███                      \n"
-  gogh_str+="                   ███    ███  ███  ███ ███  ███  ███  ███                      \n"
-  gogh_str+="                    █████████   ██████   ███████ ████ █████                     \n"
-  gogh_str+="    ${C0}█████████${C1}█████████${C2}█████████${C3}█████████${C4}█████${CS0}███${C4}█${C5}█████████${C6}█████████${C7}█████████    \n"
-  gogh_str+="    ${C0}█████████${C1}█████████${C2}█████████${C3}█████████${CS0}███${C4}██${CS0}███${C4}█${C5}█████████${C6}█████████${C7}█████████    \n"
-  gogh_str+="    ${C0}█████████${C1}█████████${C2}█████████${C3}█████████${C4}█${CR}██████${C4}██${C5}█████████${C6}█████████${C7}█████████    \n"
-  gogh_str+="    ${C8}█████████${C9}█████████${C10}█████████${C11}█████████${C12}█████████${C13}█████████${C14}█████████${C15}█████████${CS0}    \n"
-  gogh_str+="    ${C8}█████████${C9}█████████${C10}█████████${C11}█████████${C12}█████████${C13}█████████${C14}█████████${C15}█████████${CS0}    \n"
-  gogh_str+="    ${C8}█████████${C9}█████████${C10}█████████${C11}█████████${C12}█████████${C13}█████████${C14}█████████${C15}█████████${CS0}    \n"
-  gogh_str+="                                                                                "
+if [[ ${#OPTION[@]} -eq 0 ]]; then
+  tput clear
+  if [[ ${COLUMNS:-$(tput cols)} -ge 80 ]]; then
+    gogh_str=""
+    gogh_str+="                                                                                \n"
+    gogh_str+="                    █████████                    █████                          \n"
+    gogh_str+="                   ███     ███                    ███                           \n"
+    gogh_str+="                  ███           ██████   ███████  ███████                       \n"
+    gogh_str+="                  ███          ███  ███ ███  ███  ███  ███                      \n"
+    gogh_str+="                  ███    █████ ███  ███ ███  ███  ███  ███                      \n"
+    gogh_str+="                   ███    ███  ███  ███ ███  ███  ███  ███                      \n"
+    gogh_str+="                    █████████   ██████   ███████ ████ █████                     \n"
+    gogh_str+="    ${C0}█████████${C1}█████████${C2}█████████${C3}█████████${C4}█████${CS0}███${C4}█${C5}█████████${C6}█████████${C7}█████████    \n"
+    gogh_str+="    ${C0}█████████${C1}█████████${C2}█████████${C3}█████████${CS0}███${C4}██${CS0}███${C4}█${C5}█████████${C6}█████████${C7}█████████    \n"
+    gogh_str+="    ${C0}█████████${C1}█████████${C2}█████████${C3}█████████${C4}█${CR}██████${C4}██${C5}█████████${C6}█████████${C7}█████████    \n"
+    gogh_str+="    ${C8}█████████${C9}█████████${C10}█████████${C11}█████████${C12}█████████${C13}█████████${C14}█████████${C15}█████████${CS0}    \n"
+    gogh_str+="    ${C8}█████████${C9}█████████${C10}█████████${C11}█████████${C12}█████████${C13}█████████${C14}█████████${C15}█████████${CS0}    \n"
+    gogh_str+="    ${C8}█████████${C9}█████████${C10}█████████${C11}█████████${C12}█████████${C13}█████████${C14}█████████${C15}█████████${CS0}    \n"
+    gogh_str+="                                                                                "
 
 
-  printf '%b\n' "${gogh_str}"
-  sleep 2.5
-else
-  echo -e "\nGogh\n"
-  for c in C{0..15}; do
-    echo -n "${!c}█████${CR}"
-    [[ $c == C7 ]] && echo # new line
+    printf '%b\n' "${gogh_str}"
+    sleep 2.5
+  else
+    echo -e "\nGogh\n"
+    for c in C{0..15}; do
+      echo -n "${!c}█████${CR}"
+      [[ $c == C7 ]] && echo # new line
+    done
+    echo
+  fi
+
+
+  # |
+  # | ::::::: Print Themes
+  # |
+  echo -e "\nThemes:\n"
+
+  # Cross-platform function to format theme names
+  format_theme_name() {
+    local name="$1"
+    # Remove .sh extension and any other extensions
+    name="${name%.*}"
+    # Replace hyphens with spaces
+    name="${name//-/ }"
+    # Capitalize first letter of each word using awk (cross-platform)
+    echo "$name" | awk '{for(i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) substr($i,2)} 1'
+  }
+
+  # Column display of available themes
+  # Note: /usr/bin/column uses tabs and does not support ANSI codes yet (merged but not released)
+  MAXL=$(( $(printf "%s\n" "${THEMES[@]}" | wc -L) - 3 )) # Biggest theme name without the extension
+  NCOLS=$(( ${COLUMNS:-$(tput cols)} / (10+MAXL) ))       # number of columns, 10 is the length of '  ( xxx ) '
+  NROWS=$(( (ARRAYLENGTH-1)/NCOLS + 1 ))                  # number of rows
+  row=0
+
+  while ((row < NROWS)); do
+    col=0
+    while ((col < NCOLS)); do
+      NUM=$((col*NROWS+row))
+      NAME="${THEMES[$NUM]}"
+      if [[ -n $NAME ]]; then
+        FORMATTED_NAME=$(format_theme_name "$NAME")
+        printf "  ( ${C4}%3d${CR} ) %-${MAXL}s" $((NUM+1)) "$FORMATTED_NAME"
+      fi
+      ((col++))
+    done
+    echo
+    ((row++))
   done
-  echo
+
+  echo -e "  (${C4} ALL ${CR}) All themes"
+
+  # |
+  # | ::::::: Select Option
+  # |
+  echo -e "\nUsage : Enter Desired Themes Numbers (${C4}OPTIONS${CR}) Separated By A Blank Space"
+  echo -e "        Press ${C4}ENTER${CR} without options to Exit\n"
+  read -r -p 'Enter OPTION(S) : ' -a OPTION
+
+  # Automagically generate options if user opts for all themes
+  [[ "$(echo "${OPTION}" | tr '[:lower:]' '[:upper:]')" == ALL ]] && OPTION=($(seq -s " " $ARRAYLENGTH))
 fi
-
-
-# |
-# | ::::::: Print Themes
-# |
-echo -e "\nThemes:\n"
-
-# Cross-platform function to format theme names
-format_theme_name() {
-  local name="$1"
-  # Remove .sh extension and any other extensions
-  name="${name%.*}"
-  # Replace hyphens with spaces
-  name="${name//-/ }"
-  # Capitalize first letter of each word using awk (cross-platform)
-  echo "$name" | awk '{for(i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) substr($i,2)} 1'
-}
-
-# Column display of available themes
-# Note: /usr/bin/column uses tabs and does not support ANSI codes yet (merged but not released)
-MAXL=$(( $(printf "%s\n" "${THEMES[@]}" | wc -L) - 3 )) # Biggest theme name without the extension
-NCOLS=$(( ${COLUMNS:-$(tput cols)} / (10+MAXL) ))       # number of columns, 10 is the length of '  ( xxx ) '
-NROWS=$(( (ARRAYLENGTH-1)/NCOLS + 1 ))                  # number of rows
-row=0
-
-while ((row < NROWS)); do
-  col=0
-  while ((col < NCOLS)); do
-    NUM=$((col*NROWS+row))
-    NAME="${THEMES[$NUM]}"
-    if [[ -n $NAME ]]; then
-      FORMATTED_NAME=$(format_theme_name "$NAME")
-      printf "  ( ${C4}%3d${CR} ) %-${MAXL}s" $((NUM+1)) "$FORMATTED_NAME"
-    fi
-    ((col++))
-  done
-  echo
-  ((row++))
-done
-
-echo -e "  (${C4} ALL ${CR}) All themes"
-
-# |
-# | ::::::: Select Option
-# |
-echo -e "\nUsage : Enter Desired Themes Numbers (${C4}OPTIONS${CR}) Separated By A Blank Space"
-echo -e "        Press ${C4}ENTER${CR} without options to Exit\n"
-read -r -p 'Enter OPTION(S) : ' -a OPTION
-
-# Automagically generate options if user opts for all themes
-[[ "$OPTION" == ALL ]] && OPTION=($(seq -s " " $ARRAYLENGTH))
 
 # |
 # | ::::::: Get terminal
