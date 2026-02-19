@@ -1,34 +1,33 @@
-name: "🚀 - Deploy to GitHub Pages (branch: website)"
+name: "🚀 - Deploy to GitHub Pages (branch website)"
 
 on:
-  workflow_call:
+  workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+concurrency:
+  group: action-generator-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout website branch
+      - name: 🏅 Checkout website branch
         uses: actions/checkout@v4
         with:
           ref: website
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: "22"
 
       - run: npm ci
       - run: npm run generate
 
-      - name: Upload artifact
+      - name: 🏅 Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: .output/public
 
-      - name: Deploy to GitHub Pages
+      - name: 🏅 Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
