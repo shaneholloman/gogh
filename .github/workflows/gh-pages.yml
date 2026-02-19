@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - website
+      - main/website
 
 jobs:
   build:
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout website branch
         uses: actions/checkout@v4
         with:
-          ref: website
+          ref: main/website
 
       - uses: actions/setup-node@v4
         with:
