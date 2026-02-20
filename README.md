@@ -378,6 +378,23 @@ Now in your terminal just type `gogh`:
 gogh
 ```
 
+You can also select themes directly with CLI arguments (skip the interactive list):
+
+```bash
+# by name/slug (recommended, stable)
+gogh Dracula
+gogh dracula nord-light
+
+# all themes
+gogh ALL
+```
+
+For one-line remote usage with arguments, pass `--` before the options:
+
+```bash
+bash -c "$(wget -qO- https://git.io/vQgMr)" -- Dracula
+```
+
 <br/>
 
 ## 🌱 First commit:
