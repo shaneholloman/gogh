@@ -1,3 +1,5 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+
 name: "🛠️ - Run Generators"
 
 on:
@@ -11,10 +13,10 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: 🏅 Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: 🏅 Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
@@ -56,7 +58,17 @@ jobs:
           total_files=$(find themes -type f | wc -l)
           echo "total_files=$total_files" >> $GITHUB_ENV
 
+      - name: 🏅 Check if release tag already exists
+        run: |
+          tag_name="v${{ env.total_files }}"
+          if git ls-remote --tags origin "refs/tags/${tag_name}" | grep -q "${tag_name}"; then
+            echo "tag_exists=true" >> $GITHUB_ENV
+          else
+            echo "tag_exists=false" >> $GITHUB_ENV
+          fi
+
       - name: 🏅 Create Release
+        if: env.tag_exists != 'true'
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
