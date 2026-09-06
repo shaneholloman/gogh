@@ -1,6 +1,8 @@
 {
   "name": "Elemental",
-  "author": "",
+  "author": "zdj (https://github.com/zdj/themes/tree/master/iterm2)",
+  "author_name": "zdj",
+  "author_url": "https://github.com/zdj/themes/tree/master/iterm2",
   "variant": "dark",
   "color_01": "#3C3C30",
   "color_02": "#98290F",
@@ -20,6 +22,7 @@
   "color_16": "#FFF1E9",
   "background": "#22211D",
   "foreground": "#807A74",
-  "cursor": "#807A74",
-  "hash": "32eb3defe069d8b09f49bc79fdcb8c07c502e4c9e57b5a41cd03f1c7a5bda388"
+  "cursor": "#FACB80",
+  "hash": "47ca2ea720c2ea047249350f2981138fe43a13ed5619aa9c85419bc319d069ab",
+  "hash_bg": "46729f57d467389277e52e89621281298f7b228179444c765c8a9fe32350d005"
 }

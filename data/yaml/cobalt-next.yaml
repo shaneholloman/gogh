@@ -1,0 +1,26 @@
+name: Cobalt Next
+author: davidleininger (https://github.com/davidleininger/cobaltnext-vscode)
+author_name: davidleininger
+author_url: https://github.com/davidleininger/cobaltnext-vscode
+variant: dark
+color_01: '#000000'
+color_02: '#ED5F7D'
+color_03: '#99C794'
+color_04: '#FAC863'
+color_05: '#5A9BCF'
+color_06: '#C5A5C5'
+color_07: '#5FB3B3'
+color_08: '#D8DEE9'
+color_09: '#65737E'
+color_10: '#D6838C'
+color_11: '#C1DCBE'
+color_12: '#FFDE9B'
+color_13: '#8ABEE7'
+color_14: '#EDCDED'
+color_15: '#9BE2E2'
+color_16: '#FFFFFF'
+background: '#1B2B34'
+foreground: '#D8DEE9'
+cursor: '#FAC863'
+hash: ba559c65bf8b807222db481883cde8ee42ef1e7b7cbaec0fa2befcc86f295eea
+hash_bg: 490b3588fddedeef964264fa6e4be7902b9a30b460180426ca4d29da7f4ffaed

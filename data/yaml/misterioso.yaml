@@ -1,0 +1,26 @@
+name: Misterioso
+author: flooose (https://github.com/flooose/misterioso-iterm2)
+author_name: flooose
+author_url: https://github.com/flooose/misterioso-iterm2
+variant: dark
+color_01: '#000000'
+color_02: '#FF4242'
+color_03: '#74AF68'
+color_04: '#FFAD29'
+color_05: '#338F86'
+color_06: '#9414E6'
+color_07: '#23D7D7'
+color_08: '#E1E1E0'
+color_09: '#555555'
+color_10: '#FF3242'
+color_11: '#74CD68'
+color_12: '#FFB929'
+color_13: '#23D7D7'
+color_14: '#FF37FF'
+color_15: '#00EDE1'
+color_16: '#FFFFFF'
+background: '#2D3743'
+foreground: '#E1E1E0'
+cursor: '#000000'
+hash: a11ca9b280cf2fe12f9ee5c06a52b55a9535cec8926f05c0d669bcfb47f9c507
+hash_bg: 435c7016e97958efbc4ebcce0dbe2076d655c8f344e84015c98ab442e9af692f

@@ -1,0 +1,26 @@
+name: Noctis Lilac
+author: Liviu Schera (https://github.com/liviuschera)
+author_name: Liviu Schera
+author_url: https://github.com/liviuschera
+variant: light
+color_01: '#0C006B'
+color_02: '#E34E1C'
+color_03: '#00B368'
+color_04: '#F49725'
+color_05: '#0094F0'
+color_06: '#FF5792'
+color_07: '#00BDD6'
+color_08: '#8CA6A6'
+color_09: '#0F0080'
+color_10: '#FF4000'
+color_11: '#00D17A'
+color_12: '#FF8C00'
+color_13: '#0FA3FF'
+color_14: '#FF6B9F'
+color_15: '#00CBE6'
+color_16: '#BBC3C4'
+background: '#F2F1F8'
+foreground: '#0C006B'
+cursor: '#0C006B'
+hash: c6eec09d1f62428d98efcade2c7fda59ed4f0368f54a635e3c32f268410c5caa
+hash_bg: 4bddbc8785c2273af4d2d7e8109a3accf94786c7313d9c6d0caf975b400e25a5

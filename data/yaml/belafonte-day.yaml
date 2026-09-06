@@ -1,0 +1,26 @@
+name: Belafonte Day
+author: idleberg (https://github.com/idleberg)
+author_name: idleberg
+author_url: https://github.com/idleberg
+variant: light
+color_01: '#20111B'
+color_02: '#BE100E'
+color_03: '#858162'
+color_04: '#EAA549'
+color_05: '#426A79'
+color_06: '#97522C'
+color_07: '#989A9C'
+color_08: '#968C83'
+color_09: '#5E5252'
+color_10: '#BE100E'
+color_11: '#858162'
+color_12: '#EAA549'
+color_13: '#426A79'
+color_14: '#97522C'
+color_15: '#989A9C'
+color_16: '#D5CCBA'
+background: '#D5CCBA'
+foreground: '#45373C'
+cursor: '#45373C'
+hash: 35112016cac8188a9d0ab5195bc6341029ad3e82a3b5b37b0450b6cdd2c4b934
+hash_bg: 6de656b653f4f3349875b719d93bc42ff13e0f151018802cfee504036f29662a

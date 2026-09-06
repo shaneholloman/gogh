@@ -1,6 +1,8 @@
 {
   "name": "Night Owl",
-  "author": "",
+  "author": "zasdaym (https://github.com/zasdaym)",
+  "author_name": "zasdaym",
+  "author_url": "https://github.com/zasdaym",
   "variant": "dark",
   "color_01": "#011627",
   "color_02": "#EF5350",
@@ -20,6 +22,7 @@
   "color_16": "#FFFFFF",
   "background": "#011627",
   "foreground": "#D6DEEB",
-  "cursor": "#D6DEEB",
-  "hash": "ea0e3036ff1b1c4fb7a263d124b5df93c9c0909eafaa286b77e47d17245db2c5"
+  "cursor": "#7E57C2",
+  "hash": "b9f5b9f69c4fce22cabbc3f162fd158ab2653753d55fa9426f391bd1e602e54c",
+  "hash_bg": "cdd061914686a94872e5b4b197494474056e5cca4599086e927d2e4faacfe6b1"
 }

@@ -1,0 +1,26 @@
+name: Moonfly
+author: bluz71 (https://github.com/bluz71/vim-moonfly-colors)
+author_name: bluz71
+author_url: https://github.com/bluz71/vim-moonfly-colors
+variant: dark
+color_01: '#323437'
+color_02: '#FF5454'
+color_03: '#8CC85F'
+color_04: '#E3C78A'
+color_05: '#80A0FF'
+color_06: '#CF87E8'
+color_07: '#79DAC8'
+color_08: '#C6C6C6'
+color_09: '#949494'
+color_10: '#FF5189'
+color_11: '#36C692'
+color_12: '#C6C684'
+color_13: '#74B2FF'
+color_14: '#AE81FF'
+color_15: '#85DC85'
+color_16: '#E4E4E4'
+background: '#080808'
+foreground: '#BDBDBD'
+cursor: '#9E9E9E'
+hash: 3a81cc0db6ace1be7dcfeba1fad7c2981f5bd5b7491c22c48fe83348beb6a22b
+hash_bg: 7e9040f7e3a73b4139d11e9b195db48203537e3557e53969c30da26e61303fe7

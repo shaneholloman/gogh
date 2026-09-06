@@ -1,6 +1,8 @@
 {
   "name": "Desert",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#4D4D4D",
   "color_02": "#FF2B2B",
@@ -20,6 +22,7 @@
   "color_16": "#FFFFFF",
   "background": "#333333",
   "foreground": "#FFFFFF",
-  "cursor": "#FFFFFF",
-  "hash": "4d8fa9279d7f8215e1e5e251e8ae1a8ecca792920bb1696f01837c4c24daf856"
+  "cursor": "#00FF00",
+  "hash": "c0e67661ca8be4af19567f3c2b730110acb1696068a4b255ea293d6c1d3cdbd1",
+  "hash_bg": "93908647eee799e92be60d7b45e543db6e771e57b8ce28db219dbcf8b06c7a2a"
 }

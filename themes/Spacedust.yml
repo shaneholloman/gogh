@@ -1,6 +1,8 @@
 ---
 name: 'Spacedust'
-author: ''             # 'AUTHOR NAME (http://WEBSITE.com)'
+author: 'mhallendal (https://github.com/mhallendal/spacedust-theme)'
+author_name: 'mhallendal'
+author_url: 'https://github.com/mhallendal/spacedust-theme'
 variant: 'dark'            # dark or light
 
 color_01: '#6E5346'    # Black (Host)
@@ -24,4 +26,4 @@ color_16: '#FEFFF1'    # Bright White
 background: '#0A1E24'  # Background
 foreground: '#ECF0C1'  # Foreground (Text)
 
-cursor: '#ECF0C1'      # Cursor
+cursor: '#708284'      # Cursor

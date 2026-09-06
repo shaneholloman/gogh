@@ -1,0 +1,26 @@
+name: novmbr
+author: dkeg (https://github.com/dkeg/crayolo)
+author_name: dkeg
+author_url: https://github.com/dkeg/crayolo
+variant: dark
+color_01: '#282A2E'
+color_02: '#97673D'
+color_03: '#A0AC68'
+color_04: '#C6A869'
+color_05: '#457B7B'
+color_06: '#AE8B72'
+color_07: '#5E867F'
+color_08: '#C4B9AD'
+color_09: '#4E423B'
+color_10: '#97673D'
+color_11: '#A0AC68'
+color_12: '#C6A869'
+color_13: '#457B7B'
+color_14: '#AE8B72'
+color_15: '#5E867F'
+color_16: '#C4B9AD'
+background: '#231D1A'
+foreground: '#C4B9AD'
+cursor: '#C4B9AD'
+hash: a30d4e0c4c82beed29e7cf7b86e0fd4930ab5ea5e7a3270b65261b817a70ab6c
+hash_bg: d48db5c7ce9d9c664ebdcd8753f21cb154ff1c4080868c05256a54c9f8595ff9

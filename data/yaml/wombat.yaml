@@ -1,0 +1,26 @@
+name: Wombat
+author: djoyner (https://github.com/djoyner/iTerm2-wombat)
+author_name: djoyner
+author_url: https://github.com/djoyner/iTerm2-wombat
+variant: dark
+color_01: '#000000'
+color_02: '#FF615A'
+color_03: '#B1E969'
+color_04: '#EBD99C'
+color_05: '#5DA9F6'
+color_06: '#E86AFF'
+color_07: '#82FFF7'
+color_08: '#DEDACF'
+color_09: '#313131'
+color_10: '#F58C80'
+color_11: '#DDF88F'
+color_12: '#EEE5B2'
+color_13: '#A5C7FF'
+color_14: '#DDAAFF'
+color_15: '#B7FFF9'
+color_16: '#FFFFFF'
+background: '#171717'
+foreground: '#DEDACF'
+cursor: '#BBBBBB'
+hash: d2eeb752c0e0074868eec02fe0d9b7557647ebfc644c1fab09d959131e63cf0d
+hash_bg: a685aa006f5633b2d2e27d02ae8f1cf4e5440f913becdd4ac33c126070f6fd86

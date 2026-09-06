@@ -1,6 +1,8 @@
 {
-  "name": "Clrs",
-  "author": "",
+  "name": "CLRS",
+  "author": "jasonlong (https://github.com/jasonlong/iterm-clrs)",
+  "author_name": "jasonlong",
+  "author_url": "https://github.com/jasonlong/iterm-clrs",
   "variant": "light",
   "color_01": "#000000",
   "color_02": "#F8282A",
@@ -20,6 +22,7 @@
   "color_16": "#EEEEEC",
   "background": "#FFFFFF",
   "foreground": "#262626",
-  "cursor": "#262626",
-  "hash": "36aedbed394cf06d0da876a311aac221b97e3c6ccb9d0c8d24bdec9f72267cff"
+  "cursor": "#6FD3FC",
+  "hash": "f08b481264b353d09f385ce74f01a53463d8d2b52b67659dececeb77d7aab33e",
+  "hash_bg": "07ee686b3ce29f11070f5edcd6f0da03659e67becfba76650c1c6b5ac079847a"
 }

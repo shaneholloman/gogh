@@ -1,6 +1,8 @@
 {
   "name": "Apprentice",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#1C1C1C",
   "color_02": "#AF5F5F",
@@ -21,5 +23,6 @@
   "background": "#262626",
   "foreground": "#BCBCBC",
   "cursor": "#BCBCBC",
-  "hash": "db1d7254efd5fe3e325b16126e31cd55086234507a621d07f95c66c72ac8a452"
+  "hash": "815554879e0c2fe3c2aeea2888c6db7424f11fdd86f20d1e62e5f96ed7675d62",
+  "hash_bg": "170931320358994d5a207e537739d16911ee76874e63248892a3daac7b74ab85"
 }

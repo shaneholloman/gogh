@@ -1,6 +1,8 @@
 {
   "name": "Tender",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#1D1D1D",
   "color_02": "#C5152F",
@@ -21,5 +23,6 @@
   "background": "#282828",
   "foreground": "#EEEEEE",
   "cursor": "#EEEEEE",
-  "hash": "cc483ace3f7603bf200dfa4f5edbb383579c33c3adb1cb6d847b2b0812cdc2ce"
+  "hash": "7f433a1f097c7c8daa508d994730170aa194722f81ffcd3ad41bd3d74845da58",
+  "hash_bg": "692dd869c8a543dbc3e3df6d35207c5a8da6c187dc276f2cf17fd31d972f5ca5"
 }

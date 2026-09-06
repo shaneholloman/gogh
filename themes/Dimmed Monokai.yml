@@ -1,6 +1,8 @@
 ---
 name: 'Dimmed Monokai'
-author: ''             # 'AUTHOR NAME (http://WEBSITE.com)'
+author: 'zdj (https://github.com/zdj/themes/tree/master/iterm2)'
+author_name: 'zdj'
+author_url: 'https://github.com/zdj/themes/tree/master/iterm2'
 variant: 'dark'            # dark or light
 
 color_01: '#3A3D43'    # Black (Host)
@@ -24,4 +26,4 @@ color_16: '#FDFFB9'    # Bright White
 background: '#1F1F1F'  # Background
 foreground: '#B9BCBA'  # Foreground (Text)
 
-cursor: '#B9BCBA'      # Cursor
+cursor: '#F83E19'      # Cursor

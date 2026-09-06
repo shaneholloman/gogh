@@ -3,20 +3,26 @@
 </h1>
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Gogh-Co/Gogh/master/.images/gogh/Gogh-logo-dark.png" alt="Gogh" width="100%">
+  <img src=".images/intro.gif" alt="Gogh" width="80%">
 </div>
 
 <br>
 
 <div align="center">
-🔸🔸🔸 <a href="http://Gogh-Co.github.io/Gogh"> Visit the Website </a> 🔸🔸🔸
+🔸🔸🔸 <a href="http://Gogh-Co.github.io/Gogh"> gogh.website </a> 🔸🔸🔸
 </div>
 
 ## Color Scheme Implementer for Terminals
 
-Gogh is a collection of color schemes for various terminal emulators, including Gnome Terminal, Pantheon Terminal, Tilix, and XFCE4 Terminal. These schemes are designed to make your terminal more visually appealing and improve your productivity by providing a better contrast and color differentiation. (This fork of Gogh includes a color scheme named "Vaombe".)
+Gogh is a collection of color schemes for various terminal emulators, including Gnome Terminal, Pantheon Terminal, Tilix, and XFCE4 Terminal. These schemes are designed to make your terminal more visually appealing and improve your productivity by providing a better contrast and color differentiation.
 
 The inspiration for Gogh came from the clean and minimalistic design of Elementary OS, but the project has since grown to include a variety of unique and beautiful options. Not only does Gogh work on Linux systems, but it's also compatible with iTerm on macOS, providing a consistent and visually appealing experience across platforms.
+
+##### Run:
+
+```bash
+bash -c "$(curl -fsSL https://gogh.website/gogh)"
+```
 
 <br>
 
@@ -25,6 +31,7 @@ This project is here for anyone to use, no expectations. <br>
 If you want to buy me a coffee voluntarily, you can use this link.
 
 [![☕ Buy me a coffee](https://img.shields.io/badge/%E2%98%95-Buy%20me%20a%20coffee-FFA500?style=for-the-badge&logo=buymeacoffee&logoColor=white)](https://paypal.me/mgldvd?country.x=CO&locale.x=es_XC)
+
 </div>
 
 <table>
@@ -42,7 +49,7 @@ If you want to buy me a coffee voluntarily, you can use this link.
 - [Terminal Support](https://github.com/Gogh-Co/Gogh?tab=readme-ov-file#-terminals)
 - [Available Themes](https://github.com/Gogh-Co/Gogh?tab=readme-ov-file#-themes)
 - [Help](https://github.com/Gogh-Co/Gogh?tab=readme-ov-file#-help)
-- [Create your Own Theme!](https://github.com/Gogh-Co/Gogh?tab=readme-ov-file#%EF%B8%8F-how-to-create-your-own-theme)
+- [Create your Own Theme!](CONTRIBUTING.md)
 - [As Command line](https://github.com/Gogh-Co/Gogh?tab=readme-ov-file#-as-command-line)
 - [Accessibility ~ WCAG](https://github.com/Gogh-Co/Gogh?tab=readme-ov-file#-accessibility---wcag)
 - [First commit](https://github.com/Gogh-Co/Gogh?tab=readme-ov-file#-first-commit)
@@ -94,13 +101,13 @@ You can now install Gogh in Interactive Mode (Easier) or Non-Interactive Mode! (
 **1. Just copy and paste this one-line command:**
 
 ```bash
-bash -c "$(wget -qO- https://git.io/vQgMr)"
+bash -c "$(wget -qO- https://gogh.website/gogh)"
 ```
 
 Or, if you're a Mac user:
 
 ```bash
-bash -c "$(curl -sLo- https://git.io/vQgMr)"
+bash -c "$(curl -fsSL https://gogh.website/gogh)"
 ```
 
 **2. Select your installed theme from your terminal.**
@@ -112,13 +119,15 @@ bash -c "$(curl -sLo- https://git.io/vQgMr)"
 <br/>
 <br/>
 
-
 ## ⚙️ Install (Non-Interactive Mode)
+
 Two ways:
+
 * Clone the repository.
 * Download the only required files. (Bare Minimum!)
 
 ### Clone Repository
+
 ```bash
 # Clone the repo into "$HOME/src/gogh"
 mkdir -p "$HOME/src"
@@ -142,6 +151,7 @@ cd installs
 ```
 
 ### Download the only required files. (Bare Minimum!)
+
 ```bash
 # Download apply script
 wget https://github.com/Gogh-Co/Gogh/raw/master/apply-colors.sh
@@ -177,11 +187,13 @@ GOGH_APPLY_SCRIPT=/path/to/file/apply-colors.sh bash ./selenized-dark.sh
 <br/>
 
 ## 💻 Terminal Support
+
 Here are some terminals that Gogh is supported with:
 
 - Alacritty - [Web](https://github.com/alacritty/alacritty)
 - Cygwin - [Web](https://www.cygwin.com/)
 - Foot - [Web](https://codeberg.org/dnkl/foot)
+- Ghostty - [Web](https://ghostty.org/)
 - Gnome - [Web](https://help.gnome.org/users/gnome-terminal/stable/)
 - Guake - [Web](http://guake-project.org/)
 - iTerm - [Web](https://iterm2.com/)
@@ -210,8 +222,34 @@ We have lots of themes in stock! Check them out [here](https://Gogh-Co.github.io
 
 - **csv**: https://raw.githubusercontent.com/Gogh-Co/Gogh/master/data/themes.csv
 
-
 <br/>
+
+### 🔑 Color Hash
+
+Every theme in `themes.json` carries two SHA-256 fields, so palette and background can be compared independently:
+
+- `hash` — the theme's **16 ANSI colors only**, independent of `name`, `author`, `variant`, `background`, `foreground`, or `cursor` (those are cosmetic).
+- `hash_bg` — the theme's `background` value only.
+
+**How they're computed** (`tools/lib/theme_common.py`, used by `tools/generate/01_generate_themes_json.py`):
+
+- `hash`: concatenate `color_01` → `color_16` hex values as-is, no separators, then SHA-256 the result.
+- `hash_bg`: SHA-256 of the `background` hex value on its own.
+
+Example — `Solarized Dark.yml`:
+
+```
+#002831#D11C24#738A05#A57706#2176C7#C61C6F#259286#EAE3CB#001E27#BD3613#475B62#536870#708284#5956BA#819090#FCF4DC
+↓ SHA-256 → hash
+56c19575cf17b9adb71130dbf58b45d36ef250ace147115edfe61b126166f489
+
+#001E27
+↓ SHA-256 → hash_bg
+70c870089f3b222d01ae3f98d86dc53e11cb7f4cde69ecfe1f1a90a541811b2e
+```
+
+`hash` only changes if one of the 16 palette colors changes — background/cursor/foreground and metadata edits don't touch it. `hash_bg` only changes if the background changes. Two themes sharing both hashes are true duplicates; sharing only `hash` means same palette, different background.
+
 <br/>
 
 ## 👀 [WCAG](https://Gogh-Co.github.io/Gogh/wcag) - Accessibility Contrast
@@ -276,8 +314,8 @@ dconf reset -f /org/gnome/terminal/legacy/profiles:/
 ```bash
 sudo apt install uuid-runtime
 ```
-- Run the Gogh script.
 
+- Run the Gogh script.
 
 ### 🔹 Elementary OS
 
@@ -297,80 +335,11 @@ source .bashrc
 <br>
 
 ## 🖼️ Create your Own Theme!
-Good news! Now, creating themes are easier than ever.
 
-All you need to do is to create a YAML format file, following the example of the other files in the `themes` folder.
-
-Some rules to keep in mind:
-
-- The file name should match the name of the theme. For example:
-    - **Filename**: `Solarized Dark.yml`
-    - **Inside the .yml file**: `name: 'Solarized Dark'`
-- Use title case for all words by capitalizing their first letter.
-- Ensure that the contrast is sufficient for good legibility.
-
-***Now, you can send your Pull Request***
-**Thank you for collaborating!**
-
-### Theme ".yml" template
-If you indeed use this, replace the HEX values with your own ones.
-
-```yml
----
-name: 'Gogh'
-author: ''             # 'Author Name (http://website.com)'
-variant: ''            # Dark or Light
-
-color_01: '#292D3E'    # Black (Host)
-color_02: '#F07178'    # Red (Syntax string)
-color_03: '#62DE84'    # Green (Command)
-color_04: '#FFCB6B'    # Yellow (Command second)
-color_05: '#75A1FF'    # Blue (Path)
-color_06: '#F580FF'    # Magenta (Syntax var)
-color_07: '#60BAEC'    # Cyan (Prompt)
-color_08: '#ABB2BF'    # White
-
-color_09: '#959DCB'    # Bright Black
-color_10: '#F07178'    # Bright Red (Command error)
-color_11: '#C3E88D'    # Bright Green (Exec)
-color_12: '#FF5572'    # Bright Yellow
-color_13: '#82AAFF'    # Bright Blue (Folder)
-color_14: '#FFCB6B'    # Bright Magenta
-color_15: '#676E95'    # Bright Cyan
-color_16: '#FFFEFE'    # Bright White
-
-background: '#292D3E'  # Background
-foreground: '#BFC7D5'  # Foreground (Text)
-
-cursor: '#BFC7D5'      # Cursor
-```
-
-### Explanation of colors and variables
-
-The colors of the terminal are composed of 18 colors in 3 sections.
-
-Section 1: Regular text.
-
-Section 2: Bold text.
-
-Section 3: text and background.
-
-The basic colors are 8:
-
-- Black
-- Red
-- Green
-- Yellow
-- Blue
-- Purple
-- Cyan
-- White
-
-In comments variables is that of the console belongs each color.
-
-Here is a picture that explains a little better as colors are distributed.
-
-![Colors](https://raw.githubusercontent.com/Gogh-Co/Gogh/master/.images/gogh/colors.png)
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) — the single source of truth for
+adding a theme: the `.yml` template, the field-by-field reference, the
+rules a theme PR needs to follow, and how to check it locally with
+`task validate` before opening the PR.
 
 <br>
 
@@ -379,7 +348,7 @@ Here is a picture that explains a little better as colors are distributed.
 **WARNING:** *Only if you know what you are doing or trust me :)*
 
 ```bash
-sudo wget -O /usr/local/bin/gogh https://git.io/vQgMr && sudo chmod +x /usr/local/bin/gogh
+sudo wget -O /usr/local/bin/gogh https://gogh.website/gogh && sudo chmod +x /usr/local/bin/gogh
 ```
 
 Now in your terminal just type `gogh`:
@@ -402,7 +371,7 @@ gogh ALL
 For one-line remote usage with arguments, pass `--` before the options:
 
 ```bash
-bash -c "$(wget -qO- https://git.io/vQgMr)" -- Dracula
+bash -c "$(wget -qO- https://gogh.website/gogh)" -- Dracula
 ```
 
 <br/>
@@ -415,48 +384,7 @@ Nov 18, 2013 - [aa9871e](https://github.com/Gogh-Co/Gogh/commit/aa9871e2d6008d5d
 
 ## :heart: Credits:
 
-- [4bit](https://ciembor.github.io/4bit/)
-- [Bluloco Light Theme](https://github.com/uloco/theme-bluloco-light)
-- [Catppuccin](https://github.com/catppuccin)
-- [Chalk](https://github.com/chalk/chalk) by [Sindre Sorhus](https://github.com/sindresorhus)
-- [Dracula](https://github.com/dracula/dracula-theme) by [Zeno Rocha](https://github.com/zenorocha)
-- [Elementary OS](https://elementary.io/)
-- [Everblush](https://github.com/Everblush)
-- [Everforest Dark & Light theme set](https://github.com/sainnhe/everforest) by [Sainnhe Park](https://github.com/sainnhe)
-- [Fairy Floss](https://github.com/sailorhg/fairyfloss)
-- [Flat Remix](https://github.com/daniruiz/flat-remix)
-- [Flat UI Terminal Theme](https://dribbble.com/shots/1021755-Flat-UI-Terminal-Theme)
-- [Gooey](http://simey.me/editor-themes/) by [Matt Harris](https://github.com/mdh34)
-- [Gotham](https://github.com/whatyouhide/vim-gotham) by [Andrea Leopardi](https://github.com/whatyouhide)
-- [Gruvbox](https://github.com/morhetz/gruvbox) by [Pavel Pertsev](https://github.com/morhetz)
-- [Hemisu](https://noahfrederick.com/log/hemisu-for-os-x-terminal/) by [Noah Frederick](https://github.com/noahfrederick)
-- [kokuban](https://github.com/ygkn/kokuban) by [ygkn](https://github.com/ygkn)
-- [Monokai](https://web.archive.org/web/20161117102850/https://www.monokai.nl/blog/2006/07/15/textmate-color-theme) by [Wimer Hazenberg](https://github.com/monokai)
-- [Nightfox](https://github.com/EdenEast/nightfox.nvim)
-- [Ocean](https://github.com/fabianperez/ocean-dark-iterm) by [Fabian Perez](https://github.com/fabianperez)
-- [Omni](https://github.com/getomni)
-- [One Dark & Light theme set](https://github.com/nathanbuchar/one-dark-terminal) by [Nathan Buchar](https://github.com/nathanbuchar)
-- [Panda](https://github.com/PandaTheme) by [Siamak](https://github.com/siamak)
-- [Peppermint](https://noahfrederick.com/log/lion-terminal-theme-peppermint/) by [Noah Frederick](https://github.com/noahfrederick)
-- [Rosé Pine](https://github.com/rose-pine)
-- [Selenized](https://github.com/jan-warchol/selenized/)
-- [SMYCK](http://color.smyck.org/) by [John-Paul Bader](https://github.com/hukl)
-- [Snazzy](https://github.com/sindresorhus/hyper-snazzy) by [Sindre Sorhus](https://github.com/sindresorhus)
-- [Solarized](https://ethanschoonover.com/solarized) by [Ethan Schoonover](https://github.com/altercation)
-- [Sonokai](https://github.com/sainnhe/sonokai) by [Sainnhe Park](https://github.com/sainnhe)
-- [Srcery](https://github.com/srcery-colors/srcery-terminal) by [Daniel Berg](https://github.com/roosta)
-- [Summer Pop](https://github.com/guillermoap/Gogh) by [Guillermo Aguirre](https://github.com/guillermoap)
-- [SynthWave '84 ](https://github.com/robb0wen/synthwave-vscode)
-- [SynthWave Alpha](https://github.com/vikpe/synthwave-alpha)
-- [Terminal Sexy](https://terminal.sexy) by [George Czabania](https://github.com/stayradiated)
-- [Tilix](https://github.com/storm119/Tilix-Themes)
-- [Tokyo Night](https://github.com/enkia/tokyo-night-vscode-theme)
-- [Tomorrow color theme set](https://github.com/chriskempson/tomorrow-theme) by [Chris Kempson](https://github.com/chriskempson)
-- Material theme by [Mitchel van Eijgen](https://gist.github.com/mvaneijgen/4c56701215847dd5ddcf) and [Liu Xinan](https://gist.github.com/xinan/ca2b82fef6aaa0d1e099)
-- [KANAGAWA.nvim](https://github.com/rebelot/kanagawa.nvim)
-- [Apprentice](https://romainl.github.io/Apprentice/)
-- [Oxocarbon](https://github.com/nyoom-engineering/oxocarbon.nvim)
-- [website-theme](https://github.com/shayanaqvi/website-theme)
+The full theme-by-theme author list now lives in [CREDITS.md](./CREDITS.md).
 
 <br/>
 
@@ -480,10 +408,18 @@ I cannot claim to be the only author of this project. Without the help of the pe
 - Miguel D. Quintero - [Lanet.co](https://lanet.co)
 
 <div align="center">
+
+[![X](https://img.shields.io/badge/X-Mgldvd__tech-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/Mgldvd_tech)
+[![GitHub](https://img.shields.io/badge/GitHub-Mgldvd-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Mgldvd)
+
+</div>
+
+<div align="center">
 This project is here for anyone to use, no expectations. <br>
 If you want to buy me a coffee voluntarily, you can use this link.
 
 [![☕ Buy me a coffee](https://img.shields.io/badge/%E2%98%95-Buy%20me%20a%20coffee-FFA500?style=for-the-badge&logo=buymeacoffee&logoColor=white)](https://paypal.me/mgldvd?country.x=CO&locale.x=es_XC)
+
 </div>
 
 <br/>
@@ -500,16 +436,12 @@ There is no blue without yellow and without orange.
 
 ## 📣 Mentions
 
-- [VSCode Theme](https://marketplace.visualstudio.com/items?itemName=Avetis.gogh-theme)
-- [Awesome-Shell](https://github.com/alebcay/awesome-shell)
-- [Hipertextual](https://hipertextual.com/archivo/2014/11/4bit/)
-- [MuyLinux](https://www.muylinux.com/2015/06/06/ping-91)
-- [Reddit - elementaryos](https://www.reddit.com/r/elementaryos/comments/3ivnb7/how_to_change_terminals_colors/)
-- [dev.to](https://dev.to/Gogh-Co/color-scheme-for-your-terminal-1pea)
-- [Ubuntupit](https://www.ubuntupit.com/best-ubuntu-terminal-themes-and-color-schemes/)
+The full list of blogs, forums, videos and comparison sites that have mentioned Gogh now lives in [MENTIONS.md](./MENTIONS.md).
 
 <br/>
 
-## 🌟 Stargazers Over Time
+## 🌟 Star History
 
-[![Stargazers over time](https://starchart.cc/Gogh-Co/Gogh.svg?variant=adaptive)](https://starchart.cc/Gogh-Co/Gogh)
+[![Star History Chart](https://api.star-history.com/chart?repos=Gogh-Co/Gogh&type=date&logscale&legend=bottom-right&sealed_token=TC_btT_luE3IIjZQynKiuDBwXpxahiZ7vEyJudCa_0pjwPYTo1bZgIV8QhXqoJ5i1KmCoB7TZ1xUU1pk0PF9ZfwUEqqllCUG-xjMYUMrMdPLt6iWE_865TMGMd-TiTN8wLhoXJAfaG35jHL8-nTV2qvQw6SEy39L5NWLbNKjXWBv22pVbKipWpfUaPvp)](https://www.star-history.com/?repos=Gogh-Co%2FGogh&type=date&legend=bottom-right)
+
+[![Star History Rank](https://api.star-history.com/badge?repo=Gogh-Co/Gogh&type=rank)](https://www.star-history.com/gogh-co/gogh)

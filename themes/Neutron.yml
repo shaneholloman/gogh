@@ -1,6 +1,8 @@
 ---
 name: 'Neutron'
-author: ''             # 'AUTHOR NAME (http://WEBSITE.com)'
+author: 'Ch4s3 (https://github.com/Ch4s3/iTerm2-Neutron)'
+author_name: 'Ch4s3'
+author_url: 'https://github.com/Ch4s3/iTerm2-Neutron'
 variant: 'dark'            # dark or light
 
 color_01: '#23252B'    # Black (Host)
@@ -24,4 +26,4 @@ color_16: '#EBEDF2'    # Bright White
 background: '#1C1E22'  # Background
 foreground: '#E6E8EF'  # Foreground (Text)
 
-cursor: '#E6E8EF'      # Cursor
+cursor: '#F6F7EC'      # Cursor

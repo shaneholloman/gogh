@@ -1,0 +1,26 @@
+name: Dogxi Misty
+author: Dogxi (https://github.com/dogxii)
+author_name: Dogxi
+author_url: https://github.com/dogxii
+variant: dark
+color_01: '#000000'
+color_02: '#EC675E'
+color_03: '#A6E173'
+color_04: '#E6BF7B'
+color_05: '#ACEAFB'
+color_06: '#ED73BE'
+color_07: '#82DBEB'
+color_08: '#F1F1F0'
+color_09: '#686868'
+color_10: '#EC675E'
+color_11: '#A6E173'
+color_12: '#E8C88A'
+color_13: '#ACEAFB'
+color_14: '#ED73BE'
+color_15: '#9CDEEE'
+color_16: '#F1F1F0'
+background: '#282A35'
+foreground: '#EFF0EB'
+cursor: '#EAEAEA'
+hash: b13f1031217aa8751b5be3cef1d7fd0f3601b763edd9ac998e93937908697002
+hash_bg: 3469071898db37cedd85a865c886265a3f72837ef954ec9986abc489bc227faf

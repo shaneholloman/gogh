@@ -1,6 +1,8 @@
 {
   "name": "Tokyo Night Light",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "light",
   "color_01": "#0F0F14",
   "color_02": "#8C4351",
@@ -21,5 +23,6 @@
   "background": "#D5D6DB",
   "foreground": "#565A6E",
   "cursor": "#565A6E",
-  "hash": "b7ce24233898e95e735e66de0f3f1c2f09d7a15ff070d2114d44bbf15d557a0e"
+  "hash": "fc61063bbd4564f9241f20600d981e0051e58ff2f8ac5364783ba0bed3762319",
+  "hash_bg": "a90b605e9cabc00cef7165ae128ff25e9963a9e55b1e2e2d881faa4a30e62153"
 }

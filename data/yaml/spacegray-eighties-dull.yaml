@@ -1,0 +1,26 @@
+name: Spacegray Eighties Dull
+author: mhkeller (https://github.com/mhkeller/spacegray-eighties-iterm)
+author_name: mhkeller
+author_url: https://github.com/mhkeller/spacegray-eighties-iterm
+variant: dark
+color_01: '#15171C'
+color_02: '#B24A56'
+color_03: '#92B477'
+color_04: '#C6735A'
+color_05: '#7C8FA5'
+color_06: '#A5789E'
+color_07: '#80CDCB'
+color_08: '#B3B8C3'
+color_09: '#555555'
+color_10: '#EC5F67'
+color_11: '#89E986'
+color_12: '#FEC254'
+color_13: '#5486C0'
+color_14: '#BF83C1'
+color_15: '#58C2C1'
+color_16: '#FFFFFF'
+background: '#222222'
+foreground: '#C9C6BC'
+cursor: '#BBBBBB'
+hash: b4f5de24b6b6930bd536becd91fef4df5f05c2694d47670513e84d0b09383721
+hash_bg: 0ab9b7707742f7dcbadf8f430a75575121e5e4564fe75b1b0932bb9d376e6bff

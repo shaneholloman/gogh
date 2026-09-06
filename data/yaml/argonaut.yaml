@@ -1,0 +1,26 @@
+name: Argonaut
+author: effkay (https://github.com/effkay/iTerm-argonaut)
+author_name: effkay
+author_url: https://github.com/effkay/iTerm-argonaut
+variant: dark
+color_01: '#232323'
+color_02: '#FF000F'
+color_03: '#8CE10B'
+color_04: '#FFB900'
+color_05: '#008DF8'
+color_06: '#6D43A6'
+color_07: '#00D8EB'
+color_08: '#FFFFFF'
+color_09: '#444444'
+color_10: '#FF2740'
+color_11: '#ABE15B'
+color_12: '#FFD242'
+color_13: '#0092FF'
+color_14: '#9A5FEB'
+color_15: '#67FFF0'
+color_16: '#FFFFFF'
+background: '#0E1019'
+foreground: '#FFFAF4'
+cursor: '#FF0018'
+hash: b83bb43462cb013b8bf1174cfb2f69e985bc00c33b11ba45de63d12aea1fdcf3
+hash_bg: 65dcb30b98b2e73b9ea2acf759939734a5c26a6094e6ab79ba8929e2da28b95b

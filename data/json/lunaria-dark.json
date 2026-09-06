@@ -1,6 +1,8 @@
 {
   "name": "Lunaria Dark",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#36464E",
   "color_02": "#846560",
@@ -21,5 +23,6 @@
   "background": "#36464E",
   "foreground": "#CACED8",
   "cursor": "#CACED8",
-  "hash": "996b6564a628ecd50d99cf70f8bdf6682be355f911496f508e6309c5f26be4f4"
+  "hash": "b94e7e9e929f5c6d55f401fe3c351e226b0d10a6e372a3f5b806b58c1fa7a084",
+  "hash_bg": "8033106a4be31e8be2e9ca44316138973de8736f4aa5c4d53c3970dc488f72b2"
 }

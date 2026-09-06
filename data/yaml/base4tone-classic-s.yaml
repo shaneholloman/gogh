@@ -1,0 +1,26 @@
+name: Base4Tone Classic S
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#1F1D20'
+color_02: '#D64F3D'
+color_03: '#7E70E6'
+color_04: '#ABA1F7'
+color_05: '#C27EED'
+color_06: '#E963B8'
+color_07: '#9488F2'
+color_08: '#EBE8ED'
+color_09: '#0B070D'
+color_10: '#EB8275'
+color_11: '#B7AFF8'
+color_12: '#D1CBFB'
+color_13: '#E6C8F9'
+color_14: '#F17EC7'
+color_15: '#E0BAF7'
+color_16: '#F8F6F9'
+background: '#1F1D20'
+foreground: '#9A949E'
+cursor: '#767481'
+hash: ce19b17f36e9f75b57bf15d47b663dab484136b30aec8857c387a93bf521a2b0
+hash_bg: 29590651375db72d618c7e5b029a264718fa235d30d0833bdb0d4b8abc423958

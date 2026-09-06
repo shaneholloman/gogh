@@ -1,6 +1,8 @@
 ---
 name: 'Moonfly'
-author: ''             # 'AUTHOR NAME (http://WEBSITE.com)'
+author: 'bluz71 (https://github.com/bluz71/vim-moonfly-colors)'
+author_name: 'bluz71'
+author_url: 'https://github.com/bluz71/vim-moonfly-colors'
 variant: 'dark'            # dark or light
 
 color_01: '#323437'    # Black (Host)
@@ -15,7 +17,7 @@ color_08: '#C6C6C6'    # White
 color_09: '#949494'    # Bright Black
 color_10: '#FF5189'    # Bright Red (Command error)
 color_11: '#36C692'    # Bright Green (Exec)
-color_12: '#C2C292'    # Bright Yellow
+color_12: '#C6C684'    # Bright Yellow
 color_13: '#74B2FF'    # Bright Blue (Folder)
 color_14: '#AE81FF'    # Bright Magenta
 color_15: '#85DC85'    # Bright Cyan

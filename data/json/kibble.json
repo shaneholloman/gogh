@@ -1,6 +1,8 @@
 {
   "name": "Kibble",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#4D4D4D",
   "color_02": "#C70031",
@@ -20,6 +22,7 @@
   "color_16": "#FFFFFF",
   "background": "#0E100A",
   "foreground": "#F7F7F7",
-  "cursor": "#F7F7F7",
-  "hash": "84090c643735f8913cd3fc9d2ebdd8f283f472ad7db2ac35e246a572e12d22d0"
+  "cursor": "#9FDA9C",
+  "hash": "30d21ab6f56cc1175d2682ce71685410cf3bec61e657cf732622568e14611f25",
+  "hash_bg": "3f2e758b5d87299762d9a55b26d7c538026cf5e809ba63065eac9c43705bdb6d"
 }

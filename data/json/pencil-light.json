@@ -1,6 +1,8 @@
 {
   "name": "Pencil Light",
-  "author": "",
+  "author": "mattly (https://github.com/mattly/iterm-colors-pencil)",
+  "author_name": "mattly",
+  "author_url": "https://github.com/mattly/iterm-colors-pencil",
   "variant": "light",
   "color_01": "#212121",
   "color_02": "#C30771",
@@ -20,6 +22,7 @@
   "color_16": "#F1F1F1",
   "background": "#F1F1F1",
   "foreground": "#424242",
-  "cursor": "#424242",
-  "hash": "787c5f767ee447484a7f602c5809f29c3129f3dc17e85db59a4f4b42b673aacd"
+  "cursor": "#20BBFC",
+  "hash": "41764e46042cc6005de6266ae132eb2fbcaa804402a6e8837e4f4213481230ca",
+  "hash_bg": "ac285142be196f0f26a76597ac169b87eb97aa0116a02c6cd46aacabf7803d3e"
 }

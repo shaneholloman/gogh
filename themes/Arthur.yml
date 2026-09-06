@@ -1,6 +1,8 @@
 ---
 name: 'Arthur'
-author: ''             # 'AUTHOR NAME (http://WEBSITE.com)'
+author: 'baskerville (https://github.com/baskerville/iTerm-2-Color-Themes)'
+author_name: 'baskerville'
+author_url: 'https://github.com/baskerville/iTerm-2-Color-Themes'
 variant: 'dark'            # dark or light
 
 color_01: '#3D352A'    # Black (Host)
@@ -24,4 +26,4 @@ color_16: '#DDCCBB'    # Bright White
 background: '#1C1C1C'  # Background
 foreground: '#DDEEDD'  # Foreground (Text)
 
-cursor: '#DDEEDD'      # Cursor
+cursor: '#E2BBEF'      # Cursor

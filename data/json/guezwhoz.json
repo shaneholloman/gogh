@@ -1,6 +1,8 @@
 {
   "name": "Guezwhoz",
   "author": "Egor Lem (http://egorlem.com)",
+  "author_name": "Egor Lem",
+  "author_url": "http://egorlem.com",
   "variant": "dark",
   "color_01": "#333333",
   "color_02": "#E85181",
@@ -11,15 +13,16 @@
   "color_07": "#58D6CE",
   "color_08": "#D9D9D9",
   "color_09": "#808080",
-  "color_10": "#e85181",
+  "color_10": "#E85181",
   "color_11": "#AFD7AF",
-  "color_12": "#d1ed85",
+  "color_12": "#D1ED85",
   "color_13": "#64B2ED",
   "color_14": "#A398ED",
   "color_15": "#61EDE4",
   "color_16": "#EDEDED",
-  "background": "#1d1d1d",
-  "foreground": "#d9d9d9",
-  "cursor": "#99d4b1",
-  "hash": "de7998617e80b359e0dad9aa147528ef4693f0f4706e77d82ce4ed5746b0b1f7"
+  "background": "#1D1D1D",
+  "foreground": "#D9D9D9",
+  "cursor": "#99D4B1",
+  "hash": "a86526da1083cd6a8c3032345528227f1b2c6c98c62f2bb76166637c088bb06a",
+  "hash_bg": "8a8b3014d41f919506a5f4d8263348f42298d9033ddb990d5f335041167a6270"
 }

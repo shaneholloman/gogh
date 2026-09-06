@@ -1,0 +1,26 @@
+name: Mirage
+author: Tristan Remy (https://github.com/tristanremy/mirage)
+author_name: Tristan Remy
+author_url: https://github.com/tristanremy/mirage
+variant: dark
+color_01: '#011627'
+color_02: '#FF9999'
+color_03: '#85CC95'
+color_04: '#FFD700'
+color_05: '#7FB5FF'
+color_06: '#DDB3FF'
+color_07: '#21C7A8'
+color_08: '#FFFFFF'
+color_09: '#575656'
+color_10: '#FF9999'
+color_11: '#85CC95'
+color_12: '#FFD700'
+color_13: '#7FB5FF'
+color_14: '#DDB3FF'
+color_15: '#85CC95'
+color_16: '#FFFFFF'
+background: '#1B2738'
+foreground: '#A6B2C0'
+cursor: '#DDB3FF'
+hash: 439792b77b1fd164cf7a19bb3763ade1e69385d60b9281f34d727cef9701d47f
+hash_bg: 392d6a7c90f9ccceb4ef3b5d3b0b2770517a03852fda8044a08804ba38fa9e14

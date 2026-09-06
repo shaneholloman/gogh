@@ -1,6 +1,8 @@
 {
   "name": "Royal",
-  "author": "",
+  "author": "zdj (https://github.com/zdj/themes/tree/master/iterm2)",
+  "author_name": "zdj",
+  "author_url": "https://github.com/zdj/themes/tree/master/iterm2",
   "variant": "dark",
   "color_01": "#241F2B",
   "color_02": "#91284C",
@@ -20,6 +22,7 @@
   "color_16": "#9E8CBD",
   "background": "#100815",
   "foreground": "#514968",
-  "cursor": "#514968",
-  "hash": "bdcf5e71cdb5752039fdd07f80ac79e9326b3b03fb400b3b49f2fe9f1e0b767f"
+  "cursor": "#524966",
+  "hash": "45844348e31d2e108db4542ac3da84c310679e2e6cafe218b11a1dd970d5e71f",
+  "hash_bg": "899254bf0c780912566b03f2f6849336c722ea46026f72e882ab6dd65be3a551"
 }

@@ -1,6 +1,8 @@
 {
   "name": "Agave",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#222826",
   "color_02": "#A35D4E",
@@ -21,5 +23,6 @@
   "background": "#141917",
   "foreground": "#D8E3DA",
   "cursor": "#EAF5D6",
-  "hash": "59d57d2c7a2f2c4fd4645d6d6c0bf62c8b85c265d2ab66735cc3a9b129ac06ef"
+  "hash": "4a45d8bfafb282401343fcf33444b10ac4803c2970285bb5a82682ec590ca7ea",
+  "hash_bg": "8371b4bd4a7f65eccfd2322f13893501e904b16e7afae5313e6ea8bf8c0adfa1"
 }

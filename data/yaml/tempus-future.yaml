@@ -1,0 +1,26 @@
+name: Tempus Future
+author: Protesilaos Stavrou (https://protesilaos.com)
+author_name: Protesilaos Stavrou
+author_url: https://protesilaos.com
+variant: dark
+color_01: '#090A18'
+color_02: '#FF7E8F'
+color_03: '#6ABA39'
+color_04: '#BFA51A'
+color_05: '#4AB2D7'
+color_06: '#E58F84'
+color_07: '#2AB7BB'
+color_08: '#A7A2C4'
+color_09: '#2B1329'
+color_10: '#F78E2F'
+color_11: '#60BA80'
+color_12: '#DE9B1D'
+color_13: '#8BA7EA'
+color_14: '#E08BD6'
+color_15: '#2CBAB6'
+color_16: '#B4ABAC'
+background: '#090A18'
+foreground: '#B4ABAC'
+cursor: '#B4ABAC'
+hash: 742e7ce2883834b637c32087cfc67c3791a4088b5dbe760047918ef2a7fcbdc2
+hash_bg: 13ccf06c85d156fd3fdc5c13ff798eb86d890d740a3b470968897057bb158980

@@ -1,6 +1,8 @@
 ---
 name: 'Desert'
 author: ''             # 'AUTHOR NAME (http://WEBSITE.com)'
+author_name: ''
+author_url: ''
 variant: 'dark'            # dark or light
 
 color_01: '#4D4D4D'    # Black (Host)
@@ -24,4 +26,4 @@ color_16: '#FFFFFF'    # Bright White
 background: '#333333'  # Background
 foreground: '#FFFFFF'  # Foreground (Text)
 
-cursor: '#FFFFFF'      # Cursor
+cursor: '#00FF00'      # Cursor

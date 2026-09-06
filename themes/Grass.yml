@@ -1,6 +1,8 @@
 ---
 name: 'Grass'
 author: ''             # 'AUTHOR NAME (http://WEBSITE.com)'
+author_name: ''
+author_url: ''
 variant: 'dark'            # dark or light
 
 color_01: '#000000'    # Black (Host)
@@ -24,4 +26,4 @@ color_16: '#FFFFFF'    # Bright White
 background: '#13773D'  # Background
 foreground: '#FFF0A5'  # Foreground (Text)
 
-cursor: '#FFF0A5'      # Cursor
+cursor: '#8C2800'      # Cursor

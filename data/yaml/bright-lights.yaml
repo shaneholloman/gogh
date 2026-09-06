@@ -1,0 +1,26 @@
+name: Bright Lights
+author: tw15egan (https://github.com/tw15egan)
+author_name: tw15egan
+author_url: https://github.com/tw15egan
+variant: dark
+color_01: '#191919'
+color_02: '#FF355B'
+color_03: '#B7E876'
+color_04: '#FFC251'
+color_05: '#76D4FF'
+color_06: '#BA76E7'
+color_07: '#6CBFB5'
+color_08: '#C2C8D7'
+color_09: '#191919'
+color_10: '#FF355B'
+color_11: '#B7E876'
+color_12: '#FFC251'
+color_13: '#76D5FF'
+color_14: '#BA76E7'
+color_15: '#6CBFB5'
+color_16: '#C2C8D7'
+background: '#191919'
+foreground: '#B3C9D7'
+cursor: '#F34B00'
+hash: aab219788cc68302d31d8880cd56b8d55e20fddda286f4243f6066dcfcaeb0af
+hash_bg: 74fdfc67436b3623da346243598b759bae86cf6a084fedf77fa779f9037c623a

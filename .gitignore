@@ -7,11 +7,15 @@ bin/
 .devbox/
 .nuxt/
 .output/
+.agents/
+.claude/
 dist/
 
 .*.swp
 .stfolder
 .tmp
+__pycache__/
+*.pyc
 
 apply-colors-original.sh
 out.txt

@@ -1,6 +1,8 @@
 {
   "name": "Neutron",
-  "author": "",
+  "author": "Ch4s3 (https://github.com/Ch4s3/iTerm2-Neutron)",
+  "author_name": "Ch4s3",
+  "author_url": "https://github.com/Ch4s3/iTerm2-Neutron",
   "variant": "dark",
   "color_01": "#23252B",
   "color_02": "#B54036",
@@ -20,6 +22,7 @@
   "color_16": "#EBEDF2",
   "background": "#1C1E22",
   "foreground": "#E6E8EF",
-  "cursor": "#E6E8EF",
-  "hash": "7f8ddafcbbdea9cc48b0d7f007871aa047cce6a2d603e54173f046f81e115457"
+  "cursor": "#F6F7EC",
+  "hash": "2d2a5f1874cb1656c8efb8505ee8e2f464672e726121949f24c752e0ec5a9d9d",
+  "hash_bg": "2edf0a66fccc5ebe6f155888c9cb7f2aefc73beb3fb4c12950f8cf8560c70b1a"
 }

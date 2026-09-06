@@ -1,0 +1,26 @@
+name: Adwaita
+author: cnavajas (https://github.com/cnavajas)
+author_name: cnavajas
+author_url: https://github.com/cnavajas
+variant: light
+color_01: '#1D1D20'
+color_02: '#C01C28'
+color_03: '#26A269'
+color_04: '#A2734C'
+color_05: '#12488B'
+color_06: '#A347BA'
+color_07: '#2AA1B3'
+color_08: '#C2C2C2'
+color_09: '#5D5D5D'
+color_10: '#F66151'
+color_11: '#33D17A'
+color_12: '#E9AD0C'
+color_13: '#2A7BDE'
+color_14: '#C061CB'
+color_15: '#33C7DE'
+color_16: '#FFFFFF'
+background: '#FFFFFF'
+foreground: '#1D1D20'
+cursor: '#1D1D20'
+hash: 98e2ba12f46f2be4a846e295a96b69d8983bd80365e4cb2bacb260306287689e
+hash_bg: 07ee686b3ce29f11070f5edcd6f0da03659e67becfba76650c1c6b5ac079847a

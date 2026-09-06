@@ -1,0 +1,26 @@
+name: Atelier Heath
+author: Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/heath)
+author_name: Bram de Haan
+author_url: http://atelierbram.github.io/syntax-highlighting/atelier-schemes/heath
+variant: dark
+color_01: '#1B181B'
+color_02: '#CA402B'
+color_03: '#918B3B'
+color_04: '#BB8A35'
+color_05: '#516AEC'
+color_06: '#7B59C0'
+color_07: '#159393'
+color_08: '#AB9BAB'
+color_09: '#776977'
+color_10: '#A65926'
+color_11: '#918B3B'
+color_12: '#BB8A35'
+color_13: '#516AEC'
+color_14: '#7B59C0'
+color_15: '#159393'
+color_16: '#F7F3F7'
+background: '#1B181B'
+foreground: '#9E8F9E'
+cursor: '#9E8F9E'
+hash: 11ecf931ae6fb34dced6a3f09abfeb7347e02cb84de005df078b5c3e340b846c
+hash_bg: 68ec6e50d310351952dcc9d3f0cceaacb2c10e1d3a65aae36389b05e4ac36745

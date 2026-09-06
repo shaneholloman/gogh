@@ -1,0 +1,26 @@
+name: Tempus Summer
+author: Protesilaos Stavrou (https://protesilaos.com)
+author_name: Protesilaos Stavrou
+author_url: https://protesilaos.com
+variant: dark
+color_01: '#202C3D'
+color_02: '#FE6F70'
+color_03: '#4EB075'
+color_04: '#BA9A0A'
+color_05: '#60A1E6'
+color_06: '#D285AD'
+color_07: '#3DAE9F'
+color_08: '#949CBF'
+color_09: '#39304F'
+color_10: '#EC7F4F'
+color_11: '#5BAF4F'
+color_12: '#BE981F'
+color_13: '#8599EF'
+color_14: '#CC82D7'
+color_15: '#2AACBF'
+color_16: '#A0ABAE'
+background: '#202C3D'
+foreground: '#A0ABAE'
+cursor: '#A0ABAE'
+hash: 501cb3e3ec373d17d2a2783f3e4fbd14259b02acce057c86cca44eade745b242
+hash_bg: b6543f19f6df3a8b84c10bed40bb274db23148f4329e8a4151c2557a30456b66

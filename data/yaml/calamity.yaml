@@ -1,0 +1,26 @@
+name: Calamity
+author: Pustur (https://github.com/Pustur)
+author_name: Pustur
+author_url: https://github.com/Pustur
+variant: dark
+color_01: '#2F2833'
+color_02: '#FC644D'
+color_03: '#A5F69C'
+color_04: '#E9D7A5'
+color_05: '#3B79C7'
+color_06: '#F92672'
+color_07: '#74D3DE'
+color_08: '#D5CED9'
+color_09: '#7E6C88'
+color_10: '#FC644D'
+color_11: '#A5F69C'
+color_12: '#E9D7A5'
+color_13: '#3B79C7'
+color_14: '#F92672'
+color_15: '#74D3DE'
+color_16: '#FFFFFF'
+background: '#2F2833'
+foreground: '#D5CED9'
+cursor: '#D5CED9'
+hash: e1847809438c128d415cbea4687bda5b877b9791fce2d5cfd23f90d181b6b159
+hash_bg: 7d10814b72991d7d99fd50a903dfa969e73542d897d033e5ba6f7738d97437a8

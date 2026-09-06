@@ -1,6 +1,8 @@
 ---
 name: 'Novel'
 author: ''             # 'AUTHOR NAME (http://WEBSITE.com)'
+author_name: ''
+author_url: ''
 variant: 'light'            # dark or light
 
 color_01: '#000000'    # Black (Host)
@@ -24,4 +26,4 @@ color_16: '#FFFFFF'    # Bright White
 background: '#DFDBC3'  # Background
 foreground: '#3B2322'  # Foreground (Text)
 
-cursor: '#3B2322'      # Cursor
+cursor: '#73635A'      # Cursor

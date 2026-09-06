@@ -1,0 +1,26 @@
+name: Neon Night
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#20242D'
+color_02: '#FF8E8E'
+color_03: '#7EFDD0'
+color_04: '#FCAD3F'
+color_05: '#69B4F9'
+color_06: '#DD92F6'
+color_07: '#8CE8FF'
+color_08: '#C9CCCD'
+color_09: '#20242D'
+color_10: '#FF8E8E'
+color_11: '#7EFDD0'
+color_12: '#FCAD3F'
+color_13: '#69B4F9'
+color_14: '#DD92F6'
+color_15: '#8CE8FF'
+color_16: '#C9CCCD'
+background: '#20242D'
+foreground: '#C7C8FF'
+cursor: '#C7C8FF'
+hash: 2ab0499303ee83ae8d112931c07040581493539be6e3f117aee76036ce3e81bc
+hash_bg: a0f07b05583a4a55718ebcdbe923ed5a805398da95bf90bb1d24cb1031793ecc

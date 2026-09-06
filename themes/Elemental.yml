@@ -1,6 +1,8 @@
 ---
 name: 'Elemental'
-author: ''             # 'AUTHOR NAME (http://WEBSITE.com)'
+author: 'zdj (https://github.com/zdj/themes/tree/master/iterm2)'
+author_name: 'zdj'
+author_url: 'https://github.com/zdj/themes/tree/master/iterm2'
 variant: 'dark'            # dark or light
 
 color_01: '#3C3C30'    # Black (Host)
@@ -24,4 +26,4 @@ color_16: '#FFF1E9'    # Bright White
 background: '#22211D'  # Background
 foreground: '#807A74'  # Foreground (Text)
 
-cursor: '#807A74'      # Cursor
+cursor: '#FACB80'      # Cursor

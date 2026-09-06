@@ -1,6 +1,8 @@
 {
   "name": "Cobalt Neon",
-  "author": "",
+  "author": "vazquez (https://github.com/vazquez/cobalt-neon-iterm)",
+  "author_name": "vazquez",
+  "author_url": "https://github.com/vazquez/cobalt-neon-iterm",
   "variant": "dark",
   "color_01": "#142631",
   "color_02": "#FF2320",
@@ -20,6 +22,7 @@
   "color_16": "#8FF586",
   "background": "#142838",
   "foreground": "#8FF586",
-  "cursor": "#8FF586",
-  "hash": "35904ee224cd50043fd9a29641882941de0f9e460a79a841b01a2d8087f8eb59"
+  "cursor": "#C4206F",
+  "hash": "503affb0dd7f0d361201c66807dc54969d8713fc54edb2d2252b5a3fc5817a3b",
+  "hash_bg": "e53f2c5e48b6166871dbde84fb9206d13b21eff0d85b3f1b5120726deebfa28a"
 }

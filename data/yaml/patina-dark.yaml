@@ -1,0 +1,26 @@
+name: Patina Dark
+author: lmarkmann (https://github.com/lmarkmann)
+author_name: lmarkmann
+author_url: https://github.com/lmarkmann
+variant: dark
+color_01: '#2E2E2E'
+color_02: '#CB7676'
+color_03: '#4D9375'
+color_04: '#E6CC77'
+color_05: '#6DB3C2'
+color_06: '#C98A7D'
+color_07: '#5DA9A7'
+color_08: '#DBD7CA'
+color_09: '#585858'
+color_10: '#CB7676'
+color_11: '#4D9375'
+color_12: '#E6CC77'
+color_13: '#6DB3C2'
+color_14: '#C98A7D'
+color_15: '#5DA9A7'
+color_16: '#DBD7CA'
+background: '#121212'
+foreground: '#DBD7CA'
+cursor: '#DBD7CA'
+hash: 3b49d684394e06888b2801678b4be967a01f78f21263df7be46edb1232008259
+hash_bg: 21dcede6e69a9179baf4f068aa143596c90d183d54dc17764131e198dd3dbe71

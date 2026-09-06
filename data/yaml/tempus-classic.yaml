@@ -1,0 +1,26 @@
+name: Tempus Classic
+author: Protesilaos Stavrou (https://protesilaos.com)
+author_name: Protesilaos Stavrou
+author_url: https://protesilaos.com
+variant: dark
+color_01: '#232323'
+color_02: '#D4823D'
+color_03: '#8C9E3D'
+color_04: '#B1942B'
+color_05: '#6E9CB0'
+color_06: '#B58D88'
+color_07: '#6DA280'
+color_08: '#949D9F'
+color_09: '#312E30'
+color_10: '#D0913D'
+color_11: '#96A42D'
+color_12: '#A8A030'
+color_13: '#8E9CC0'
+color_14: '#D58888'
+color_15: '#7AA880'
+color_16: '#AEADAF'
+background: '#232323'
+foreground: '#AEADAF'
+cursor: '#AEADAF'
+hash: 2f7e4f0471532af97f78351eb5f2f3e1a22b64d839dc5f6f49bc8209b8420e13
+hash_bg: f547570cd4285410eacc76c30f7d1b8f2bbd217d549c0dd6a0ae16d224160f0e

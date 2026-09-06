@@ -1,6 +1,8 @@
 {
   "name": "Alien Blood",
-  "author": "",
+  "author": "zdj (https://github.com/zdj/themes/tree/master/iterm2)",
+  "author_name": "zdj",
+  "author_url": "https://github.com/zdj/themes/tree/master/iterm2",
   "variant": "dark",
   "color_01": "#112616",
   "color_02": "#7F2B27",
@@ -20,6 +22,7 @@
   "color_16": "#73FA91",
   "background": "#0F1610",
   "foreground": "#637D75",
-  "cursor": "#637D75",
-  "hash": "f3e5f6c374afdf9cbd01fc7a3952c01302bc56122e2035f32b787a210d3b9a5e"
+  "cursor": "#73FA91",
+  "hash": "79ca8efeeda1db44cb9fdcd4d8440dd0b64577fe44c81c839d77b4a957f947da",
+  "hash_bg": "b49b3a744561e5a83dfc459b1d6c809091d90e328832c31a2cff936f0b8e8abe"
 }

@@ -1,0 +1,26 @@
+name: Modus Operandi Deuteranopia
+author: Protesilaos Stavrou (https://github.com/protesilaos)
+author_name: Protesilaos Stavrou
+author_url: https://github.com/protesilaos
+variant: light
+color_01: '#000000'
+color_02: '#A60000'
+color_03: '#006800'
+color_04: '#695500'
+color_05: '#0031A9'
+color_06: '#721045'
+color_07: '#005E8B'
+color_08: '#A6A6A6'
+color_09: '#595959'
+color_10: '#972500'
+color_11: '#00663F'
+color_12: '#973300'
+color_13: '#3548CF'
+color_14: '#531AB6'
+color_15: '#005F5F'
+color_16: '#595959'
+background: '#FFFFFF'
+foreground: '#000000'
+cursor: '#000000'
+hash: 7bc811b948ceca3ecc4a442888a3145b5e80f4b95bef7eceeaa079bdeff9c361
+hash_bg: 07ee686b3ce29f11070f5edcd6f0da03659e67becfba76650c1c6b5ac079847a

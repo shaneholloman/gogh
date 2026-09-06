@@ -1,0 +1,26 @@
+name: Night Owl
+author: zasdaym (https://github.com/zasdaym)
+author_name: zasdaym
+author_url: https://github.com/zasdaym
+variant: dark
+color_01: '#011627'
+color_02: '#EF5350'
+color_03: '#22DA6E'
+color_04: '#ADDB67'
+color_05: '#82AAFF'
+color_06: '#C792EA'
+color_07: '#21C7A8'
+color_08: '#FFFFFF'
+color_09: '#575656'
+color_10: '#EF5350'
+color_11: '#22DA6E'
+color_12: '#FFEB95'
+color_13: '#82AAFF'
+color_14: '#C792EA'
+color_15: '#7FDBCA'
+color_16: '#FFFFFF'
+background: '#011627'
+foreground: '#D6DEEB'
+cursor: '#7E57C2'
+hash: b9f5b9f69c4fce22cabbc3f162fd158ab2653753d55fa9426f391bd1e602e54c
+hash_bg: cdd061914686a94872e5b4b197494474056e5cca4599086e927d2e4faacfe6b1

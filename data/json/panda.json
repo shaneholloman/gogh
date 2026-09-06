@@ -1,6 +1,8 @@
 {
   "name": "Panda",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#1F1F20",
   "color_02": "#FB055A",
@@ -21,5 +23,6 @@
   "background": "#1D1E20",
   "foreground": "#F0F0F0",
   "cursor": "#F0F0F0",
-  "hash": "99e88ebbb951e0902555b06b2d045eaa25e6ddd1219f226525d81a814fe26f0a"
+  "hash": "5e22133b605efa1e80296da882cc4bb4a102252ffc3142a14b454a9d200cc517",
+  "hash_bg": "8b1d406fe093dd2011334cd516af3851a7101ee7bd27a456ddf8b06a7d9e016b"
 }

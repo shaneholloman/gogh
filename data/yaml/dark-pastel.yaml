@@ -1,0 +1,26 @@
+name: Dark Pastel
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#000000'
+color_02: '#FF5555'
+color_03: '#55FF55'
+color_04: '#FFFF55'
+color_05: '#5555FF'
+color_06: '#FF55FF'
+color_07: '#55FFFF'
+color_08: '#BBBBBB'
+color_09: '#555555'
+color_10: '#FF5555'
+color_11: '#55FF55'
+color_12: '#FFFF55'
+color_13: '#5555FF'
+color_14: '#FF55FF'
+color_15: '#55FFFF'
+color_16: '#FFFFFF'
+background: '#000000'
+foreground: '#FFFFFF'
+cursor: '#BBBBBB'
+hash: 33da54df22f773c6940f9acd3ac0a527a15b786008a83ea290b5653d11e05180
+hash_bg: 7b2817bf9b80e66d07f28095dcd1244590692778dc617a53cbd666ad280872ed

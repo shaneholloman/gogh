@@ -1,6 +1,8 @@
 {
   "name": "Breath Light",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "light",
   "color_01": "#E8E8E8",
   "color_02": "#ED1515",
@@ -21,5 +23,6 @@
   "background": "#E8E8E8",
   "foreground": "#292F34",
   "cursor": "#292F34",
-  "hash": "25841ca0b884f17e6828f958b902886588d989a99dde8e53e86738a445a19d09"
+  "hash": "1ce0c33711c46f93a89da81bdf5cd6d163ee24eb1045cb8e64c7bb535176dbc8",
+  "hash_bg": "7cbcdbb877e41f1ab1ebfd12092aeb06842dcbf65db069db70995777b55d5e1a"
 }

@@ -1,0 +1,26 @@
+name: Wez
+author: wez (https://gist.github.com/wez/850268/)
+author_name: wez
+author_url: https://gist.github.com/wez/850268/
+variant: dark
+color_01: '#000000'
+color_02: '#CC5555'
+color_03: '#55CC55'
+color_04: '#CDCD55'
+color_05: '#5555CC'
+color_06: '#CC55CC'
+color_07: '#7ACACA'
+color_08: '#CCCCCC'
+color_09: '#555555'
+color_10: '#FF5555'
+color_11: '#55FF55'
+color_12: '#FFFF55'
+color_13: '#5555FF'
+color_14: '#FF55FF'
+color_15: '#55FFFF'
+color_16: '#FFFFFF'
+background: '#000000'
+foreground: '#B3B3B3'
+cursor: '#53AE71'
+hash: edf71cb61fde2b89e3c08a00bf1bdea76cf03609f2ab509e55b9d95ad8abd9e9
+hash_bg: 7b2817bf9b80e66d07f28095dcd1244590692778dc617a53cbd666ad280872ed

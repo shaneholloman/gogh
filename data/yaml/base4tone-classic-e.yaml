@@ -1,0 +1,26 @@
+name: Base4Tone Classic E
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#21211C'
+color_02: '#088EA0'
+color_03: '#C27905'
+color_04: '#E8A02C'
+color_05: '#B9CF17'
+color_06: '#5CBA21'
+color_07: '#DC9118'
+color_08: '#EDEEE8'
+color_09: '#0D0D07'
+color_10: '#25BCD0'
+color_11: '#EAA83E'
+color_12: '#F3CD91'
+color_13: '#EEF6B1'
+color_14: '#69D425'
+color_15: '#E6F28C'
+color_16: '#F9F9F6'
+background: '#21211C'
+foreground: '#A0A290'
+cursor: '#877D6E'
+hash: ab09807886588a926055d4850b30799eb3913ddc806a6173fbc3ded5413b4618
+hash_bg: f8c4a129d4ef69168d1cb288ff47510fd6b1f610b29ae66c03c1a44bfe046b62

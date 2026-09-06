@@ -1,0 +1,26 @@
+name: Sequoia Monochrome Dark
+author: Michael Andreuzza (https://github.com/michael-andreuzza)
+author_name: Michael Andreuzza
+author_url: https://github.com/michael-andreuzza
+variant: dark
+color_01: '#131317'
+color_02: '#999EB2'
+color_03: '#626983'
+color_04: '#D3D5DE'
+color_05: '#7C829D'
+color_06: '#E2E4ED'
+color_07: '#B6BAC8'
+color_08: '#868690'
+color_09: '#575861'
+color_10: '#999EB2'
+color_11: '#626983'
+color_12: '#D3D5DE'
+color_13: '#7C829D'
+color_14: '#E2E4ED'
+color_15: '#B6BAC8'
+color_16: '#868690'
+background: '#0F1014'
+foreground: '#868690'
+cursor: '#43444D'
+hash: 6d3036bbe15209ddbb381a44cbdf8e306826f332e1d6afa2a17a188eb06951c8
+hash_bg: dc260b6903e4fde3fa10aa1379445588f5150193f9d14fa806c259d3580dc767

@@ -1,6 +1,8 @@
 ---
 name: 'Birds Of Paradise'
-author: ''             # 'AUTHOR NAME (http://WEBSITE.com)'
+author: 'zdj (https://github.com/zdj/themes/tree/master/iterm2)'
+author_name: 'zdj'
+author_url: 'https://github.com/zdj/themes/tree/master/iterm2'
 variant: 'dark'            # dark or light
 
 color_01: '#573D26'    # Black (Host)
@@ -24,4 +26,4 @@ color_16: '#FFF9D5'    # Bright White
 background: '#2A1F1D'  # Background
 foreground: '#E0DBB7'  # Foreground (Text)
 
-cursor: '#E0DBB7'      # Cursor
+cursor: '#573D26'      # Cursor

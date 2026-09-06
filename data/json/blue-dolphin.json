@@ -1,6 +1,8 @@
 {
   "name": "Blue Dolphin",
-  "author": "",
+  "author": "vimiomori (https://github.com/vimiomori)",
+  "author_name": "vimiomori",
+  "author_url": "https://github.com/vimiomori",
   "variant": "dark",
   "color_01": "#292D3E",
   "color_02": "#FF8288",
@@ -21,5 +23,6 @@
   "background": "#006984",
   "foreground": "#C5F2FF",
   "cursor": "#FFCC00",
-  "hash": "bdf4f6fd400941905e984750c8f395e077ec9675cdb9f5bed70b90247ce0a60d"
+  "hash": "323306c7529b8c31d51ffaeaea60b8e3f99805fe665ba41e0e2d4cad6e0ae1ae",
+  "hash_bg": "ac54412ba2061acedc5633d1e1f9a59f6f77601ef2b2b923eae41b924a08609c"
 }

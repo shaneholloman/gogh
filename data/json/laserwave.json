@@ -1,6 +1,8 @@
 {
   "name": "Laserwave",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#39243A",
   "color_02": "#EB64B9",
@@ -21,5 +23,6 @@
   "background": "#1F1926",
   "foreground": "#E0E0E0",
   "cursor": "#C7C7C7",
-  "hash": "6be9ca54ebd120fb9f7804b858fe1c4386e198a3077527feea550b7818898cfc"
+  "hash": "908038829195c95887f4de948538596b1d1b14696dc3aa110f67bf34d73b4b23",
+  "hash_bg": "37ab2b23dcde079a55378a871e428be34678db51145a243ffae8b29fdda49c82"
 }

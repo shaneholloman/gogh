@@ -1,0 +1,26 @@
+name: Shaman
+author: zdj (https://github.com/zdj/themes/tree/master/iterm2)
+author_name: zdj
+author_url: https://github.com/zdj/themes/tree/master/iterm2
+variant: dark
+color_01: '#012026'
+color_02: '#B2302D'
+color_03: '#00A941'
+color_04: '#5E8BAA'
+color_05: '#449A86'
+color_06: '#00599D'
+color_07: '#5D7E19'
+color_08: '#405555'
+color_09: '#384451'
+color_10: '#FF4242'
+color_11: '#2AEA5E'
+color_12: '#8ED4FD'
+color_13: '#61D5BA'
+color_14: '#1298FF'
+color_15: '#98D028'
+color_16: '#58FBD6'
+background: '#001015'
+foreground: '#405555'
+cursor: '#4AFCD6'
+hash: f2bf438fb6b107395ac2e010cbbc61a00132a8527052054a11ff69ec5d718427
+hash_bg: 3c7aacda54fdf1b938691a855ef55433b9041d4607c90375a00a2b41eb84c654

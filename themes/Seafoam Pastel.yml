@@ -1,6 +1,8 @@
 ---
 name: 'Seafoam Pastel'
 author: ''             # 'AUTHOR NAME (http://WEBSITE.com)'
+author_name: ''
+author_url: ''
 variant: 'dark'            # dark or light
 
 color_01: '#757575'    # Black (Host)
@@ -24,4 +26,4 @@ color_16: '#E0E0E0'    # Bright White
 background: '#243435'  # Background
 foreground: '#D4E7D4'  # Foreground (Text)
 
-cursor: '#D4E7D4'      # Cursor
+cursor: '#57647A'      # Cursor

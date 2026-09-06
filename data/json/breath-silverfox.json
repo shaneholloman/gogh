@@ -1,6 +1,8 @@
 {
   "name": "Breath Silverfox",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#1E2229",
   "color_02": "#ED1515",
@@ -21,5 +23,6 @@
   "background": "#1E2229",
   "foreground": "#BBBBBB",
   "cursor": "#BBBBBB",
-  "hash": "5340ad1740816fd8c4c0a9f69fcc650509db10b410d74df04f20b8e1f6c9fd7c"
+  "hash": "5e637a4b6b7efe3914b6e25c2b4487122963b4c883eeb07ebe2e986f4bc2a061",
+  "hash_bg": "0ad5d8fcd99a5e4a3357a2729a2ed70586b7704980c23530b70036e7c8985b2b"
 }

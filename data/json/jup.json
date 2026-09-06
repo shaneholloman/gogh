@@ -1,6 +1,8 @@
 {
   "name": "Jup",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#000000",
   "color_02": "#DD006F",
@@ -21,5 +23,6 @@
   "background": "#758480",
   "foreground": "#23476A",
   "cursor": "#23476A",
-  "hash": "869b2838a43ff682530801cbf8a1b02b028533b52bed9f9f59501393e238a8ea"
+  "hash": "a7ea98db3330dff951c3a60e77c1cc14ab43ebd19390fd5c0baca2676bac43f8",
+  "hash_bg": "d1dda896b3e280ce25545430a566ae83dbb975f57bcd2a07801cf75fd3046def"
 }

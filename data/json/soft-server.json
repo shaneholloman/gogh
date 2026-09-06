@@ -1,6 +1,8 @@
 {
   "name": "Soft Server",
-  "author": "",
+  "author": "zdj (https://github.com/zdj/themes/tree/master/iterm2)",
+  "author_name": "zdj",
+  "author_url": "https://github.com/zdj/themes/tree/master/iterm2",
   "variant": "dark",
   "color_01": "#000000",
   "color_02": "#A2686A",
@@ -20,6 +22,7 @@
   "color_16": "#D2E0DE",
   "background": "#242626",
   "foreground": "#99A3A2",
-  "cursor": "#99A3A2",
-  "hash": "b183080ab2d87d20949ba4de5b6e749c57c33a8fa8be293a36e46655b3ab8fc7"
+  "cursor": "#D2E0DE",
+  "hash": "6a6cd9e729bb843487b9617f9d92c645d900446cf15b04e5ffd94b9be719b114",
+  "hash_bg": "2828e78d12b00265262aa2aa7449ce2df5897489c8548c20fde9bc5b9623e2b9"
 }

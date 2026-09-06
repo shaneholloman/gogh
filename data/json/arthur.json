@@ -1,6 +1,8 @@
 {
   "name": "Arthur",
-  "author": "",
+  "author": "baskerville (https://github.com/baskerville/iTerm-2-Color-Themes)",
+  "author_name": "baskerville",
+  "author_url": "https://github.com/baskerville/iTerm-2-Color-Themes",
   "variant": "dark",
   "color_01": "#3D352A",
   "color_02": "#CD5C5C",
@@ -20,6 +22,7 @@
   "color_16": "#DDCCBB",
   "background": "#1C1C1C",
   "foreground": "#DDEEDD",
-  "cursor": "#DDEEDD",
-  "hash": "b3b0ea8840ef2c87faf89aaaa71f084208816b2f4ec6bd7abe2110f0e43c7406"
+  "cursor": "#E2BBEF",
+  "hash": "20a0d7d0726a60565988766262b48c31a638622d4b9c380b1759d24b2e8b4b88",
+  "hash_bg": "3f993b89eef47bcaf3361bdbfb15482f89509ad54b81ade9bd7d7500cc3ff98b"
 }

@@ -1,6 +1,8 @@
 {
   "name": "Jellybeans",
-  "author": "",
+  "author": "qtpi (https://github.com/qtpi/Jellybeans.itermcolors)",
+  "author_name": "qtpi",
+  "author_url": "https://github.com/qtpi/Jellybeans.itermcolors",
   "variant": "dark",
   "color_01": "#929292",
   "color_02": "#E27373",
@@ -20,6 +22,7 @@
   "color_16": "#FFFFFF",
   "background": "#121212",
   "foreground": "#DEDEDE",
-  "cursor": "#DEDEDE",
-  "hash": "fdf9d40f783783081f57a9358e887968bfcc32fd51ed51df20d821399080b896"
+  "cursor": "#FFA560",
+  "hash": "faeeedd6f29cbd6b611569d87f90b3927e077ba9cd88f899a20e589b191914de",
+  "hash_bg": "21dcede6e69a9179baf4f068aa143596c90d183d54dc17764131e198dd3dbe71"
 }

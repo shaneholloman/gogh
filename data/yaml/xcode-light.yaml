@@ -1,0 +1,26 @@
+name: Xcode Light
+author: lunacookies (https://github.com/lunacookies/vim-colors-xcode)
+author_name: lunacookies
+author_url: https://github.com/lunacookies/vim-colors-xcode
+variant: light
+color_01: '#B4D8FD'
+color_02: '#D12F1B'
+color_03: '#3E8087'
+color_04: '#78492A'
+color_05: '#0F68A0'
+color_06: '#AD3DA4'
+color_07: '#804FB8'
+color_08: '#262626'
+color_09: '#8A99A6'
+color_10: '#D12F1B'
+color_11: '#23575C'
+color_12: '#78492A'
+color_13: '#0B4F79'
+color_14: '#AD3DA4'
+color_15: '#4B21B0'
+color_16: '#262626'
+background: '#FFFFFF'
+foreground: '#262626'
+cursor: '#262626'
+hash: 887e5db909592ca2ff57bf6e74ea4aaac51093beb60ba3460e0f7d516eca911b
+hash_bg: 07ee686b3ce29f11070f5edcd6f0da03659e67becfba76650c1c6b5ac079847a

@@ -1,6 +1,8 @@
 {
   "name": "Lunaria Eclipse",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#323F46",
   "color_02": "#83615B",
@@ -21,5 +23,6 @@
   "background": "#323F46",
   "foreground": "#C9CDD7",
   "cursor": "#C9CDD7",
-  "hash": "5bb4b3d0420d59c35c5966c18b12a6602543ffd8c770033abda99a53cd629b17"
+  "hash": "d91e87580168adf10bb596ddb62c523578388d3c9ffec34c607c0305db28044f",
+  "hash_bg": "1354a7d05e4648e0c7bfcd7e236ccd33576fef8875779745a9351bca8f4d5a0d"
 }

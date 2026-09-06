@@ -1,0 +1,26 @@
+name: Tinacious Design Light
+author: Tina Holly (https://tinaciousdesign.com)
+author_name: Tina Holly
+author_url: https://tinaciousdesign.com
+variant: light
+color_01: '#1D1D26'
+color_02: '#FF3399'
+color_03: '#00D364'
+color_04: '#FFCC66'
+color_05: '#00CBFF'
+color_06: '#CC66FF'
+color_07: '#00CECA'
+color_08: '#CBCBF0'
+color_09: '#636667'
+color_10: '#FF2F92'
+color_11: '#00D364'
+color_12: '#FFD479'
+color_13: '#00CBFF'
+color_14: '#D783FF'
+color_15: '#00D5D4'
+color_16: '#D5D6F3'
+background: '#F8F8FF'
+foreground: '#1D1D26'
+cursor: '#CBCBF0'
+hash: 328ddfb9009e634f1861e6f2c3cf2e8d53cf44fe71af1de6d612f9c3683c7953
+hash_bg: 81679b578875895333276252866fcc7548047c45f56e43656b86505ee4a88521

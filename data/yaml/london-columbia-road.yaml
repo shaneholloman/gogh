@@ -1,0 +1,26 @@
+name: London Columbia Road
+author: Scott Matthews (https://github.com/scottmatthews7)
+author_name: Scott Matthews
+author_url: https://github.com/scottmatthews7
+variant: light
+color_01: '#2A2520'
+color_02: '#C14A4A'
+color_03: '#5A8A3A'
+color_04: '#D4A82C'
+color_05: '#3A7A8A'
+color_06: '#C45F8A'
+color_07: '#5FA89A'
+color_08: '#1F3A2F'
+color_09: '#756A55'
+color_10: '#D96A6A'
+color_11: '#6EA050'
+color_12: '#E5BC40'
+color_13: '#5598AB'
+color_14: '#D97AA3'
+color_15: '#7AC0B0'
+color_16: '#142217'
+background: '#F8F5EC'
+foreground: '#1F3A2F'
+cursor: '#D4708E'
+hash: c71b92818217f6ab9bfc933af2f79a2fe829f16bab0f33f0fcf1fe9a58be19d0
+hash_bg: 048833b3eef7e22596bd64deee1f116b10983967b9e41c85f6a5be126d94f038

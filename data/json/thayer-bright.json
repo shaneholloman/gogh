@@ -1,6 +1,8 @@
 {
   "name": "Thayer Bright",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#1B1D1E",
   "color_02": "#F92672",
@@ -20,6 +22,7 @@
   "color_16": "#F8F8F2",
   "background": "#1B1D1E",
   "foreground": "#F8F8F8",
-  "cursor": "#F8F8F8",
-  "hash": "493265d352315b4a5935c4e865dbe6c7e1c32b02b934f20088fa9d565892e6dc"
+  "cursor": "#FC971F",
+  "hash": "73828eedca42a96740a6476a0147ff26ff0b2e35101c644320742f130e42df34",
+  "hash_bg": "b4cf018ccb00a4136aced28095fd81620343d783907065157633634c29a77b7f"
 }

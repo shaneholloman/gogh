@@ -1,6 +1,8 @@
 {
   "name": "Vibrant Ink",
-  "author": "",
+  "author": "asanghi (https://github.com/asanghi/vibrantinklion)",
+  "author_name": "asanghi",
+  "author_url": "https://github.com/asanghi/vibrantinklion",
   "variant": "dark",
   "color_01": "#878787",
   "color_02": "#FF6600",
@@ -21,5 +23,6 @@
   "background": "#000000",
   "foreground": "#FFFFFF",
   "cursor": "#FFFFFF",
-  "hash": "2cc40ebd75ed8079da3c39d196d9c61d88efbbc5f0d594296e4524bf05dd0095"
+  "hash": "e7cc7dd0c8591a020805e24064e496750fdc1b27c5fe0ce8f60799a004e1e447",
+  "hash_bg": "7b2817bf9b80e66d07f28095dcd1244590692778dc617a53cbd666ad280872ed"
 }

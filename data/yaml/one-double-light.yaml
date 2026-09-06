@@ -1,0 +1,26 @@
+name: One Double Light
+author: pamburus (https://github.com/pamburus/one-double)
+author_name: pamburus
+author_url: https://github.com/pamburus/one-double
+variant: light
+color_01: '#464B57'
+color_02: '#E45649'
+color_03: '#50A14F'
+color_04: '#C18401'
+color_05: '#0184BC'
+color_06: '#A626A4'
+color_07: '#0997B3'
+color_08: '#E8D9D9'
+color_09: '#0F131E'
+color_10: '#F24C2D'
+color_11: '#3DB637'
+color_12: '#E09D00'
+color_13: '#2E63D6'
+color_14: '#D21FD1'
+color_15: '#06B1D8'
+color_16: '#FFFFFF'
+background: '#FAFAFA'
+foreground: '#383A42'
+cursor: '#1A1A1A'
+hash: 426f83924715ceec815955ec5012bb72436eb87b5d810a1654597022e20da20a
+hash_bg: 7f6fe813de8e07553a3eb71e309f1f710f53117b136cfaec174e6a04c653bc88

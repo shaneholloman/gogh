@@ -1,0 +1,26 @@
+name: Monokai Pro Ristretto
+author: Monokai (https://monokai.com/)
+author_name: Monokai
+author_url: https://monokai.com/
+variant: dark
+color_01: '#2C2525'
+color_02: '#FD6883'
+color_03: '#ADDA78'
+color_04: '#F9CC6C'
+color_05: '#F38D70'
+color_06: '#A8A9EB'
+color_07: '#85DACC'
+color_08: '#FFF1F3'
+color_09: '#72696A'
+color_10: '#FD6883'
+color_11: '#ADDA78'
+color_12: '#F9CC6C'
+color_13: '#F38D70'
+color_14: '#A8A9EB'
+color_15: '#85DACC'
+color_16: '#FFF1F3'
+background: '#2C2525'
+foreground: '#FFF1F3'
+cursor: '#C3B7B8'
+hash: 5ba206360310250a5606e04f430cf5490c3486ce4af8825667ad9e293465ce9f
+hash_bg: 3a28ad926446e03637480115bd581bcfb0c6ac78d925f59690213b8339582857

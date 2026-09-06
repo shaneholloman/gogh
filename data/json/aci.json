@@ -1,6 +1,8 @@
 {
   "name": "Aci",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#363636",
   "color_02": "#FF0883",
@@ -21,5 +23,6 @@
   "background": "#0D1926",
   "foreground": "#B4E1FD",
   "cursor": "#B4E1FD",
-  "hash": "1cedad028d1a484d3ccbbcf6cfe6eefb338e44ff71bc8b223c950f8d523555c3"
+  "hash": "32e0d63804ae77d5653ea7d6db0ab9ca853e2ec39d2196d29a85d21cc1dd88be",
+  "hash_bg": "05979ebfbb83e25ce7349ae34fbf84dec937841db73551f17b444fca7e1ddae4"
 }

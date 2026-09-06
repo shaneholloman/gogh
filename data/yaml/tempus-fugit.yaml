@@ -1,0 +1,26 @@
+name: Tempus Fugit
+author: Protesilaos Stavrou (https://protesilaos.com)
+author_name: Protesilaos Stavrou
+author_url: https://protesilaos.com
+variant: light
+color_01: '#4D595F'
+color_02: '#C61A14'
+color_03: '#357200'
+color_04: '#825E00'
+color_05: '#1666B0'
+color_06: '#A83884'
+color_07: '#007072'
+color_08: '#EFE6E4'
+color_09: '#796271'
+color_10: '#B93F1A'
+color_11: '#437520'
+color_12: '#985900'
+color_13: '#485ADF'
+color_14: '#A234C0'
+color_15: '#00756A'
+color_16: '#FFF5F3'
+background: '#FFF5F3'
+foreground: '#4D595F'
+cursor: '#4D595F'
+hash: 6e2d0d8298c4f87221a1975934926ecd1accb0b48e8e2a8e337eead8ad39a774
+hash_bg: 4d17347ce564f01a48a741f8d81b3c8f2745cbb84af249bb88fe581df351663c

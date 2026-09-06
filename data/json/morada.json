@@ -1,6 +1,8 @@
 {
   "name": "Morada",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#040404",
   "color_02": "#0F49C4",
@@ -21,5 +23,6 @@
   "background": "#211F46",
   "foreground": "#FFFFFF",
   "cursor": "#FFFFFF",
-  "hash": "6244b5a4a5fd7fce0a789b8b36a6302408d778a3cd565c605e07f031517e486f"
+  "hash": "acffbace4a1461ab22568a4a62358750496298a8a9059564cbe9557edd37e9c0",
+  "hash_bg": "57bb770729747c5b93fb9e7eca8d03056ca45bcfea2a96c0ac651e6af248b23c"
 }

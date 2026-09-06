@@ -1,6 +1,8 @@
 {
   "name": "Breath Darker",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#1E2229",
   "color_02": "#ED1515",
@@ -21,5 +23,6 @@
   "background": "#080D14",
   "foreground": "#17A88B",
   "cursor": "#17A88B",
-  "hash": "a975dbce3878d7fff0dc4cf6b52100e7b22686895a260f12474ad0ce4af406e2"
+  "hash": "5e637a4b6b7efe3914b6e25c2b4487122963b4c883eeb07ebe2e986f4bc2a061",
+  "hash_bg": "36f3b8be72ee2ee6804b6a7171b721bc139ed3b103eadbe80b0408f805c8a94b"
 }

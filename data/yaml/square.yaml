@@ -1,0 +1,26 @@
+name: Square
+author: baskerville (https://github.com/baskerville/iTerm-2-Color-Themes)
+author_name: baskerville
+author_url: https://github.com/baskerville/iTerm-2-Color-Themes
+variant: dark
+color_01: '#050505'
+color_02: '#E9897C'
+color_03: '#B6377D'
+color_04: '#ECEBBE'
+color_05: '#A9CDEB'
+color_06: '#75507B'
+color_07: '#C9CAEC'
+color_08: '#F2F2F2'
+color_09: '#141414'
+color_10: '#F99286'
+color_11: '#C3F786'
+color_12: '#FCFBCC'
+color_13: '#B6DEFB'
+color_14: '#AD7FA8'
+color_15: '#D7D9FC'
+color_16: '#E2E2E2'
+background: '#1A1A1A'
+foreground: '#ACACAB'
+cursor: '#FCFBCC'
+hash: c9e21dc35b696c6bbdff08453e5293c4c76770c8b47ba91c1fecc05bc8d1294c
+hash_bg: f70b776dd81bc5cf00513200646fe4e0452b12e474fda29388b12ed13738fb90

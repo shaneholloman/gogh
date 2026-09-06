@@ -1,0 +1,26 @@
+name: Wild Cherry
+author: mashaal (https://github.com/mashaal/wild-cherry)
+author_name: mashaal
+author_url: https://github.com/mashaal/wild-cherry
+variant: dark
+color_01: '#000507'
+color_02: '#D94085'
+color_03: '#2AB250'
+color_04: '#FFD16F'
+color_05: '#883CDC'
+color_06: '#ECECEC'
+color_07: '#C1B8B7'
+color_08: '#FFF8DE'
+color_09: '#009CC9'
+color_10: '#DA6BAC'
+color_11: '#F4DCA5'
+color_12: '#EAC066'
+color_13: '#308CBA'
+color_14: '#AE636B'
+color_15: '#FF919D'
+color_16: '#E4838D'
+background: '#1F1726'
+foreground: '#DAFAFF'
+cursor: '#DD00FF'
+hash: 684c650765289e31bfe6996c33c4d9cd99dcd54eb9279dab5ef50a80d29bc6bf
+hash_bg: aa22b6ead8410ca12ce1a2c5cd906bf1ceee20981fe51d60cfb1301a2a4d4249

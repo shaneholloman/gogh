@@ -1,0 +1,26 @@
+name: Ultra Dark
+author: Kasper (https://github.com/Kasper-Liu)
+author_name: Kasper
+author_url: https://github.com/Kasper-Liu
+variant: dark
+color_01: '#000000'
+color_02: '#F07178'
+color_03: '#C3E88D'
+color_04: '#FFCB6B'
+color_05: '#82AAFF'
+color_06: '#C792EA'
+color_07: '#89DDFF'
+color_08: '#CCCCCC'
+color_09: '#333333'
+color_10: '#F6A9AE'
+color_11: '#DBF1BA'
+color_12: '#FFDFA6'
+color_13: '#B4CCFF'
+color_14: '#DDBDF2'
+color_15: '#B8EAFF'
+color_16: '#FFFFFF'
+background: '#000000'
+foreground: '#FFFFFF'
+cursor: '#FEFEFE'
+hash: 053a3d7d80c937b50d9811ad9ef0af789ac287296630a64b846228ab9d79cb84
+hash_bg: 7b2817bf9b80e66d07f28095dcd1244590692778dc617a53cbd666ad280872ed

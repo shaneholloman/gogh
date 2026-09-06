@@ -1,0 +1,26 @@
+name: Rapture
+author: Pustur (https://github.com/Pustur)
+author_name: Pustur
+author_url: https://github.com/Pustur
+variant: dark
+color_01: '#000000'
+color_02: '#FC644D'
+color_03: '#7AFDE1'
+color_04: '#FFF09B'
+color_05: '#6C9BF5'
+color_06: '#FF4FA1'
+color_07: '#64E0FF'
+color_08: '#C0C9E5'
+color_09: '#304B66'
+color_10: '#FC644D'
+color_11: '#7AFDE1'
+color_12: '#FFF09B'
+color_13: '#6C9BF5'
+color_14: '#FF4FA1'
+color_15: '#64E0FF'
+color_16: '#FFFFFF'
+background: '#111E2A'
+foreground: '#C0C9E5'
+cursor: '#FFFFFF'
+hash: 2f1cd5837f5cb3133dea222935d745340bdadc308060d748b12459053f12793e
+hash_bg: c6923116dfaac7735796476bbf953a3ec8adda3658964ee70bd10d818ed09b14

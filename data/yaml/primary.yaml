@@ -1,0 +1,26 @@
+name: Primary
+author: jayanthkoushik (https://github.com/jayanthkoushik)
+author_name: jayanthkoushik
+author_url: https://github.com/jayanthkoushik
+variant: light
+color_01: '#000000'
+color_02: '#DB4437'
+color_03: '#0F9D58'
+color_04: '#F4B400'
+color_05: '#4285F4'
+color_06: '#DB4437'
+color_07: '#4285F4'
+color_08: '#FFFFFF'
+color_09: '#000000'
+color_10: '#DB4437'
+color_11: '#0F9D58'
+color_12: '#F4B400'
+color_13: '#4285F4'
+color_14: '#4285F4'
+color_15: '#0F9D58'
+color_16: '#FFFFFF'
+background: '#FFFFFF'
+foreground: '#000000'
+cursor: '#000000'
+hash: 3d466d2a26998005fd4da17cc3698e1505a495e6710bcdae8e09612fd5ce4e1f
+hash_bg: 07ee686b3ce29f11070f5edcd6f0da03659e67becfba76650c1c6b5ac079847a

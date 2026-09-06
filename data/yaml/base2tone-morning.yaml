@@ -1,0 +1,26 @@
+name: Base2Tone Morning
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#232834'
+color_02: '#1659DF'
+color_03: '#B29762'
+color_04: '#E5DDCD'
+color_05: '#3D75E6'
+color_06: '#B29762'
+color_07: '#728FCB'
+color_08: '#8D95A5'
+color_09: '#656E81'
+color_10: '#C6B28B'
+color_11: '#31363F'
+color_12: '#4F5664'
+color_13: '#707A8F'
+color_14: '#B7C9EB'
+color_15: '#9A7C42'
+color_16: '#DEE6F7'
+background: '#232834'
+foreground: '#8D95A5'
+cursor: '#594212'
+hash: 8c2fc67508c410a1b34d17b7ce25eb8da94f0af8aa25a258f65cf9766ada8cb3
+hash_bg: 1dbcfcb3928baf68f36121cb677bb18bf1fac683dbd1711e599945e11516286f

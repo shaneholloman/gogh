@@ -1,0 +1,26 @@
+name: Ciapre
+author: zdj (https://github.com/zdj/themes/tree/master/iterm2)
+author_name: zdj
+author_url: https://github.com/zdj/themes/tree/master/iterm2
+variant: dark
+color_01: '#181818'
+color_02: '#810009'
+color_03: '#48513B'
+color_04: '#CC8B3F'
+color_05: '#576D8C'
+color_06: '#724D7C'
+color_07: '#5C4F4B'
+color_08: '#AEA47F'
+color_09: '#555555'
+color_10: '#AC3835'
+color_11: '#A6A75D'
+color_12: '#DCDF7C'
+color_13: '#3097C6'
+color_14: '#D33061'
+color_15: '#F3DBB2'
+color_16: '#F4F4F4'
+background: '#191C27'
+foreground: '#AEA47A'
+cursor: '#92805B'
+hash: 56813e9260a10aad8e4235cae5b5ad3060dbc2ccb98657458592674685821a88
+hash_bg: 14cbedf4cffc32ece656875873f463f6506db5781e0b030621b11c5d589ac3db

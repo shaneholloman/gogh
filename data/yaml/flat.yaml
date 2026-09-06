@@ -1,0 +1,26 @@
+name: Flat
+author: ahmetsulek (https://github.com/ahmetsulek/flat-terminal)
+author_name: ahmetsulek
+author_url: https://github.com/ahmetsulek/flat-terminal
+variant: dark
+color_01: '#222D3F'
+color_02: '#A82320'
+color_03: '#32A548'
+color_04: '#E58D11'
+color_05: '#3167AC'
+color_06: '#781AA0'
+color_07: '#2C9370'
+color_08: '#B0B6BA'
+color_09: '#212C3C'
+color_10: '#D4312E'
+color_11: '#2D9440'
+color_12: '#E5BE0C'
+color_13: '#3C7DD2'
+color_14: '#8230A7'
+color_15: '#35B387'
+color_16: '#E7ECED'
+background: '#002240'
+foreground: '#2CC55D'
+cursor: '#E5BE0C'
+hash: 4f93bd2d7e32071829e746f9408661f8d1af05d9ace19c8b7d414f52434badd2
+hash_bg: 192dacb3d95c7d24a3e6b90c7c77b28db90358daa589535fa1688860ad6d9292

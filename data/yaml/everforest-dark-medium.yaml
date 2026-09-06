@@ -1,0 +1,26 @@
+name: Everforest Dark Medium
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#343F44'
+color_02: '#E67E80'
+color_03: '#A7C080'
+color_04: '#DBBC7F'
+color_05: '#7FBBB3'
+color_06: '#D699B6'
+color_07: '#83C092'
+color_08: '#D3C6AA'
+color_09: '#5C6A72'
+color_10: '#F85552'
+color_11: '#8DA101'
+color_12: '#DFA000'
+color_13: '#3A94C5'
+color_14: '#DF69BA'
+color_15: '#35A77C'
+color_16: '#DFDDC8'
+background: '#2D353B'
+foreground: '#D3C6AA'
+cursor: '#D3C6AA'
+hash: 5f1cbe366ccec4fb0d96ad0abfde6e926ce2ccd14c44ef93f5cc6f71f1a155ad
+hash_bg: 250c6316a6e5f4c38075a2367883c73375310fb2bee5f7ee5b52c0fcb0b7b86d

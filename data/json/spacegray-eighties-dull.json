@@ -1,6 +1,8 @@
 {
   "name": "Spacegray Eighties Dull",
-  "author": "",
+  "author": "mhkeller (https://github.com/mhkeller/spacegray-eighties-iterm)",
+  "author_name": "mhkeller",
+  "author_url": "https://github.com/mhkeller/spacegray-eighties-iterm",
   "variant": "dark",
   "color_01": "#15171C",
   "color_02": "#B24A56",
@@ -20,6 +22,7 @@
   "color_16": "#FFFFFF",
   "background": "#222222",
   "foreground": "#C9C6BC",
-  "cursor": "#C9C6BC",
-  "hash": "f10c7f413cd6a09b4d447afdbcccb370bc1f68e8d9a2e9bc1933ce24489e0757"
+  "cursor": "#BBBBBB",
+  "hash": "b4f5de24b6b6930bd536becd91fef4df5f05c2694d47670513e84d0b09383721",
+  "hash_bg": "0ab9b7707742f7dcbadf8f430a75575121e5e4564fe75b1b0932bb9d376e6bff"
 }

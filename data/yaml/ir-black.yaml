@@ -1,0 +1,26 @@
+name: IR Black
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#4F4F4F'
+color_02: '#FA6C60'
+color_03: '#A8FF60'
+color_04: '#FFFEB7'
+color_05: '#96CAFE'
+color_06: '#FA73FD'
+color_07: '#C6C5FE'
+color_08: '#EFEDEF'
+color_09: '#7B7B7B'
+color_10: '#FCB6B0'
+color_11: '#CFFFAB'
+color_12: '#FFFFCC'
+color_13: '#B5DCFF'
+color_14: '#FB9CFE'
+color_15: '#E0E0FE'
+color_16: '#FFFFFF'
+background: '#000000'
+foreground: '#F1F1F1'
+cursor: '#808080'
+hash: 233f11c47261541c087a87c395ce215b45a761337c63c57319f1dafe09c46e50
+hash_bg: 7b2817bf9b80e66d07f28095dcd1244590692778dc617a53cbd666ad280872ed

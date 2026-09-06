@@ -1,0 +1,26 @@
+name: Base2Tone Forest
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#2A2D2A'
+color_02: '#5C705C'
+color_03: '#BFD454'
+color_04: '#E5FB79'
+color_05: '#687D68'
+color_06: '#BFD454'
+color_07: '#8FAE8F'
+color_08: '#A1B5A1'
+color_09: '#535F53'
+color_10: '#CBE25A'
+color_11: '#353B35'
+color_12: '#485148'
+color_13: '#5E6E5E'
+color_14: '#C8E4C8'
+color_15: '#B1C44F'
+color_16: '#F0FFF0'
+background: '#2A2D2A'
+foreground: '#A1B5A1'
+cursor: '#818B4B'
+hash: 167e2481e940085eea53c9b6ce2963e1d1f1046411f423598c37630bd036b478
+hash_bg: 848c73fe38d0cf6778e83b8ab20c8605283dc15d830ac4846e28eaf199c8b498

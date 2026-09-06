@@ -1,0 +1,26 @@
+name: Terminal Green 1999
+author: theebest.com (https://www.theebest.com)
+author_name: theebest.com
+author_url: https://www.theebest.com
+variant: dark
+color_01: '#32463A'
+color_02: '#FF5C7A'
+color_03: '#22C55E'
+color_04: '#00D26A'
+color_05: '#7DD3FC'
+color_06: '#9DFF57'
+color_07: '#39FF88'
+color_08: '#8FD6A9'
+color_09: '#274335'
+color_10: '#FF7D95'
+color_11: '#4ED17E'
+color_12: '#2EDA85'
+color_13: '#97DCFD'
+color_14: '#B1FF79'
+color_15: '#61FFA0'
+color_16: '#D8FFE6'
+background: '#03120A'
+foreground: '#D8FFE6'
+cursor: '#D8FFE6'
+hash: cc403f90c5024dc4bdedb91ac3467b7521021a1bc5a98592d74ca4aa7f90b013
+hash_bg: 80bd8d105a107e6c2409f7944c88e517060dc50cd2fdbfa03b57e2472e173179

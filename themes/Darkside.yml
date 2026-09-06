@@ -1,6 +1,8 @@
 ---
 name: 'Darkside'
-author: ''             # 'AUTHOR NAME (http://WEBSITE.com)'
+author: 'bahlo (https://github.com/bahlo/iterm-colors)'
+author_name: 'bahlo'
+author_url: 'https://github.com/bahlo/iterm-colors'
 variant: 'dark'            # dark or light
 
 color_01: '#000000'    # Black (Host)
@@ -24,4 +26,4 @@ color_16: '#BABABA'    # Bright White
 background: '#222324'  # Background
 foreground: '#BABABA'  # Foreground (Text)
 
-cursor: '#BABABA'      # Cursor
+cursor: '#BBBBBB'      # Cursor

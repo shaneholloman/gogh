@@ -1,6 +1,8 @@
 {
   "name": "Purple People Eater",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#0D1117",
   "color_02": "#E34C26",
@@ -21,5 +23,6 @@
   "background": "#161B22",
   "foreground": "#C9D1D9",
   "cursor": "#C9D1D9",
-  "hash": "56e2bd09d4cdd1ee4cbad617e9f9bb0891d6c4d516cca055b5c1b75f5f2f7761"
+  "hash": "618391eaba9cb9b2f67601ca206dfc12e9b78ff71419be77c4f76870f1099e1f",
+  "hash_bg": "ac4a4d2991b602cbe6b905dac6a2afb47bfe17bb2021b9d841b3818109ff54d7"
 }

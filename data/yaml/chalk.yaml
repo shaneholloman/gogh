@@ -1,0 +1,26 @@
+name: Chalk
+author: achalv (https://github.com/achalv/chalk)
+author_name: achalv
+author_url: https://github.com/achalv/chalk
+variant: dark
+color_01: '#7D8B8F'
+color_02: '#B23A52'
+color_03: '#789B6A'
+color_04: '#B9AC4A'
+color_05: '#2A7FAC'
+color_06: '#BD4F5A'
+color_07: '#44A799'
+color_08: '#D2D8D9'
+color_09: '#888888'
+color_10: '#F24840'
+color_11: '#80C470'
+color_12: '#FFEB62'
+color_13: '#4196FF'
+color_14: '#FC5275'
+color_15: '#53CDBD'
+color_16: '#D2D8D9'
+background: '#2B2D2E'
+foreground: '#D2D8D9'
+cursor: '#708284'
+hash: 8b1e43be8e06945299b4058c12710db9ad800b5a78209bea4b7aa81e2dea3a44
+hash_bg: 88ff734de9fa147529b384ef2f3f453c0cb01bd263302aeba67598adcfa6ed3e

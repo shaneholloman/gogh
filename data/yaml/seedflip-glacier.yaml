@@ -1,0 +1,26 @@
+name: SeedFlip Glacier
+author: ''
+author_name: ''
+author_url: ''
+variant: light
+color_01: '#C2D4E5'
+color_02: '#BD0F0F'
+color_03: '#0FBD49'
+color_04: '#BDA00F'
+color_05: '#0F58BD'
+color_06: '#BD0FBD'
+color_07: '#0FBDBD'
+color_08: '#080D17'
+color_09: '#8DADCE'
+color_10: '#EE2B2B'
+color_11: '#12D452'
+color_12: '#D4B312'
+color_13: '#2B7CEE'
+color_14: '#EE2BEE'
+color_15: '#12D4D4'
+color_16: '#0F172A'
+background: '#F8FAFC'
+foreground: '#0F172A'
+cursor: '#0EA5E9'
+hash: 05434f236f38533b534c410058b2ebaad1adf31f9e655611e4b3d6b3f4b96e0a
+hash_bg: f38ab0a4e14ff2ae964b81a551cdb3ff67fd3e2a72527767c0f770504ed891e5

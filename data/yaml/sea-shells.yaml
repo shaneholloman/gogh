@@ -1,0 +1,26 @@
+name: Sea Shells
+author: zdj (https://github.com/zdj/themes/tree/master/iterm2)
+author_name: zdj
+author_url: https://github.com/zdj/themes/tree/master/iterm2
+variant: dark
+color_01: '#17384C'
+color_02: '#D15123'
+color_03: '#027C9B'
+color_04: '#FCA02F'
+color_05: '#1E4950'
+color_06: '#68D4F1'
+color_07: '#50A3B5'
+color_08: '#DEB88D'
+color_09: '#434B53'
+color_10: '#D48678'
+color_11: '#628D98'
+color_12: '#FDD39F'
+color_13: '#1BBCDD'
+color_14: '#BBE3EE'
+color_15: '#87ACB4'
+color_16: '#FEE4CE'
+background: '#09141B'
+foreground: '#DEB88D'
+cursor: '#FCA02F'
+hash: 71ca6d0dcc6400259a28e5a4bf1d686982bbae758fb83b90d0ffef660e2551fc
+hash_bg: 1300c7733f66bb8cdd2926df8fb66f73cd0911f5933f6d1ca0279a83c9c73b46

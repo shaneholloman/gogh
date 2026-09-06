@@ -1,0 +1,26 @@
+name: Purple Portal
+author: theebest.com (https://www.theebest.com)
+author_name: theebest.com
+author_url: https://www.theebest.com
+variant: dark
+color_01: '#483A57'
+color_02: '#FB7185'
+color_03: '#34D399'
+color_04: '#F472B6'
+color_05: '#FACC15'
+color_06: '#38BDF8'
+color_07: '#580FF0'
+color_08: '#D8B4FE'
+color_09: '#503872'
+color_10: '#FC8D9D'
+color_11: '#5DDCAD'
+color_12: '#F68BC3'
+color_13: '#FBD644'
+color_14: '#60CAF9'
+color_15: '#793FF3'
+color_16: '#FAF5FF'
+background: '#160528'
+foreground: '#FAF5FF'
+cursor: '#FAF5FF'
+hash: 9cddd3f1ed60004d7608df648ad800dd1e2c372a5f3f8dc2fd7f450776950b4b
+hash_bg: 159200da325f7d4a7469eecdc7fd76acddacf067b4d462e3c964e8d8183bcd1b

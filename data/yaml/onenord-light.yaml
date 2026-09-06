@@ -1,0 +1,26 @@
+name: Onenord Light
+author: Ryan Mehri (https://github.com/rmehri01/onenord.nvim)
+author_name: Ryan Mehri
+author_url: https://github.com/rmehri01/onenord.nvim
+variant: light
+color_01: '#2E3440'
+color_02: '#CB4F53'
+color_03: '#48A53D'
+color_04: '#EE5E25'
+color_05: '#3879C5'
+color_06: '#9F4ACA'
+color_07: '#3EA1AD'
+color_08: '#E5E9F0'
+color_09: '#646A76'
+color_10: '#D16366'
+color_11: '#5F9E9D'
+color_12: '#BA793E'
+color_13: '#1B40A6'
+color_14: '#9665AF'
+color_15: '#8FBCBB'
+color_16: '#ECEFF4'
+background: '#F7F8FA'
+foreground: '#2E3440'
+cursor: '#3879C5'
+hash: 8a1b4c48385e846c31f7ab06565704841af4d8aebee7dfc1bd32e240e3245d7c
+hash_bg: 150121cc23a6f0924fbb45c095a41555817a59c51153676b10a983aa252d9005

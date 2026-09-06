@@ -1,6 +1,8 @@
 ---
 name: 'Slate'
-author: ''             # 'AUTHOR NAME (http://WEBSITE.com)'
+author: 'deneshshan (https://github.com/deneshshan)'
+author_name: 'deneshshan'
+author_url: 'https://github.com/deneshshan'
 variant: 'dark'            # dark or light
 
 color_01: '#222222'    # Black (Host)
@@ -24,4 +26,4 @@ color_16: '#E0E0E0'    # Bright White
 background: '#222222'  # Background
 foreground: '#35B1D2'  # Foreground (Text)
 
-cursor: '#35B1D2'      # Cursor
+cursor: '#87D3C4'      # Cursor

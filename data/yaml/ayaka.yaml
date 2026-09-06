@@ -1,0 +1,26 @@
+name: Ayaka
+author: Ruhannn (https://github.com/ruhannn)
+author_name: Ruhannn
+author_url: https://github.com/ruhannn
+variant: dark
+color_01: '#36283D'
+color_02: '#71ADE9'
+color_03: '#AB8CAE'
+color_04: '#9EA0D3'
+color_05: '#8BB8E9'
+color_06: '#E1B4CE'
+color_07: '#CEDAEB'
+color_08: '#9098A4'
+color_09: '#71ADE9'
+color_10: '#AB8CAE'
+color_11: '#E59DB1'
+color_12: '#9EA0D3'
+color_13: '#8BB8E9'
+color_14: '#E1B4CE'
+color_15: '#CEDAEB'
+color_16: '#FFFEFE'
+background: '#36283D'
+foreground: '#CEDAEB'
+cursor: '#CEDAEB'
+hash: 76d0d7505c03c9cd1b0c598100d6653931de6a5f330d96d953fbe575d88d17be
+hash_bg: 2f667828241f146fa6baf8609597e608b38e95f12c367af3d1ad570c51502dc7

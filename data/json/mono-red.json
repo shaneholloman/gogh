@@ -1,6 +1,8 @@
 {
   "name": "Mono Red",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#401200",
   "color_02": "#FF3600",
@@ -21,5 +23,6 @@
   "background": "#2B0C00",
   "foreground": "#FF3600",
   "cursor": "#FF3600",
-  "hash": "cb954b1ff6fa11df5e891213a28864297ea171aaca23b1a7c39bdea563337fab"
+  "hash": "39c12e6c1bf5b8d4e0057c9aeecfea5c6479e70cd50ab51849ba2838cff005ef",
+  "hash_bg": "9f8ab1f70b9c28a612879301d70f31456526d24c9403bd2e364c3a43ea84f554"
 }

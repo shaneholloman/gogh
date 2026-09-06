@@ -1,6 +1,8 @@
 {
   "name": "Pixiefloss",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#2F2942",
   "color_02": "#FF857F",
@@ -21,5 +23,6 @@
   "background": "#241F33",
   "foreground": "#D1CAE8",
   "cursor": "#D1CAE8",
-  "hash": "354848ae95897fc9bfe889f11f5fe3f0e3d190cfd18cc73900bf23304453af23"
+  "hash": "5a3b744e89bca2383042267b08c5db5eda3b457128f7521e58b0fc1a4b743a31",
+  "hash_bg": "a43a350712cbe99aaf4884b11d637d564e1d5f761cff9b5b011098c8c5a6a6b4"
 }

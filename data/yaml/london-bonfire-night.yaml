@@ -1,0 +1,26 @@
+name: London Bonfire Night
+author: Scott Matthews (https://github.com/scottmatthews7)
+author_name: Scott Matthews
+author_url: https://github.com/scottmatthews7
+variant: dark
+color_01: '#1A1418'
+color_02: '#D65A3A'
+color_03: '#6A8A4A'
+color_04: '#E8B048'
+color_05: '#5A7AB8'
+color_06: '#D76AA8'
+color_07: '#88A8C8'
+color_08: '#E8E0C8'
+color_09: '#44403C'
+color_10: '#EC7654'
+color_11: '#88A868'
+color_12: '#F5C25C'
+color_13: '#7A96D0'
+color_14: '#ED85BC'
+color_15: '#A0BCD6'
+color_16: '#FDF6DF'
+background: '#0E0C0E'
+foreground: '#E8E0C8'
+cursor: '#E85AA8'
+hash: d1d169b2d7c28a9870fd47c6a5dd2aba75553b10a4e77699a3404906a5cbc16f
+hash_bg: a3d23a42a0c857d3e3794df3140eab29897bcb5182ea40b7f2c7c20ce2f51253

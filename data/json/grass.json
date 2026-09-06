@@ -1,6 +1,8 @@
 {
   "name": "Grass",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#000000",
   "color_02": "#BB0000",
@@ -20,6 +22,7 @@
   "color_16": "#FFFFFF",
   "background": "#13773D",
   "foreground": "#FFF0A5",
-  "cursor": "#FFF0A5",
-  "hash": "484311ae83dc7accfeb5dba05c70fa5a16ee8f167b6dcc9d6fbcd89dca2f3db5"
+  "cursor": "#8C2800",
+  "hash": "ff8c2f3b8a57a00db11f8482d81c844da57914be86d458bcc04dd75e4ad4aee0",
+  "hash_bg": "5ac2873f00129a903d56d3eef2e5a554e038a019b940a3b106311b237200ae74"
 }

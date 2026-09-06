@@ -1,6 +1,8 @@
 {
   "name": "Seti",
-  "author": "",
+  "author": "jesseweed (https://github.com/jesseweed/seti-syntax/)",
+  "author_name": "jesseweed",
+  "author_url": "https://github.com/jesseweed/seti-syntax/",
   "variant": "dark",
   "color_01": "#323232",
   "color_02": "#C22832",
@@ -20,6 +22,7 @@
   "color_16": "#FFFFFF",
   "background": "#111213",
   "foreground": "#CACECD",
-  "cursor": "#CACECD",
-  "hash": "f28dc79b668d0f5d3f934774ab49444425c873fd7b26a8aa6efb1af98ca0b906"
+  "cursor": "#E3BF21",
+  "hash": "bc12f8b0503fd72501b08a79aec6d565e60825c45e1941429904eaabe3158452",
+  "hash_bg": "9dc9738cc40541a3ee2ca07288b884894f9fe5e0feb0e5700982901f920d8f70"
 }

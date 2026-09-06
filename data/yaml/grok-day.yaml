@@ -1,0 +1,26 @@
+name: Grok Day
+author: ''
+author_name: ''
+author_url: ''
+variant: light
+color_01: '#262626'
+color_02: '#CD3048'
+color_03: '#378E23'
+color_04: '#A27612'
+color_05: '#2F64D2'
+color_06: '#7D4BC6'
+color_07: '#0082AA'
+color_08: '#BBBBBB'
+color_09: '#767676'
+color_10: '#CD3048'
+color_11: '#378E23'
+color_12: '#A27612'
+color_13: '#2F64D2'
+color_14: '#7D4BC6'
+color_15: '#0082AA'
+color_16: '#444444'
+background: '#F5F5F5'
+foreground: '#262626'
+cursor: '#7D4BC6'
+hash: c244199e4542c5ccad3a67b8cbadc06df8819e0a799c7c5f0437d46cc99ef7e9
+hash_bg: e155ed1a43c8e11f69abfd5ecef16e53ae81c351a1b676b24ccbea1ef6ee85e7

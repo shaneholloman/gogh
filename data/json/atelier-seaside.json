@@ -1,6 +1,8 @@
 {
   "name": "Atelier Seaside",
   "author": "Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/seaside)",
+  "author_name": "Bram de Haan",
+  "author_url": "http://atelierbram.github.io/syntax-highlighting/atelier-schemes/seaside",
   "variant": "dark",
   "color_01": "#131513",
   "color_02": "#E6193C",
@@ -21,5 +23,6 @@
   "background": "#131513",
   "foreground": "#809980",
   "cursor": "#809980",
-  "hash": "dd1a50fb71c0f7fef685752a8a58f5b084929b8438805bfeedd888f1e1ea7c37"
+  "hash": "de9c03e6c5ad7647ef2b21b8230297bb6724dad377b452cc80567270b0a1cbc0",
+  "hash_bg": "0c246b19e8febea88fed6ec40432dc8338c11d64735210d51430cf5535802e8f"
 }

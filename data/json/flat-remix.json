@@ -1,6 +1,8 @@
 {
   "name": "Flat Remix",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#1F2229",
   "color_02": "#D41919",
@@ -21,5 +23,6 @@
   "background": "#272A34",
   "foreground": "#FFFFFF",
   "cursor": "#FFFFFF",
-  "hash": "ace6635738283f415cd75421f1305fa30218d6d77117b05da973bf543c2662fb"
+  "hash": "c6a2dae2fc057034396eb670678d11dfe9b54f4522f360e03f22e8dec277b58e",
+  "hash_bg": "2929cff66361b2159b350d34ba2f6a489654ed0f6bc397347f33401773f4f1a1"
 }

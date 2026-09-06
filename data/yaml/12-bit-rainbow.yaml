@@ -1,0 +1,26 @@
+name: 12-bit Rainbow
+author: xxxserxxx (https://github.com/xxxserxxx)
+author_name: xxxserxxx
+author_url: https://github.com/xxxserxxx
+variant: dark
+color_01: '#000000'
+color_02: '#A03050'
+color_03: '#40D080'
+color_04: '#E09040'
+color_05: '#3060B0'
+color_06: '#603090'
+color_07: '#0090C0'
+color_08: '#DBDED8'
+color_09: '#685656'
+color_10: '#C06060'
+color_11: '#90D050'
+color_12: '#E0D000'
+color_13: '#00B0C0'
+color_14: '#801070'
+color_15: '#20B0C0'
+color_16: '#FFFFFF'
+background: '#040404'
+foreground: '#FEFFFF'
+cursor: '#E0D000'
+hash: 4876c26c85d388d7cfec42e57bac2fb2d6b11d2fa912c36f1f8c0a5df4865a79
+hash_bg: 124f646bc320a1108b7e3487f552bd1b81b14c1b212315e07efb0dfdf6d412b0

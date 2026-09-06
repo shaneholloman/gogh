@@ -1,0 +1,26 @@
+name: Base4Tone Classic L
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#1B2221'
+color_02: '#7667E4'
+color_03: '#0DA51F'
+color_04: '#2BDA3F'
+color_05: '#1CC4AE'
+color_06: '#659EFB'
+color_07: '#22BF34'
+color_08: '#E8EEED'
+color_09: '#070D0C'
+color_10: '#A095F3'
+color_11: '#3CDD4F'
+color_12: '#97EDA1'
+color_13: '#ADF0E7'
+color_14: '#88B4FC'
+color_15: '#93ECE0'
+color_16: '#F6F9F8'
+background: '#1B2221'
+foreground: '#8EA4A1'
+cursor: '#748176'
+hash: 0a67b4d91f13d4ea41e4789ed623c2033e87bec755051a017391984306e9267c
+hash_bg: 304d29a175f89a60e37bf43d0f4498576467539e1a86dd673f2240a5b8da34ca

@@ -1,6 +1,8 @@
 ---
 name: 'Argonaut'
-author: ''             # 'AUTHOR NAME (http://WEBSITE.com)'
+author: 'effkay (https://github.com/effkay/iTerm-argonaut)'
+author_name: 'effkay'
+author_url: 'https://github.com/effkay/iTerm-argonaut'
 variant: 'dark'            # dark or light
 
 color_01: '#232323'    # Black (Host)
@@ -24,4 +26,4 @@ color_16: '#FFFFFF'    # Bright White
 background: '#0E1019'  # Background
 foreground: '#FFFAF4'  # Foreground (Text)
 
-cursor: '#FFFAF4'      # Cursor
+cursor: '#FF0018'      # Cursor

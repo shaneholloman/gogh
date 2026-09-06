@@ -1,0 +1,26 @@
+name: Base2Tone Field
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#18201E'
+color_02: '#0FBDA0'
+color_03: '#3BE381'
+color_04: '#85FFB8'
+color_05: '#25D0B4'
+color_06: '#3BE381'
+color_07: '#40DDC3'
+color_08: '#8EA4A0'
+color_09: '#5A6D6A'
+color_10: '#55EC94'
+color_11: '#242E2C'
+color_12: '#42524F'
+color_13: '#667A77'
+color_14: '#88F2E0'
+color_15: '#25D46E'
+color_16: '#A8FFF1'
+background: '#18201E'
+foreground: '#8EA4A0'
+cursor: '#00943E'
+hash: 02f566602e60a7b9c70a29dc645f21d719a007901534ae4edcd5665cb83c280f
+hash_bg: 608a7c8a2add7a301cc6169c4c7711be2e278c38933106f2665c056893cb52f1

@@ -1,6 +1,8 @@
 ---
 name: 'Hipster Green'
-author: ''             # 'AUTHOR NAME (http://WEBSITE.com)'
+author: 'Unkulunkulu (https://github.com/Unkulunkulu)'
+author_name: 'Unkulunkulu'
+author_url: 'https://github.com/Unkulunkulu'
 variant: 'dark'            # dark or light
 
 color_01: '#000000'    # Black (Host)
@@ -24,4 +26,4 @@ color_16: '#E5E5E5'    # Bright White
 background: '#100B05'  # Background
 foreground: '#84C138'  # Foreground (Text)
 
-cursor: '#84C138'      # Cursor
+cursor: '#23FF18'      # Cursor

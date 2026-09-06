@@ -1,6 +1,8 @@
 ---
 name: 'Sea Shells'
-author: ''             # 'AUTHOR NAME (http://WEBSITE.com)'
+author: 'zdj (https://github.com/zdj/themes/tree/master/iterm2)'
+author_name: 'zdj'
+author_url: 'https://github.com/zdj/themes/tree/master/iterm2'
 variant: 'dark'            # dark or light
 
 color_01: '#17384C'    # Black (Host)
@@ -24,4 +26,4 @@ color_16: '#FEE4CE'    # Bright White
 background: '#09141B'  # Background
 foreground: '#DEB88D'  # Foreground (Text)
 
-cursor: '#DEB88D'      # Cursor
+cursor: '#FCA02F'      # Cursor

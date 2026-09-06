@@ -1,0 +1,26 @@
+name: IC Green PPL
+author: zdj (https://github.com/zdj/themes/tree/master/iterm2)
+author_name: zdj
+author_url: https://github.com/zdj/themes/tree/master/iterm2
+variant: dark
+color_01: '#014401'
+color_02: '#FF2736'
+color_03: '#41A638'
+color_04: '#76A831'
+color_05: '#2EC3B9'
+color_06: '#50A096'
+color_07: '#3CA078'
+color_08: '#E6FEF2'
+color_09: '#035C03'
+color_10: '#B4FA5C'
+color_11: '#AEFB86'
+color_12: '#DAFA87'
+color_13: '#2EFAEB'
+color_14: '#50FAFA'
+color_15: '#3CFAC8'
+color_16: '#E0F1DC'
+background: '#2C2C2C'
+foreground: '#E0F1DC'
+cursor: '#47FA6B'
+hash: 6735a68fa264d747864fbdc828f5a3e14639a54fb91b9ce5fdec21a41e912531
+hash_bg: 0302a03a04f2089cc73dc32a4e75e304b5011c26ae09fe70ca991232607262c4

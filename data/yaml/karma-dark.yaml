@@ -1,0 +1,26 @@
+name: Karma Dark
+author: Sreetam Das (https://github.com/sreetamdas)
+author_name: Sreetam Das
+author_url: https://github.com/sreetamdas
+variant: dark
+color_01: '#0A0E14'
+color_02: '#FC618D'
+color_03: '#7BD88F'
+color_04: '#FCE566'
+color_05: '#5AD4E6'
+color_06: '#AF98E6'
+color_07: '#5AD4E6'
+color_08: '#BAB6C0'
+color_09: '#69676C'
+color_10: '#FF7BA0'
+color_11: '#9CE3AB'
+color_12: '#FCE566'
+color_13: '#7FE0EE'
+color_14: '#C3B0F0'
+color_15: '#7FE0EE'
+color_16: '#F7F1FF'
+background: '#0A0E14'
+foreground: '#F7F1FF'
+cursor: '#FCE566'
+hash: 798f9d4d43dc5a90d5bcda548aed80513b48ce522752012e06c901ce8f5d9740
+hash_bg: ff7fd53c84fa2d0c2a2df529a7f6976dc2f9700a820d673d9dee1bd00ec402eb

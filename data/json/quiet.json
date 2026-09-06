@@ -1,6 +1,8 @@
 {
   "name": "Quiet",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#141414",
   "color_02": "#C16262",
@@ -21,5 +23,6 @@
   "background": "#141414",
   "foreground": "#B9B9B9",
   "cursor": "#A0A0A0",
-  "hash": "ef46f4adafa08ae0036d000c41dfeb02ca1d470ad317776607b7d03a5e547149"
+  "hash": "86ed52f635580137b3b7404dd0f2ee1d52fa5cfca1dccc8a71758caeb11dc606",
+  "hash_bg": "a082ae38274c70fbe0d4b8361d54889303a2dabb6301b4642e76b8b8fb8f033a"
 }

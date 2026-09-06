@@ -1,0 +1,26 @@
+name: Rippedcasts
+author: mdw123 (https://github.com/mdw123/rippedcasts)
+author_name: mdw123
+author_url: https://github.com/mdw123/rippedcasts
+variant: dark
+color_01: '#000000'
+color_02: '#CDAF95'
+color_03: '#A8FF60'
+color_04: '#BFBB1F'
+color_05: '#75A5B0'
+color_06: '#FF73FD'
+color_07: '#5A647E'
+color_08: '#BFBFBF'
+color_09: '#666666'
+color_10: '#EECBAD'
+color_11: '#BCEE68'
+color_12: '#E5E500'
+color_13: '#86BDC9'
+color_14: '#E500E5'
+color_15: '#8C9BC4'
+color_16: '#E5E5E5'
+background: '#2B2B2B'
+foreground: '#FFFFFF'
+cursor: '#7F7F7F'
+hash: 4616268808f1990c3fd8df5f31f537659ab9c6373e1de584fb3b6b2b69da58fd
+hash_bg: 80b5aa3f71cbfb56d38d86dffb86cc2f7b0853c93de6dfbd4fb5de4f42442f8d

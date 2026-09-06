@@ -1,0 +1,26 @@
+name: Monokai Pro Spectrum
+author: Monokai (https://monokai.com/)
+author_name: Monokai
+author_url: https://monokai.com/
+variant: dark
+color_01: '#222222'
+color_02: '#FC618D'
+color_03: '#7BD88F'
+color_04: '#FCE566'
+color_05: '#FD9353'
+color_06: '#948AE3'
+color_07: '#5AD4E6'
+color_08: '#F7F1FF'
+color_09: '#69676C'
+color_10: '#FC618D'
+color_11: '#7BD88F'
+color_12: '#FCE566'
+color_13: '#FD9353'
+color_14: '#948AE3'
+color_15: '#5AD4E6'
+color_16: '#F7F1FF'
+background: '#222222'
+foreground: '#F7F1FF'
+cursor: '#BAB6C0'
+hash: bfaaeaa5ed14696fc67abb274328dfe7a732e5fa02a22c086bbef5f575de7df8
+hash_bg: 0ab9b7707742f7dcbadf8f430a75575121e5e4564fe75b1b0932bb9d376e6bff

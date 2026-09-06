@@ -1,6 +1,8 @@
 {
   "name": "Argonaut",
-  "author": "",
+  "author": "effkay (https://github.com/effkay/iTerm-argonaut)",
+  "author_name": "effkay",
+  "author_url": "https://github.com/effkay/iTerm-argonaut",
   "variant": "dark",
   "color_01": "#232323",
   "color_02": "#FF000F",
@@ -20,6 +22,7 @@
   "color_16": "#FFFFFF",
   "background": "#0E1019",
   "foreground": "#FFFAF4",
-  "cursor": "#FFFAF4",
-  "hash": "91109bea4785263820c5a81a2e09f3696defe0ebf8c6ede5128ea36a01708727"
+  "cursor": "#FF0018",
+  "hash": "b83bb43462cb013b8bf1174cfb2f69e985bc00c33b11ba45de63d12aea1fdcf3",
+  "hash_bg": "65dcb30b98b2e73b9ea2acf759939734a5c26a6094e6ab79ba8929e2da28b95b"
 }

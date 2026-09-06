@@ -1,0 +1,26 @@
+name: owl
+author: dkeg (https://github.com/dkeg/crayolo)
+author_name: dkeg
+author_url: https://github.com/dkeg/crayolo
+variant: dark
+color_01: '#302C2C'
+color_02: '#5A5A5A'
+color_03: '#989898'
+color_04: '#CACACA'
+color_05: '#656565'
+color_06: '#B1B1B1'
+color_07: '#7F7F7F'
+color_08: '#DEDEDE'
+color_09: '#5D595B'
+color_10: '#DA5B2C'
+color_11: '#989898'
+color_12: '#CACACA'
+color_13: '#656565'
+color_14: '#B1B1B1'
+color_15: '#7F7F7F'
+color_16: '#FFFFFF'
+background: '#2F2B2C'
+foreground: '#DEDEDE'
+cursor: '#DEDEDE'
+hash: 2357c7c48c8b0f7e4f217cd6d51ee1424249bc16dfe14b0ba9c5e76f110f18fa
+hash_bg: 7a8e316cc5b4d59215c56bbcfb69e9c992ba45cef720882480cebbea313d0f25

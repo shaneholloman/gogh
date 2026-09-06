@@ -1,0 +1,26 @@
+name: Poimandres Storm
+author: drcmda (https://github.com/drcmda/poimandres-theme)
+author_name: drcmda
+author_url: https://github.com/drcmda/poimandres-theme
+variant: dark
+color_01: '#252B37'
+color_02: '#D0679D'
+color_03: '#5DE4C7'
+color_04: '#FFFAC2'
+color_05: '#89DDFF'
+color_06: '#F087BD'
+color_07: '#89DDFF'
+color_08: '#FFFFFF'
+color_09: '#A6ACCD'
+color_10: '#D0679D'
+color_11: '#5DE4C7'
+color_12: '#FFFAC2'
+color_13: '#ADD7FF'
+color_14: '#F087BD'
+color_15: '#ADD7FF'
+color_16: '#FFFFFF'
+background: '#252B37'
+foreground: '#A6ACCD'
+cursor: '#FFFFFF'
+hash: 702b54690a4c74ee2e3939f4b3a2e2c36980d67c1a8105796a888b64884a6593
+hash_bg: f217953174306bdffd64f15dd9e3602f931f8bab42b4aa4411335e9190632468

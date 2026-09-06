@@ -1,6 +1,8 @@
 {
   "name": "Tin",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#000000",
   "color_02": "#8D534E",
@@ -21,5 +23,6 @@
   "background": "#2E2E35",
   "foreground": "#FFFFFF",
   "cursor": "#FFFFFF",
-  "hash": "fee625756db5cc7e6bbb863946e35601b0d9a8812664e401bbf5b0eb4a49048e"
+  "hash": "f960367b9b80bf8acd793879010b349d527bce96a67b9786668f8678afa14678",
+  "hash_bg": "ac290babb7b3f94b9c44eac1c73bb2e07b5955dc1b57eddac963e2d2dded8c03"
 }

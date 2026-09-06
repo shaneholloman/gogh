@@ -1,6 +1,8 @@
 ---
 name: 'Red Sands'
 author: ''             # 'AUTHOR NAME (http://WEBSITE.com)'
+author_name: ''
+author_url: ''
 variant: 'dark'            # dark or light
 
 color_01: '#000000'    # Black (Host)
@@ -24,4 +26,4 @@ color_16: '#FFFFFF'    # Bright White
 background: '#7A251E'  # Background
 foreground: '#D7C9A7'  # Foreground (Text)
 
-cursor: '#D7C9A7'      # Cursor
+cursor: '#FFFFFF'      # Cursor

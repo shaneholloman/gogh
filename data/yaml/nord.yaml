@@ -1,0 +1,26 @@
+name: Nord
+author: Arctic Ice Studio (https://www.nordtheme.com/)
+author_name: Arctic Ice Studio
+author_url: https://www.nordtheme.com/
+variant: dark
+color_01: '#3B4252'
+color_02: '#BF616A'
+color_03: '#A3BE8C'
+color_04: '#EBCB8B'
+color_05: '#81A1C1'
+color_06: '#B48EAD'
+color_07: '#88C0D0'
+color_08: '#E5E9F0'
+color_09: '#4C566A'
+color_10: '#BF616A'
+color_11: '#A3BE8C'
+color_12: '#EBCB8B'
+color_13: '#81A1C1'
+color_14: '#B48EAD'
+color_15: '#8FBCBB'
+color_16: '#ECEFF4'
+background: '#2E3440'
+foreground: '#D8DEE9'
+cursor: '#ECEFF4'
+hash: b0e7449a6668910bc652c9c559b1911b249450bf4d82b483c56686e8e87ee0bc
+hash_bg: 164693acbcc19fdca2063406e98be054e9c270778af7cb264f6ce955cc3c8d6c

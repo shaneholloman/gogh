@@ -1,6 +1,8 @@
 ---
 name: 'Wild Cherry'
-author: ''             # 'AUTHOR NAME (http://WEBSITE.com)'
+author: 'mashaal (https://github.com/mashaal/wild-cherry)'
+author_name: 'mashaal'
+author_url: 'https://github.com/mashaal/wild-cherry'
 variant: 'dark'            # dark or light
 
 color_01: '#000507'    # Black (Host)
@@ -24,4 +26,4 @@ color_16: '#E4838D'    # Bright White
 background: '#1F1726'  # Background
 foreground: '#DAFAFF'  # Foreground (Text)
 
-cursor: '#DAFAFF'      # Cursor
+cursor: '#DD00FF'      # Cursor

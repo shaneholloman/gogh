@@ -1,0 +1,26 @@
+name: Aura
+author: daltonmenezes (https://github.com/daltonmenezes)
+author_name: daltonmenezes
+author_url: https://github.com/daltonmenezes
+variant: dark
+color_01: '#110F18'
+color_02: '#FF6767'
+color_03: '#61FFCA'
+color_04: '#FFCA85'
+color_05: '#A277FF'
+color_06: '#A277FF'
+color_07: '#61FFCA'
+color_08: '#EDECEE'
+color_09: '#4D4D4D'
+color_10: '#FFCA85'
+color_11: '#A277FF'
+color_12: '#FFCA85'
+color_13: '#A277FF'
+color_14: '#A277FF'
+color_15: '#61FFCA'
+color_16: '#EDECEE'
+background: '#15141B'
+foreground: '#EDECEE'
+cursor: '#A277FF'
+hash: c945085b77c23fca8200181683696b487252e5dec1ad68e285c14feb34a0fb98
+hash_bg: e235735b54efd0466b3b83dc255bb79aa3683d9f307cfa1337d15444c6d99c13

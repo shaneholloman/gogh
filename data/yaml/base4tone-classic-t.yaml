@@ -1,0 +1,26 @@
+name: Base4Tone Classic T
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#201D20'
+color_02: '#CE672C'
+color_03: '#9263E3'
+color_04: '#B792F6'
+color_05: '#DB75EB'
+color_06: '#E96396'
+color_07: '#A57AF0'
+color_08: '#EDE8ED'
+color_09: '#0C070D'
+color_10: '#E78B55'
+color_11: '#C0A1F7'
+color_12: '#D6C2FA'
+color_13: '#F1C3F8'
+color_14: '#F17EAA'
+color_15: '#EDB1F6'
+color_16: '#F8F6F9'
+background: '#201D20'
+foreground: '#9D949E'
+cursor: '#797481'
+hash: 39dd1756abe811c3c3a423398bcf41c3dbbe5ceaa1b08321346d63f94cc0b4a8
+hash_bg: 1b144dc3d65bf903eb08d4efa39cf9eb6d544bd8957546fcdf6d1a5da9455a43

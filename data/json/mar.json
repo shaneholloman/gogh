@@ -1,6 +1,8 @@
 {
   "name": "Mar",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "light",
   "color_01": "#000000",
   "color_02": "#B5407B",
@@ -21,5 +23,6 @@
   "background": "#FFFFFF",
   "foreground": "#23476A",
   "cursor": "#23476A",
-  "hash": "7bb4c467b42f418dd43bff522abf7b87cf41b430f2790ee1be1dde2b08ff96cf"
+  "hash": "82e82be75b87b1b615af588ee440b3e0d8d9f954cfa99155c404391a46ff6a64",
+  "hash_bg": "07ee686b3ce29f11070f5edcd6f0da03659e67becfba76650c1c6b5ac079847a"
 }

@@ -1,0 +1,26 @@
+name: Raycast Light
+author: ''
+author_name: ''
+author_url: ''
+variant: light
+color_01: '#000000'
+color_02: '#B12424'
+color_03: '#006B4F'
+color_04: '#F8A300'
+color_05: '#138AF2'
+color_06: '#9A1B6E'
+color_07: '#3EB8BF'
+color_08: '#FFFFFF'
+color_09: '#000000'
+color_10: '#B12424'
+color_11: '#006B4F'
+color_12: '#F8A300'
+color_13: '#138AF2'
+color_14: '#9A1B6E'
+color_15: '#3EB8BF'
+color_16: '#FFFFFF'
+background: '#FFFFFF'
+foreground: '#000000'
+cursor: '#000000'
+hash: e11e019d8329cf795bd7fe20e7eccec4fca81d3698e4368bab132bee6207af03
+hash_bg: 07ee686b3ce29f11070f5edcd6f0da03659e67becfba76650c1c6b5ac079847a

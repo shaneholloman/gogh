@@ -1,6 +1,8 @@
 {
   "name": "Square",
-  "author": "",
+  "author": "baskerville (https://github.com/baskerville/iTerm-2-Color-Themes)",
+  "author_name": "baskerville",
+  "author_url": "https://github.com/baskerville/iTerm-2-Color-Themes",
   "variant": "dark",
   "color_01": "#050505",
   "color_02": "#E9897C",
@@ -18,8 +20,9 @@
   "color_14": "#AD7FA8",
   "color_15": "#D7D9FC",
   "color_16": "#E2E2E2",
-  "background": "#0A1E24",
-  "foreground": "#A1A1A1",
-  "cursor": "#A1A1A1",
-  "hash": "9cc4c414dec22ac337f1372e355d4c1fa817d97125fe8a24b1bf8df970cb1838"
+  "background": "#1A1A1A",
+  "foreground": "#ACACAB",
+  "cursor": "#FCFBCC",
+  "hash": "c9e21dc35b696c6bbdff08453e5293c4c76770c8b47ba91c1fecc05bc8d1294c",
+  "hash_bg": "f70b776dd81bc5cf00513200646fe4e0452b12e474fda29388b12ed13738fb90"
 }

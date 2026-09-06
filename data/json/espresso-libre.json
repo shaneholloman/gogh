@@ -1,6 +1,8 @@
 {
   "name": "Espresso Libre",
-  "author": "",
+  "author": "jurgemaister (https://github.com/jurgemaister/Espresso-Libre)",
+  "author_name": "jurgemaister",
+  "author_url": "https://github.com/jurgemaister/Espresso-Libre",
   "variant": "dark",
   "color_01": "#000000",
   "color_02": "#CC0000",
@@ -20,6 +22,7 @@
   "color_16": "#EEEEEC",
   "background": "#2A211C",
   "foreground": "#B8A898",
-  "cursor": "#B8A898",
-  "hash": "187cf3988f8d2218a904e6602face38a6c68ae4c28b6f951d7817f78520b21d4"
+  "cursor": "#FFFFFF",
+  "hash": "923947446bab681e6de1a89dfcdeec460272ee2a552a3d2ebbaede394d81d62c",
+  "hash_bg": "1f127f52f4bc5652ab108df6eb5314006c307285c1e040c7bc5ee0dc1218ec26"
 }

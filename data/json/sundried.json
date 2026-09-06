@@ -1,6 +1,8 @@
 {
   "name": "Sundried",
-  "author": "",
+  "author": "zdj (https://github.com/zdj/themes/tree/master/iterm2)",
+  "author_name": "zdj",
+  "author_url": "https://github.com/zdj/themes/tree/master/iterm2",
   "variant": "dark",
   "color_01": "#302B2A",
   "color_02": "#A7463D",
@@ -20,6 +22,7 @@
   "color_16": "#FFFFFF",
   "background": "#1A1818",
   "foreground": "#C9C9C9",
-  "cursor": "#C9C9C9",
-  "hash": "a02e2f5135f90e01f9738759ea34d7e9388b19d0358a707f89ceb5f1447dac69"
+  "cursor": "#FFFFFF",
+  "hash": "b77d5d58898d82b2e890adf4618b1f43b2427f42ef8ea773efd546fa816ba7a7",
+  "hash_bg": "0500ba59205c98dffdeb738f9650b8a6fcd470d930e8c21835dbd3087d18878b"
 }

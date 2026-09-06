@@ -1,0 +1,26 @@
+name: Moonwalk
+author: Jian (https://github.com/thejian)
+author_name: Jian
+author_url: https://github.com/thejian
+variant: light
+color_01: '#080808'
+color_02: '#7A0047'
+color_03: '#145B0E'
+color_04: '#733A11'
+color_05: '#002FA7'
+color_06: '#5400A8'
+color_07: '#00566B'
+color_08: '#9C958D'
+color_09: '#494440'
+color_10: '#AF1608'
+color_11: '#4C6129'
+color_12: '#7A5000'
+color_13: '#0D50C5'
+color_14: '#952197'
+color_15: '#006092'
+color_16: '#FFFFFF'
+background: '#E4E2E0'
+foreground: '#061F4A'
+cursor: '#061F4A'
+hash: b32f2a5d0a2acc531ce34398b8559f275dd98643871f3033768a992d220a8831
+hash_bg: 8e596d03ba5e900309868958b363a53f2902d6d54cec98b76b661fc756a999a5

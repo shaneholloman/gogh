@@ -1,0 +1,26 @@
+name: Noctis Bordo
+author: Liviu Schera (https://github.com/liviuschera)
+author_name: Liviu Schera
+author_url: https://github.com/liviuschera
+variant: dark
+color_01: '#47393E'
+color_02: '#E66533'
+color_03: '#49E9A6'
+color_04: '#E4B781'
+color_05: '#49ACE9'
+color_06: '#DF769B'
+color_07: '#49D6E9'
+color_08: '#B9ACB0'
+color_09: '#69545B'
+color_10: '#E97749'
+color_11: '#60EBB1'
+color_12: '#E69533'
+color_13: '#60B6EB'
+color_14: '#E798B3'
+color_15: '#60DBEB'
+color_16: '#CBBEC2'
+background: '#322A2D'
+foreground: '#CBBEC2'
+cursor: '#CBBEC2'
+hash: d2facea1b11b21256fcbd9f7b3d3e7580e1a9f4a15fc5c774758ce320966ee0c
+hash_bg: be03c1f238f33e7b6849d78be42890226b3100a8347e11a6d0dc41541b3a503c

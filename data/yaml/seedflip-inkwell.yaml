@@ -1,0 +1,26 @@
+name: SeedFlip Inkwell
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#050505'
+color_02: '#CC6666'
+color_03: '#66CC88'
+color_04: '#CCBB66'
+color_05: '#6690CC'
+color_06: '#CC66CC'
+color_07: '#66CCCC'
+color_08: '#F3F1EE'
+color_09: '#3D3D3D'
+color_10: '#DF9F9F'
+color_11: '#9FDFB5'
+color_12: '#DFD49F'
+color_13: '#9FBADF'
+color_14: '#DF9FDF'
+color_15: '#9FDFDF'
+color_16: '#FFFFFF'
+background: '#0A0A0A'
+foreground: '#E8E4DF'
+cursor: '#C8B8A0'
+hash: a08ca0a93bca51925cddcefd49063aaff49fa9247a0c6bc99758105a7c1d4371
+hash_bg: 328c0ac9bcb539f8023a5d5d54c82c788f71b73d4206b2664b4e2746a669a360

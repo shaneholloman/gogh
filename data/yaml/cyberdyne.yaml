@@ -1,0 +1,26 @@
+name: Cyberdyne
+author: ReagentX (https://github.com/ReagentX)
+author_name: ReagentX
+author_url: https://github.com/ReagentX
+variant: dark
+color_01: '#080808'
+color_02: '#FF8373'
+color_03: '#00C172'
+color_04: '#D2A700'
+color_05: '#0071CF'
+color_06: '#FF90FE'
+color_07: '#6BFFDD'
+color_08: '#F1F1F1'
+color_09: '#2E2E2E'
+color_10: '#FFC4BE'
+color_11: '#D6FCBA'
+color_12: '#FFFED5'
+color_13: '#C2E3FF'
+color_14: '#FFB2FE'
+color_15: '#E6E7FE'
+color_16: '#FFFFFF'
+background: '#151144'
+foreground: '#00FF92'
+cursor: '#00FF9C'
+hash: c607914c47b4845dda49be463f60b8e464790b6d5619585773fbbfe607e99e7b
+hash_bg: 1c12fa68cf98f93ca9c55aab34a7d96fe62105f83792dd837afe3411a6f752c5

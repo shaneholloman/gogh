@@ -1,0 +1,26 @@
+name: Sweet Terminal
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#3F3F54'
+color_02: '#F60055'
+color_03: '#06C993'
+color_04: '#9700BE'
+color_05: '#F69154'
+color_06: '#EC89CB'
+color_07: '#60ADEC'
+color_08: '#ABB2BF'
+color_09: '#959DCB'
+color_10: '#F60055'
+color_11: '#06C993'
+color_12: '#9700BE'
+color_13: '#F69154'
+color_14: '#EC89CB'
+color_15: '#00DDED'
+color_16: '#FFFFFF'
+background: '#222235'
+foreground: '#FFFFFF'
+cursor: '#FFFFFF'
+hash: 167d03b8c73adaf091b30fdcba97101f570f77f61335d74901d3cc04c027828b
+hash_bg: d2b13859a4cec4ebd9192079149da9001d48a86014688692fbf56931f6127634

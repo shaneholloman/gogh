@@ -1,6 +1,8 @@
 {
   "name": "Vaughn",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#25234F",
   "color_02": "#705050",
@@ -20,6 +22,7 @@
   "color_16": "#FFFFFF",
   "background": "#25234F",
   "foreground": "#DCDCCC",
-  "cursor": "#DCDCCC",
-  "hash": "9308a04a5193b1bb49b2ee7f1c48fb91634bd6b7d3db5bad2326266255b69f28"
+  "cursor": "#FF5555",
+  "hash": "f23a5b7e9e0a12e796c65d62e9c4477eb2aa60f68eb0cdde3f5adebf37b25230",
+  "hash_bg": "e404abc36b01c5e1b33fd18adc5aa81510641787274f4055dca282d4ec9a404c"
 }

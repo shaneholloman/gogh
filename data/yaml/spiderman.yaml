@@ -1,0 +1,26 @@
+name: Spiderman
+author: pyrophos (https://github.com/pyrophos)
+author_name: pyrophos
+author_url: https://github.com/pyrophos
+variant: dark
+color_01: '#1B1D1E'
+color_02: '#E60813'
+color_03: '#E22928'
+color_04: '#E24756'
+color_05: '#2C3FFF'
+color_06: '#2435DB'
+color_07: '#3256FF'
+color_08: '#FFFEF6'
+color_09: '#505354'
+color_10: '#FF0325'
+color_11: '#FF3338'
+color_12: '#FE3A35'
+color_13: '#1D50FF'
+color_14: '#747CFF'
+color_15: '#6184FF'
+color_16: '#FFFFF9'
+background: '#1B1D1E'
+foreground: '#E3E3E3'
+cursor: '#2C3FFF'
+hash: 3d0e1da78d5a134fbb3856334012b48a5f7a7fbc4b97cb340943c11ffcc7f9a1
+hash_bg: b4cf018ccb00a4136aced28095fd81620343d783907065157633634c29a77b7f

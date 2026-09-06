@@ -1,6 +1,8 @@
 {
   "name": "Spacegray Eighties",
-  "author": "",
+  "author": "mhkeller (https://github.com/mhkeller/spacegray-eighties-iterm)",
+  "author_name": "mhkeller",
+  "author_url": "https://github.com/mhkeller/spacegray-eighties-iterm",
   "variant": "dark",
   "color_01": "#15171C",
   "color_02": "#EC5F67",
@@ -20,6 +22,7 @@
   "color_16": "#FFFFFF",
   "background": "#222222",
   "foreground": "#BDBAAE",
-  "cursor": "#BDBAAE",
-  "hash": "94bb03045383057b01961e83619e622457e3af0d2f896ca136acbf5ef5395f2f"
+  "cursor": "#BBBBBB",
+  "hash": "9bef9f036b33d00aa5b0be09b03cb9b26e4cb067e5e1f0a3d10042499818f45d",
+  "hash_bg": "0ab9b7707742f7dcbadf8f430a75575121e5e4564fe75b1b0932bb9d376e6bff"
 }

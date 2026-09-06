@@ -1,0 +1,26 @@
+name: Lunaria Eclipse
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#323F46'
+color_02: '#83615B'
+color_03: '#7F9781'
+color_04: '#A69875'
+color_05: '#53516F'
+color_06: '#856880'
+color_07: '#7D96B2'
+color_08: '#C9CDD7'
+color_09: '#3D4950'
+color_10: '#BA9088'
+color_11: '#BEDBC1'
+color_12: '#F1DFB4'
+color_13: '#767495'
+color_14: '#BE9CB8'
+color_15: '#BCDBFF'
+color_16: '#DFE2ED'
+background: '#323F46'
+foreground: '#C9CDD7'
+cursor: '#C9CDD7'
+hash: d91e87580168adf10bb596ddb62c523578388d3c9ffec34c607c0305db28044f
+hash_bg: 1354a7d05e4648e0c7bfcd7e236ccd33576fef8875779745a9351bca8f4d5a0d

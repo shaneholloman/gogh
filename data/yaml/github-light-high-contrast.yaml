@@ -1,0 +1,26 @@
+name: GitHub Light High Contrast
+author: Antonio Camargo (https://github.com/apcamargo)
+author_name: Antonio Camargo
+author_url: https://github.com/apcamargo
+variant: light
+color_01: '#0E1116'
+color_02: '#A0111F'
+color_03: '#024C1A'
+color_04: '#3F2200'
+color_05: '#0349B4'
+color_06: '#622CBC'
+color_07: '#1B7C83'
+color_08: '#66707B'
+color_09: '#4B535D'
+color_10: '#86061D'
+color_11: '#055D20'
+color_12: '#4E2C00'
+color_13: '#1168E3'
+color_14: '#844AE7'
+color_15: '#3192AA'
+color_16: '#88929D'
+background: '#FFFFFF'
+foreground: '#0E1116'
+cursor: '#0349B4'
+hash: 3228d9ba1f51303113f22479cfa8833e93dc2369406b747c055ec2b14abcf842
+hash_bg: 07ee686b3ce29f11070f5edcd6f0da03659e67becfba76650c1c6b5ac079847a

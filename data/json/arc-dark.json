@@ -1,6 +1,8 @@
 {
   "name": "Arc Dark",
   "author": "https://hesamrad.com",
+  "author_name": "Hesamrad",
+  "author_url": "https://hesamrad.com",
   "variant": "dark",
   "color_01": "#0D1117",
   "color_02": "#C32424",
@@ -21,5 +23,6 @@
   "background": "#0D1117",
   "foreground": "#9198A1",
   "cursor": "#00FF00",
-  "hash": "ecb062cba4992858dc1d0cd2bfa91976f6b5bb5e5f89406a2f4c84b91b338026"
+  "hash": "4f415baf4f3482f3d6fefc65fea631f917ac637dbf70d313f69e49f690a34cb0",
+  "hash_bg": "db7e8d8a9273c87d02700aba4fc3c0642bb95fad548f11c4049bfa3eb3fb6e23"
 }

@@ -1,6 +1,8 @@
 {
   "name": "Bluloco Zsh Light",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "light",
   "color_01": "#E4E5F1",
   "color_02": "#D52753",
@@ -21,5 +23,6 @@
   "background": "#F9F9F9",
   "foreground": "#383A42",
   "cursor": "#383A42",
-  "hash": "4ba1535ecb473aea8cd43ef19a4b1e68cc8ed84541bbb08b17185fcff7aac4df"
+  "hash": "d981d486005af9ed92722ba72d387b302c948056332475fd661221950765877d",
+  "hash_bg": "0142ea2bd1d1589ebb8c0b75a30f5e07e4868140fee5d8b5f78b44be07ffd3e9"
 }

@@ -1,0 +1,26 @@
+name: Neutron
+author: Ch4s3 (https://github.com/Ch4s3/iTerm2-Neutron)
+author_name: Ch4s3
+author_url: https://github.com/Ch4s3/iTerm2-Neutron
+variant: dark
+color_01: '#23252B'
+color_02: '#B54036'
+color_03: '#5AB977'
+color_04: '#DEB566'
+color_05: '#6A7C93'
+color_06: '#A4799D'
+color_07: '#3F94A8'
+color_08: '#E6E8EF'
+color_09: '#23252B'
+color_10: '#B54036'
+color_11: '#5AB977'
+color_12: '#DEB566'
+color_13: '#6A7C93'
+color_14: '#A4799D'
+color_15: '#3F94A8'
+color_16: '#EBEDF2'
+background: '#1C1E22'
+foreground: '#E6E8EF'
+cursor: '#F6F7EC'
+hash: 2d2a5f1874cb1656c8efb8505ee8e2f464672e726121949f24c752e0ec5a9d9d
+hash_bg: 2edf0a66fccc5ebe6f155888c9cb7f2aefc73beb3fb4c12950f8cf8560c70b1a

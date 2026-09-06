@@ -1,0 +1,26 @@
+name: Base4Tone Classic U
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#201D20'
+color_02: '#CE672C'
+color_03: '#AA52E0'
+color_04: '#C988F2'
+color_05: '#EB75DD'
+color_06: '#E96375'
+color_07: '#BA6CEA'
+color_08: '#EDE8ED'
+color_09: '#0D070C'
+color_10: '#E78B55'
+color_11: '#D19AF4'
+color_12: '#E0BAF7'
+color_13: '#F8C3F2'
+color_14: '#F17E8E'
+color_15: '#F6B1EE'
+color_16: '#F9F6F8'
+background: '#201D20'
+foreground: '#9E949D'
+cursor: '#7C7481'
+hash: 03a6ce699a171223b6ec67ef98100a72c660bdbe80eda88878de8229fc70c313
+hash_bg: 1b144dc3d65bf903eb08d4efa39cf9eb6d544bd8957546fcdf6d1a5da9455a43

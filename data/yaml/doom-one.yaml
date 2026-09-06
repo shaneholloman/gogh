@@ -1,0 +1,26 @@
+name: Doom One
+author: Henrik Lissner
+author_name: Henrik Lissner
+author_url: https://github.com/hlissner
+variant: dark
+color_01: '#000000'
+color_02: '#FF6C6B'
+color_03: '#98BE65'
+color_04: '#ECBE7B'
+color_05: '#A9A1E1'
+color_06: '#C678DD'
+color_07: '#51AFEF'
+color_08: '#BBC2CF'
+color_09: '#000000'
+color_10: '#FF6655'
+color_11: '#99BB66'
+color_12: '#ECBE7B'
+color_13: '#A9A1E1'
+color_14: '#C678DD'
+color_15: '#51AFEF'
+color_16: '#BFBFBF'
+background: '#282C34'
+foreground: '#BBC2CF'
+cursor: '#51AFEF'
+hash: 8e6ad3eee6a1f0e39deb7ae0c809319270f43a202ad176028524c211350d7a16
+hash_bg: 5e8eab6831045b60ca66d1dee977bb724c2cab9963110788954ed06cf9366b15

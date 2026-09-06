@@ -1,0 +1,26 @@
+name: Tempus Past
+author: Protesilaos Stavrou (https://protesilaos.com)
+author_name: Protesilaos Stavrou
+author_url: https://protesilaos.com
+variant: light
+color_01: '#53545B'
+color_02: '#C00C50'
+color_03: '#0A7040'
+color_04: '#A6403A'
+color_05: '#1763AA'
+color_06: '#B02874'
+color_07: '#096A83'
+color_08: '#EAE2DE'
+color_09: '#80565D'
+color_10: '#BD3133'
+color_11: '#337243'
+color_12: '#8D554A'
+color_13: '#5559BB'
+color_14: '#B022A7'
+color_15: '#07707A'
+color_16: '#F3F2F4'
+background: '#F3F2F4'
+foreground: '#53545B'
+cursor: '#53545B'
+hash: 32c28fce3930cd727168f3641be2e7363de229aabaebbc08059b6330c10593ec
+hash_bg: 3388338a563759be5ffeb31b2df04cfa09058510971ee9cc92e730871a187ec7

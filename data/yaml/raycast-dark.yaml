@@ -1,0 +1,26 @@
+name: Raycast Dark
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#000000'
+color_02: '#FF5360'
+color_03: '#59D499'
+color_04: '#FFC531'
+color_05: '#56C2FF'
+color_06: '#CF2F98'
+color_07: '#52EEE5'
+color_08: '#FFFFFF'
+color_09: '#000000'
+color_10: '#FF6363'
+color_11: '#59D499'
+color_12: '#FFC531'
+color_13: '#56C2FF'
+color_14: '#CF2F98'
+color_15: '#52EEE5'
+color_16: '#FFFFFF'
+background: '#1A1A1A'
+foreground: '#FFFFFF'
+cursor: '#CCCCCC'
+hash: f453bfde324660a72e416793893516cc2d2cd9e22aa98e665145d3b8fbd6fcf1
+hash_bg: f70b776dd81bc5cf00513200646fe4e0452b12e474fda29388b12ed13738fb90

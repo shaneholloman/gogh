@@ -1,6 +1,8 @@
 {
   "name": "Maia",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#232423",
   "color_02": "#BA2922",
@@ -21,5 +23,6 @@
   "background": "#31363B",
   "foreground": "#BDC3C7",
   "cursor": "#BDC3C7",
-  "hash": "280285cae2bf5fdf372138b4654cec454fd1dca32da29f672741860fc0429215"
+  "hash": "68c204706fe2e4de8d6e25741abc256a629558a23471811fe09b8c8699a65384",
+  "hash_bg": "e19d6f62a635d80854c641b97b49f4f40ed9f2b9a3307c5fd1bf17f70c076a53"
 }

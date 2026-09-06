@@ -1,6 +1,8 @@
 {
   "name": "Ibm3270",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#222222",
   "color_02": "#F01818",
@@ -21,5 +23,6 @@
   "background": "#000000",
   "foreground": "#FDFDFD",
   "cursor": "#FDFDFD",
-  "hash": "ec8110104c3e76aca7b743bc9be11917ca6c35888c25124a012951305eab991a"
+  "hash": "448ef95605b384fa13d0713ef565614dd50a66af3ffcab5109ea091bfd555c11",
+  "hash_bg": "7b2817bf9b80e66d07f28095dcd1244590692778dc617a53cbd666ad280872ed"
 }

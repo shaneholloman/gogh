@@ -1,6 +1,8 @@
 {
   "name": "Birds Of Paradise",
-  "author": "",
+  "author": "zdj (https://github.com/zdj/themes/tree/master/iterm2)",
+  "author_name": "zdj",
+  "author_url": "https://github.com/zdj/themes/tree/master/iterm2",
   "variant": "dark",
   "color_01": "#573D26",
   "color_02": "#BE2D26",
@@ -20,6 +22,7 @@
   "color_16": "#FFF9D5",
   "background": "#2A1F1D",
   "foreground": "#E0DBB7",
-  "cursor": "#E0DBB7",
-  "hash": "002634bc0f6f10f8887c85463175507fd86d143436cdb391320491551b62fe60"
+  "cursor": "#573D26",
+  "hash": "56861f5cc9946dae5b0c14306dafed8ecfaf169bf71e98b4c87f1aeb1f9d7976",
+  "hash_bg": "194fac9131dcf45dbbcb85a6acc8f93fcef842596e9f23cbad43a75dc3d8b26a"
 }

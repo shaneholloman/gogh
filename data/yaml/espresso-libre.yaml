@@ -1,0 +1,26 @@
+name: Espresso Libre
+author: jurgemaister (https://github.com/jurgemaister/Espresso-Libre)
+author_name: jurgemaister
+author_url: https://github.com/jurgemaister/Espresso-Libre
+variant: dark
+color_01: '#000000'
+color_02: '#CC0000'
+color_03: '#1A921C'
+color_04: '#F0E53A'
+color_05: '#0066FF'
+color_06: '#C5656B'
+color_07: '#06989A'
+color_08: '#D3D7CF'
+color_09: '#555753'
+color_10: '#EF2929'
+color_11: '#9AFF87'
+color_12: '#FFFB5C'
+color_13: '#43A8ED'
+color_14: '#FF818A'
+color_15: '#34E2E2'
+color_16: '#EEEEEC'
+background: '#2A211C'
+foreground: '#B8A898'
+cursor: '#FFFFFF'
+hash: 923947446bab681e6de1a89dfcdeec460272ee2a552a3d2ebbaede394d81d62c
+hash_bg: 1f127f52f4bc5652ab108df6eb5314006c307285c1e040c7bc5ee0dc1218ec26

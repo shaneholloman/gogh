@@ -1,0 +1,26 @@
+name: Japanesque
+author: aereal (https://github.com/aereal/dotfiles/blob/master/colors/Japanesque/Japanesque.itermcolors)
+author_name: aereal
+author_url: https://github.com/aereal/dotfiles/blob/master/colors/Japanesque/Japanesque.itermcolors
+variant: dark
+color_01: '#343935'
+color_02: '#CF3F61'
+color_03: '#7BB75B'
+color_04: '#E9B32A'
+color_05: '#4C9AD4'
+color_06: '#A57FC4'
+color_07: '#389AAD'
+color_08: '#FAFAF6'
+color_09: '#595B59'
+color_10: '#D18FA6'
+color_11: '#767F2C'
+color_12: '#78592F'
+color_13: '#135979'
+color_14: '#604291'
+color_15: '#76BBCA'
+color_16: '#B2B5AE'
+background: '#1E1E1E'
+foreground: '#F7F6EC'
+cursor: '#EDCF4F'
+hash: 540956db0070d115f7ee72487cba3343498b15e3ce165df4e23aa28563d558ab
+hash_bg: af7cd9f2913f3f7bb60dd9395af6c5a757e69612e3b7cb09d2034878101d4589

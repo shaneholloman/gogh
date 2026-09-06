@@ -1,6 +1,8 @@
 ---
 name: 'Obsidian'
 author: ''             # 'AUTHOR NAME (http://WEBSITE.com)'
+author_name: ''
+author_url: ''
 variant: 'dark'            # dark or light
 
 color_01: '#000000'    # Black (Host)
@@ -24,4 +26,4 @@ color_16: '#FFFFFF'    # Bright White
 background: '#283033'  # Background
 foreground: '#CDCDCD'  # Foreground (Text)
 
-cursor: '#CDCDCD'      # Cursor
+cursor: '#C0CAD0'      # Cursor

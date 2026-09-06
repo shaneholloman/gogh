@@ -1,6 +1,8 @@
 {
   "name": "Mono Yellow",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#403500",
   "color_02": "#FFD300",
@@ -21,5 +23,6 @@
   "background": "#2B2400",
   "foreground": "#FFD300",
   "cursor": "#FFD300",
-  "hash": "602fda5fb01dffbb7bf0b2515096969721d180d4e314c792336a292a47c11ede"
+  "hash": "f30b4dbb76385f9d10c5d1f3c1bf77c7ba52e9b6a70a5415585ee3133be52184",
+  "hash_bg": "4db257539f39cc3a3bb014a0d317800029ef2619f74938ab85ba89943628b4b8"
 }

@@ -1,6 +1,8 @@
 {
   "name": "Cai",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#000000",
   "color_02": "#CA274D",
@@ -21,5 +23,6 @@
   "background": "#09111A",
   "foreground": "#D9E6F2",
   "cursor": "#D9E6F2",
-  "hash": "52205c3bb1ad335bf691adf3537e5142f470696881c3cf665e555a21a9ace0cd"
+  "hash": "a84519be267b3f0efb13013ff5094f5366f65e1d66077bc2a473d23314b43f50",
+  "hash_bg": "a51203ffd1927b8e95bc8aaa1c7788f065dda6add70e2a6091967e4c9446081c"
 }

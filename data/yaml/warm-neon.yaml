@@ -1,0 +1,26 @@
+name: Warm Neon
+author: firewut (https://github.com/firewut)
+author_name: firewut
+author_url: https://github.com/firewut
+variant: dark
+color_01: '#000000'
+color_02: '#E24346'
+color_03: '#39B13A'
+color_04: '#DAE145'
+color_05: '#4261C5'
+color_06: '#F920FB'
+color_07: '#2ABBD4'
+color_08: '#D0B8A3'
+color_09: '#FEFCFC'
+color_10: '#E97071'
+color_11: '#9CC090'
+color_12: '#DDDA7A'
+color_13: '#7B91D6'
+color_14: '#F674BA'
+color_15: '#5ED1E5'
+color_16: '#D8C8BB'
+background: '#404040'
+foreground: '#AFDAB6'
+cursor: '#30FF24'
+hash: 8f7be0e013cea879fb9de8b17fd2d49c58722a91287274087c2f30fbe04e6d1f
+hash_bg: a26e56380d6ef77775d9dbc4fdaf48744d01a4e8eafa8a04a3b05099b880a484

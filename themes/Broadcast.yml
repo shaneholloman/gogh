@@ -1,6 +1,8 @@
 ---
 name: 'Broadcast'
-author: ''             # 'AUTHOR NAME (http://WEBSITE.com)'
+author: 'vinkla (https://github.com/vinkla/broadcast-theme)'
+author_name: 'vinkla'
+author_url: 'https://github.com/vinkla/broadcast-theme'
 variant: 'dark'            # dark or light
 
 color_01: '#000000'    # Black (Host)
@@ -24,4 +26,4 @@ color_16: '#FFFFFF'    # Bright White
 background: '#2B2B2B'  # Background
 foreground: '#E6E1DC'  # Foreground (Text)
 
-cursor: '#E6E1DC'      # Cursor
+cursor: '#FFFFFF'      # Cursor

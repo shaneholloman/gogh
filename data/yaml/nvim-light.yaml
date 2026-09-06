@@ -1,0 +1,26 @@
+name: Nvim Light
+author: slavamak (https://github.com/slavamak)
+author_name: slavamak
+author_url: https://github.com/slavamak
+variant: light
+color_01: '#07080D'
+color_02: '#590008'
+color_03: '#005523'
+color_04: '#6B5300'
+color_05: '#004C73'
+color_06: '#470045'
+color_07: '#007373'
+color_08: '#EEF1F8'
+color_09: '#4F5258'
+color_10: '#590008'
+color_11: '#005523'
+color_12: '#6B5300'
+color_13: '#004C73'
+color_14: '#470045'
+color_15: '#007373'
+color_16: '#EEF1F8'
+background: '#E0E2EA'
+foreground: '#14161B'
+cursor: '#9B9EA4'
+hash: b59c4379947b1cfce7a12a976bce32aba98a2828a7db7661078227d4e6bda367
+hash_bg: 8d8d06d96805860914b0dd3e9dbcac88b91df200fd61551cc33b04a07b34cbcd

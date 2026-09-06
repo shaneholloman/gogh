@@ -1,0 +1,26 @@
+name: Tomorrow
+author: Chris Kempson (http://chriskempson.com)
+author_name: Chris Kempson
+author_url: http://chriskempson.com
+variant: light
+color_01: '#000000'
+color_02: '#C82829'
+color_03: '#718C00'
+color_04: '#EAB700'
+color_05: '#4271AE'
+color_06: '#8959A8'
+color_07: '#3E999F'
+color_08: '#FFFFFF'
+color_09: '#000000'
+color_10: '#C82829'
+color_11: '#718C00'
+color_12: '#EAB700'
+color_13: '#4271AE'
+color_14: '#8959A8'
+color_15: '#3E999F'
+color_16: '#FFFFFF'
+background: '#FFFFFF'
+foreground: '#4D4D4C'
+cursor: '#4D4D4C'
+hash: 6ec7d6f8e46ca7d7b0a17ec6f28ca1ddcbdfe47a24021fdb125bae6e06e4dc4f
+hash_bg: 07ee686b3ce29f11070f5edcd6f0da03659e67becfba76650c1c6b5ac079847a

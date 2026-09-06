@@ -1,6 +1,8 @@
 {
   "name": "Highway",
-  "author": "",
+  "author": "zdj (https://github.com/zdj/themes/tree/master/iterm2)",
+  "author_name": "zdj",
+  "author_url": "https://github.com/zdj/themes/tree/master/iterm2",
   "variant": "dark",
   "color_01": "#000000",
   "color_02": "#D00E18",
@@ -20,6 +22,7 @@
   "color_16": "#FFFFFF",
   "background": "#222225",
   "foreground": "#EDEDED",
-  "cursor": "#EDEDED",
-  "hash": "5169c4931afe44239fbca73c7a86c9b61e8ef56b1daa22440cf7c3680bf0d8e9"
+  "cursor": "#E0D9B9",
+  "hash": "f1ac98608db86953c1578c082c0b956c497270c93d0858c56111f2d9648e2af4",
+  "hash_bg": "8ae3741b89bd72b8fa139c6bdac3492d5ac68f5867241a10a606ac7e1d8b773b"
 }

@@ -1,6 +1,8 @@
 {
   "name": "Pali",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#0A0A0A",
   "color_02": "#AB8F74",
@@ -21,5 +23,6 @@
   "background": "#232E37",
   "foreground": "#D9E6F2",
   "cursor": "#D9E6F2",
-  "hash": "6f9c551afc652eff2085753b2bc3cbd7c6320db88ce228c19b6030a330a28929"
+  "hash": "745c5d91b161376ce28c69a8130ffee04dc705b7b9db661e0e68131eaefe3391",
+  "hash_bg": "8bcbc2f100aebdde0cb372208215dc8f9b57cea05676d0f74709a4300e882a7c"
 }

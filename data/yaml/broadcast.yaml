@@ -1,0 +1,26 @@
+name: Broadcast
+author: vinkla (https://github.com/vinkla/broadcast-theme)
+author_name: vinkla
+author_url: https://github.com/vinkla/broadcast-theme
+variant: dark
+color_01: '#000000'
+color_02: '#DA4939'
+color_03: '#519F50'
+color_04: '#FFD24A'
+color_05: '#6D9CBE'
+color_06: '#D0D0FF'
+color_07: '#6E9CBE'
+color_08: '#FFFFFF'
+color_09: '#323232'
+color_10: '#FF7B6B'
+color_11: '#83D182'
+color_12: '#FFFF7C'
+color_13: '#9FCEF0'
+color_14: '#FFFFFF'
+color_15: '#A0CEF0'
+color_16: '#FFFFFF'
+background: '#2B2B2B'
+foreground: '#E6E1DC'
+cursor: '#FFFFFF'
+hash: cabdb06b0d7bfb4cee73e80276b15599bee12af1693aee8bd54f861bfb874124
+hash_bg: 80b5aa3f71cbfb56d38d86dffb86cc2f7b0853c93de6dfbd4fb5de4f42442f8d

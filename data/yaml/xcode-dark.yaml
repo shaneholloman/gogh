@@ -1,0 +1,26 @@
+name: Xcode Dark
+author: lunacookies (https://github.com/lunacookies/vim-colors-xcode)
+author_name: lunacookies
+author_url: https://github.com/lunacookies/vim-colors-xcode
+variant: dark
+color_01: '#414453'
+color_02: '#FF8170'
+color_03: '#78C2B3'
+color_04: '#D9C97C'
+color_05: '#4EB0CC'
+color_06: '#FF7AB2'
+color_07: '#B281EB'
+color_08: '#DFDFE0'
+color_09: '#7F8C98'
+color_10: '#FF8170'
+color_11: '#ACF2E4'
+color_12: '#FFA14F'
+color_13: '#6BDFFF'
+color_14: '#FF7AB2'
+color_15: '#DABAFF'
+color_16: '#DFDFE0'
+background: '#292A30'
+foreground: '#DFDFE0'
+cursor: '#DFDFE0'
+hash: 2bcf2b5e075475a19542be5f86a9c891bfa31da27cc31cff5a7522ea2d530227
+hash_bg: 7e62af18b04173a5bc563fd924d13bc5e6836c89abbda30d4701334b4cfc82ae

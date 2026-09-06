@@ -1,6 +1,8 @@
 {
   "name": "Mona Lisa",
-  "author": "",
+  "author": "zdj (https://github.com/zdj/themes/tree/master/iterm2)",
+  "author_name": "zdj",
+  "author_url": "https://github.com/zdj/themes/tree/master/iterm2",
   "variant": "dark",
   "color_01": "#351B0E",
   "color_02": "#9B291C",
@@ -20,6 +22,7 @@
   "color_16": "#FFE598",
   "background": "#120B0D",
   "foreground": "#F7D66A",
-  "cursor": "#F7D66A",
-  "hash": "98875c164d575d9f8a845b83e57d90e8bdc5a8757072b48774f68120a6089c2b"
+  "cursor": "#C46C32",
+  "hash": "2c360748a7eddf7e7166d73d5047f84a9a7af607a11d9c1af620f31b067b0af6",
+  "hash_bg": "b1e583221c3e72e5be01ac74391fd46eef30c240ca1b4fbd165e1dda46b13190"
 }

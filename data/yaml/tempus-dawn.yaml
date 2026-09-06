@@ -1,0 +1,26 @@
+name: Tempus Dawn
+author: Protesilaos Stavrou (https://protesilaos.com)
+author_name: Protesilaos Stavrou
+author_url: https://protesilaos.com
+variant: light
+color_01: '#4A4B4E'
+color_02: '#A32A3A'
+color_03: '#206620'
+color_04: '#745300'
+color_05: '#4B529A'
+color_06: '#8D377E'
+color_07: '#086784'
+color_08: '#DEE2E0'
+color_09: '#676364'
+color_10: '#A64822'
+color_11: '#187408'
+color_12: '#8B590A'
+color_13: '#5C59B2'
+color_14: '#8E45A8'
+color_15: '#3F649C'
+color_16: '#EFF0F2'
+background: '#EFF0F2'
+foreground: '#4A4B4E'
+cursor: '#4A4B4E'
+hash: e32e21117e489da9975adb367645e9bb44f0c93605dc0215e422c5947f908f33
+hash_bg: 346e9a5ac0f3153a39344f82b4f9426fee772377e1195dd74f85a7e14b7dfde1

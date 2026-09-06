@@ -1,6 +1,8 @@
 {
   "name": "Toy Chest",
-  "author": "",
+  "author": "zdj (https://github.com/zdj/themes/tree/master/iterm2)",
+  "author_name": "zdj",
+  "author_url": "https://github.com/zdj/themes/tree/master/iterm2",
   "variant": "dark",
   "color_01": "#2C3F58",
   "color_02": "#BE2D26",
@@ -20,6 +22,7 @@
   "color_16": "#D5D5D5",
   "background": "#24364B",
   "foreground": "#31D07B",
-  "cursor": "#31D07B",
-  "hash": "211441ece80494709ed090208af91405b9e1317759f31707c63927db6fa6cdc4"
+  "cursor": "#D5D5D5",
+  "hash": "224e22f2e272ead0f2a52407efc53898cab0dc76ca3c30607deb1258cd7512ad",
+  "hash_bg": "abc701947321b7a93ca24e387062ddc2584d3d5793657d9290100abe19bb78d6"
 }

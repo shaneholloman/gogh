@@ -1,0 +1,26 @@
+name: Medallion
+author: zdj (https://github.com/zdj/themes/tree/master/iterm2)
+author_name: zdj
+author_url: https://github.com/zdj/themes/tree/master/iterm2
+variant: dark
+color_01: '#000000'
+color_02: '#B64C00'
+color_03: '#7C8B16'
+color_04: '#D3BD26'
+color_05: '#616BB0'
+color_06: '#8C5A90'
+color_07: '#916C25'
+color_08: '#CAC29A'
+color_09: '#5E5219'
+color_10: '#FF9149'
+color_11: '#B2CA3B'
+color_12: '#FFE54A'
+color_13: '#ACB8FF'
+color_14: '#FFA0FF'
+color_15: '#FFBC51'
+color_16: '#FED698'
+background: '#1D1908'
+foreground: '#CAC296'
+cursor: '#D3BA30'
+hash: a441e6475a40ba73ee39ccde1e6f169ab71aa88f28abb973fa31f44c9506f310
+hash_bg: 15291de76dc65634844e64ddef6aa45755378ce57026a34cc22e7875d6ae88e4

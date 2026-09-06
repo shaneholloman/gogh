@@ -1,0 +1,26 @@
+name: Patina Dark Soft
+author: lmarkmann (https://github.com/lmarkmann)
+author_name: lmarkmann
+author_url: https://github.com/lmarkmann
+variant: dark
+color_01: '#2E2E2E'
+color_02: '#CB7676'
+color_03: '#549C7D'
+color_04: '#E6CC77'
+color_05: '#6DB3C2'
+color_06: '#C98A7D'
+color_07: '#5DA9A7'
+color_08: '#DBD7CA'
+color_09: '#585858'
+color_10: '#CB7676'
+color_11: '#549C7D'
+color_12: '#E6CC77'
+color_13: '#6DB3C2'
+color_14: '#C98A7D'
+color_15: '#5DA9A7'
+color_16: '#DBD7CA'
+background: '#1A1A1A'
+foreground: '#DBD7CA'
+cursor: '#DBD7CA'
+hash: ff86068d98f8d65dff0ed94b4570c8a0983acbffe9144a0b7b4197f6ebeed1fc
+hash_bg: f70b776dd81bc5cf00513200646fe4e0452b12e474fda29388b12ed13738fb90

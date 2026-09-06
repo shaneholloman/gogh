@@ -1,0 +1,26 @@
+name: Blue Moon
+author: kyazdani42 (https://github.com/kyazdani42/blue-moon)
+author_name: kyazdani42
+author_url: https://github.com/kyazdani42/blue-moon
+variant: dark
+color_01: '#353B52'
+color_02: '#D06178'
+color_03: '#B4C4B4'
+color_04: '#CFCFBF'
+color_05: '#959DCB'
+color_06: '#B9A3EB'
+color_07: '#89BBDD'
+color_08: '#FFFFFF'
+color_09: '#8796B0'
+color_10: '#E61F44'
+color_11: '#ACFAB4'
+color_12: '#DFDF9F'
+color_13: '#B8BCF3'
+color_14: '#B9A3EB'
+color_15: '#89DDFF'
+color_16: '#FFFFFF'
+background: '#1B1E2B'
+foreground: '#676E96'
+cursor: '#676E96'
+hash: 8811f2fd74086a86e8b9fd32830cf80d0f38fccf26be6ba20d61d01352847a74
+hash_bg: 46f73cc922987c6796d4a8c5aa2688aa34be00ed1cc0424ec47aefe619ef0753

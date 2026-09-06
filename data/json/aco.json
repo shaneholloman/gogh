@@ -1,6 +1,8 @@
 {
   "name": "Aco",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#3F3F3F",
   "color_02": "#FF0883",
@@ -21,5 +23,6 @@
   "background": "#1F1305",
   "foreground": "#B4E1FD",
   "cursor": "#B4E1FD",
-  "hash": "b97c16368902e9705b24293da062b850992f3cc1dbdadd7fd7aacab4d7fa8a66"
+  "hash": "2e175bf997e2c02edc7dbde20121fa04b27a2a5596eb1479a9a9882d986911af",
+  "hash_bg": "3f6ef40ad6f2fda44e059ae6f2756b098b9636779bfa822d44749cc9fe6e7ed6"
 }

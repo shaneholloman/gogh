@@ -1,6 +1,8 @@
 ---
 name: 'Pencil Dark'
-author: ''             # 'AUTHOR NAME (http://WEBSITE.com)'
+author: 'mattly (https://github.com/mattly/iterm-colors-pencil)'
+author_name: 'mattly'
+author_url: 'https://github.com/mattly/iterm-colors-pencil'
 variant: 'dark'            # dark or light
 
 color_01: '#212121'    # Black (Host)
@@ -24,4 +26,4 @@ color_16: '#F1F1F1'    # Bright White
 background: '#212121'  # Background
 foreground: '#F1F1F1'  # Foreground (Text)
 
-cursor: '#F1F1F1'      # Cursor
+cursor: '#20BBFC'      # Cursor

@@ -1,6 +1,8 @@
 {
   "name": "One Half Black",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#282C34",
   "color_02": "#E06C75",
@@ -21,5 +23,6 @@
   "background": "#000000",
   "foreground": "#DCDFE4",
   "cursor": "#DCDFE4",
-  "hash": "2285e1daf9fe3e81c0b8d4569796ff920b3748e35961aa83a031758f4d54423b"
+  "hash": "66e6fca38f84937323f4d6b57ff96b1eb850e3b0fa8d063d12528de55b41a68b",
+  "hash_bg": "7b2817bf9b80e66d07f28095dcd1244590692778dc617a53cbd666ad280872ed"
 }

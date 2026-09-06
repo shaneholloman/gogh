@@ -1,6 +1,8 @@
 {
   "name": "Vs Code Dark+",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#6A787A",
   "color_02": "#E9653B",
@@ -21,5 +23,6 @@
   "background": "#1E1E1E",
   "foreground": "#CCCCCC",
   "cursor": "#CCCCCC",
-  "hash": "9111bfaa4ae3c3f9b769474f188725d8f63b8f861027c088e473119309c0c5b7"
+  "hash": "5b3a111585a3f5342f9a3b9c6a7e128d808c4dcdc4c9a96b80a1c8791204d79c",
+  "hash_bg": "af7cd9f2913f3f7bb60dd9395af6c5a757e69612e3b7cb09d2034878101d4589"
 }

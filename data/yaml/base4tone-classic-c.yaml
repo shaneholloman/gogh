@@ -1,0 +1,26 @@
+name: Base4Tone Classic C
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#221F1C'
+color_02: '#049A61'
+color_03: '#DE5745'
+color_04: '#F18C7E'
+color_05: '#E6971A'
+color_06: '#ADC115'
+color_07: '#E97263'
+color_08: '#EEEBE8'
+color_09: '#0D0B07'
+color_10: '#16CA85'
+color_11: '#F39C91'
+color_12: '#FBBAB1'
+color_13: '#F5D8A8'
+color_14: '#C5DC18'
+color_15: '#F3CD91'
+color_16: '#F9F8F6'
+background: '#221F1C'
+foreground: '#A39B8F'
+cursor: '#847371'
+hash: af73d7b4405e7b656a2bce7f9befceec7988a732e5cb9488ab80ae4db7958ff4
+hash_bg: 1caa443056f4ee7da5ec9f89b60b4389a49040157a3d80c0e84632b6266caf52

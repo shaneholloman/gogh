@@ -1,0 +1,26 @@
+name: Base4Tone Classic W
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#201D1E'
+color_02: '#B87305'
+color_03: '#CA45DE'
+color_04: '#E17EF1'
+color_05: '#EB75A2'
+color_06: '#E97263'
+color_07: '#D763E9'
+color_08: '#EDE8EA'
+color_09: '#0D080A'
+color_10: '#E6971A'
+color_11: '#E691F3'
+color_12: '#EDB1F6'
+color_13: '#F8BFD5'
+color_14: '#F18C7E'
+color_15: '#F6B1CC'
+color_16: '#F9F6F7'
+background: '#201D1E'
+foreground: '#9E9498'
+cursor: '#7F7481'
+hash: a01fbd8f901b33b55843b41c7b43b2e23a57b992d9b676a9566d7a37c5628824
+hash_bg: 6de95309f0d728ffe94b3081db1673247e66e80b1bf62486ba1c60e31ff481dd

@@ -1,0 +1,26 @@
+name: Black Metal (Khold)
+author: nooneknows (https://github.com/nooneknowspeter)
+author_name: nooneknows
+author_url: https://github.com/nooneknowspeter
+variant: dark
+color_01: '#000000'
+color_02: '#5F8787'
+color_03: '#ECEEE3'
+color_04: '#974B46'
+color_05: '#888888'
+color_06: '#999999'
+color_07: '#AAAAAA'
+color_08: '#C1C1C1'
+color_09: '#404040'
+color_10: '#5F8787'
+color_11: '#ECEEE3'
+color_12: '#974B46'
+color_13: '#888888'
+color_14: '#999999'
+color_15: '#AAAAAA'
+color_16: '#C1C1C1'
+background: '#000000'
+foreground: '#C1C1C1'
+cursor: '#C1C1C1'
+hash: 7b16e27041024b1bdc65f2a3c72bd5880a7431f2e8eed877a83d04894d6c7721
+hash_bg: 7b2817bf9b80e66d07f28095dcd1244590692778dc617a53cbd666ad280872ed

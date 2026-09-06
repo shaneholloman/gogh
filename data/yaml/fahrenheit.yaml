@@ -1,0 +1,26 @@
+name: Fahrenheit
+author: jonascarpay (https://github.com/jonascarpay)
+author_name: jonascarpay
+author_url: https://github.com/jonascarpay
+variant: dark
+color_01: '#1D1D1D'
+color_02: '#CDA074'
+color_03: '#9E744D'
+color_04: '#FECF75'
+color_05: '#720102'
+color_06: '#734C4D'
+color_07: '#979797'
+color_08: '#FFFFCE'
+color_09: '#000000'
+color_10: '#FECEA0'
+color_11: '#CC734D'
+color_12: '#FD9F4D'
+color_13: '#CB4A05'
+color_14: '#4E739F'
+color_15: '#FED04D'
+color_16: '#FFFFFF'
+background: '#000000'
+foreground: '#FFFFCE'
+cursor: '#BBBBBB'
+hash: 0e1334f0345a507acb5c7eaa380f2d7fe4d3eaf7f4cafd0a2c5baf901aec6378
+hash_bg: 7b2817bf9b80e66d07f28095dcd1244590692778dc617a53cbd666ad280872ed

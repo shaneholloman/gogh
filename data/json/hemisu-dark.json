@@ -1,6 +1,8 @@
 {
   "name": "Hemisu Dark",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#444444",
   "color_02": "#FF0054",
@@ -21,5 +23,6 @@
   "background": "#000000",
   "foreground": "#FFFFFF",
   "cursor": "#BAFFAA",
-  "hash": "a983879a82454eec927bb736cb3200b15b829a757e3fcc449384fb57c1f404a9"
+  "hash": "093c40469754780bfff72e43dc20a5b478518912157a8b66add6d0c2b6bb5917",
+  "hash_bg": "7b2817bf9b80e66d07f28095dcd1244590692778dc617a53cbd666ad280872ed"
 }

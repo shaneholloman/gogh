@@ -1,0 +1,26 @@
+name: Grok Night
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#0A0A0A'
+color_02: '#F7768E'
+color_03: '#9ECE6A'
+color_04: '#E0AF68'
+color_05: '#7AA2F7'
+color_06: '#BB9AF7'
+color_07: '#7DCFFF'
+color_08: '#C8C8C8'
+color_09: '#6C6C6C'
+color_10: '#F7768E'
+color_11: '#9ECE6A'
+color_12: '#E0AF68'
+color_13: '#7AA2F7'
+color_14: '#BB9AF7'
+color_15: '#7DCFFF'
+color_16: '#E1E1E1'
+background: '#141414'
+foreground: '#E1E1E1'
+cursor: '#E0AF68'
+hash: 30468636960c96fde44422eff9f783fa3b68a5bb548064ac6a190edc1ed8aeb7
+hash_bg: a082ae38274c70fbe0d4b8361d54889303a2dabb6301b4642e76b8b8fb8f033a

@@ -1,6 +1,8 @@
 ---
 name: 'Highway'
-author: ''             # 'AUTHOR NAME (http://WEBSITE.com)'
+author: 'zdj (https://github.com/zdj/themes/tree/master/iterm2)'
+author_name: 'zdj'
+author_url: 'https://github.com/zdj/themes/tree/master/iterm2'
 variant: 'dark'            # dark or light
 
 color_01: '#000000'    # Black (Host)
@@ -24,4 +26,4 @@ color_16: '#FFFFFF'    # Bright White
 background: '#222225'  # Background
 foreground: '#EDEDED'  # Foreground (Text)
 
-cursor: '#EDEDED'      # Cursor
+cursor: '#E0D9B9'      # Cursor

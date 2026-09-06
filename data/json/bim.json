@@ -1,6 +1,8 @@
 {
   "name": "Bim",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#2C2423",
   "color_02": "#F557A0",
@@ -21,5 +23,6 @@
   "background": "#012849",
   "foreground": "#A9BED8",
   "cursor": "#A9BED8",
-  "hash": "06d81f7bab830e63765a657b468c1c93fa569923b92099447b54129581a6301b"
+  "hash": "cc2aa206f94b0d3f08d9c95350058c55f11686bc6e3452f0262a1a674d02b9e1",
+  "hash_bg": "f15e0622db888e46bda9e20eb67250bceceb54646139e51793e3dd63b1c3ecec"
 }

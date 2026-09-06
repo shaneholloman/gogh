@@ -1,0 +1,26 @@
+name: Modus Operandi
+author: ''
+author_name: ''
+author_url: ''
+variant: light
+color_01: '#000000'
+color_02: '#A60000'
+color_03: '#006800'
+color_04: '#6F5500'
+color_05: '#0031A9'
+color_06: '#721045'
+color_07: '#005E8B'
+color_08: '#A6A6A6'
+color_09: '#595959'
+color_10: '#972500'
+color_11: '#00663F'
+color_12: '#884900'
+color_13: '#3548CF'
+color_14: '#531AB6'
+color_15: '#005F5F'
+color_16: '#595959'
+background: '#FFFFFF'
+foreground: '#000000'
+cursor: '#000000'
+hash: 4173af58bda3388a877ff5aea5004c098a26dd8f7f1b7a97630b6a20d8802eba
+hash_bg: 07ee686b3ce29f11070f5edcd6f0da03659e67becfba76650c1c6b5ac079847a

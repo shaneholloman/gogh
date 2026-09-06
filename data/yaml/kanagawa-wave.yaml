@@ -1,0 +1,26 @@
+name: Kanagawa Wave
+author: rebelot (https://github.com/rebelot)
+author_name: rebelot
+author_url: https://github.com/rebelot
+variant: dark
+color_01: '#090618'
+color_02: '#C34043'
+color_03: '#76946A'
+color_04: '#C0A36E'
+color_05: '#7E9CD8'
+color_06: '#957FB8'
+color_07: '#6A9589'
+color_08: '#C8C093'
+color_09: '#727169'
+color_10: '#E82424'
+color_11: '#98BB6C'
+color_12: '#E6C384'
+color_13: '#7FB4CA'
+color_14: '#938AA9'
+color_15: '#7AA89F'
+color_16: '#DCD7BA'
+background: '#1F1F28'
+foreground: '#DCD7BA'
+cursor: '#DCD7BA'
+hash: 5e7edab04f7e4f9f4137bcaa10cd415270d065c7932c7072d3d2a36fcf901be8
+hash_bg: 5ea563f1f70dee3d96945e82afea2ee20485d92e302f6a4eed3857a6b102e26e

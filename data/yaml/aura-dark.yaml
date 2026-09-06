@@ -1,0 +1,26 @@
+name: Aura Dark
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#15141B'
+color_02: '#FF6767'
+color_03: '#61FFCA'
+color_04: '#FFCA85'
+color_05: '#A277FF'
+color_06: '#61FFCA'
+color_07: '#A277FF'
+color_08: '#CDCCCE'
+color_09: '#464646'
+color_10: '#FFCA85'
+color_11: '#A277FF'
+color_12: '#FFCA85'
+color_13: '#A277FF'
+color_14: '#61FFCA'
+color_15: '#61FFCA'
+color_16: '#EDECEE'
+background: '#15141B'
+foreground: '#CDCCCE'
+cursor: '#A277FF'
+hash: a607255f56c3352db11f42b4b53d668e22db80b26edbc0908d48199ea90f0152
+hash_bg: e235735b54efd0466b3b83dc255bb79aa3683d9f307cfa1337d15444c6d99c13

@@ -1,0 +1,26 @@
+name: Base4Tone Classic P
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#1C1D21'
+color_02: '#C039D5'
+color_03: '#1398AA'
+color_04: '#3CCADD'
+color_05: '#929FF7'
+color_06: '#A57AF0'
+color_07: '#23B4C7'
+color_08: '#E8E8EE'
+color_09: '#07080D'
+color_10: '#DB75EB'
+color_11: '#5AD2E2'
+color_12: '#A4E6EF'
+color_13: '#D0D5FB'
+color_14: '#B792F6'
+color_15: '#C6CDFB'
+color_16: '#F6F6F9'
+background: '#1C1D21'
+foreground: '#9092A2'
+cursor: '#6A878A'
+hash: 4d53bbfedfdce90af939edfb181952c806cd1fbbee514fd624861cb0f7ae53f7
+hash_bg: ab199d385e5c86e6bbf2dca668103a22f75ad9b7cad2fe32fcc9b12e536abe0c

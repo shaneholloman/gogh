@@ -1,0 +1,26 @@
+name: One Dark
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#000000'
+color_02: '#E06C75'
+color_03: '#98C379'
+color_04: '#D19A66'
+color_05: '#61AFEF'
+color_06: '#C678DD'
+color_07: '#56B6C2'
+color_08: '#ABB2BF'
+color_09: '#5C6370'
+color_10: '#E06C75'
+color_11: '#98C379'
+color_12: '#D19A66'
+color_13: '#61AFEF'
+color_14: '#C678DD'
+color_15: '#56B6C2'
+color_16: '#FFFEFE'
+background: '#1E2127'
+foreground: '#5C6370'
+cursor: '#5C6370'
+hash: 5869c1b10c53f7023b01785483c408016bd1eb9f975c1b0fa5f42fd99ebab1da
+hash_bg: e225b1b29db7c63c116cd56c8f94f3d3c3350b30af7588906b63e4d6075d315b

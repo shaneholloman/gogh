@@ -1,6 +1,8 @@
 {
   "name": "Monokai Pro Machine",
-  "author": "",
+  "author": "Monokai (https://monokai.com/)",
+  "author_name": "Monokai",
+  "author_url": "https://monokai.com/",
   "variant": "dark",
   "color_01": "#273136",
   "color_02": "#FF6D7E",
@@ -10,7 +12,7 @@
   "color_06": "#BAA0F8",
   "color_07": "#7CD5F1",
   "color_08": "#F2FFFC",
-  "color_09": "#ADB1B4",
+  "color_09": "#6B7678",
   "color_10": "#FF6D7E",
   "color_11": "#A2E57B",
   "color_12": "#FFED72",
@@ -20,6 +22,7 @@
   "color_16": "#F2FFFC",
   "background": "#273136",
   "foreground": "#F2FFFC",
-  "cursor": "#F2FFFC",
-  "hash": "a2f3640be2c1622114127eee87a53e06174c7c1141733e60eedb8acda6833e09"
+  "cursor": "#B8C4C3",
+  "hash": "018851133d63577d26058ca6c58aa5f8ceb956c5ba861eaca793789016487e2c",
+  "hash_bg": "ce8b1b7175510f812b27f9d2ff9be5551a6cdcae4a3bfdb413af361882da9ddd"
 }

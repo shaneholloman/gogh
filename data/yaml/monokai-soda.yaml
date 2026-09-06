@@ -1,0 +1,26 @@
+name: Monokai Soda
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#1A1A1A'
+color_02: '#F4005F'
+color_03: '#98E024'
+color_04: '#FA8419'
+color_05: '#9D65FF'
+color_06: '#F4005F'
+color_07: '#58D1EB'
+color_08: '#C4C5B5'
+color_09: '#625E4C'
+color_10: '#F4005F'
+color_11: '#98E024'
+color_12: '#E0D561'
+color_13: '#9D65FF'
+color_14: '#F4005F'
+color_15: '#58D1EB'
+color_16: '#F6F6EF'
+background: '#1A1A1A'
+foreground: '#C4C5B5'
+cursor: '#F6F7EC'
+hash: 7dfc97cc141d0d6d9c78f9cbcbb735a43976105f9520e23b13bd8c5d28d1b8b8
+hash_bg: f70b776dd81bc5cf00513200646fe4e0452b12e474fda29388b12ed13738fb90

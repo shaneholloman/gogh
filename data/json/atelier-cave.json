@@ -1,6 +1,8 @@
 {
   "name": "Atelier Cave",
   "author": "Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/cave)",
+  "author_name": "Bram de Haan",
+  "author_url": "http://atelierbram.github.io/syntax-highlighting/atelier-schemes/cave",
   "variant": "dark",
   "color_01": "#19171C",
   "color_02": "#BE4678",
@@ -21,5 +23,6 @@
   "background": "#19171C",
   "foreground": "#7E7887",
   "cursor": "#7E7887",
-  "hash": "9956cb9c3c3a2335ec99b03a2b216132bdf39c8f63160a5b8c70f5369c6aa984"
+  "hash": "8e37b093d09e866abd1f40a88954cf657ea92a7d756843fc7fe828a2065dbdc9",
+  "hash_bg": "6c97e6f8473e675cd26b29c02741f2e9e063f28ee4ff04fc81f50f2f96300e68"
 }

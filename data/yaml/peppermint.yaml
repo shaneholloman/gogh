@@ -1,0 +1,26 @@
+name: Peppermint
+author: Noah Frederick (https://noahfrederick.com/log/lion-terminal-theme-peppermint)
+author_name: Noah Frederick
+author_url: https://noahfrederick.com/log/lion-terminal-theme-peppermint
+variant: dark
+color_01: '#353535'
+color_02: '#E74669'
+color_03: '#89D287'
+color_04: '#DAB853'
+color_05: '#449FD0'
+color_06: '#DA62DC'
+color_07: '#65AAAF'
+color_08: '#B4B4B4'
+color_09: '#535353'
+color_10: '#E4859B'
+color_11: '#A3CCA2'
+color_12: '#E1E487'
+color_13: '#6FBCE2'
+color_14: '#E586E7'
+color_15: '#96DCDB'
+color_16: '#DFDFDF'
+background: '#000000'
+foreground: '#C8C8C8'
+cursor: '#BBBBBB'
+hash: cb2e3ebe2de1563863b81037a393c45e45003cd5053b71ebb74dc364e51ca00c
+hash_bg: 7b2817bf9b80e66d07f28095dcd1244590692778dc617a53cbd666ad280872ed

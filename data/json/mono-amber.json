@@ -1,6 +1,8 @@
 {
   "name": "Mono Amber",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#402500",
   "color_02": "#FF9400",
@@ -21,5 +23,6 @@
   "background": "#2B1900",
   "foreground": "#FF9400",
   "cursor": "#FF9400",
-  "hash": "e9c20ae559b2d75bcc130fb17a44db5e17c9f6df2379f16338a9437fb4018d28"
+  "hash": "7222a2ecb05c92124f67ac773a1dc38a6acda9caca8b2528034df96597d7b825",
+  "hash_bg": "fd97a9a27479f3392ebd002b6534742e93fd48464f2a2c47f0ebf2962cf8be66"
 }

@@ -1,6 +1,8 @@
 {
   "name": "Vs Code Light+",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "light",
   "color_01": "#020202",
   "color_02": "#CD3232",
@@ -21,5 +23,6 @@
   "background": "#F9F9F9",
   "foreground": "#020202",
   "cursor": "#020202",
-  "hash": "25ee2aabd98c66a07708af651cbb68fe27317a64c7700ecf06d0b6636b128b54"
+  "hash": "10f268b4f7e7a96ef1c917f3af817b1aada16b40c456624a512351db3e2ce8f5",
+  "hash_bg": "0142ea2bd1d1589ebb8c0b75a30f5e07e4868140fee5d8b5f78b44be07ffd3e9"
 }

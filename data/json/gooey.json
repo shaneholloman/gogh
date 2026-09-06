@@ -1,6 +1,8 @@
 {
   "name": "Gooey",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#000009",
   "color_02": "#BB4F6C",
@@ -21,5 +23,6 @@
   "background": "#0D101B",
   "foreground": "#EBEEF9",
   "cursor": "#EBEEF9",
-  "hash": "8414f4c16b48e6e7c8ae356fbda99d0f8a30976a80987cdba430b32c0909c213"
+  "hash": "25f311dd560e553e7ac86d08ac0560a685cfa54a68ecc50618c551abb7b092d0",
+  "hash_bg": "001bf48ff4a132b11131227a65e0abe61dbd30cb2aaccadb840fa2a7d9ec909e"
 }

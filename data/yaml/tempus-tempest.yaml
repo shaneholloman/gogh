@@ -1,0 +1,26 @@
+name: Tempus Tempest
+author: Protesilaos Stavrou (https://protesilaos.com)
+author_name: Protesilaos Stavrou
+author_url: https://protesilaos.com
+variant: dark
+color_01: '#282B2B'
+color_02: '#CFC80A'
+color_03: '#7AD97A'
+color_04: '#BFCC4A'
+color_05: '#60D7CD'
+color_06: '#C5C4AF'
+color_07: '#8BD0BF'
+color_08: '#B0C8CA'
+color_09: '#323535'
+color_10: '#D1D933'
+color_11: '#99E299'
+color_12: '#BBDE4F'
+color_13: '#74E4CD'
+color_14: '#D2D4AA'
+color_15: '#9BDFC4'
+color_16: '#B6E0CA'
+background: '#282B2B'
+foreground: '#B6E0CA'
+cursor: '#B6E0CA'
+hash: 5eb9b11d344af0050b20fa69e834607a42204a5275ea36a4c0a9b1110d9d488d
+hash_bg: a9d9280980507a74845cc657b8f4ad01efab66caee357b90606d42912c6f95da

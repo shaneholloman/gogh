@@ -1,0 +1,26 @@
+name: iTerm2 Light Background
+author: ''
+author_name: ''
+author_url: ''
+variant: light
+color_01: '#000000'
+color_02: '#C91B00'
+color_03: '#00C200'
+color_04: '#C7C400'
+color_05: '#0225C7'
+color_06: '#CA30C7'
+color_07: '#00C5C7'
+color_08: '#C7C7C7'
+color_09: '#686868'
+color_10: '#FF6E67'
+color_11: '#5FFA68'
+color_12: '#FFFC67'
+color_13: '#6871FF'
+color_14: '#FF77FF'
+color_15: '#60FDFF'
+color_16: '#FFFFFF'
+background: '#FFFFFF'
+foreground: '#000000'
+cursor: '#000000'
+hash: c2b0fe8968595f9540e9e5985b38a6545f877087800b8f6945a375063f8885db
+hash_bg: 07ee686b3ce29f11070f5edcd6f0da03659e67becfba76650c1c6b5ac079847a

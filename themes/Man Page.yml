@@ -1,6 +1,8 @@
 ---
 name: 'Man Page'
 author: ''             # 'AUTHOR NAME (http://WEBSITE.com)'
+author_name: ''
+author_url: ''
 variant: 'light'            # dark or light
 
 color_01: '#000000'    # Black (Host)
@@ -24,4 +26,4 @@ color_16: '#E5E5E5'    # Bright White
 background: '#FEF49C'  # Background
 foreground: '#000000'  # Foreground (Text)
 
-cursor: '#000000'      # Cursor
+cursor: '#7F7F7F'      # Cursor

@@ -1,0 +1,26 @@
+name: Aardvark Blue
+author: joshka (https://github.com/joshka)
+author_name: joshka
+author_url: https://github.com/joshka
+variant: dark
+color_01: '#191919'
+color_02: '#AA342E'
+color_03: '#4B8C0F'
+color_04: '#DBBA00'
+color_05: '#1370D3'
+color_06: '#C43AC3'
+color_07: '#008EB0'
+color_08: '#BEBEBE'
+color_09: '#454545'
+color_10: '#F05B50'
+color_11: '#95DC55'
+color_12: '#FFE763'
+color_13: '#60A4EC'
+color_14: '#E26BE2'
+color_15: '#60B6CB'
+color_16: '#F7F7F7'
+background: '#102040'
+foreground: '#DDDDDD'
+cursor: '#007ACC'
+hash: 6a6a1b1c23abb45ee2ca77363d3f8a691f8f029cac1eb682d7a4d681b1e648b0
+hash_bg: 93b5cd3ce8a56937241930f571c9e74783f0765e6d3e64ac8441f7412bc68402

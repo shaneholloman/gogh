@@ -1,6 +1,8 @@
 {
   "name": "Seoulism",
   "author": "Lee Yunjin (https://oborona.zip)",
+  "author_name": "Lee Yunjin",
+  "author_url": "https://oborona.zip",
   "variant": "dark",
   "color_01": "#101114",
   "color_02": "#E94536",
@@ -21,5 +23,6 @@
   "background": "#101114",
   "foreground": "#ECECE9",
   "cursor": "#ECECE9",
-  "hash": "00659853abd0905d97cce495a4d0f35f851d4e1091acf6d790c606bdb78e9eae"
+  "hash": "efa3f35500062e043fc5c74577a194052d3206fbe6657bb0b89548d911462d48",
+  "hash_bg": "b178521f9ca8fe1b3d6f184d5a33ab7a08b1ae7d439c177100000dbf31e81189"
 }

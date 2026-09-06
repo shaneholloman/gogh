@@ -1,6 +1,8 @@
 {
   "name": "Jackie Brown",
-  "author": "",
+  "author": "Unkulunkulu (https://github.com/Unkulunkulu)",
+  "author_name": "Unkulunkulu",
+  "author_url": "https://github.com/Unkulunkulu",
   "variant": "dark",
   "color_01": "#2C1D16",
   "color_02": "#EF5734",
@@ -20,6 +22,7 @@
   "color_16": "#E5E5E5",
   "background": "#2C1D16",
   "foreground": "#FFCC2F",
-  "cursor": "#FFCC2F",
-  "hash": "086387910be6a6b07fbd0eb6194a9f93c28533ce7490b51b49e4c8fcb9c7a068"
+  "cursor": "#23FF18",
+  "hash": "22d705eea89d2c71db81ec056e9fd2a764fa87c5e10fdb1f065aafdd7ee9413e",
+  "hash_bg": "1c9dbbca5e88e4313bf84cb9efc2ec7b633b6735ea9fd8d607b32bd4f6b1e181"
 }

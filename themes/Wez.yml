@@ -1,6 +1,8 @@
 ---
 name: 'Wez'
-author: ''             # 'AUTHOR NAME (http://WEBSITE.com)'
+author: 'wez (https://gist.github.com/wez/850268/)'
+author_name: 'wez'
+author_url: 'https://gist.github.com/wez/850268/'
 variant: 'dark'            # dark or light
 
 color_01: '#000000'    # Black (Host)
@@ -24,4 +26,4 @@ color_16: '#FFFFFF'    # Bright White
 background: '#000000'  # Background
 foreground: '#B3B3B3'  # Foreground (Text)
 
-cursor: '#B3B3B3'      # Cursor
+cursor: '#53AE71'      # Cursor

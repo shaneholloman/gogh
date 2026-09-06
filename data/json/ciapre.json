@@ -1,6 +1,8 @@
 {
   "name": "Ciapre",
-  "author": "",
+  "author": "zdj (https://github.com/zdj/themes/tree/master/iterm2)",
+  "author_name": "zdj",
+  "author_url": "https://github.com/zdj/themes/tree/master/iterm2",
   "variant": "dark",
   "color_01": "#181818",
   "color_02": "#810009",
@@ -20,6 +22,7 @@
   "color_16": "#F4F4F4",
   "background": "#191C27",
   "foreground": "#AEA47A",
-  "cursor": "#AEA47A",
-  "hash": "c570965b7350fb0afe2b188b20c4d0194740aa32200827efd0bff928275f76ad"
+  "cursor": "#92805B",
+  "hash": "56813e9260a10aad8e4235cae5b5ad3060dbc2ccb98657458592674685821a88",
+  "hash_bg": "14cbedf4cffc32ece656875873f463f6506db5781e0b030621b11c5d589ac3db"
 }

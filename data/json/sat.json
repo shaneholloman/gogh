@@ -1,6 +1,8 @@
 {
   "name": "Sat",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#000000",
   "color_02": "#DD0007",
@@ -21,5 +23,6 @@
   "background": "#758480",
   "foreground": "#23476A",
   "cursor": "#23476A",
-  "hash": "c8cbfd38e4fa9f3bd63db90b7998216978b861a4c396b4fc3a6ddb5fa6bf5341"
+  "hash": "dce1bc61e60975d62e3482faef42bc6b1c49409a2eaa91a27d8b3c96749445cd",
+  "hash_bg": "d1dda896b3e280ce25545430a566ae83dbb975f57bcd2a07801cf75fd3046def"
 }

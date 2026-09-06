@@ -1,0 +1,26 @@
+name: Base4Tone Classic B
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#211E1C'
+color_02: '#669F04'
+color_03: '#DE5745'
+color_04: '#F18C7E'
+color_05: '#E78B55'
+color_06: '#C1AA15'
+color_07: '#E97263'
+color_08: '#EEEAE8'
+color_09: '#0D0907'
+color_10: '#8BCF17'
+color_11: '#F39C91'
+color_12: '#FBBAB1'
+color_13: '#F7CDB6'
+color_14: '#DCC218'
+color_15: '#F5C1A3'
+color_16: '#F9F7F6'
+background: '#211E1C'
+foreground: '#A29790'
+cursor: '#847371'
+hash: 20dc034d492a097da19ab8f2f88f5740affef41184792f4923e5c7d5004c78ea
+hash_bg: cf0d035cad03dece4c062d757caadc8cd3f455180e26bc8fb8b2982a3856d7d1

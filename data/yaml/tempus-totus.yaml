@@ -1,0 +1,26 @@
+name: Tempus Totus
+author: Protesilaos Stavrou (https://protesilaos.com)
+author_name: Protesilaos Stavrou
+author_url: https://protesilaos.com
+variant: light
+color_01: '#4A484D'
+color_02: '#A50000'
+color_03: '#005D26'
+color_04: '#714700'
+color_05: '#1D3CCF'
+color_06: '#88267A'
+color_07: '#185570'
+color_08: '#EFEFEF'
+color_09: '#5E4B4F'
+color_10: '#992030'
+color_11: '#4A5500'
+color_12: '#8A3600'
+color_13: '#2D45B0'
+color_14: '#700DC9'
+color_15: '#005289'
+color_16: '#FFFFFF'
+background: '#FFFFFF'
+foreground: '#4A484D'
+cursor: '#4A484D'
+hash: 4f3b5563be1315ca2d8f89fe32657f165f2f46a10e6850e4aa24afddf0c0dc6a
+hash_bg: 07ee686b3ce29f11070f5edcd6f0da03659e67becfba76650c1c6b5ac079847a

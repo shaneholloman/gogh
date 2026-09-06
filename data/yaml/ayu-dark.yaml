@@ -1,0 +1,26 @@
+name: Ayu Dark
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#0A0E14'
+color_02: '#FF3333'
+color_03: '#C2D94C'
+color_04: '#FF8F40'
+color_05: '#59C2FF'
+color_06: '#FFEE99'
+color_07: '#95E6CB'
+color_08: '#B3B1AD'
+color_09: '#4D5566'
+color_10: '#FF3333'
+color_11: '#C2D94C'
+color_12: '#FF8F40'
+color_13: '#59C2FF'
+color_14: '#FFEE99'
+color_15: '#95E6CB'
+color_16: '#B3B1AD'
+background: '#0A0E14'
+foreground: '#B3B1AD'
+cursor: '#E6B450'
+hash: 455181f839cc3b41775595b0082cd525cbd69fec6f84391275c5737cf71a6702
+hash_bg: ff7fd53c84fa2d0c2a2df529a7f6976dc2f9700a820d673d9dee1bd00ec402eb

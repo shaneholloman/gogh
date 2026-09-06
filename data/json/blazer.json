@@ -1,6 +1,8 @@
 {
   "name": "Blazer",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#000000",
   "color_02": "#B87A7A",
@@ -21,5 +23,6 @@
   "background": "#0D1926",
   "foreground": "#D9E6F2",
   "cursor": "#D9E6F2",
-  "hash": "f19e82c4972474f5be70ce01e5dc09ce9fc88f1b815d5e28bbb6a57e7e89437e"
+  "hash": "86f7a534b5bcb0ae74b568550fcc1878286ece5cc5af16fafb099988c926c9f1",
+  "hash_bg": "05979ebfbb83e25ce7349ae34fbf84dec937841db73551f17b444fca7e1ddae4"
 }

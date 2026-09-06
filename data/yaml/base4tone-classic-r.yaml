@@ -1,0 +1,26 @@
+name: Base4Tone Classic R
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#1E1D20'
+color_02: '#D53975'
+color_03: '#6577EC'
+color_04: '#A0ACF8'
+color_05: '#AF88F2'
+color_06: '#D763E9'
+color_07: '#8493F6'
+color_08: '#EAE8ED'
+color_09: '#09070D'
+color_10: '#EB75A2'
+color_11: '#AEB8F9'
+color_12: '#C6CDFB'
+color_13: '#DDCBFB'
+color_14: '#E17EF1'
+color_15: '#D6C2FA'
+color_16: '#F7F6F9'
+background: '#1E1D20'
+foreground: '#98949E'
+cursor: '#6F7285'
+hash: e5cdb03763bdc19f1810b9ab132109b57d76dbc557ff5122d8e8e4cc51ea8614
+hash_bg: 00c493bda9e3af612fb53780c4ad5b5b7dc464ea8c4d185020c90ca494c5a0fe

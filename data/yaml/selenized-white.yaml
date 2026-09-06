@@ -1,0 +1,26 @@
+name: Selenized White
+author: ''
+author_name: ''
+author_url: ''
+variant: light
+color_01: '#EBEBEB'
+color_02: '#D6000C'
+color_03: '#1D9700'
+color_04: '#C49700'
+color_05: '#0064E4'
+color_06: '#DD0F9D'
+color_07: '#00AD9C'
+color_08: '#878787'
+color_09: '#CDCDCD'
+color_10: '#BF0000'
+color_11: '#008400'
+color_12: '#AF8500'
+color_13: '#0054CF'
+color_14: '#C7008B'
+color_15: '#009A8A'
+color_16: '#282828'
+background: '#FFFFFF'
+foreground: '#474747'
+cursor: '#282828'
+hash: 829610ad3c3caf37602b92e4a5b13db1a96573c3537ee072a405542c107ac4d3
+hash_bg: 07ee686b3ce29f11070f5edcd6f0da03659e67becfba76650c1c6b5ac079847a

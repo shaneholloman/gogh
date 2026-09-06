@@ -1,6 +1,8 @@
 ---
 name: 'Night Owl'
-author: ''             # 'AUTHOR NAME (http://WEBSITE.com)'
+author: 'zasdaym (https://github.com/zasdaym)'
+author_name: 'zasdaym'
+author_url: 'https://github.com/zasdaym'
 variant: 'dark'            # dark or light
 
 color_01: '#011627'    # Black (Host)
@@ -24,4 +26,4 @@ color_16: '#FFFFFF'    # Bright White
 background: '#011627'  # Background
 foreground: '#D6DEEB'  # Foreground (Text)
 
-cursor: '#D6DEEB'      # Cursor
+cursor: '#7E57C2'      # Cursor

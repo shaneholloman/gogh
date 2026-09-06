@@ -1,6 +1,8 @@
 {
   "name": "Hurtado",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#575757",
   "color_02": "#FF1B00",
@@ -20,6 +22,7 @@
   "color_16": "#DBDBDB",
   "background": "#000000",
   "foreground": "#DBDBDB",
-  "cursor": "#DBDBDB",
-  "hash": "f97ba368c82f83a337900ad2191096e4e250e6b4ef073e7ca01fa4562dafae12"
+  "cursor": "#BBBBBB",
+  "hash": "8e1682f886941310a5d667de6a75f4c93b1ece4271272dc83c0ce32ee200d0ad",
+  "hash_bg": "7b2817bf9b80e66d07f28095dcd1244590692778dc617a53cbd666ad280872ed"
 }

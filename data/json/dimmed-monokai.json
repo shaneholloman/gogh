@@ -1,6 +1,8 @@
 {
   "name": "Dimmed Monokai",
-  "author": "",
+  "author": "zdj (https://github.com/zdj/themes/tree/master/iterm2)",
+  "author_name": "zdj",
+  "author_url": "https://github.com/zdj/themes/tree/master/iterm2",
   "variant": "dark",
   "color_01": "#3A3D43",
   "color_02": "#BE3F48",
@@ -20,6 +22,7 @@
   "color_16": "#FDFFB9",
   "background": "#1F1F1F",
   "foreground": "#B9BCBA",
-  "cursor": "#B9BCBA",
-  "hash": "7a0401567ef296d358c00c1332904b7f6838faa114274c5cee73065a78f3127c"
+  "cursor": "#F83E19",
+  "hash": "9e586a1208541e8c0fbe03c440bafe03bb2831f6842d85d12bb4421065df8330",
+  "hash_bg": "dbdd511290756a7dba07d8b528420df3ee54692ce7beced9c6610b738a18f891"
 }

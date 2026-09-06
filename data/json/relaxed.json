@@ -1,6 +1,8 @@
 {
   "name": "Relaxed",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#151515",
   "color_02": "#BC5653",
@@ -21,5 +23,6 @@
   "background": "#353A44",
   "foreground": "#D9D9D9",
   "cursor": "#D9D9D9",
-  "hash": "9bd61c597a77eedd7517f8251c21e8ade3ee4b2ccdd1417bf78c1b7aaa212c83"
+  "hash": "f25031541be2bcc58742a036802b2076475ee852425172359adb6d63a73409de",
+  "hash_bg": "a07dd7b3dae20bd744240a27497e0bbfed80c5ce5b69394620cf080ea8a3683b"
 }

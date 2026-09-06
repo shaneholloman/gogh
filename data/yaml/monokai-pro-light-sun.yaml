@@ -1,0 +1,26 @@
+name: Monokai Pro Light Sun
+author: Monokai (https://monokai.com/)
+author_name: Monokai
+author_url: https://monokai.com/
+variant: light
+color_01: '#F8EFE7'
+color_02: '#CE4770'
+color_03: '#218871'
+color_04: '#B16803'
+color_05: '#D4572B'
+color_06: '#6851A2'
+color_07: '#2473B6'
+color_08: '#2C232E'
+color_09: '#A59C9C'
+color_10: '#CE4770'
+color_11: '#218871'
+color_12: '#B16803'
+color_13: '#D4572B'
+color_14: '#6851A2'
+color_15: '#2473B6'
+color_16: '#2C232E'
+background: '#F8EFE7'
+foreground: '#2C232E'
+cursor: '#72696D'
+hash: ef9a2d91a9845040b4a852f7e3698e6961056718cf7c7923d000e1d0d072f21f
+hash_bg: cb0c3b965deba497f39b07a9b3e0bdc999692f962b1bdac998ae77a2f62881d5

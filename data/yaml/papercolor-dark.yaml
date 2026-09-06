@@ -1,0 +1,26 @@
+name: Papercolor Dark
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#1C1C1C'
+color_02: '#AF005F'
+color_03: '#5FAF00'
+color_04: '#D7AF5F'
+color_05: '#5FAFD7'
+color_06: '#808080'
+color_07: '#D7875F'
+color_08: '#D0D0D0'
+color_09: '#585858'
+color_10: '#5FAF5F'
+color_11: '#AFD700'
+color_12: '#AF87D7'
+color_13: '#FFAF00'
+color_14: '#FF5FAF'
+color_15: '#00AFAF'
+color_16: '#5F8787'
+background: '#1C1C1C'
+foreground: '#D0D0D0'
+cursor: '#D0D0D0'
+hash: 408f74411b2eb76754b6d8f1b69a5a6a59d9982af9dfa1c3dd6bbedd96a7e208
+hash_bg: 3f993b89eef47bcaf3361bdbfb15482f89509ad54b81ade9bd7d7500cc3ff98b

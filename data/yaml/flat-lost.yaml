@@ -1,0 +1,26 @@
+name: Flat Lost
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#2C3E50'
+color_02: '#C0392B'
+color_03: '#27AE60'
+color_04: '#F39C12'
+color_05: '#2980B9'
+color_06: '#8E44AD'
+color_07: '#16A085'
+color_08: '#BDC3C7'
+color_09: '#34495E'
+color_10: '#E74C3C'
+color_11: '#2ECC71'
+color_12: '#F1C40F'
+color_13: '#3498DB'
+color_14: '#9B59B6'
+color_15: '#2AA198'
+color_16: '#ECF0F1'
+background: '#1F2D3A'
+foreground: '#1ABC9C'
+cursor: '#1ABC9C'
+hash: 55f0c06f635a510b9a072df899573f22d59595e70b3b996a7aa6a09160f70527
+hash_bg: 7cca759be8331194136adbfb5619bf0168d470f14cad3075f4f319f6005b12bb

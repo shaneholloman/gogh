@@ -1,6 +1,8 @@
 {
   "name": "Elic",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#303030",
   "color_02": "#E1321A",
@@ -21,5 +23,6 @@
   "background": "#4A453E",
   "foreground": "#F2F2F2",
   "cursor": "#F2F2F2",
-  "hash": "38b06434ea62359994af4d72323f6068cf8789ba6b8bce080b8a1d3a160e634a"
+  "hash": "754f42a188b8983556dab650cf600ac810d2cac564847413bf0aeb0a1c08a02b",
+  "hash_bg": "8bef4620abfd74d4af5b27b1493109c6674a495f5cddf565f477cc0a23836969"
 }

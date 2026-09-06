@@ -1,6 +1,8 @@
 {
   "name": "Shaman",
-  "author": "",
+  "author": "zdj (https://github.com/zdj/themes/tree/master/iterm2)",
+  "author_name": "zdj",
+  "author_url": "https://github.com/zdj/themes/tree/master/iterm2",
   "variant": "dark",
   "color_01": "#012026",
   "color_02": "#B2302D",
@@ -20,6 +22,7 @@
   "color_16": "#58FBD6",
   "background": "#001015",
   "foreground": "#405555",
-  "cursor": "#405555",
-  "hash": "7ea4a8e920c53cca6ff51874bd1289f46898af4c2c614e168776b641a997b6f8"
+  "cursor": "#4AFCD6",
+  "hash": "f2bf438fb6b107395ac2e010cbbc61a00132a8527052054a11ff69ec5d718427",
+  "hash_bg": "3c7aacda54fdf1b938691a855ef55433b9041d4607c90375a00a2b41eb84c654"
 }

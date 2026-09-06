@@ -1,6 +1,8 @@
 {
   "name": "Papercolor Light",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "light",
   "color_01": "#EEEEEE",
   "color_02": "#AF0000",
@@ -21,5 +23,6 @@
   "background": "#EEEEEE",
   "foreground": "#444444",
   "cursor": "#444444",
-  "hash": "8b9848ebb0c3a1555d5ba76edaf8648acd9e9591a3bd7c5c4ae3fdf79879bf07"
+  "hash": "427a9eae2eab7f8668146f8cb8320ea7535b71aedaacdf102645a64ef1b657f7",
+  "hash_bg": "3f95fbbe249a7f8f8c040a510dcb1c75b15ff5fb17993e075411c34e8042a0fa"
 }

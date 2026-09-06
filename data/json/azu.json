@@ -1,6 +1,8 @@
 {
   "name": "Azu",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#000000",
   "color_02": "#AC6D74",
@@ -21,5 +23,6 @@
   "background": "#09111A",
   "foreground": "#D9E6F2",
   "cursor": "#D9E6F2",
-  "hash": "e6b820e3e06872d0b4ba3be882c05d4d2205d6a79865f82b9038d529729572c0"
+  "hash": "c7ca64493df29a66ceb9428dc19e3573515e49b630710152042cc5d543ee741e",
+  "hash_bg": "a51203ffd1927b8e95bc8aaa1c7788f065dda6add70e2a6091967e4c9446081c"
 }

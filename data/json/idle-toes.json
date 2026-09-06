@@ -1,6 +1,8 @@
 {
   "name": "Idle Toes",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#323232",
   "color_02": "#D25252",
@@ -20,6 +22,7 @@
   "color_16": "#FFFFFF",
   "background": "#323232",
   "foreground": "#FFFFFF",
-  "cursor": "#FFFFFF",
-  "hash": "0f09bf33e10a1890f8b4156bf4351e76f0e00db2081417c98a4e21359140d09b"
+  "cursor": "#D6D6D6",
+  "hash": "c4dcb577706b0a3af7e50421e0dcc0aa8740918e9173617d5aca36424ca4cf9a",
+  "hash_bg": "8a4087b68e4780fbdf5e514d09dc341dbdb7981d503f1b3cadeadf90f1dc1f6b"
 }

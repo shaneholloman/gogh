@@ -1,0 +1,26 @@
+name: Spacegray Eighties
+author: mhkeller (https://github.com/mhkeller/spacegray-eighties-iterm)
+author_name: mhkeller
+author_url: https://github.com/mhkeller/spacegray-eighties-iterm
+variant: dark
+color_01: '#15171C'
+color_02: '#EC5F67'
+color_03: '#81A764'
+color_04: '#FEC254'
+color_05: '#5486C0'
+color_06: '#BF83C1'
+color_07: '#57C2C1'
+color_08: '#EFECE7'
+color_09: '#555555'
+color_10: '#FF6973'
+color_11: '#93D493'
+color_12: '#FFD256'
+color_13: '#4D84D1'
+color_14: '#FF55FF'
+color_15: '#83E9E4'
+color_16: '#FFFFFF'
+background: '#222222'
+foreground: '#BDBAAE'
+cursor: '#BBBBBB'
+hash: 9bef9f036b33d00aa5b0be09b03cb9b26e4cb067e5e1f0a3d10042499818f45d
+hash_bg: 0ab9b7707742f7dcbadf8f430a75575121e5e4564fe75b1b0932bb9d376e6bff

@@ -1,6 +1,8 @@
 {
   "name": "Vacme",
   "author": "newptcai",
+  "author_name": "newptcai",
+  "author_url": "",
   "variant": "light",
   "color_01": "#424242",
   "color_02": "#B85C57",
@@ -21,5 +23,6 @@
   "background": "#FFFFEC",
   "foreground": "#424242",
   "cursor": "#030093",
-  "hash": "fc78b76e983a286fdf7a748fc6f7cacae73f04a86ab2dc752682005fbabbf7f9"
+  "hash": "6ff40bb024250a616b602c43322d1ea1ff2edca3b4716f54114dd62d8f0c72f8",
+  "hash_bg": "bbda0f523d4784a1336346fd56ef8d5e54e063e2063dd1a38d5e6e3ee2b344dc"
 }

@@ -1,0 +1,26 @@
+name: Base4Tone Modern W
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#201D1E'
+color_02: '#21A00D'
+color_03: '#1398AA'
+color_04: '#3CCADD'
+color_05: '#EB75A2'
+color_06: '#E97263'
+color_07: '#23B4C7'
+color_08: '#EDE8EA'
+color_09: '#0D080A'
+color_10: '#39C723'
+color_11: '#5AD2E2'
+color_12: '#A4E6EF'
+color_13: '#F8BFD5'
+color_14: '#F18C7E'
+color_15: '#F6B1CC'
+color_16: '#F9F6F7'
+background: '#201D1E'
+foreground: '#9E9498'
+cursor: '#6A878A'
+hash: f9906c66a6b03a52b8add0a5112fb16c4a231a482416cded26ca0d181af470bc
+hash_bg: 6de95309f0d728ffe94b3081db1673247e66e80b1bf62486ba1c60e31ff481dd

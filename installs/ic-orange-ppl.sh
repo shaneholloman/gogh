@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export PROFILE_NAME="Ic Orange Ppl"
+export PROFILE_NAME="IC Orange PPL"
 
 export COLOR_01="#000000"           # Black (Host)
 export COLOR_02="#C13900"           # Red (Syntax string)
@@ -23,7 +23,7 @@ export COLOR_16="#FAFAFF"           # Bright White
 export BACKGROUND_COLOR="#262626"   # Background
 export FOREGROUND_COLOR="#FFCB83"   # Foreground (Text)
 
-export CURSOR_COLOR="#FFCB83" # Cursor
+export CURSOR_COLOR="#FC531D" # Cursor
 
 apply_theme() {
     if [[ -e "${GOGH_APPLY_SCRIPT}" ]]; then

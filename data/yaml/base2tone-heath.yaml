@@ -1,0 +1,26 @@
+name: Base2Tone Heath
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#222022'
+color_02: '#8F6C93'
+color_03: '#CC8C33'
+color_04: '#FFD599'
+color_05: '#9A819C'
+color_06: '#CC8C33'
+color_07: '#CB79D2'
+color_08: '#9E999F'
+color_09: '#635F63'
+color_10: '#D9B98C'
+color_11: '#2F2D2F'
+color_12: '#575158'
+color_13: '#6F6B70'
+color_14: '#EAA8F0'
+color_15: '#C38022'
+color_16: '#FDEBFF'
+background: '#222022'
+foreground: '#9E999F'
+cursor: '#995900'
+hash: 6025e53bced1b08971921eb95026544a4f2bcb62a0bed5574a537ea87144a0f8
+hash_bg: 4d31731522c46fe0b74baeb66e4e30d790fcbac7fbde5891282babfe9b7efb15

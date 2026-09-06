@@ -1,6 +1,8 @@
 {
   "name": "Everforest Light Medium",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "light",
   "color_01": "#5C6A72",
   "color_02": "#F85552",
@@ -21,5 +23,6 @@
   "background": "#FDF6E3",
   "foreground": "#5C6A72",
   "cursor": "#5C6A72",
-  "hash": "ee6dcbdf70198b0d5106fef9e0a1e79253936bda4934e8ad177aa21888689be6"
+  "hash": "4dba493c75aa6db6e4a735405402ef59f970010a72397601d07c619d739f4701",
+  "hash_bg": "c02ddc0b1de22591d77634b9fe04f3f45e7ed16a5f1bce7aed32babbcf6064e6"
 }

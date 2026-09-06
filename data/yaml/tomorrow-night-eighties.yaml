@@ -1,0 +1,26 @@
+name: Tomorrow Night Eighties
+author: Chris Kempson (http://chriskempson.com)
+author_name: Chris Kempson
+author_url: http://chriskempson.com
+variant: dark
+color_01: '#000000'
+color_02: '#F2777A'
+color_03: '#99CC99'
+color_04: '#FFCC66'
+color_05: '#6699CC'
+color_06: '#CC99CC'
+color_07: '#66CCCC'
+color_08: '#FFFFFF'
+color_09: '#000000'
+color_10: '#F2777A'
+color_11: '#99CC99'
+color_12: '#FFCC66'
+color_13: '#6699CC'
+color_14: '#CC99CC'
+color_15: '#66CCCC'
+color_16: '#FFFFFF'
+background: '#2D2D2D'
+foreground: '#CCCCCC'
+cursor: '#CCCCCC'
+hash: b7b89ee0cbf9014d8ae5bd1357073bb02c73a053208d2e8401a0e56092ec647b
+hash_bg: 31994f4a8426344e3d237010ba5fe7291c29ad41ee198a51dd88a68a55ea5f69

@@ -1,0 +1,26 @@
+name: Pyrokai Light
+author: Patrick Serrano (https://patrickserrano.com)
+author_name: Patrick Serrano
+author_url: https://patrickserrano.com
+variant: light
+color_01: '#242120'
+color_02: '#B84963'
+color_03: '#568413'
+color_04: '#8E7100'
+color_05: '#0979C4'
+color_06: '#B44A74'
+color_07: '#008490'
+color_08: '#B4AFAD'
+color_09: '#807C7A'
+color_10: '#943C50'
+color_11: '#456A13'
+color_12: '#735A00'
+color_13: '#0F619D'
+color_14: '#913C5D'
+color_15: '#006A74'
+color_16: '#FAF6F5'
+background: '#FAF6F5'
+foreground: '#242120'
+cursor: '#B65318'
+hash: 85622d8293af7ba3aa3bcccf78ed2d7a87308a6040c88275fedcb52725ac14a1
+hash_bg: 4c8f9ff06b67206050b4b3a02bf01dc22ec2f5e6e662ec77f9bc0cfd4c09b490

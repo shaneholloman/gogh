@@ -1,0 +1,26 @@
+name: Neopolitan
+author: daytonn (https://github.com/daytonn/iTerm2-Color-Schemes)
+author_name: daytonn
+author_url: https://github.com/daytonn/iTerm2-Color-Schemes
+variant: dark
+color_01: '#000000'
+color_02: '#800000'
+color_03: '#61CE3C'
+color_04: '#FBDE2D'
+color_05: '#253B76'
+color_06: '#FF0080'
+color_07: '#8DA6CE'
+color_08: '#F8F8F8'
+color_09: '#000000'
+color_10: '#800000'
+color_11: '#61CE3C'
+color_12: '#FBDE2D'
+color_13: '#253B76'
+color_14: '#FF0080'
+color_15: '#8DA6CE'
+color_16: '#F8F8F8'
+background: '#271F19'
+foreground: '#FFFFFF'
+cursor: '#FFFFFF'
+hash: 392c7764399bbac833eb367d4b5e1bc550e141cddfac5c19d4c7e6da19030972
+hash_bg: d03343cd876c8ec4f77adc8b9ab2f93c2ca5d37d7d337b4cd8f1026668e622b2

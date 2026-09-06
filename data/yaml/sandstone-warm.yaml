@@ -1,0 +1,26 @@
+name: Sandstone Warm
+author: ''
+author_name: ''
+author_url: ''
+variant: light
+color_01: '#2E2010'
+color_02: '#CF2522'
+color_03: '#5D7B00'
+color_04: '#865E00'
+color_05: '#0D6EB2'
+color_06: '#B52D6E'
+color_07: '#037A71'
+color_08: '#756C51'
+color_09: '#5C4A2A'
+color_10: '#C04010'
+color_11: '#7F6648'
+color_12: '#7D6646'
+color_13: '#5C6F6F'
+color_14: '#5F64B7'
+color_15: '#5F6E6E'
+color_16: '#FDF6E3'
+background: '#FDF6E3'
+foreground: '#3E3220'
+cursor: '#3E3220'
+hash: b289d562aedd30f0dc68472f67758204c3ddb330ec9625e1f12d01e8969ae80c
+hash_bg: c02ddc0b1de22591d77634b9fe04f3f45e7ed16a5f1bce7aed32babbcf6064e6

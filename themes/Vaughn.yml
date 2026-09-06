@@ -1,6 +1,8 @@
 ---
 name: 'Vaughn'
 author: ''             # 'AUTHOR NAME (http://WEBSITE.com)'
+author_name: ''
+author_url: ''
 variant: 'dark'            # dark or light
 
 color_01: '#25234F'    # Black (Host)
@@ -24,4 +26,4 @@ color_16: '#FFFFFF'    # Bright White
 background: '#25234F'  # Background
 foreground: '#DCDCCC'  # Foreground (Text)
 
-cursor: '#DCDCCC'      # Cursor
+cursor: '#FF5555'      # Cursor

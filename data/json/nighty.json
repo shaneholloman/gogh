@@ -1,6 +1,8 @@
 {
   "name": "Nighty",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#373D48",
   "color_02": "#9B3E46",
@@ -21,5 +23,6 @@
   "background": "#2F2F2F",
   "foreground": "#DFDFDF",
   "cursor": "#DFDFDF",
-  "hash": "c8093707e34aa08b4e68583972fc41100fca8aba01bdcc451a92cc1d34da17f3"
+  "hash": "19204c185ab66ec97d1ae4f7f861d08235c4e8ec8424a70653f6926f80c27495",
+  "hash_bg": "bbb3e16bf28d665b038e9dd5c31b770a44a4dcd2637771a1eb7961aa0ee68056"
 }

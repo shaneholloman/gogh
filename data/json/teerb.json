@@ -1,6 +1,8 @@
 {
   "name": "Teerb",
-  "author": "",
+  "author": "Teerb (https://gist.github.com/teerb/1360453)",
+  "author_name": "Teerb",
+  "author_url": "https://gist.github.com/teerb/1360453",
   "variant": "dark",
   "color_01": "#1C1C1C",
   "color_02": "#D68686",
@@ -20,6 +22,7 @@
   "color_16": "#EFEFEF",
   "background": "#262626",
   "foreground": "#D0D0D0",
-  "cursor": "#D0D0D0",
-  "hash": "6da80481d793a04440c81c80d8733c978177bf564957caeee3100087691e7426"
+  "cursor": "#E4C9AF",
+  "hash": "9b0256af70d5101b7bff313d8f06a8874a3d3a44d3d6905b10b84f57f0373081",
+  "hash_bg": "170931320358994d5a207e537739d16911ee76874e63248892a3daac7b74ab85"
 }

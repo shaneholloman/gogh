@@ -1,6 +1,8 @@
 {
   "name": "Terminix Dark",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#282A2E",
   "color_02": "#A54242",
@@ -21,5 +23,6 @@
   "background": "#091116",
   "foreground": "#868A8C",
   "cursor": "#868A8C",
-  "hash": "7544f757adf84b8a69eac2fe490edcb537dadc167f2d811a0df05cbf9e4c4f49"
+  "hash": "501479561e08a6ba8952c9812d1afd49f85f012023bb2147b89b9c8c78f422e8",
+  "hash_bg": "04e6669c8571148d891c722a1ef45e44b6ab399d170350a4e25ac7e7227c33bc"
 }

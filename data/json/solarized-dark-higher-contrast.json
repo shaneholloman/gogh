@@ -1,6 +1,8 @@
 {
   "name": "Solarized Dark Higher Contrast",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#002831",
   "color_02": "#D11C24",
@@ -20,6 +22,7 @@
   "color_16": "#FCF4DC",
   "background": "#001E27",
   "foreground": "#9CC2C3",
-  "cursor": "#9CC2C3",
-  "hash": "106b2f88986f11794108816e0ed4498e787807be7b82e7381607347c16b0cb7a"
+  "cursor": "#F34B00",
+  "hash": "3c2a262417451d4c5c6ad443df5e3829d4674b1b6102cb74c2f4a864185cbc6d",
+  "hash_bg": "70c870089f3b222d01ae3f98d86dc53e11cb7f4cde69ecfe1f1a90a541811b2e"
 }

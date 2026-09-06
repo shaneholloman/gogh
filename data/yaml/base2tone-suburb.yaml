@@ -1,0 +1,26 @@
+name: Base2Tone Suburb
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#1E202F'
+color_02: '#7586F5'
+color_03: '#FB6FA9'
+color_04: '#FFB3D2'
+color_05: '#8696FD'
+color_06: '#FB6FA9'
+color_07: '#A0ACFE'
+color_08: '#878BA6'
+color_09: '#4F5472'
+color_10: '#FE81B5'
+color_11: '#292C3D'
+color_12: '#444864'
+color_13: '#5B6080'
+color_14: '#D2D8FE'
+color_15: '#F764A1'
+color_16: '#EBEDFF'
+background: '#1E202F'
+foreground: '#878BA6'
+cursor: '#D14781'
+hash: 745f5a7ab111ce3f427143f05f7ad6e820f154ddb624843eadd721fcdbce0c3f
+hash_bg: f9f96e77764ef6e5615693e76419640193af411eb9c7831471d557dbf2290abc

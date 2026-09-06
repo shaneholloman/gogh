@@ -1,0 +1,26 @@
+name: Selenized Dark
+author: jan-warchol (https://github.com/jan-warchol)
+author_name: jan-warchol
+author_url: https://github.com/jan-warchol
+variant: dark
+color_01: '#184956'
+color_02: '#FA5750'
+color_03: '#75B938'
+color_04: '#DBB32D'
+color_05: '#4695F7'
+color_06: '#F275BE'
+color_07: '#41C7B9'
+color_08: '#ADBCBC'
+color_09: '#72898F'
+color_10: '#FF665C'
+color_11: '#84C747'
+color_12: '#EBC13D'
+color_13: '#58A3FF'
+color_14: '#FF84CD'
+color_15: '#53D6C7'
+color_16: '#CAD8D9'
+background: '#103C48'
+foreground: '#ADBCBC'
+cursor: '#ADBCBC'
+hash: 246e5ef65782ac3f225e14dcdf8498730a04874faf7bf63fe14b4d27f8cf1486
+hash_bg: e734c0625e84e7cffc7489c10d7e329205702cd245162ad2d81ba66cd5d8d1b9

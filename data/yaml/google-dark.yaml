@@ -1,0 +1,26 @@
+name: Google Dark
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#202124'
+color_02: '#EA4335'
+color_03: '#34A853'
+color_04: '#FBBC04'
+color_05: '#4285F4'
+color_06: '#A142F4'
+color_07: '#24C1E0'
+color_08: '#E8EAED'
+color_09: '#5F6368'
+color_10: '#EA4335'
+color_11: '#34A853'
+color_12: '#FBBC05'
+color_13: '#4285F4'
+color_14: '#A142F4'
+color_15: '#24C1E0'
+color_16: '#FFFFFF'
+background: '#202124'
+foreground: '#E8EAED'
+cursor: '#E8EAED'
+hash: fac019928c007a0b1a0ec215210cbc87403cdcfe17b9cd7263bc1f07b6ff8cdd
+hash_bg: b3fd66482950caadbc3fb4cfaae731e211db618d5f84e36c965572f123ba66c8

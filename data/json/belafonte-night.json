@@ -1,6 +1,8 @@
 {
   "name": "Belafonte Night",
-  "author": "",
+  "author": "idleberg (https://github.com/idleberg)",
+  "author_name": "idleberg",
+  "author_url": "https://github.com/idleberg",
   "variant": "dark",
   "color_01": "#20111B",
   "color_02": "#BE100E",
@@ -21,5 +23,6 @@
   "background": "#20111B",
   "foreground": "#968C83",
   "cursor": "#968C83",
-  "hash": "741b7d56478a912043499d9fa4e01ec8b696827359ef9c6f3cd636ce573cb39f"
+  "hash": "35112016cac8188a9d0ab5195bc6341029ad3e82a3b5b37b0450b6cdd2c4b934",
+  "hash_bg": "249ee5dcbdd08213c0d667ea000ada2da2f1f1ff96676c997553241c1ffadc2c"
 }

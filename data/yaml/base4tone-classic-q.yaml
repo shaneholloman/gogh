@@ -1,0 +1,26 @@
+name: Base4Tone Classic Q
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#1D1D20'
+color_02: '#D4359A'
+color_03: '#4287F5'
+color_04: '#88B4FC'
+color_05: '#A095F3'
+color_06: '#BA6CEA'
+color_07: '#659EFB'
+color_08: '#E9E8ED'
+color_09: '#08070D'
+color_10: '#EB75C0'
+color_11: '#9CC1FC'
+color_12: '#C2D9FF'
+color_13: '#D9D5FC'
+color_14: '#C988F2'
+color_15: '#D1CBFB'
+color_16: '#F6F6F9'
+background: '#1D1D20'
+foreground: '#95949E'
+cursor: '#67768E'
+hash: 205c022e6285aff1af7efab7677584830d4c6cd39bcf04291ecc7546edd55e9e
+hash_bg: 989529f5860d8e8fabc56ca5379c91470b21e7a9c7250dc3ab43bea18a9b22e6

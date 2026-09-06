@@ -1,6 +1,8 @@
 {
   "name": "Vag",
   "author": "",
+  "author_name": "",
+  "author_url": "",
   "variant": "dark",
   "color_01": "#303030",
   "color_02": "#A87139",
@@ -21,5 +23,6 @@
   "background": "#191F1D",
   "foreground": "#D9E6F2",
   "cursor": "#D9E6F2",
-  "hash": "c56065d8151657f8d9e417920454558e0ac8b19d7d8cb24bae8ef4646cd75b3c"
+  "hash": "1d1e30d7a5293e374394247dc4f9dee3032fe560791b9edebdd31cae7f3dac25",
+  "hash_bg": "a5faae354c088262f9a0c283054752eb8434a057af20fd594555a1fbcb26e7d2"
 }

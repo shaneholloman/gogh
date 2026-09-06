@@ -1,6 +1,8 @@
 ---
 name: 'Ciapre'
-author: ''             # 'AUTHOR NAME (http://WEBSITE.com)'
+author: 'zdj (https://github.com/zdj/themes/tree/master/iterm2)'
+author_name: 'zdj'
+author_url: 'https://github.com/zdj/themes/tree/master/iterm2'
 variant: 'dark'            # dark or light
 
 color_01: '#181818'    # Black (Host)
@@ -24,4 +26,4 @@ color_16: '#F4F4F4'    # Bright White
 background: '#191C27'  # Background
 foreground: '#AEA47A'  # Foreground (Text)
 
-cursor: '#AEA47A'      # Cursor
+cursor: '#92805B'      # Cursor

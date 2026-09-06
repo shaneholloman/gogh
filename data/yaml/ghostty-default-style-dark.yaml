@@ -1,0 +1,26 @@
+name: Ghostty Default Style Dark
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#1D1F21'
+color_02: '#BF6B69'
+color_03: '#B7BD73'
+color_04: '#E9C880'
+color_05: '#88A1BB'
+color_06: '#AD95B8'
+color_07: '#95BDB7'
+color_08: '#C5C8C6'
+color_09: '#666666'
+color_10: '#C55757'
+color_11: '#BCC95F'
+color_12: '#E1C65E'
+color_13: '#83A5D6'
+color_14: '#BC99D4'
+color_15: '#83BEB1'
+color_16: '#EAEAEA'
+background: '#292C33'
+foreground: '#FFFFFF'
+cursor: '#FFFFFF'
+hash: 8e35ee3741247f1ca32b769116a3d1b7a95bd5bd483c888a1561b00ced89efb3
+hash_bg: 103a2c7987a0a38d6278af913dcaa9f7f9f90f9e588821e289c8bf0c194588d8

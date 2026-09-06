@@ -1,0 +1,26 @@
+name: Fideloper
+author: Fideloper (http://fideloper.com/)
+author_name: Fideloper
+author_url: http://fideloper.com/
+variant: dark
+color_01: '#292F33'
+color_02: '#CB1E2D'
+color_03: '#EDB8AC'
+color_04: '#B7AB9B'
+color_05: '#2E78C2'
+color_06: '#C0236F'
+color_07: '#309186'
+color_08: '#EAE3CE'
+color_09: '#092028'
+color_10: '#D4605A'
+color_11: '#D4605A'
+color_12: '#A86671'
+color_13: '#7C85C4'
+color_14: '#5C5DB2'
+color_15: '#819090'
+color_16: '#FCF4DF'
+background: '#292F33'
+foreground: '#DBDAE0'
+cursor: '#D4605A'
+hash: 0018572a593470d8852cc07e0b08fed2ec020fadfdf1383fd30f654067051cc6
+hash_bg: 06f4b1b084a97ffa44569450e16dd345f2a23c33b49dbef417554878bf3c07cf

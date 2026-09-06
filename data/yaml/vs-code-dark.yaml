@@ -1,0 +1,26 @@
+name: Vs Code Dark+
+author: ''
+author_name: ''
+author_url: ''
+variant: dark
+color_01: '#6A787A'
+color_02: '#E9653B'
+color_03: '#39E9A8'
+color_04: '#E5B684'
+color_05: '#44AAE6'
+color_06: '#E17599'
+color_07: '#3DD5E7'
+color_08: '#C3DDE1'
+color_09: '#598489'
+color_10: '#E65029'
+color_11: '#00FF9A'
+color_12: '#E89440'
+color_13: '#009AFB'
+color_14: '#FF578F'
+color_15: '#5FFFFF'
+color_16: '#D9FBFF'
+background: '#1E1E1E'
+foreground: '#CCCCCC'
+cursor: '#CCCCCC'
+hash: 5b3a111585a3f5342f9a3b9c6a7e128d808c4dcdc4c9a96b80a1c8791204d79c
+hash_bg: af7cd9f2913f3f7bb60dd9395af6c5a757e69612e3b7cb09d2034878101d4589

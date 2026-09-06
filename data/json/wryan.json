@@ -1,6 +1,8 @@
 {
   "name": "Wryan",
-  "author": "",
+  "author": "baskerville (https://github.com/baskerville/iTerm-2-Color-Themes)",
+  "author_name": "baskerville",
+  "author_url": "https://github.com/baskerville/iTerm-2-Color-Themes",
   "variant": "dark",
   "color_01": "#333333",
   "color_02": "#8C4665",
@@ -20,6 +22,7 @@
   "color_16": "#C0C0C0",
   "background": "#101010",
   "foreground": "#999993",
-  "cursor": "#999993",
-  "hash": "6a64d89430e7ecf06cfc35ddc61fbbbfe79e4950458a86c9960de0070b528ac9"
+  "cursor": "#9E9ECB",
+  "hash": "372d8f013978451f32458836ce299f5af74eb756118f9112bbc1d1767642d53a",
+  "hash_bg": "7425a82693ba3f69f6e8f7a6749ed63780bfe503f91a64de917aafb09f351f26"
 }

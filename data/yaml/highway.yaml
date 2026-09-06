@@ -1,0 +1,26 @@
+name: Highway
+author: zdj (https://github.com/zdj/themes/tree/master/iterm2)
+author_name: zdj
+author_url: https://github.com/zdj/themes/tree/master/iterm2
+variant: dark
+color_01: '#000000'
+color_02: '#D00E18'
+color_03: '#138034'
+color_04: '#FFCB3E'
+color_05: '#006BB3'
+color_06: '#6B2775'
+color_07: '#384564'
+color_08: '#EDEDED'
+color_09: '#5D504A'
+color_10: '#F07E18'
+color_11: '#B1D130'
+color_12: '#FFF120'
+color_13: '#4FC2FD'
+color_14: '#DE0071'
+color_15: '#5D504A'
+color_16: '#FFFFFF'
+background: '#222225'
+foreground: '#EDEDED'
+cursor: '#E0D9B9'
+hash: f1ac98608db86953c1578c082c0b956c497270c93d0858c56111f2d9648e2af4
+hash_bg: 8ae3741b89bd72b8fa139c6bdac3492d5ac68f5867241a10a606ac7e1d8b773b
