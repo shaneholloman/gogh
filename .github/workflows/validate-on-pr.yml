@@ -15,6 +15,10 @@ on:
       - 'gogh.sh'
       - 'tools/run.txt'
 
+env:
+  # Pinned for reproducible results; bump this deliberately, not implicitly.
+  SHELLCHECK_VERSION: v0.11.0
+
 jobs:
   validate-colors:
     runs-on: ubuntu-22.04
@@ -47,3 +51,32 @@ jobs:
         env:
           PR_TITLE: ${{ github.event.pull_request.title }}
         run: python tools/validate/validate_pr.py /tmp/changed_files.txt
+
+  shell-validation:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: 🏅 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🏅 bash -n syntax check
+        run: |
+          bash -n gogh.sh
+          bash -n apply-colors.sh
+          for f in installs/*.sh; do bash -n "$f"; done
+
+      # Install the pinned version directly -- don't rely on the runner's
+      # preinstalled ShellCheck, since different versions can flag different things.
+      - name: 🏅 Install ShellCheck ${{ env.SHELLCHECK_VERSION }}
+        run: |
+          curl -sSL "https://github.com/koalaman/shellcheck/releases/download/${SHELLCHECK_VERSION}/shellcheck-${SHELLCHECK_VERSION}.linux.x86_64.tar.xz" | tar -xJ
+          sudo install "shellcheck-${SHELLCHECK_VERSION}/shellcheck" /usr/local/bin/shellcheck
+          shellcheck --version
+
+      - name: 🏅 ShellCheck
+        run: shellcheck gogh.sh apply-colors.sh
+
+      - name: 🏅 Install Bats
+        run: sudo apt-get update && sudo apt-get install -y bats
+
+      - name: 🏅 Run Bats tests
+        run: bats tests/

@@ -1,13 +1,18 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 # Variables to avoid repeated calls to tput
+# tput exits non-zero (and prints nothing) on a terminal that doesn't support
+# the requested capability (e.g. TERM=dumb) -- `|| true` keeps that a graceful
+# "no color" fallback instead of aborting under `set -e`.
 for n in {0..15}; do
-  declare C$n=$(tput setaf $n)
+  declare "C$n"="$(tput setaf "$n" || true)"
 done
-CR=$(tput sgr0)
-CS0=$(tput sgr 0)
+CR=$(tput sgr0 || true)
+CS0=$(tput sgr 0 || true)
 
 # Define traps and trapfunctions early in case any errors before script exits
+# shellcheck disable=SC2329 # invoked indirectly via `trap ... EXIT` below
 GLOBAL_VAR_CLEANUP(){
   echo "Cleanup up..."
   [[ -n "$(command -v TILIX_TMP_CLEANUP)" ]] && TILIX_TMP_CLEANUP
@@ -21,7 +26,12 @@ GLOBAL_VAR_CLEANUP(){
   echo "Done"
 }
 
-trap 'GLOBAL_VAR_CLEANUP; trap - EXIT' EXIT HUP INT QUIT PIPE TERM
+# Cleanup always runs on EXIT. For signals that would otherwise terminate the
+# process (HUP/INT/QUIT/PIPE/TERM), Bash's default terminating behavior is
+# suppressed once a handler is installed for them, so the handler must call
+# exit itself -- otherwise the script keeps running after e.g. Ctrl+C.
+trap 'GLOBAL_VAR_CLEANUP' EXIT
+trap 'GLOBAL_VAR_CLEANUP; trap - EXIT HUP INT QUIT PIPE TERM; exit 130' HUP INT QUIT PIPE TERM
 
 # TO-DO: Investigate dynamically building this array e.g.
 # curl -s https://github.com/Gogh-Co/Gogh/tree/master/themes | grep -o "title=.*\.sh\" " | awk -F '=' '{print $2}'
@@ -39,7 +49,6 @@ declare -a THEMES=(
   'abernathy.sh'
   'aci.sh'
   'acid-lime.sh'
-  'acme.sh'
   'aco.sh'
   'adapta-nokto-maia.sh'
   'adventure-time.sh'
@@ -1259,9 +1268,12 @@ declare -a THEMES=(
 
 # Allow developer to change url to forked url for easier testing
 BASE_URL=${BASE_URL:-"https://raw.githubusercontent.com/Gogh-Co/Gogh/master"}
-PROGRESS_URL="https://raw.githubusercontent.com/phenonymous/shell-progressbar/1.0/progress.sh"
 
-SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+if [[ -n "${BASH_SOURCE[0]:-}" && -f "${BASH_SOURCE[0]}" ]]; then
+  SCRIPT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+else
+  SCRIPT_PATH=""
+fi
 
 capitalize() {
   local ARGUMENT=$1
@@ -1279,53 +1291,67 @@ capitalize() {
 }
 
 
+fetch() {  # fetch URL DEST -- downloads URL into DEST, verifies it's non-empty
+  local url="$1" dest="$2"
+  if command -v curl >/dev/null 2>&1; then
+    curl -fsSL --connect-timeout 5 --max-time 30 --retry 2 -o "$dest" "$url" || return $?
+  elif command -v wget >/dev/null 2>&1; then
+    wget -q --timeout=30 --tries=3 -O "$dest" "$url" || return $?
+  else
+    echo "Error: gogh requires curl or wget to download files" >&2
+    return 127
+  fi
+  if [[ ! -s "$dest" ]]; then
+    echo "Error: downloaded file is empty: ${url}" >&2
+    return 1
+  fi
+}
+
+
 # Used to get required python scripts, either from the internet or from local directory
-if [[ ! -f "${SCRIPT_PATH}/apply-alacritty.py" ]]; then
+if [[ -z "${SCRIPT_PATH}" || ! -f "${SCRIPT_PATH}/apply-alacritty.py" ]]; then
+  # shellcheck disable=SC2329 # invoked indirectly via GLOBAL_VAR_CLEANUP's `command -v` check
   ALACRITTY_APPLY_TMP_CLEANUP() {
     rm -rf "${GOGH_ALACRITTY_SCRIPT}"
     unset GOGH_ALACRITTY_SCRIPT
   }
-  export GOGH_ALACRITTY_SCRIPT="$(mktemp -t gogh.alacritty.XXXXXX)"
-  if [[ "$(uname)" = "Darwin" ]]; then
-    # OSX ships with curl and ancient bash
-    curl -so "${GOGH_ALACRITTY_SCRIPT}" "${BASE_URL}/apply-alacritty.py"
-  else
-    # Linux ships with wget
-    wget -qO "${GOGH_ALACRITTY_SCRIPT}" "${BASE_URL}/apply-alacritty.py"
+  GOGH_ALACRITTY_SCRIPT="$(mktemp -t gogh.alacritty.XXXXXX)"
+  export GOGH_ALACRITTY_SCRIPT
+  if ! fetch "${BASE_URL}/apply-alacritty.py" "${GOGH_ALACRITTY_SCRIPT}"; then
+    echo "Error: failed to download apply-alacritty.py" >&2
+    exit 1
   fi
 fi
 
 
 # Used to get required python scripts, either from the internet or from local directory
-if [[ ! -e "${SCRIPT_PATH}/apply-terminator.py" ]]; then
+if [[ -z "${SCRIPT_PATH}" || ! -e "${SCRIPT_PATH}/apply-terminator.py" ]]; then
+  # shellcheck disable=SC2329 # invoked indirectly via GLOBAL_VAR_CLEANUP's `command -v` check
   TERMINATOR_APPLY_TMP_CLEANUP() {
     rm -rf "${GOGH_TERMINATOR_SCRIPT}"
     unset GOGH_TERMINATOR_SCRIPT
   }
-  export GOGH_TERMINATOR_SCRIPT="$(mktemp -t gogh.terminator.XXXXXX)"
-  if [[ "$(uname)" = "Darwin" ]]; then
-    # OSX ships with curl and ancient bash
-    curl -so "${GOGH_TERMINATOR_SCRIPT}" "${BASE_URL}/apply-terminator.py"
-  else
-    # Linux ships with wget
-    wget -qO "${GOGH_TERMINATOR_SCRIPT}" "${BASE_URL}/apply-terminator.py"
+  GOGH_TERMINATOR_SCRIPT="$(mktemp -t gogh.terminator.XXXXXX)"
+  export GOGH_TERMINATOR_SCRIPT
+  if ! fetch "${BASE_URL}/apply-terminator.py" "${GOGH_TERMINATOR_SCRIPT}"; then
+    echo "Error: failed to download apply-terminator.py" >&2
+    exit 1
   fi
 fi
 
 
 # Used to get required shell scripts, either from the internet or from local directory
-if [[ ! -e "${SCRIPT_PATH}/apply-colors.sh" ]]; then
+if [[ -z "${SCRIPT_PATH}" || ! -e "${SCRIPT_PATH}/apply-colors.sh" ]]; then
+  # shellcheck disable=SC2329 # invoked indirectly via GLOBAL_VAR_CLEANUP's `command -v` check
   APPLY_SCRIPT_TMP_CLEANUP() {
     rm -rf "${GOGH_APPLY_SCRIPT}"
     unset GOGH_APPLY_SCRIPT
   }
-  export GOGH_APPLY_SCRIPT="$(mktemp -t gogh.apply.XXXXXX)"
-  if [[ "$(uname)" = "Darwin" ]]; then
-    # OSX ships with curl and ancient bash
-    curl -so "${GOGH_APPLY_SCRIPT}" "${BASE_URL}/apply-colors.sh"
-  else
-    # Linux ships with wget
-    wget -qO "${GOGH_APPLY_SCRIPT}" "${BASE_URL}/apply-colors.sh"
+  GOGH_APPLY_SCRIPT="$(mktemp -t gogh.apply.XXXXXX)"
+  export GOGH_APPLY_SCRIPT
+  if ! fetch "${BASE_URL}/apply-colors.sh" "${GOGH_APPLY_SCRIPT}"; then
+    echo "Error: failed to download apply-colors.sh" >&2
+    exit 1
   fi
 fi
 
@@ -1339,17 +1365,22 @@ set_gogh() {
 
   export {PROFILE_NAME,PROFILE_SLUG}="$result"
 
-  if [[ -e "${SCRIPT_PATH}/installs/$1" ]]; then
+  if [[ -n "${SCRIPT_PATH}" && -e "${SCRIPT_PATH}/installs/$1" ]]; then
     bash "${SCRIPT_PATH}/installs/$1"
-  else
-    if [[ "$(uname)" = "Darwin" ]]; then
-      # OSX ships with curl
-      bash -c "$(curl -sLo- "${url}")"
-    else
-      # Linux ships with wget
-      bash -c "$(wget -qO- "${url}")"
-    fi
+    return $?
   fi
+
+  local tmp_install
+  tmp_install="$(mktemp -t gogh.install.XXXXXX)"
+  if ! fetch "${url}" "${tmp_install}"; then
+    echo "Error: failed to download theme installer for '$1'" >&2
+    rm -f "${tmp_install}"
+    return 1
+  fi
+  bash "${tmp_install}"
+  local status=$?
+  rm -f "${tmp_install}"
+  return $status
 }
 
 
@@ -1408,7 +1439,7 @@ ARRAYLENGTH=${#THEMES[@]}
 declare -a OPTION=()
 
 # Allow direct CLI selection by number/name/ALL
-if [[ "$1" = "--" ]]; then
+if [[ "${1:-}" = "--" ]]; then
   shift
 fi
 
@@ -1424,21 +1455,21 @@ if [[ $# -gt 0 ]]; then
     ARG_UPPER=$(echo "${ARG}" | tr '[:lower:]' '[:upper:]')
 
     if [[ "${ARG_UPPER}" = "ALL" ]]; then
-      OPTION=($(seq 1 "${ARRAYLENGTH}"))
+      mapfile -t OPTION < <(seq 1 "${ARRAYLENGTH}")
       break
     elif [[ "${ARG}" =~ ^[0-9]+$ ]]; then
-      echo -e "${C1} ~ INVALID OPTION: '${ARG}' ~${CR}"
-      echo "CLI mode accepts theme names/slugs only."
-      echo "Use interactive mode for numbered selection."
-      print_usage
+      echo -e "${C1} ~ INVALID OPTION: '${ARG}' ~${CR}" >&2
+      echo "CLI mode accepts theme names/slugs only." >&2
+      echo "Use interactive mode for numbered selection." >&2
+      print_usage >&2
       exit 1
     else
-      ARG_THEME_NUMBER=$(get_theme_number_from_selector "${ARG}")
+      ARG_THEME_NUMBER=$(get_theme_number_from_selector "${ARG}") || true
       if [[ -n "${ARG_THEME_NUMBER}" ]]; then
         OPTION+=("${ARG_THEME_NUMBER}")
       else
-        echo -e "${C1} ~ INVALID OPTION: '${ARG}' ~${CR}"
-        print_usage
+        echo -e "${C1} ~ INVALID OPTION: '${ARG}' ~${CR}" >&2
+        print_usage >&2
         exit 1
       fi
     fi
@@ -1450,7 +1481,7 @@ fi
 # | ::::::: Print logo
 # |
 if [[ ${#OPTION[@]} -eq 0 ]]; then
-  tput clear
+  tput clear || true
   if [[ ${COLUMNS:-$(tput cols)} -ge 80 ]]; then
     gogh_str=""
     gogh_str+="                                                                                \n"
@@ -1501,7 +1532,8 @@ if [[ ${#OPTION[@]} -eq 0 ]]; then
   # Column display of available themes
   # Note: /usr/bin/column uses tabs and does not support ANSI codes yet (merged but not released)
   MAXL=$(( $(printf "%s\n" "${THEMES[@]}" | wc -L) - 3 )) # Biggest theme name without the extension
-  NCOLS=$(( ${COLUMNS:-$(tput cols)} / (10+MAXL) ))       # number of columns, 10 is the length of '  ( xxx ) '
+  NCOLS=$(( ${COLUMNS:-$(tput cols || echo 80)} / (10+MAXL) )) # number of columns, 10 is the length of '  ( xxx ) '
+  (( NCOLS < 1 )) && NCOLS=1                              # avoid a division by zero below on narrow terminals
   NROWS=$(( (ARRAYLENGTH-1)/NCOLS + 1 ))                  # number of rows
   row=0
 
@@ -1509,15 +1541,15 @@ if [[ ${#OPTION[@]} -eq 0 ]]; then
     col=0
     while ((col < NCOLS)); do
       NUM=$((col*NROWS+row))
-      NAME="${THEMES[$NUM]}"
+      NAME="${THEMES[$NUM]:-}"
       if [[ -n $NAME ]]; then
         FORMATTED_NAME=$(format_theme_name "$NAME")
         printf "  ( ${C4}%3d${CR} ) %-${MAXL}s" $((NUM+1)) "$FORMATTED_NAME"
       fi
-      ((col++))
+      ((++col))
     done
     echo
-    ((row++))
+    ((++row))
   done
 
   echo -e "  (${C4} ALL ${CR}) All themes"
@@ -1527,10 +1559,12 @@ if [[ ${#OPTION[@]} -eq 0 ]]; then
   # |
   echo -e "\nUsage : Enter Desired Themes Numbers (${C4}OPTIONS${CR}) Separated By A Blank Space"
   echo -e "        Press ${C4}ENTER${CR} without options to Exit\n"
-  read -r -p 'Enter OPTION(S) : ' -a OPTION
+  read -r -p 'Enter OPTION(S) : ' -a OPTION || true
 
   # Automagically generate options if user opts for all themes
-  [[ "$(echo "${OPTION}" | tr '[:lower:]' '[:upper:]')" == ALL ]] && OPTION=($(seq -s " " $ARRAYLENGTH))
+  if [[ "$(echo "${OPTION[0]:-}" | tr '[:lower:]' '[:upper:]')" == ALL ]]; then
+    mapfile -t OPTION < <(seq 1 "${ARRAYLENGTH}")
+  fi
 fi
 
 # |
@@ -1541,17 +1575,17 @@ if [[ -z "${TERMINAL:-}" ]]; then
   # | Check for the terminal name (depening on os)
   # | ===========================================
   OS="$(uname)"
-  if [[ "$TERM" = "xterm-ghostty" ]] || [[ "$TERM_PROGRAM" = "ghostty" ]]; then
+  if [[ "${TERM:-}" = "xterm-ghostty" ]] || [[ "${TERM_PROGRAM:-}" = "ghostty" ]]; then
     TERMINAL="ghostty"
   elif [[ "$OS" = "Darwin" ]]; then
-    TERMINAL=$TERM_PROGRAM
+    TERMINAL="${TERM_PROGRAM:-}"
   elif [[ "${OS#CYGWIN}" != "${OS}" ]]; then
     TERMINAL="mintty"
-  elif [[ "$TERM" = "xterm-kitty" ]]; then
+  elif [[ "${TERM:-}" = "xterm-kitty" ]]; then
     TERMINAL="kitty"
-  elif [[ "${TERM}" = "linux" ]]; then
+  elif [[ "${TERM:-}" = "linux" ]]; then
     TERMINAL="linux"
-  elif [[ "${HOME}" = *com.termux* ]]; then
+  elif [[ "${HOME:-}" = *com.termux* ]]; then
     TERMINAL="termux"
   else
     # |
@@ -1559,10 +1593,18 @@ if [[ -z "${TERMINAL:-}" ]]; then
     # | to loop until pid is no longer a subshell
     # | ===========================================
     pid="$$"
-    TERMINAL="$(ps -h -o comm -p $pid)"
+    # -o field= (empty header) suppresses the header without -h: -h itself
+    # triggers BSD-vs-SysV personality detection that some procps-ng versions
+    # reject outright ("error: unsupported SysV option") when combined with
+    # -o/-p, even though it works fine on others.
+    TERMINAL="$(ps -o comm= -p "$pid")" || true
     while [[ "${TERMINAL:(-2)}" == "sh" ]]; do
-      pid="$(ps -h -o ppid -p $pid)"
-      TERMINAL="$(ps -h -o comm -p $pid)"
+      # ppid= is numeric and right-padded by ps to its column width, so a
+      # short pid can come back with leading spaces -- trim them, or the
+      # next -p "$pid" gets quoted whitespace and fails ("improper list").
+      pid="$(ps -o ppid= -p "$pid")" || true
+      pid="${pid// /}"
+      TERMINAL="$(ps -o comm= -p "$pid")" || true
     done
   fi
 fi
@@ -1571,13 +1613,28 @@ fi
 # |
 # | ::::::: Fancy progressbar for lengthy operations
 # |
+# | Minimal, vendored implementation (no third-party download/eval — see the
+# | improvement plan for why this replaced an `eval`'d remote script).
+# |
 if [[ ${#OPTION[@]} -gt 5 ]]; then
-  # Note: We use eval here because we want the functions to be available in this script
-  if [[ "$(uname)" = "Darwin" ]]; then
-    eval "$(curl -so- ${PROGRESS_URL})" 2> /dev/null
-  else
-    eval "$(wget -qO- ${PROGRESS_URL})"  2> /dev/null
-  fi
+  bar::start() {
+    printf '\n'
+  }
+
+  bar::status_changed() {
+    local current="$1" total="$2"
+    local width=40
+    local filled=$(( total > 0 ? current * width / total : 0 ))
+    local bar
+    bar="$(printf '%*s' "$filled" '')"
+    bar="${bar// /#}"
+    printf '\r[%-*s] %3d%% (%d/%d)' "$width" "$bar" $(( total > 0 ? current * 100 / total : 0 )) "$current" "$total"
+    [[ "$current" -ge "$total" ]] && printf '\n'
+  }
+
+  bar::stop() {
+    printf '\n'
+  }
 fi
 
 
@@ -1586,9 +1643,13 @@ fi
 # | This is to avoid creating multiple profiles just for colors
 # | ===========================================
 if [[ "$TERMINAL" = "tilix" ]] && [[ ${#OPTION[@]} -gt 0 ]]; then
-  echo
-  read -r -p "Tilix detected - use color schemes instead of profiles? [y/N] " -n 1 TILIX_RES
-  echo
+  if [[ -z "${GOGH_NONINTERACTIVE+no}" ]]; then
+    echo
+    read -r -p "Tilix detected - use color schemes instead of profiles? [y/N] " -n 1 TILIX_RES || true
+    echo
+  else
+    TILIX_RES="n"
+  fi
 
   # |
   # | When selecting multiple themes and user opts for color schemes, we save all themes
@@ -1596,6 +1657,7 @@ if [[ "$TERMINAL" = "tilix" ]] && [[ ${#OPTION[@]} -gt 0 ]]; then
   # | desides to abort before all themes has been processed this section will cleanup the tmpdir
   # | =======================================
   if [[ ${TILIX_RES::1} =~ ^(y|Y)$ ]]; then
+    # shellcheck disable=SC2329 # invoked indirectly via GLOBAL_VAR_CLEANUP's `command -v` check
     TILIX_TMP_CLEANUP() {
       echo
       echo "Cleaning up"
@@ -1629,31 +1691,33 @@ for c in C{0..15}; do
 done
 
 # Note:
-# Constants with a leading 0 are interpreted as octal numbers
-# Hence option 08 and 09 will not work
-# Solution is to remove the leading 0 from the parsed options
+# Constants with a leading 0 are interpreted as octal numbers, so a
+# zero-padded option (08, 008, ...) is forced to base 10 via the 10#
+# prefix below instead of being parsed as octal.
 command -v bar::start > /dev/null && bar::start
-for OP in "${OPTION[@]#0}"; do
+GOGH_EXIT_STATUS=0
+for OP in "${OPTION[@]}"; do
   # See appy_tilixschemes in apply-colors.sh for usage of LOOP
   LOOP=$((${LOOP:-0}+1))
 
   command -v bar::status_changed > /dev/null && bar::status_changed $LOOP ${#OPTION[@]}
 
-  if [[ OP -le ARRAYLENGTH && OP -gt 0 ]]; then
+  if [[ "${OP}" =~ ^0*[0-9]+$ ]] && (( 10#${OP} <= ARRAYLENGTH && 10#${OP} > 0 )); then
 
-    FILENAME=$(remove_file_extension "${THEMES[((OP-1))]}")
+    FILENAME=$(remove_file_extension "${THEMES[((10#${OP}-1))]}")
     FILENAME_SPACE="${FILENAME//-/ }"
     echo -e "\nTheme: $(capitalize "${FILENAME_SPACE}")"
     echo "${color_dot_str}"
     echo
 
-    SET_THEME="${THEMES[((OP-1))]}"
-    set_gogh "${SET_THEME}"
+    SET_THEME="${THEMES[((10#${OP}-1))]}"
+    if ! set_gogh "${SET_THEME}"; then
+      GOGH_EXIT_STATUS=1
+    fi
   else
-    echo -e "${C1} ~ INVALID OPTION! ~${CR}"
+    echo -e "${C1} ~ INVALID OPTION! ~${CR}" >&2
     exit 1
   fi
 done
-# If you skip || : and the command does not exist the script will exit with code 1
-# this will always return exit code 0 if we got this far
-command -v bar::stop > /dev/null && bar::stop || :
+command -v bar::stop > /dev/null && bar::stop
+exit "${GOGH_EXIT_STATUS}"

@@ -26,8 +26,8 @@ GLOBAL_VAR_CLEANUP() {
   unset OPTLENGTH
 
   for c in $(seq -s " " -w 16); do
-    unset DEMO_COLOR_${c}
-    unset COLOR_${c}
+    unset "DEMO_COLOR_${c}"
+    unset "COLOR_${c}"
   done
 
   unset BACKGROUND_COLOR
@@ -40,16 +40,22 @@ GLOBAL_VAR_CLEANUP() {
 }
 
 SCRIPT_PATH="${SCRIPT_PATH:-$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)}"
-PARENT_PATH="$(dirname "${SCRIPT_PATH}")"
 
 # Note: Since all scripts gets invoked in a subshell the traps from the parent shell
 # will not get inherited. Hence traps defined in gogh.sh and print-themes.sh will still trigger
 trap 'GLOBAL_VAR_CLEANUP; trap - EXIT' EXIT HUP INT QUIT PIPE TERM
 
+# These are intentional printf-format wrappers: `format` IS the parameter, by
+# design, so it can never be a plain literal in the printf call itself. Every
+# call site passes a fixed literal (e.g. '%s\n', '\n%s\n\n') -- dynamic values
+# only ever go through "${@}" as printf's %s arguments, never as the format
+# string itself, so there is no risk of a stray "%" in dynamic data being
+# misinterpreted as a format specifier.
 print() {
         format="${1:?missing value for print}"
         shift
         if [ -z "${GOGH_NONINTERACTIVE+no}" ]; then
+                # shellcheck disable=SC2059
                 printf "${format}" "${@}"
         fi
 }
@@ -61,6 +67,7 @@ prints() {
 printerr() {
         format="${1:?missing value for printerr}"
         shift
+        # shellcheck disable=SC2059
         printf "${format}" "${@}" 1>&2
 }
 
@@ -98,10 +105,18 @@ if [[ -z "${TERMINAL:-}" ]]; then
     # | to loop until pid is no longer a subshell
     # | ===========================================
     pid="$$"
-    TERMINAL="$(ps -h -o comm -p $pid)"
+    # -o field= (empty header) suppresses the header without -h: -h itself
+    # triggers BSD-vs-SysV personality detection that some procps-ng versions
+    # reject outright ("error: unsupported SysV option") when combined with
+    # -o/-p, even though it works fine on others.
+    TERMINAL="$(ps -o comm= -p "$pid")"
     while [[ "${TERMINAL:(-2)}" == "sh" ]]; do
-      pid="$(ps -h -o ppid -p $pid)"
-      TERMINAL="$(ps -h -o comm -p $pid)"
+      # ppid= is numeric and right-padded by ps to its column width, so a
+      # short pid can come back with leading spaces -- trim them, or the
+      # next -p "$pid" gets quoted whitespace and fails ("improper list").
+      pid="$(ps -o ppid= -p "$pid")"
+      pid="${pid// /}"
+      TERMINAL="$(ps -o comm= -p "$pid")"
     done
   fi
 fi
@@ -279,6 +294,9 @@ hexRGBtoDecRGB () {
 convertRGBtoMac () {
   local color="${1}"
   set --
+  # Word splitting here is intentional: hexRGBtoDecRGB's "R G B" output is
+  # deliberately split into three positional parameters below.
+  # shellcheck disable=SC2046
   set -- $(hexRGBtoDecRGB "${color}")
   R=${1}; shift; G=${1}; shift; B=${1}; shift
 
@@ -293,6 +311,9 @@ createMinttyEntry () {
   local  name="${1}"
   local color="${2}"
   set --
+  # Word splitting here is intentional: hexRGBtoDecRGB's "R G B" output is
+  # deliberately split into three positional parameters below.
+  # shellcheck disable=SC2046
   set -- $(hexRGBtoDecRGB "${color}")
   R=${1}; shift; G=${1}; shift; B=${1}; shift
 
@@ -304,13 +325,20 @@ updateMinttyConfig () {
   local  color="${2}"
   local   name="${3}"
 
-  sed -i -r -e "s/^${name}=.+/$(createMinttyEntry "${name}" "${color}")/g" "${config}"
+  if grep -q "^${name}=" "${config}"; then
+    sed -i -r -e "s/^${name}=.+/$(createMinttyEntry "${name}" "${color}")/g" "${config}"
+  else
+    createMinttyEntry "${name}" "${color}" >> "${config}"
+  fi
 }
 
 createKmsconEntry () {
   local  name="${1}"
   local color="${2}"
   set --
+  # Word splitting here is intentional: hexRGBtoDecRGB's "R G B" output is
+  # deliberately split into three positional parameters below.
+  # shellcheck disable=SC2046
   set -- $(hexRGBtoDecRGB "${color}")
   R=${1}; shift; G=${1}; shift; B=${1}; shift
 
@@ -323,7 +351,7 @@ updateKmsconConfig () {
   local   name="${3}"
 
   if ! grep -qe "^${name}=.+" "${config}"; then
-          echo "$(createKmsconEntry "${name}" "${color}")" >> "${config}"
+          createKmsconEntry "${name}" "${color}" >> "${config}"
   fi
 }
 
@@ -347,6 +375,9 @@ createKonsoleEntry () {
   local   name="${1}"
   local  color="${2}"
   set --
+  # Word splitting here is intentional: hexRGBtoDecRGB's "R G B" output is
+  # deliberately split into three positional parameters below.
+  # shellcheck disable=SC2046
   set -- $(hexRGBtoDecRGB "${color}")
   R=${1}; shift; G=${1}; shift; B=${1}; shift
 
@@ -367,6 +398,9 @@ convertNameAndRGBtoITerm() {
   local  name="${1}"
   local color="${2}"
   set --
+  # Word splitting here is intentional: convertRGBtoMac's "R G B" output is
+  # deliberately split into three positional parameters below.
+  # shellcheck disable=SC2046
   set -- $(convertRGBtoMac "${color}")
   R=${1}; shift; G=${1}; shift; B=${1}; shift
 
@@ -394,6 +428,25 @@ dlist_append() {
   )"
 
   "${DCONF}" write "${key}" "[${entries}]"
+}
+
+# GNOME/MATE/Tilix all ship their profile list as a schema default, so it
+# reads back empty from dconf under the exact same conditions as the default
+# profile itself -- confirmed empirically (fresh installs of all three) that
+# both keys are empty together, not just the default one. Seed the list from
+# gsettings before dlist_append() reads it, or it silently drops the
+# pre-existing profile instead of appending to it.
+seed_profile_list_from_gsettings() {
+  local dconf_key="${1}"
+  local gs_schema="${2}"
+  local gs_key="${3}"
+  local list
+
+  [[ -n "${GS}" ]] || return 0
+  [[ -z "$(${DCONF} read "${dconf_key}")" ]] || return 0
+
+  list="$(${GS} get "${gs_schema}" "${gs_key}")"
+  [[ -n "${list}" ]] && "${DCONF}" write "${dconf_key}" "${list}"
 }
 
 gcset() {
@@ -487,6 +540,9 @@ if [[ "${COLORTERM:-}" == "truecolor" ]] || [[ "${COLORTERM:-}" == "24bit" ]]; t
     # Note: {01..16} does not work on OSX
     for c in $(seq -s " " -w 16); do
       local color="COLOR_$c"
+      # Word splitting here is intentional: hexRGBtoDecRGB's "R G B" output is
+      # deliberately split into three positional parameters below.
+      # shellcheck disable=SC2046
       set -- $(hexRGBtoDecRGB "${!color}")
       color_str+="\033[38;2;${1};${2};${3}m█████$(tput sgr0)"
       [[ ${GOGH_DRY_RUN:-0} -eq 1 ]] && export "DEMO_COLOR_$c=\033[38;2;${1};${2};${3}m"
@@ -500,7 +556,7 @@ else
     # Build up the color string to avoid visual rendering
     local color_str
     for c in {0..15}; do
-      color_str+="$(tput setaf $c)█████$(tput sgr0)"
+      color_str+="$(tput setaf "$c")█████$(tput sgr0)"
       [[ $c == 7 ]] && color_str+="\n" # new line
     done
     print '\n%b\n\n' "${color_str}"
@@ -772,9 +828,11 @@ apply_kitty() {
   COLOR_FILE="colors.conf"
 
   if ! grep -q "^include $COLOR_FILE$" "$CFGFILE" ; then
-    echo "" >> "$CFGFILE"
-    echo "# Added by Gogh" >> "$CFGFILE"
-    echo "include $COLOR_FILE" >> "$CFGFILE"
+    {
+      echo ""
+      echo "# Added by Gogh"
+      echo "include $COLOR_FILE"
+    } >> "$CFGFILE"
   fi
 
   CFGFILE="${KITTY_CONFIG_DIRECTORY}/$COLOR_FILE"
@@ -783,36 +841,38 @@ apply_kitty() {
 
   rm -f "$CFGFILE"
 
-  echo "# Color theme: $PROFILE_NAME" >> "$CFGFILE"
-  echo "# Auto-generated by Gogh (https://Gogh-Co.github.io/Gogh/)" >> "$CFGFILE"
-  echo "" >> "$CFGFILE"
-  echo "color0  $COLOR_01" >> "$CFGFILE"
-  echo "color1  $COLOR_02" >> "$CFGFILE"
-  echo "color2  $COLOR_03" >> "$CFGFILE"
-  echo "color3  $COLOR_04" >> "$CFGFILE"
-  echo "color4  $COLOR_05" >> "$CFGFILE"
-  echo "color5  $COLOR_06" >> "$CFGFILE"
-  echo "color6  $COLOR_07" >> "$CFGFILE"
-  echo "color7  $COLOR_08" >> "$CFGFILE"
-  echo "color8  $COLOR_09" >> "$CFGFILE"
-  echo "color9  $COLOR_10" >> "$CFGFILE"
-  echo "color10 $COLOR_11" >> "$CFGFILE"
-  echo "color11 $COLOR_12" >> "$CFGFILE"
-  echo "color12 $COLOR_13" >> "$CFGFILE"
-  echo "color13 $COLOR_14" >> "$CFGFILE"
-  echo "color14 $COLOR_15" >> "$CFGFILE"
-  echo "color15 $COLOR_16" >> "$CFGFILE"
+  {
+    echo "# Color theme: $PROFILE_NAME"
+    echo "# Auto-generated by Gogh (https://Gogh-Co.github.io/Gogh/)"
+    echo ""
+    echo "color0  $COLOR_01"
+    echo "color1  $COLOR_02"
+    echo "color2  $COLOR_03"
+    echo "color3  $COLOR_04"
+    echo "color4  $COLOR_05"
+    echo "color5  $COLOR_06"
+    echo "color6  $COLOR_07"
+    echo "color7  $COLOR_08"
+    echo "color8  $COLOR_09"
+    echo "color9  $COLOR_10"
+    echo "color10 $COLOR_11"
+    echo "color11 $COLOR_12"
+    echo "color12 $COLOR_13"
+    echo "color13 $COLOR_14"
+    echo "color14 $COLOR_15"
+    echo "color15 $COLOR_16"
 
-  echo "background $BACKGROUND_COLOR" >> "$CFGFILE"
-  echo "foreground $FOREGROUND_COLOR" >> "$CFGFILE"
+    echo "background $BACKGROUND_COLOR"
+    echo "foreground $FOREGROUND_COLOR"
 
-  [ -n "$HIGHLIGHT_FG_COLOR" ] && echo "selection_foreground $HIGHLIGHT_FG_COLOR" >> "$CFGFILE"
-  [ -n "$HIGHLIGHT_BG_COLOR" ] && echo "selection_background $HIGHLIGHT_BG_COLOR" >> "$CFGFILE"
+    [ -n "$HIGHLIGHT_FG_COLOR" ] && echo "selection_foreground $HIGHLIGHT_FG_COLOR"
+    [ -n "$HIGHLIGHT_BG_COLOR" ] && echo "selection_background $HIGHLIGHT_BG_COLOR"
 
-  echo "cursor $CURSOR_COLOR" >> "$CFGFILE"
+    echo "cursor $CURSOR_COLOR"
+  } >> "$CFGFILE"
 
   prints "Done - signaling kitty to reload"
-  killall -u ${USER} -SIGUSR1 kitty || pkill --uid $(id -u) -SIGUSR1 kitty || prints "Reload failed. Please reopen your kitty terminal to see the changes."
+  killall -u "${USER}" -SIGUSR1 kitty || pkill --uid "$(id -u)" -SIGUSR1 kitty || prints "Reload failed. Please reopen your kitty terminal to see the changes."
 }
 
 apply_kmscon() {
@@ -850,7 +910,7 @@ apply_konsole() {
   # | Applying values on Konsole
   # | ===========================================
 
-  PARENT=$(grep -o "^DefaultProfile=.*$" ${CFGFILE} | cut -d '=' -f 2)
+  PARENT=$(grep -o "^DefaultProfile=.*$" "${CFGFILE}" | cut -d '=' -f 2)
   if [[ -z "${PARENT}" ]]; then
     PARENT="FALLBACK/"
   fi
@@ -860,6 +920,11 @@ apply_konsole() {
   else
         KDIR="${XDG_DATA_HOME}/konsole"
   fi
+
+  # A fresh system (Konsole never launched, or ~/.local/share/konsole never
+  # created) doesn't have this directory yet -- the touch calls below fail
+  # silently without it.
+  [[ -d "${KDIR}" ]] || mkdir --parents "${KDIR}"
 
   KPROFILE="${KDIR}/${PROFILE_NAME}.profile"
   if [[ -f "${KPROFILE}" ]]; then
@@ -878,22 +943,24 @@ apply_konsole() {
   fi
 
   touch "${KCOLORSCHEME}"
-  createKonsoleTriple "Background" "${BACKGROUND_COLOR}" "${BACKGROUND_COLOR}" >> "${KCOLORSCHEME}"
-  createKonsoleTriple "Color0" "${COLOR_01}" "${COLOR_09}" >> "${KCOLORSCHEME}"
-  createKonsoleTriple "Color1" "${COLOR_02}" "${COLOR_10}" >> "${KCOLORSCHEME}"
-  createKonsoleTriple "Color2" "${COLOR_03}" "${COLOR_11}" >> "${KCOLORSCHEME}"
-  createKonsoleTriple "Color3" "${COLOR_04}" "${COLOR_12}" >> "${KCOLORSCHEME}"
-  createKonsoleTriple "Color4" "${COLOR_05}" "${COLOR_13}" >> "${KCOLORSCHEME}"
-  createKonsoleTriple "Color5" "${COLOR_06}" "${COLOR_14}" >> "${KCOLORSCHEME}"
-  createKonsoleTriple "Color6" "${COLOR_07}" "${COLOR_15}" >> "${KCOLORSCHEME}"
-  createKonsoleTriple "Color7" "${COLOR_08}" "${COLOR_16}" >> "${KCOLORSCHEME}"
-  createKonsoleTriple "Foreground" "${FOREGROUND_COLOR}" "${FOREGROUND_COLOR}" >> "${KCOLORSCHEME}"
-  echo "[General]" >> "${KCOLORSCHEME}"
-  echo "Blur=false" >> "${KCOLORSCHEME}"
-  echo "ColorRandomization=false" >> "${KCOLORSCHEME}"
-  echo "Description=${PROFILE_NAME}" >> "${KCOLORSCHEME}"
-  echo "Opacity=1" >> "${KCOLORSCHEME}"
-  echo "Wallpaper=" >> "${KCOLORSCHEME}"
+  {
+    createKonsoleTriple "Background" "${BACKGROUND_COLOR}" "${BACKGROUND_COLOR}"
+    createKonsoleTriple "Color0" "${COLOR_01}" "${COLOR_09}"
+    createKonsoleTriple "Color1" "${COLOR_02}" "${COLOR_10}"
+    createKonsoleTriple "Color2" "${COLOR_03}" "${COLOR_11}"
+    createKonsoleTriple "Color3" "${COLOR_04}" "${COLOR_12}"
+    createKonsoleTriple "Color4" "${COLOR_05}" "${COLOR_13}"
+    createKonsoleTriple "Color5" "${COLOR_06}" "${COLOR_14}"
+    createKonsoleTriple "Color6" "${COLOR_07}" "${COLOR_15}"
+    createKonsoleTriple "Color7" "${COLOR_08}" "${COLOR_16}"
+    createKonsoleTriple "Foreground" "${FOREGROUND_COLOR}" "${FOREGROUND_COLOR}"
+    echo "[General]"
+    echo "Blur=false"
+    echo "ColorRandomization=false"
+    echo "Description=${PROFILE_NAME}"
+    echo "Opacity=1"
+    echo "Wallpaper="
+  } >> "${KCOLORSCHEME}"
 }
 
 apply_darwin() {
@@ -946,6 +1013,9 @@ apply_gtk() {
   fi
 
   # Check first wether profile already exists
+  # Word splitting here is intentional: the tr output is a space-separated
+  # list of profile hashes, deliberately split into array elements.
+  # shellcheck disable=SC2207
   profile_hashes=($(${CONFTOOL} "${PROFILE_LIST_KEY}" | tr "[]'," " "))
   for profile in "${profile_hashes[@]}"; do
     if [[ "$(${CONFTOOL} "${BASE_DIR}${profile}/${VISIBLE_NAME}" | tr -d "'")" == "${PROFILE_NAME}" ]]; then
@@ -955,17 +1025,30 @@ apply_gtk() {
   done
 
   # Fallback if there is no default profile
-  set -- $(${CONFTOOL} ${PROFILE_LIST_KEY} | tr "[]'," " ")
-  : ${DEFAULT_SLUG:="$1"}
+  # Word splitting here is intentional: only the first field of the
+  # space-separated tr output is used, below, as the default slug.
+  # shellcheck disable=SC2046
+  set -- $(${CONFTOOL} "${PROFILE_LIST_KEY}" | tr "[]'," " ")
+  : "${DEFAULT_SLUG:="$1"}"
 
-  : ${PROFILE_NAME:="Default"}
-  : ${PROFILE_SLUG:="Default"}
+  : "${PROFILE_NAME:="Default"}"
+  : "${PROFILE_SLUG:="Default"}"
 
   DEFAULT_KEY="${BASE_DIR}${DEFAULT_SLUG:-}"
   PROFILE_KEY="${BASE_DIR}${PROFILE_SLUG:-}"
 
   if [[ -z "${legacy}" ]]; then
-    if [[ -z "$(${DCONF} list ${BASE_DIR%:})" ]]; then
+    # Every non-legacy caller (gnome-terminal, mate-terminal, tilix) already
+    # validates DEFAULT_SLUG itself before calling apply_gtk, via the same
+    # gsettings fallback -- so check that directly instead of re-deriving
+    # "any profile exists" from `dconf list "${BASE_DIR%:}"`. That path-based
+    # check happened to keep working for gnome-terminal/tilix only because
+    # their PROFILE_LIST_KEY is a direct child of BASE_DIR (seeding the list
+    # incidentally populates it); MATE's PROFILE_LIST_KEY lives under a
+    # sibling .../global/ subtree instead, so the same fresh-install case
+    # that DEFAULT_SLUG's fallback already resolved still failed this
+    # second, redundant check.
+    if [[ -z "${DEFAULT_SLUG}" ]]; then
       # Provide a user friendly error text if no saved profile exists, otherwise it will display "Error gconftool not found!"
       #  it could happen on a newly installed system. (happened on CentOS 7)
       printserr "Error, no saved profiles found!" \
@@ -1053,24 +1136,32 @@ appy_tilixschemes() {
     [[ -d "${HOME}/.config/tilix/schemes" ]] || mkdir -p "${HOME}/.config/tilix/schemes"
 
     TILIXCOLORS='{\n\t"name": "'${PROFILE_NAME}'",\n\t"comment": "Generated by Gogh",\n\t"foreground-color": "'${FOREGROUND_COLOR}'",\n\t"background-color":"'${BACKGROUND_COLOR}'",\n\t"cursor-background-color": "'${CURSOR_COLOR}'",\n\t"palette": [\n\t\t"'${COLOR_01}'",\n\t\t"'${COLOR_02}'",\n\t\t"'${COLOR_03}'",\n\t\t"'${COLOR_04}'",\n\t\t"'${COLOR_05}'",\n\t\t"'${COLOR_06}'",\n\t\t"'${COLOR_07}'",\n\t\t"'${COLOR_08}'",\n\t\t"'${COLOR_09}'",\n\t\t"'${COLOR_10}'",\n\t\t"'${COLOR_11}'",\n\t\t"'${COLOR_12}'",\n\t\t"'${COLOR_13}'",\n\t\t"'${COLOR_14}'",\n\t\t"'${COLOR_15}'",\n\t\t"'${COLOR_16}'"\n\t],\n\t"use-badge-color": false,\n\t"use-bold-color": false,\n\t"use-cursor-color": false,\n\t"use-highlight-color": false,\n\t"use-theme-colors": false\n}'
+    # scratchdir is exported by gogh.sh when TILIX_RES matches y/Y -- a
+    # cross-script contract shellcheck can't see analyzing this file alone.
+    # shellcheck disable=SC2154
     echo -e "${TILIXCOLORS}" > "${scratchdir}/${PROFILE_NAME}.json"
 
     # Note: Tilix does not store color scheme name in dconf
     # so we have to update color palette for the current profile in order to switch to the new theme
     # but only set the palette on the last loop to avoid a flashing terminal
     if ((LOOP == OPTLENGTH)); then
-      cp -f  ${scratchdir}/* "$HOME/.config/tilix/schemes/"
+      cp -f "${scratchdir}"/* "$HOME/.config/tilix/schemes/"
       rm -rf "${scratchdir}"
       if [ -z "${GOGH_NONINTERACTIVE+no}" ] && [ -z "${GOGH_USE_NEW_THEME+no}" ]; then
               read -r -p "All done - apply new theme? [y/N] " -n 1 TILIX_RES
-      elif [ ! -z "${GOGH_USE_NEW_THEME+yes}" ]; then
+      elif [ -n "${GOGH_USE_NEW_THEME+yes}" ]; then
               TILIX_RES="Y"
       else
               TILIX_RES="N"
       fi
       if [[ ${TILIX_RES::1} =~ ^(y|Y)$ ]]; then
         PROFILE_KEY="${BASE_DIR}${DEFAULT_SLUG}"
-        PROFILE_NAME="$(${DCONF} read ${PROFILE_KEY}/visible-name | tr -d \')"
+        PROFILE_NAME="$(${DCONF} read "${PROFILE_KEY}/visible-name" | tr -d \')"
+        # Same schema-default gap as the profile list/default above, just for
+        # this one profile's display name.
+        if [[ -z "${PROFILE_NAME}" ]] && [[ -n "${GS}" ]]; then
+          PROFILE_NAME="$(${GS} get "com.gexperts.Tilix.Profile:${PROFILE_KEY}/" visible-name | tr -d \')"
+        fi
         set_theme
         dset palette "['${COLOR_01}', '${COLOR_02}', '${COLOR_03}', '${COLOR_04}', '${COLOR_05}', '${COLOR_06}', '${COLOR_07}', '${COLOR_08}', '${COLOR_09}', '${COLOR_10}', '${COLOR_11}', '${COLOR_12}', '${COLOR_13}', '${COLOR_14}', '${COLOR_15}', '${COLOR_16}']"
       fi
@@ -1090,7 +1181,7 @@ apply_xfce4-terminal() {
 
     if [[ ! (-w "${CONFFILE}") ]]; then
       if [[ -r "${XDG_CONFIG_DIRS%%:*}/Terminal/terminalrc" ]]; then
-        cp "${XDG_CONFIG_DIRS%%:*}/Terminal/terminalrc" ${CONFFILE}
+        cp "${XDG_CONFIG_DIRS%%:*}/Terminal/terminalrc" "${CONFFILE}"
       else
         [[ -d "$(dirname "${CONFFILE}")" ]] || mkdir --parents "$(dirname "${CONFFILE}")"
         touch "${CONFFILE}" || { printserr "Error: xfce4-terminal config file not writeable: ${CONFFILE}"; exit 1; }
@@ -1100,7 +1191,7 @@ apply_xfce4-terminal() {
     [[ -d "${SCHEMEDIR}" ]] || mkdir -p "${SCHEMEDIR}"
 
     F_NAME=${PROFILE_NAME// /-}
-    F_NAME=$(echo ${F_NAME} | tr -d ":()")
+    F_NAME=$(echo "${F_NAME}" | tr -d ":()")
     F_NAME=$(echo "${F_NAME}" | awk '{print tolower($0)}')
 
     FF_NAME="${SCHEMEDIR}/${F_NAME}.theme"
@@ -1119,7 +1210,7 @@ apply_xfce4-terminal() {
         "ColorBackground=${BACKGROUND_COLOR}" \
         "${L_COLORCURSOR}" \
         "${L_COLORPALETTE}" \
-        "ColorCursorUseDefault=FALSE" > ${FF_NAME}
+        "ColorCursorUseDefault=FALSE" > "${FF_NAME}"
 
     # apply last theme in queue
     # xfce4-terminal monitors its rc file and doesn't reference
@@ -1128,7 +1219,7 @@ apply_xfce4-terminal() {
     if ((LOOP == OPTLENGTH)); then
         if [ -z "${GOGH_NONINTERACTIVE+no}" ] && [ -z "${GOGH_USE_NEW_THEME+no}" ]; then
             read -r -p "All done - apply new theme? [y/N] " -n 1 XFCE4_APPLY_CURR_THEME
-        elif [ ! -z "${GOGH_USE_NEW_THEME+yes}" ]; then
+        elif [ -n "${GOGH_USE_NEW_THEME+yes}" ]; then
             XFCE4_APPLY_CURR_THEME="Y"
         else
             XFCE4_APPLY_CURR_THEME="N"
@@ -1193,14 +1284,14 @@ apply_linux_vt () {
             echo "${!color}" >> "${file_name}"
           done
     # apply the theme if setvtrgb exists
-    if command -v setvtrgb >/dev/null &2>&1; then
+    if command -v setvtrgb >/dev/null 2>&1; then
             setvtrgb "${file_name}"
             echo setvtrgb "${file_name}"
             gogh_colors # preview
     fi
   fi
 
-  if command -v update-alternatives >/dev/null &2>&1 && [[ "${USER}" = "root" ]]; then
+  if command -v update-alternatives >/dev/null 2>&1 && [[ "${USER}" = "root" ]]; then
     update-alternatives --install /etc/vtrgb vtrgb "${file_name}" 30
     update-alternatives --set vtrgb "${file_name}"
     setvtrgb /etc/vtrgb
@@ -1237,7 +1328,7 @@ apply_termux() {
     read -r -p "All done - apply new theme? [y/N] " -n 1
     res="${REPLY}"
     unset REPLY
-  elif [[ ! -z "${GOGH_USE_NEW_THEME+yes}" ]]; then
+  elif [[ -n "${GOGH_USE_NEW_THEME+yes}" ]]; then
     res="Y"
   else
     res="N"
@@ -1276,16 +1367,22 @@ apply_wezterm() {
   palette_seq="${palette_seq};15;${COLOR_16}\\007"
 
   # Apply the color palette
+  # palette_seq's literal \033/\007 sequences need printf's own format-string
+  # escape processing to become real ESC/BEL bytes -- printf '%s' would print
+  # them as literal backslash-digit text instead (verified). The dynamic parts
+  # (COLOR_01..COLOR_16) are validated hex colors (tools/validate/validate_colors.py),
+  # never containing "%", so there's no real risk from using it as the format.
+  # shellcheck disable=SC2059
   printf "${palette_seq}"
 
   # Set foreground color (escape sequence 10)
-  printf "\\033]10;${FOREGROUND_COLOR}\\007"
+  printf '\033]10;%s\007' "${FOREGROUND_COLOR}"
 
   # Set background color (escape sequence 11)
-  printf "\\033]11;${BACKGROUND_COLOR}\\007"
+  printf '\033]11;%s\007' "${BACKGROUND_COLOR}"
 
   # Set cursor color (escape sequence 12)
-  printf "\\033]12;${CURSOR_COLOR}\\007"
+  printf '\033]12;%s\007' "${CURSOR_COLOR}"
 
   prints "Done - Wezterm colors have been applied dynamically."
   prints "Theme: ${PROFILE_NAME}"
@@ -1320,14 +1417,32 @@ case "${TERMINAL}" in
     ;;
 
   gnome-terminal* )
-    if [[ -n "$(${DCONF} list /org/gnome/terminal/)" ]]; then
+    # Modern GNOME Terminal is detected by schema presence, not by dconf having
+    # written keys -- dconf list is empty for a never-customized default
+    # profile even on a fully modern install, which used to misroute here into
+    # the legacy gconftool-2 branch below.
+    if [[ -n "$(${DCONF} list /org/gnome/terminal/)" ]] || { [[ -n "${GS}" ]] && ${GS} list-schemas 2>/dev/null | grep -qx "org.gnome.Terminal.ProfilesList"; }; then
       BASE_DIR="/org/gnome/terminal/legacy/profiles:/:"
       PROFILE_LIST_KEY="${BASE_DIR%:}list"
-      PROFILE_SLUG="${PROFILE_SLUG}"
 
       # Note -- ${BASE_DIR%s} is a workaround to avoid doing additional conditional testing for existing profiles
       # if terminal is set to gnome-terminal
-      : ${DEFAULT_SLUG:="$(${DCONF} read ${BASE_DIR%:}default | tr -d \')"}
+      : "${DEFAULT_SLUG:="$(${DCONF} read "${BASE_DIR%:}default" | tr -d \')"}"
+
+      # GNOME Terminal ships the default profile as a schema default, and dconf
+      # only reports values the user has set, so this reads back empty until a
+      # profile is added or renamed. gsettings does honour schema defaults.
+      if [[ -z "${DEFAULT_SLUG}" ]] && [[ -n "${GS}" ]]; then
+        DEFAULT_SLUG="$(${GS} get org.gnome.Terminal.ProfilesList default | tr -d \')"
+      fi
+      seed_profile_list_from_gsettings "${PROFILE_LIST_KEY}" "org.gnome.Terminal.ProfilesList" "list"
+
+      if [[ -z "${DEFAULT_SLUG}" ]]; then
+        printserr "Error, no saved profiles found!" \
+        "Possible fix, create a new profile (Terminal > Preferences > Profiles > +) and try again." \
+        "You can safely delete the created profile after the installation."
+        exit 1
+      fi
 
       LEFT_WRAPPER="["
       RIGHT_WRAPPER="]"
@@ -1339,7 +1454,14 @@ case "${TERMINAL}" in
       PROFILE_LIST_KEY="${BASE_DIR/profiles/global}profile_list"
       LEGACY_BOLD=true
 
-      : ${DEFAULT_SLUG:="$(${GCONF} read ${BASE_DIR}default_profile)"}
+      if [[ -z "${GCONF}" ]]; then
+        printserr "Error gconftool not found!" \
+        "This looks like a pre-3.8 GNOME Terminal, which needs gconftool-2 to read its profile settings." \
+        "sudo apt install gconf2? or export GCONF=/path/to/gconftool-2"
+        exit 1
+      fi
+
+      : "${DEFAULT_SLUG:="$(${GCONF} read "${BASE_DIR}default_profile")"}"
 
       apply_gtk legacy
     fi
@@ -1350,7 +1472,22 @@ case "${TERMINAL}" in
     PROFILE_LIST_KEY="${BASE_DIR/profiles/global}profile-list"
     LEGACY_BOLD=true
 
-    : ${DEFAULT_SLUG:="$(${DCONF} read ${BASE_DIR/profiles/global}default-profile | tr -d \')"}
+    : "${DEFAULT_SLUG:="$(${DCONF} read "${BASE_DIR/profiles/global}default-profile" | tr -d \')"}"
+
+    # MATE Terminal ships the default profile as a schema default, and dconf
+    # only reports values the user has set, so this reads back empty until a
+    # profile is added or renamed. gsettings does honour schema defaults.
+    if [[ -z "${DEFAULT_SLUG}" ]] && [[ -n "${GS}" ]]; then
+      DEFAULT_SLUG="$(${GS} get org.mate.terminal.global default-profile | tr -d \')"
+    fi
+    seed_profile_list_from_gsettings "${PROFILE_LIST_KEY}" "org.mate.terminal.global" "profile-list"
+
+    if [[ -z "${DEFAULT_SLUG}" ]]; then
+      printserr "Error, no saved profiles found!" \
+      "Possible fix, create a new profile (MATE Terminal > Edit > Profiles > New) and try again." \
+      "You can safely delete the created profile after the installation."
+      exit 1
+    fi
 
     PALETTE_DELIM=":"
 
@@ -1361,7 +1498,22 @@ case "${TERMINAL}" in
     BASE_DIR="/com/gexperts/Tilix/profiles/"
     PROFILE_LIST_KEY="${BASE_DIR}list"
 
-    : ${DEFAULT_SLUG:="$(${DCONF} read ${BASE_DIR}default | tr -d \')"}
+    : "${DEFAULT_SLUG:="$(${DCONF} read "${BASE_DIR}default" | tr -d \')"}"
+
+    # Tilix ships the default profile as a schema default, and dconf only
+    # reports values the user has set, so this reads back empty until a
+    # profile is added or renamed. gsettings does honour schema defaults.
+    if [[ -z "${DEFAULT_SLUG}" ]] && [[ -n "${GS}" ]]; then
+      DEFAULT_SLUG="$(${GS} get com.gexperts.Tilix.ProfilesList default | tr -d \')"
+    fi
+    seed_profile_list_from_gsettings "${PROFILE_LIST_KEY}" "com.gexperts.Tilix.ProfilesList" "list"
+
+    if [[ -z "${DEFAULT_SLUG}" ]]; then
+      printserr "Error, no saved profiles found!" \
+      "Possible fix, create a new profile (Tilix > Preferences > Profiles > +, then Close) and try again." \
+      "You can safely delete the created profile after the installation."
+      exit 1
+    fi
 
     LEFT_WRAPPER="["
     RIGHT_WRAPPER="]"
@@ -1441,7 +1593,7 @@ case "${TERMINAL}" in
     ""                                                        \
     "If you believe you have received this message in error," \
     "try manually setting env \`TERMINAL' with the value above." \
-    "hint: ps -h -o comm -p \$PPID"
+    "hint: ps -o comm= -p \$PPID"
     exit 1
     ;;
 
