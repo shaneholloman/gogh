@@ -1,23 +1,33 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Variables to avoid repeated calls to tput
-# tput exits non-zero (and prints nothing) on a terminal that doesn't support
-# the requested capability (e.g. TERM=dumb) -- `|| true` keeps that a graceful
-# "no color" fallback instead of aborting under `set -e`.
+
+# | ===========================================
+# | SETUP
+# | ===========================================
+
+# |
+# | Terminal colors
+# | ===========================================
+# Variables to avoid repeated calls to `tput`.
+# `tput` exits non-zero (and prints nothing) on a terminal that doesn't
+# support the requested capability (e.g. TERM=dumb) -- `|| true` keeps that a
+# graceful "no color" fallback instead of aborting under `set -e`.
 for n in {0..15}; do
   declare "C$n"="$(tput setaf "$n" || true)"
 done
 CR=$(tput sgr0 || true)
 CS0=$(tput sgr 0 || true)
 
-# Define traps and trapfunctions early in case any errors before script exits
-# shellcheck disable=SC2329 # invoked indirectly via `trap ... EXIT` below
+# |
+# | Cleanup traps
+# | ===========================================
+# Define traps and trap functions early in case of errors before the script
+# exits. Invoked indirectly via `trap ... EXIT` below.
+# shellcheck disable=SC2329
 GLOBAL_VAR_CLEANUP(){
   echo "Cleanup up..."
   [[ -n "$(command -v TILIX_TMP_CLEANUP)" ]] && TILIX_TMP_CLEANUP
-  [[ -n "$(command -v ALACRITTY_APPLY_TMP_CLEANUP)" ]] && ALACRITTY_APPLY_TMP_CLEANUP
-  [[ -n "$(command -v TERMINATOR_APPLY_TMP_CLEANUP)" ]] && TERMINATOR_APPLY_TMP_CLEANUP
   [[ -n "$(command -v APPLY_SCRIPT_TMP_CLEANUP)" ]] && APPLY_SCRIPT_TMP_CLEANUP
   unset PROFILE_NAME
   unset PROFILE_SLUG
@@ -33,7 +43,12 @@ GLOBAL_VAR_CLEANUP(){
 trap 'GLOBAL_VAR_CLEANUP' EXIT
 trap 'GLOBAL_VAR_CLEANUP; trap - EXIT HUP INT QUIT PIPE TERM; exit 130' HUP INT QUIT PIPE TERM
 
-# TO-DO: Investigate dynamically building this array e.g.
+
+# | ===========================================
+# | THEME LIST
+# | ===========================================
+
+# TODO: Investigate dynamically building this array, e.g.:
 # curl -s https://github.com/Gogh-Co/Gogh/tree/master/themes | grep -o "title=.*\.sh\" " | awk -F '=' '{print $2}'
 declare -a THEMES=(
   '0x96f.sh'
@@ -181,6 +196,7 @@ declare -a THEMES=(
   'batman.sh'
   'belafonte-day.sh'
   'belafonte-night.sh'
+  'berlin.sh'
   'bespin.sh'
   'bim.sh'
   'birds-of-paradise.sh'
@@ -213,6 +229,7 @@ declare -a THEMES=(
   'bluloco-dark.sh'
   'bluloco-light.sh'
   'bluloco-zsh-light.sh'
+  'bogota.sh'
   'bogster-dark.sh'
   'boo-shnickle-light.sh'
   'boo-shnickle.sh'
@@ -312,6 +329,8 @@ declare -a THEMES=(
   'cursor-dark.sh'
   'cursor-light.sh'
   'cutie-pro.sh'
+  'cyan-day.sh'
+  'cyan-night.sh'
   'cyberdyne.sh'
   'cyberpunk-icy.sh'
   'cyberpunk-neon.sh'
@@ -549,6 +568,7 @@ declare -a THEMES=(
   'heetch-light.sh'
   'heetch.sh'
   'helios.sh'
+  'helsinki.sh'
   'hemisu-dark.sh'
   'hemisu-light.sh'
   'high-contrast.sh'
@@ -661,6 +681,7 @@ declare -a THEMES=(
   'kurayami.sh'
   'kurokula.sh'
   'lab-fox.sh'
+  'lahabana.sh'
   'laser.sh'
   'laserwave.sh'
   'later-this-evening.sh'
@@ -681,6 +702,7 @@ declare -a THEMES=(
   'london-columbia-road.sh'
   'london-embankment-dusk.sh'
   'london-soho-night.sh'
+  'london.sh'
   'love-ghost.sh'
   'lovelace.sh'
   'low-contrast.sh'
@@ -689,6 +711,7 @@ declare -a THEMES=(
   'lunaria-eclipse.sh'
   'lunaria-light.sh'
   'macintosh.sh'
+  'madrid.sh'
   'maia.sh'
   'man-page.sh'
   'mar.sh'
@@ -726,6 +749,7 @@ declare -a THEMES=(
   'mexico-light.sh'
   'mezcal.sh'
   'miami-heat.sh'
+  'miami.sh'
   'miasma.sh'
   'midnight-arcade.sh'
   'midnight-haze.sh'
@@ -858,6 +882,7 @@ declare -a THEMES=(
   'opaline.sh'
   'operator-mono-dark.sh'
   'osaka-jade.sh'
+  'oslo.sh'
   'outrun-dark.sh'
   'outrun-electric.sh'
   'overnight-slumber.sh'
@@ -878,6 +903,7 @@ declare -a THEMES=(
   'papercolor-light.sh'
   'paradiso-dark.sh'
   'paraiso-dark.sh'
+  'paris.sh'
   'pasque.sh'
   'pastel-cyberpunk.sh'
   'pastel-ega.sh'
@@ -921,6 +947,7 @@ declare -a THEMES=(
   'porcelain.sh'
   'porple.sh'
   'powershell.sh'
+  'praha.sh'
   'precious-dark-eleven.sh'
   'precious-dark-fifteen.sh'
   'precious-light-warm.sh'
@@ -981,6 +1008,8 @@ declare -a THEMES=(
   'sandstone-classic.sh'
   'sandstone-ink.sh'
   'sandstone-warm.sh'
+  'sangdoist-light.sh'
+  'sangdoist.sh'
   'sat.sh'
   'sauber.sh'
   'scarlet-protocol.sh'
@@ -1011,6 +1040,7 @@ declare -a THEMES=(
   'seoul256.sh'
   'seoulbones-dark.sh'
   'seoulbones-light.sh'
+  'seoulism-light.sh'
   'seoulism.sh'
   'sequoia-monochrome-dark.sh'
   'sequoia-monochrome-light.sh'
@@ -1035,6 +1065,11 @@ declare -a THEMES=(
   'sierra.sh'
   'silk-dark.sh'
   'silk-light.sh'
+  'silkcircuit-dawn.sh'
+  'silkcircuit-glow.sh'
+  'silkcircuit-neon.sh'
+  'silkcircuit-soft.sh'
+  'silkcircuit-vibrant.sh'
   'slate.sh'
   'sleepy-hollow.sh'
   'smyck-lost.sh'
@@ -1154,6 +1189,7 @@ declare -a THEMES=(
   'tiwahu-light.sh'
   'token-dark.sh'
   'token-light.sh'
+  'tokio.sh'
   'tokyo-city-dark.sh'
   'tokyo-city-light.sh'
   'tokyo-city-terminal-dark.sh'
@@ -1241,6 +1277,7 @@ declare -a THEMES=(
   'woodland.sh'
   'wryan.sh'
   'wzoreck.sh'
+  'x.sh'
   'xcode-dark-hc.sh'
   'xcode-dark.sh'
   'xcode-dusk.sh'
@@ -1266,7 +1303,15 @@ declare -a THEMES=(
   'zenwritten-light.sh'
 )
 
-# Allow developer to change url to forked url for easier testing
+
+# | ===========================================
+# | SCRIPT DEPENDENCIES
+# | ===========================================
+
+# |
+# | Script location
+# | ===========================================
+# Allow developers to change the URL to a fork for easier testing
 BASE_URL=${BASE_URL:-"https://raw.githubusercontent.com/Gogh-Co/Gogh/master"}
 
 if [[ -n "${BASH_SOURCE[0]:-}" && -f "${BASH_SOURCE[0]}" ]]; then
@@ -1275,6 +1320,9 @@ else
   SCRIPT_PATH=""
 fi
 
+# |
+# | Download helpers
+# | ===========================================
 capitalize() {
   local ARGUMENT=$1
   local RES=""
@@ -1290,8 +1338,8 @@ capitalize() {
   echo "${RES_NO_TRAIL_SPACE}"
 }
 
-
-fetch() {  # fetch URL DEST -- downloads URL into DEST, verifies it's non-empty
+# Usage: fetch URL DEST -- download URL into DEST and verify it's non-empty
+fetch() {
   local url="$1" dest="$2"
   if command -v curl >/dev/null 2>&1; then
     curl -fsSL --connect-timeout 5 --max-time 30 --retry 2 -o "$dest" "$url" || return $?
@@ -1307,42 +1355,13 @@ fetch() {  # fetch URL DEST -- downloads URL into DEST, verifies it's non-empty
   fi
 }
 
-
-# Used to get required python scripts, either from the internet or from local directory
-if [[ -z "${SCRIPT_PATH}" || ! -f "${SCRIPT_PATH}/apply-alacritty.py" ]]; then
-  # shellcheck disable=SC2329 # invoked indirectly via GLOBAL_VAR_CLEANUP's `command -v` check
-  ALACRITTY_APPLY_TMP_CLEANUP() {
-    rm -rf "${GOGH_ALACRITTY_SCRIPT}"
-    unset GOGH_ALACRITTY_SCRIPT
-  }
-  GOGH_ALACRITTY_SCRIPT="$(mktemp -t gogh.alacritty.XXXXXX)"
-  export GOGH_ALACRITTY_SCRIPT
-  if ! fetch "${BASE_URL}/apply-alacritty.py" "${GOGH_ALACRITTY_SCRIPT}"; then
-    echo "Error: failed to download apply-alacritty.py" >&2
-    exit 1
-  fi
-fi
-
-
-# Used to get required python scripts, either from the internet or from local directory
-if [[ -z "${SCRIPT_PATH}" || ! -e "${SCRIPT_PATH}/apply-terminator.py" ]]; then
-  # shellcheck disable=SC2329 # invoked indirectly via GLOBAL_VAR_CLEANUP's `command -v` check
-  TERMINATOR_APPLY_TMP_CLEANUP() {
-    rm -rf "${GOGH_TERMINATOR_SCRIPT}"
-    unset GOGH_TERMINATOR_SCRIPT
-  }
-  GOGH_TERMINATOR_SCRIPT="$(mktemp -t gogh.terminator.XXXXXX)"
-  export GOGH_TERMINATOR_SCRIPT
-  if ! fetch "${BASE_URL}/apply-terminator.py" "${GOGH_TERMINATOR_SCRIPT}"; then
-    echo "Error: failed to download apply-terminator.py" >&2
-    exit 1
-  fi
-fi
-
-
-# Used to get required shell scripts, either from the internet or from local directory
+# |
+# | Get apply-colors.sh when not running from a checkout
+# | ===========================================
+# Get the required shell scripts from the internet or the local directory
 if [[ -z "${SCRIPT_PATH}" || ! -e "${SCRIPT_PATH}/apply-colors.sh" ]]; then
-  # shellcheck disable=SC2329 # invoked indirectly via GLOBAL_VAR_CLEANUP's `command -v` check
+  # Invoked indirectly via GLOBAL_VAR_CLEANUP's `command -v` check.
+  # shellcheck disable=SC2329
   APPLY_SCRIPT_TMP_CLEANUP() {
     rm -rf "${GOGH_APPLY_SCRIPT}"
     unset GOGH_APPLY_SCRIPT
@@ -1356,6 +1375,13 @@ if [[ -z "${SCRIPT_PATH}" || ! -e "${SCRIPT_PATH}/apply-colors.sh" ]]; then
 fi
 
 
+# | ===========================================
+# | THEME SELECTION
+# | ===========================================
+
+# |
+# | Theme selection helpers
+# | ===========================================
 set_gogh() {
   string=$1
   string_r="${string%???}"
@@ -1383,18 +1409,15 @@ set_gogh() {
   return $status
 }
 
-
 remove_file_extension (){
   echo "${1%.*}"
 }
-
 
 normalize_theme_selector() {
   echo "$1" \
     | tr '[:upper:]' '[:lower:]' \
     | sed -e 's/\.sh$//' -e 's/[^[:alnum:]]\+/-/g' -e 's/--*/-/g' -e 's/^-//' -e 's/-$//'
 }
-
 
 get_theme_number_from_selector() {
   local SELECTOR="$1"
@@ -1415,7 +1438,6 @@ get_theme_number_from_selector() {
   return 1
 }
 
-
 print_usage() {
   echo "Usage: $0 [OPTION ...]"
   echo
@@ -1431,10 +1453,11 @@ print_usage() {
   echo "  $0 ALL"
 }
 
-
-### Get length of an array
+# |
+# | Parse command-line options
+# | ===========================================
+# Get the length of the themes array
 ARRAYLENGTH=${#THEMES[@]}
-
 
 declare -a OPTION=()
 
@@ -1476,10 +1499,9 @@ if [[ $# -gt 0 ]]; then
   done
 fi
 
-
 # |
-# | ::::::: Print logo
-# |
+# | Print logo
+# | ===========================================
 if [[ ${#OPTION[@]} -eq 0 ]]; then
   tput clear || true
   if [[ ${COLUMNS:-$(tput cols)} -ge 80 ]]; then
@@ -1500,22 +1522,21 @@ if [[ ${#OPTION[@]} -eq 0 ]]; then
     gogh_str+="    ${C8}█████████${C9}█████████${C10}█████████${C11}█████████${C12}█████████${C13}█████████${C14}█████████${C15}█████████${CS0}    \n"
     gogh_str+="                                                                                "
 
-
     printf '%b\n' "${gogh_str}"
     sleep 2.5
   else
     echo -e "\nGogh\n"
     for c in C{0..15}; do
       echo -n "${!c}█████${CR}"
-      [[ $c == C7 ]] && echo # new line
+      # New line
+      [[ $c == C7 ]] && echo
     done
     echo
   fi
 
-
   # |
-  # | ::::::: Print Themes
-  # |
+  # | Print themes
+  # | ===========================================
   echo -e "\nThemes:\n"
 
   # Cross-platform function to format theme names
@@ -1525,16 +1546,21 @@ if [[ ${#OPTION[@]} -eq 0 ]]; then
     name="${name%.*}"
     # Replace hyphens with spaces
     name="${name//-/ }"
-    # Capitalize first letter of each word using awk (cross-platform)
+    # Capitalize the first letter of each word using `awk` (cross-platform)
     echo "$name" | awk '{for(i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) substr($i,2)} 1'
   }
 
   # Column display of available themes
-  # Note: /usr/bin/column uses tabs and does not support ANSI codes yet (merged but not released)
-  MAXL=$(( $(printf "%s\n" "${THEMES[@]}" | wc -L) - 3 )) # Biggest theme name without the extension
-  NCOLS=$(( ${COLUMNS:-$(tput cols || echo 80)} / (10+MAXL) )) # number of columns, 10 is the length of '  ( xxx ) '
-  (( NCOLS < 1 )) && NCOLS=1                              # avoid a division by zero below on narrow terminals
-  NROWS=$(( (ARRAYLENGTH-1)/NCOLS + 1 ))                  # number of rows
+  # Note: `/usr/bin/column` uses tabs and does not support ANSI codes yet
+  # (merged but not released).
+  # Longest theme name without the extension
+  MAXL=$(( $(printf "%s\n" "${THEMES[@]}" | wc -L) - 3 ))
+  # Number of columns, 10 is the length of '  ( xxx ) '
+  NCOLS=$(( ${COLUMNS:-$(tput cols || echo 80)} / (10+MAXL) ))
+  # Avoid a division by zero below on narrow terminals
+  (( NCOLS < 1 )) && NCOLS=1
+  # Number of rows
+  NROWS=$(( (ARRAYLENGTH-1)/NCOLS + 1 ))
   row=0
 
   while ((row < NROWS)); do
@@ -1555,24 +1581,29 @@ if [[ ${#OPTION[@]} -eq 0 ]]; then
   echo -e "  (${C4} ALL ${CR}) All themes"
 
   # |
-  # | ::::::: Select Option
-  # |
+  # | Select option
+  # | ===========================================
   echo -e "\nUsage : Enter Desired Themes Numbers (${C4}OPTIONS${CR}) Separated By A Blank Space"
   echo -e "        Press ${C4}ENTER${CR} without options to Exit\n"
   read -r -p 'Enter OPTION(S) : ' -a OPTION || true
 
-  # Automagically generate options if user opts for all themes
+  # Automatically generate options if the user opts for all themes
   if [[ "$(echo "${OPTION[0]:-}" | tr '[:lower:]' '[:upper:]')" == ALL ]]; then
     mapfile -t OPTION < <(seq 1 "${ARRAYLENGTH}")
   fi
 fi
 
+
+# | ===========================================
+# | TERMINAL DETECTION
+# | ===========================================
+
 # |
-# | ::::::: Get terminal
-# |
+# | Get terminal
+# | ===========================================
 if [[ -z "${TERMINAL:-}" ]]; then
   # |
-  # | Check for the terminal name (depening on os)
+  # | Check for the terminal name (depending on OS)
   # | ===========================================
   OS="$(uname)"
   if [[ "${TERM:-}" = "xterm-ghostty" ]] || [[ "${TERM_PROGRAM:-}" = "ghostty" ]]; then
@@ -1589,19 +1620,18 @@ if [[ -z "${TERMINAL:-}" ]]; then
     TERMINAL="termux"
   else
     # |
-    # | Depending on how the script was invoked, we need
-    # | to loop until pid is no longer a subshell
+    # | Walk up the parent processes until pid is no longer a subshell
     # | ===========================================
     pid="$$"
-    # -o field= (empty header) suppresses the header without -h: -h itself
-    # triggers BSD-vs-SysV personality detection that some procps-ng versions
-    # reject outright ("error: unsupported SysV option") when combined with
-    # -o/-p, even though it works fine on others.
+    # `-o field=` (empty header) suppresses the header without `-h`: `-h`
+    # itself triggers BSD-vs-SysV personality detection that some procps-ng
+    # versions reject outright ("error: unsupported SysV option") when
+    # combined with `-o`/`-p`, even though it works fine on others.
     TERMINAL="$(ps -o comm= -p "$pid")" || true
     while [[ "${TERMINAL:(-2)}" == "sh" ]]; do
-      # ppid= is numeric and right-padded by ps to its column width, so a
+      # `ppid=` is numeric and right-padded by `ps` to its column width, so a
       # short pid can come back with leading spaces -- trim them, or the
-      # next -p "$pid" gets quoted whitespace and fails ("improper list").
+      # next `-p "$pid"` gets quoted whitespace and fails ("improper list").
       pid="$(ps -o ppid= -p "$pid")" || true
       pid="${pid// /}"
       TERMINAL="$(ps -o comm= -p "$pid")" || true
@@ -1610,12 +1640,15 @@ if [[ -z "${TERMINAL:-}" ]]; then
 fi
 
 
+# | ===========================================
+# | APPLY THEMES
+# | ===========================================
+
 # |
-# | ::::::: Fancy progressbar for lengthy operations
-# |
-# | Minimal, vendored implementation (no third-party download/eval — see the
-# | improvement plan for why this replaced an `eval`'d remote script).
-# |
+# | Fancy progress bar for lengthy operations
+# | ===========================================
+# Minimal, vendored implementation, so no third-party script is downloaded
+# and run through `eval`.
 if [[ ${#OPTION[@]} -gt 5 ]]; then
   bar::start() {
     printf '\n'
@@ -1637,11 +1670,11 @@ if [[ ${#OPTION[@]} -gt 5 ]]; then
   }
 fi
 
-
 # |
-# | Tilix supports fg/bg in color schemes - ask wether user wants to go that route
-# | This is to avoid creating multiple profiles just for colors
+# | Ask whether to use Tilix color schemes instead of profiles
 # | ===========================================
+# Tilix supports fg/bg in color schemes, which avoids creating multiple
+# profiles just for colors.
 if [[ "$TERMINAL" = "tilix" ]] && [[ ${#OPTION[@]} -gt 0 ]]; then
   if [[ -z "${GOGH_NONINTERACTIVE+no}" ]]; then
     echo
@@ -1652,12 +1685,15 @@ if [[ "$TERMINAL" = "tilix" ]] && [[ ${#OPTION[@]} -gt 0 ]]; then
   fi
 
   # |
-  # | When selecting multiple themes and user opts for color schemes, we save all themes
-  # | in a tmpdir and copy the files once all themes has been processed.. If a user
-  # | desides to abort before all themes has been processed this section will cleanup the tmpdir
-  # | =======================================
+  # | Stage Tilix color schemes in a temporary directory
+  # | ===========================================
+  # When selecting multiple themes and the user opts for color schemes, all
+  # themes are saved in a tmpdir and the files are copied once all themes
+  # have been processed. If the user decides to abort before that, this
+  # section cleans up the tmpdir.
   if [[ ${TILIX_RES::1} =~ ^(y|Y)$ ]]; then
-    # shellcheck disable=SC2329 # invoked indirectly via GLOBAL_VAR_CLEANUP's `command -v` check
+    # Invoked indirectly via GLOBAL_VAR_CLEANUP's `command -v` check.
+    # shellcheck disable=SC2329
     TILIX_TMP_CLEANUP() {
       echo
       echo "Cleaning up"
@@ -1672,17 +1708,15 @@ if [[ "$TERMINAL" = "tilix" ]] && [[ ${#OPTION[@]} -gt 0 ]]; then
   fi
 fi
 
-
 # |
-# | ::::::: Export one-off variables
-# |
+# | Export one-off variables
+# | ===========================================
 [[ -n "${TILIX_RES:-}" ]] && export TILIX_RES
 export TERMINAL LOOP OPTLENGTH=${#OPTION[@]}
 
-
 # |
-# | ::::::: Apply Theme
-# |
+# | Apply theme
+# | ===========================================
 
 declare color_dot_str
 for c in C{0..15}; do
@@ -1690,14 +1724,13 @@ for c in C{0..15}; do
   [[ $c == C7 ]] && color_dot_str+=" "
 done
 
-# Note:
-# Constants with a leading 0 are interpreted as octal numbers, so a
-# zero-padded option (08, 008, ...) is forced to base 10 via the 10#
+# Note: Constants with a leading 0 are interpreted as octal numbers, so a
+# zero-padded option (08, 008, ...) is forced to base 10 via the `10#`
 # prefix below instead of being parsed as octal.
 command -v bar::start > /dev/null && bar::start
 GOGH_EXIT_STATUS=0
 for OP in "${OPTION[@]}"; do
-  # See appy_tilixschemes in apply-colors.sh for usage of LOOP
+  # See `apply_tilixschemes` in `apply-colors.sh` for the usage of LOOP
   LOOP=$((${LOOP:-0}+1))
 
   command -v bar::status_changed > /dev/null && bar::status_changed $LOOP ${#OPTION[@]}

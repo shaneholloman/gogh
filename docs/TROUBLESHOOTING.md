@@ -20,13 +20,11 @@ a new one.
 
 ## Alacritty
 
-**[#304](https://github.com/Gogh-Co/Gogh/issues/304):** `KeyError: 'colors'` when applying a theme.
+Gogh writes the theme to `gogh.toml` next to your `alacritty.toml` and adds it to `general.import` (plain `import` on Alacritty 0.13). Your own `alacritty.toml` is loaded after its imports, so:
 
-Alacritty's config only accepts colors if the `colors:` block (and its `primary`, `normal`, `bright` sub-keys) already exist. Uncomment or add that block in `alacritty.yml`, then run Gogh again:
-
-```bash
-export TERMINAL=alacritty
-```
+- **The theme doesn't show up:** Gogh comments out `[colors.primary]`, `[colors.normal]` and `[colors.bright]` tables in `alacritty.toml` (marked `# Disabled by Gogh:`, after a backup), but warns instead of editing colors set as dotted keys (`colors.primary.background = ...`) or inline tables. Remove the lines it lists, and Alacritty reloads the theme.
+- **`Found alacritty.yml, but Gogh only supports Alacritty 0.13 or newer`:** Alacritty 0.13 replaced YAML with TOML. Upgrade Alacritty and convert your config with `alacritty migrate`.
+- **[#304](https://github.com/Gogh-Co/Gogh/issues/304)** (`KeyError: 'colors'`) came from the old Python helper, which needed a `colors:` block to already exist; Gogh no longer needs it.
 
 ## Arch Linux
 
@@ -121,13 +119,10 @@ bash -c 'bash -c "$(wget -qO- https://gogh.website/gogh)"'
 
 ## Terminator
 
-**[#439](https://github.com/Gogh-Co/Gogh/issues/439):** `ModuleNotFoundError: No module named 'configobj'`. This is a missing dependency of Terminator itself, not a Gogh bug.
+Gogh writes the theme into one profile of `~/.config/terminator/config` (`default`, unless you type another name; a new profile can start as a copy of `default`), after a backup. Close and reopen Terminator to see it.
 
-```bash
-sudo apt install python3-configobj
-# or
-pip install configobj
-```
+- **The colors don't change:** check you're using the profile Gogh wrote to (Preferences → Profiles). Gogh also sets `use_theme_colors = False` on it, since with `True` Terminator ignores the theme's colors.
+- **[#439](https://github.com/Gogh-Co/Gogh/issues/439)** (`ModuleNotFoundError: No module named 'configobj'`) came from the old Python helper; Gogh no longer needs Python for Terminator.
 
 ## Termux
 

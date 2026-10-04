@@ -14,22 +14,32 @@ on:
       - 'installs/**'
       - 'gogh.sh'
       - 'tools/run.txt'
+      # Scripts, their tests and this validation itself (including the
+      # shared helpers in tools/lib/ it imports), so a non-theme PR still
+      # gets the shell checks and the scope check below.
+      - 'apply-colors.sh'
+      - 'tests/**'
+      - 'tools/validate/**'
+      - 'tools/lib/**'
+      - 'README.md'
+      - '.github/workflows/validate-on-pr.yml'
 
 env:
   # Pinned for reproducible results; bump this deliberately, not implicitly.
   SHELLCHECK_VERSION: v0.11.0
+  BATS_VERSION: v1.14.0
 
 jobs:
   validate-colors:
     runs-on: ubuntu-22.04
     steps:
       - name: 🏅 Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
       - name: 🏅 Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: '3.x'
 
@@ -42,21 +52,27 @@ jobs:
       - name: 🏅 Validate theme name, filename, and contrast (new themes only)
         run: python tools/validate/validate_theme_format.py "${{ github.event.pull_request.base.sha }}"
 
+      - name: 🏅 Validate README links to the apply functions
+        run: python tools/validate/validate_readme_links.py
+
       - name: 🏅 List changed files
         run: |
           git diff --name-only "${{ github.event.pull_request.base.sha }}" "${{ github.event.pull_request.head.sha }}" > /tmp/changed_files.txt
           cat /tmp/changed_files.txt
 
-      - name: 🏅 Validate PR title and scope (themes/ only)
+      # A theme PR must be titled "theme:" and only touch themes/; any other
+      # PR must leave generated output (data/, installs/, tools/run.txt and
+      # the THEMES array in gogh.sh) alone.
+      - name: 🏅 Validate PR title and scope
         env:
           PR_TITLE: ${{ github.event.pull_request.title }}
-        run: python tools/validate/validate_pr.py /tmp/changed_files.txt
+        run: python tools/validate/validate_pr.py /tmp/changed_files.txt "${{ github.event.pull_request.base.sha }}"
 
   shell-validation:
     runs-on: ubuntu-22.04
     steps:
       - name: 🏅 Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: 🏅 bash -n syntax check
         run: |
@@ -75,8 +91,16 @@ jobs:
       - name: 🏅 ShellCheck
         run: shellcheck gogh.sh apply-colors.sh
 
-      - name: 🏅 Install Bats
-        run: sudo apt-get update && sudo apt-get install -y bats
+      # Install a pinned bats-core release directly -- the Ubuntu 22.04 apt
+      # package is bats 1.2.1, which predates BATS_TEST_TMPDIR (it silently
+      # expands empty, turning "${BATS_TEST_TMPDIR}/foo.XXXXXX" into
+      # "/foo.XXXXXX" and failing every test that uses it with a
+      # permission-denied mktemp/mkfifo error at the filesystem root).
+      - name: 🏅 Install Bats ${{ env.BATS_VERSION }}
+        run: |
+          git clone --depth 1 --branch "$BATS_VERSION" https://github.com/bats-core/bats-core.git /tmp/bats-core
+          sudo /tmp/bats-core/install.sh /usr/local
+          bats --version
 
       - name: 🏅 Run Bats tests
         run: bats tests/

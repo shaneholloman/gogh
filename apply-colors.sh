@@ -1,21 +1,26 @@
 #!/usr/bin/env bash
 
+
+# | ===========================================
+# | SETUP
+# | ===========================================
+
 # |
-# | Early pre-requisites check
+# | Early prerequisites check
 # | ===========================================
 UUIDGEN="${UUIDGEN:-$(command -v uuidgen | xargs echo)}"
 DCONF="${DCONF:-$(command -v dconf | xargs echo)}"
 GCONF="${GCONF:-$(command -v gconftool-2 | xargs echo)}"
 GS="${GS:-$(command -v gsettings | xargs echo)}"
-# Note: xargs echo is to make the command sucessful even if it was not
-# otherwise the script will exit if the command does not exist (elementary os)
+# Note: `xargs echo` makes the command succeed even when the program does
+# not exist, otherwise the script would exit (elementary OS).
 
 # |
 # | Make sure all exported variables get unset no matter what
-# | Defining this in this script because it gets called even if
-# | gogh.sh was not called. Exported variables in gogh.sh gets
-# | handled there in case there was en error before this script was called
-# | ============================================
+# | ===========================================
+# This is defined here because this script gets called even when `gogh.sh`
+# was not. Exported variables in `gogh.sh` are handled there, in case there
+# was an error before this script was called.
 GLOBAL_VAR_CLEANUP() {
   unset PROFILE_NAME
   unset PROFILE_SLUG
@@ -41,10 +46,14 @@ GLOBAL_VAR_CLEANUP() {
 
 SCRIPT_PATH="${SCRIPT_PATH:-$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)}"
 
-# Note: Since all scripts gets invoked in a subshell the traps from the parent shell
-# will not get inherited. Hence traps defined in gogh.sh and print-themes.sh will still trigger
+# Note: Since all scripts are invoked in a subshell, the traps from the parent
+# shell are not inherited. Hence traps defined in `gogh.sh` and
+# `print-themes.sh` will still trigger.
 trap 'GLOBAL_VAR_CLEANUP; trap - EXIT' EXIT HUP INT QUIT PIPE TERM
 
+# |
+# | Print helpers
+# | ===========================================
 # These are intentional printf-format wrappers: `format` IS the parameter, by
 # design, so it can never be a plain literal in the printf call itself. Every
 # call site passes a fixed literal (e.g. '%s\n', '\n%s\n\n') -- dynamic values
@@ -75,14 +84,18 @@ printserr() {
         printerr '%s\n' "${@}"
 }
 
+
+# | ===========================================
+# | TERMINAL DETECTION
+# | ===========================================
+
 # |
-# | Second test for TERMINAL in case user ran
-# | theme script directly instead of gogh.sh
-# | ============================================
+# | Detect TERMINAL again in case the theme script was run directly
+# | ===========================================
 if [[ -z "${TERMINAL:-}" ]]; then
 
   # |
-  # | Check for the terminal name (depening on os)
+  # | Check for the terminal name (depending on OS)
   # | ===========================================
   OS="$(uname)"
   if [[ "$TERM" = "xterm-kitty" ]]; then
@@ -101,19 +114,18 @@ if [[ -z "${TERMINAL:-}" ]]; then
     TERMINAL="termux"
   else
     # |
-    # | Depending on how the script was invoked, we need
-    # | to loop until pid is no longer a subshell
+    # | Walk up the parent processes until pid is no longer a subshell
     # | ===========================================
     pid="$$"
-    # -o field= (empty header) suppresses the header without -h: -h itself
-    # triggers BSD-vs-SysV personality detection that some procps-ng versions
-    # reject outright ("error: unsupported SysV option") when combined with
-    # -o/-p, even though it works fine on others.
+    # `-o field=` (empty header) suppresses the header without `-h`: `-h`
+    # itself triggers BSD-vs-SysV personality detection that some procps-ng
+    # versions reject outright ("error: unsupported SysV option") when
+    # combined with `-o`/`-p`, even though it works fine on others.
     TERMINAL="$(ps -o comm= -p "$pid")"
     while [[ "${TERMINAL:(-2)}" == "sh" ]]; do
-      # ppid= is numeric and right-padded by ps to its column width, so a
+      # `ppid=` is numeric and right-padded by `ps` to its column width, so a
       # short pid can come back with leading spaces -- trim them, or the
-      # next -p "$pid" gets quoted whitespace and fails ("improper list").
+      # next `-p "$pid"` gets quoted whitespace and fails ("improper list").
       pid="$(ps -o ppid= -p "$pid")"
       pid="${pid// /}"
       TERMINAL="$(ps -o comm= -p "$pid")"
@@ -121,7 +133,9 @@ if [[ -z "${TERMINAL:-}" ]]; then
   fi
 fi
 
-
+# |
+# | Locate the configuration file of each terminal
+# | ===========================================
 case "${TERMINAL}" in
   pantheon-terminal|io.elementary.t* )
     if [[ -z "${GS}" ]]; then
@@ -160,12 +174,51 @@ case "${TERMINAL}" in
     fi
     ;;
 
+  alacritty )
+    # Same lookup order as Alacritty itself (see `man 5 alacritty`)
+    CFGFILE=""
+    for candidate in \
+      "${XDG_CONFIG_HOME:-${HOME}/.config}/alacritty/alacritty.toml" \
+      "${XDG_CONFIG_HOME:-${HOME}/.config}/alacritty.toml" \
+      "${HOME}/.config/alacritty/alacritty.toml" \
+      "${HOME}/.alacritty.toml"; do
+      if [[ -f "${candidate}" ]]; then
+        CFGFILE="${candidate}"
+        break
+      fi
+    done
+    unset candidate
+
+    if [[ -z "${CFGFILE}" ]]; then
+      # Alacritty 0.13 replaced alacritty.yml with alacritty.toml
+      for candidate in \
+        "${XDG_CONFIG_HOME:-${HOME}/.config}/alacritty/alacritty.yml" \
+        "${XDG_CONFIG_HOME:-${HOME}/.config}/alacritty.yml" \
+        "${HOME}/.config/alacritty/alacritty.yml" \
+        "${HOME}/.alacritty.yml"; do
+        if [[ -f "${candidate}" ]]; then
+          printerr '\n%s\n' "Error: Found ${candidate}, but Gogh only supports Alacritty 0.13 or newer, which uses alacritty.toml."
+          printerr '%s\n\n' "Upgrade Alacritty and run \`alacritty migrate\` to convert your configuration, then try again."
+          exit 1
+        fi
+      done
+      unset candidate
+
+      # Alacritty runs fine without a config file, so create an empty one to patch
+      CFGFILE="${XDG_CONFIG_HOME:-${HOME}/.config}/alacritty/alacritty.toml"
+      if ! mkdir -p "$(dirname "${CFGFILE}")" || ! touch "${CFGFILE}"; then
+        printerr '\n%s\n' "Error: Couldn't create a configuration file for Alacritty at ${CFGFILE}."
+        exit 1
+      fi
+    fi
+    ;;
+
   foot )
     CFGFILE="${HOME}/.config/foot/foot.ini"
     if [[ ! -f "${CFGFILE}" ]]; then
       mkdir --parents "$(dirname "${CFGFILE}")"
-      # Create a new config for the user if not exist
-      # Extracted from foot's default config file
+      # Create a new config for the user if it does not exist, using the
+      # colors section of foot's default config file.
       {
         echo "[colors]"
         echo "background=242424"
@@ -196,11 +249,12 @@ case "${TERMINAL}" in
 
   ghostty )
     # |
-    # | Ghostty looks for its configuration in the XDG path first and, on macOS,
-    # | additionally under Application Support. The file was named `config` up
-    # | to Ghostty 1.2 and `config.ghostty` from 1.3 onwards - both are still
-    # | honoured, so prefer whichever the user already has.
+    # | Locate the Ghostty configuration file
     # | ===========================================
+    # Ghostty looks for its configuration in the XDG path first and, on
+    # macOS, additionally under Application Support. The file was named
+    # `config` up to Ghostty 1.2 and `config.ghostty` from 1.3 onwards --
+    # both are still honoured, so prefer whichever the user already has.
     if [[ -z "${GHOSTTY_CONFIG_DIRECTORY:-}" ]]; then
       GHOSTTY_CONFIG_DIRECTORY="${XDG_CONFIG_HOME:-${HOME}/.config}/ghostty"
       if [[ ! -d "${GHOSTTY_CONFIG_DIRECTORY}" ]] &&
@@ -219,7 +273,7 @@ case "${TERMINAL}" in
     unset candidate
 
     if [[ -z "${CFGFILE}" ]]; then
-      # No config yet - create one using the current default name
+      # No config yet -- create one using the current default name
       CFGFILE="${GHOSTTY_CONFIG_DIRECTORY}/config.ghostty"
       print '\n%s\n\n' "Warning: Couldn't find an existing configuration file for Ghostty, so one will be created for you."
       mkdir -p "${GHOSTTY_CONFIG_DIRECTORY}"
@@ -233,8 +287,11 @@ case "${TERMINAL}" in
     fi
     CFGFILE="${KITTY_CONFIG_DIRECTORY}/kitty.conf"
     if [[ ! -f "${CFGFILE}" ]]; then
-      printerr '\n%s\n' "Error: Couldn't find an existing configuration file for Kitty."
-      exit 1
+      # Kitty runs fine without a config file, so create an empty one to patch
+      if ! mkdir -p "${KITTY_CONFIG_DIRECTORY}" || ! touch "${CFGFILE}"; then
+        printerr '\n%s\n' "Error: Couldn't create a configuration file for Kitty at ${CFGFILE}."
+        exit 1
+      fi
     fi
     ;;
 
@@ -249,12 +306,22 @@ case "${TERMINAL}" in
     fi
     ;;
 
-
   konsole )
     CFGFILE="${HOME}/.config/konsolerc"
     if [[ ! -f "${CFGFILE}" ]]; then
       printerr '\n%s\n' "Error: Couldn't find an existing configuration file for Konsole."
       exit 1
+    fi
+    ;;
+
+  terminator )
+    CFGFILE="${XDG_CONFIG_HOME:-${HOME}/.config}/terminator/config"
+    if [[ ! -f "${CFGFILE}" ]]; then
+      # Terminator runs fine without a config file, so create an empty one to patch
+      if ! mkdir -p "$(dirname "${CFGFILE}")" || ! touch "${CFGFILE}"; then
+        printerr '\n%s\n' "Error: Couldn't create a configuration file for Terminator at ${CFGFILE}."
+        exit 1
+      fi
     fi
     ;;
 
@@ -265,8 +332,12 @@ case "${TERMINAL}" in
 esac
 
 
+# | ===========================================
+# | HELPER FUNCTIONS
+# | ===========================================
+
 # |
-# | Convert RGB to gnome colors
+# | Color conversion
 # | ===========================================
 gnome_color () {
 
@@ -294,8 +365,7 @@ hexRGBtoDecRGB () {
 convertRGBtoMac () {
   local color="${1}"
   set --
-  # Word splitting here is intentional: hexRGBtoDecRGB's "R G B" output is
-  # deliberately split into three positional parameters below.
+  # Word splitting is intentional: "R G B" becomes three arguments.
   # shellcheck disable=SC2046
   set -- $(hexRGBtoDecRGB "${color}")
   R=${1}; shift; G=${1}; shift; B=${1}; shift
@@ -307,12 +377,14 @@ convertRGBtoMac () {
   echo "${R}" "${G}" "${B}"
 }
 
+# |
+# | Configuration entry writers
+# | ===========================================
 createMinttyEntry () {
   local  name="${1}"
   local color="${2}"
   set --
-  # Word splitting here is intentional: hexRGBtoDecRGB's "R G B" output is
-  # deliberately split into three positional parameters below.
+  # Word splitting is intentional: "R G B" becomes three arguments.
   # shellcheck disable=SC2046
   set -- $(hexRGBtoDecRGB "${color}")
   R=${1}; shift; G=${1}; shift; B=${1}; shift
@@ -336,8 +408,7 @@ createKmsconEntry () {
   local  name="${1}"
   local color="${2}"
   set --
-  # Word splitting here is intentional: hexRGBtoDecRGB's "R G B" output is
-  # deliberately split into three positional parameters below.
+  # Word splitting is intentional: "R G B" becomes three arguments.
   # shellcheck disable=SC2046
   set -- $(hexRGBtoDecRGB "${color}")
   R=${1}; shift; G=${1}; shift; B=${1}; shift
@@ -371,12 +442,260 @@ updateTermuxConfig() {
   echo "${name}=${color}" >> "${config}"
 }
 
+# Copy a config file to <file>.<timestamp> before Gogh changes it, unless
+# it's empty (Gogh just created it). Several changes within one second,
+# e.g. when applying many themes, keep the first backup: the one with the
+# user's original content.
+backupConfig () {
+  local config="${1}"
+  local backup
+
+  [[ -s "${config}" ]] || return 0
+  backup="${config}.$(date +%Y%m%d_%H%M%S)"
+  if [[ ! -e "${backup}" ]]; then
+    cp "${config}" "${backup}" || return 1
+    prints "Backup created at ${backup}"
+  fi
+}
+
+# Print an Alacritty config with its [colors.primary], [colors.normal] and
+# [colors.bright] tables commented out, so an imported theme isn't
+# overridden by them (the importing file is loaded last).
+disableAlacrittyColorTables () {
+  local config="${1}"
+
+  awk '
+    /^[[:space:]]*\[/ {
+      in_colors = ($0 ~ /^[[:space:]]*\[[[:space:]]*colors\.(primary|normal|bright)[[:space:]]*\][[:space:]]*(#.*)?$/)
+    }
+    in_colors && $0 !~ /^[[:space:]]*(#.*)?$/ { print "# Disabled by Gogh: " $0; next }
+    { print }
+  ' "${config}"
+}
+
+# Print the lines of an Alacritty config that still set primary, normal or
+# bright colors in a form disableAlacrittyColorTables doesn't handle
+# (dotted keys or inline tables).
+findOtherAlacrittyColors () {
+  local config="${1}"
+
+  awk '
+    /^[[:space:]]*\[/ {
+      table = $0
+      sub(/^[[:space:]]*\[+[[:space:]]*/, "", table)
+      sub(/[[:space:]]*\].*$/, "", table)
+      next
+    }
+    (table == "" && /^[[:space:]]*colors[[:space:]]*(\.[[:space:]]*(primary|normal|bright)|=)/) ||
+    (table == "colors" && /^[[:space:]]*(primary|normal|bright)[[:space:]]*[.=]/) { print FNR ": " $0 }
+  ' "${config}"
+}
+
+# Print an Alacritty config with `entry` (a quoted path) added as the last
+# import, so it wins over any other import, unless the import array already
+# has it. `key` is "general.import" for
+# Alacritty 0.14+ or "import" for 0.13. Exits 3 when the import can't be
+# added safely (`general` is an inline table, or the array never closes).
+addAlacrittyImport () {
+  local config="${1}"
+  local entry="${2}"
+  local key="${3}"
+
+  awk -v entry="${entry}" -v key="${key}" '
+    function rtrim(s) { sub(/[[:space:]]+$/, "", s); return s }
+    # Drop a trailing comment: a "#" outside of a quoted string
+    function code(s,   i, ch, quote) {
+      quote = ""
+      for (i = 1; i <= length(s); i++) {
+        ch = substr(s, i, 1)
+        if (quote == "\"" && ch == "\\") { i++; continue }
+        if (quote != "") { if (ch == quote) quote = ""; continue }
+        if (ch == "\"" || ch == "'\''") { quote = ch; continue }
+        if (ch == "#") return rtrim(substr(s, 1, i - 1))
+      }
+      return s
+    }
+    # Insert entry before the last "]" of line n
+    function insert_before_bracket(n,   c, comment, p, i, before, sep) {
+      c = code(line[n]); comment = substr(line[n], length(c) + 1)
+      for (i = length(c); i > 0; i--) if (substr(c, i, 1) == "]") { p = i; break }
+      before = rtrim(substr(c, 1, p - 1))
+      if (before ~ /\[$/) sep = ""
+      else if (before ~ /,$/) sep = " "
+      else sep = ", "
+      line[n] = before sep entry substr(c, p) comment
+    }
+    { line[NR] = $0 }
+    END {
+      table = ""; imp = 0; general = 0
+      for (i = 1; i <= NR; i++) {
+        l = line[i]
+        if (l ~ /^[[:space:]]*\[\[/) { table = "[[]]"; continue }
+        if (l ~ /^[[:space:]]*\[/) {
+          table = l
+          sub(/^[[:space:]]*\[[[:space:]]*/, "", table)
+          sub(/[[:space:]]*\].*$/, "", table)
+          if (table == "general" && !general) general = i
+          continue
+        }
+        if (table == "" && l ~ /^[[:space:]]*general[[:space:]]*=/) exit 3
+        if ((table == "" && l ~ /^[[:space:]]*(general[[:space:]]*\.[[:space:]]*)?import[[:space:]]*=/) ||
+            (table == "general" && l ~ /^[[:space:]]*import[[:space:]]*=/)) { imp = i; break }
+      }
+
+      if (imp) {
+        # Find the line that closes the array
+        for (c = imp; c <= NR; c++) if (rtrim(code(line[c])) ~ /\]$/) break
+        if (c > NR) exit 3
+        # Already imported: leave the config as it is
+        for (i = imp; i <= c; i++)
+          if (index(code(line[i]), entry)) { for (i = 1; i <= NR; i++) print line[i]; exit }
+        if (c > imp && code(line[c]) ~ /^[[:space:]]*\]/) {
+          # "]" on its own line: make sure the last element ends with a comma
+          for (k = c - 1; k > imp && rtrim(code(line[k])) == ""; k--) ;
+          last = rtrim(code(line[k]))
+          if (last !~ /[\[,]$/) line[k] = last "," substr(line[k], length(code(line[k])) + 1)
+          line[c] = "  " entry ",\n" line[c]
+        } else {
+          insert_before_bracket(c)
+        }
+      } else if (key == "general.import" && general) {
+        line[general] = line[general] "\n# Added by Gogh\nimport = [" entry "]"
+      } else {
+        added = "# Added by Gogh\n" key " = [" entry "]"
+        if (NR == 0) { print added; exit }
+        line[1] = added "\n\n" line[1]
+      }
+      for (i = 1; i <= NR; i++) print line[i]
+    }
+  ' "${config}"
+}
+
+# Succeed if a Terminator config has `profile` under its [profiles] section
+terminatorProfileExists () {
+  local config="${1}"
+  local profile="${2}"
+
+  awk -v profile="${profile}" '
+    function name(l) {
+      sub(/^[[:space:]]*\[+[[:space:]]*/, "", l)
+      sub(/[[:space:]]*\]+[[:space:]]*(#.*)?$/, "", l)
+      return l
+    }
+    /^[[:space:]]*\[\[\[/ { next }
+    /^[[:space:]]*\[\[/ { if (section == "profiles" && name($0) == profile) found = 1; next }
+    /^[[:space:]]*\[/ { section = name($0) }
+    END { exit !found }
+  ' "${config}"
+}
+
+# Print a Terminator config with `profile` (under [profiles], not the
+# [[default]] of [layouts]) set to the given colors. A missing [profiles]
+# section or profile is created; a new profile starts as a copy of
+# [[default]] when copy_default is "yes". Other settings are kept.
+updateTerminatorProfile () {
+  local config="${1}"
+  local profile="${2}"
+  local copy_default="${3}"
+  local background="${4}"
+  local foreground="${5}"
+  local palette="${6}"
+
+  awk -v profile="${profile}" -v copy="${copy_default}" \
+      -v bg="${background}" -v fg="${foreground}" -v palette="${palette}" '
+    function name(l) {
+      sub(/^[[:space:]]*\[+[[:space:]]*/, "", l)
+      sub(/[[:space:]]*\]+[[:space:]]*(#.*)?$/, "", l)
+      return l
+    }
+    function level(l) {
+      if (l ~ /^[[:space:]]*\[\[\[/) return 3
+      if (l ~ /^[[:space:]]*\[\[/) return 2
+      if (l ~ /^[[:space:]]*\[/) return 1
+      return 0
+    }
+    # Last line of the section or subsection whose header is at `start`
+    function block_end(start, max_level,   j, lv) {
+      for (j = start + 1; j <= NR; j++) {
+        lv = level(line[j])
+        if (lv && lv <= max_level) return j - 1
+      }
+      return NR
+    }
+    function is_key(l,   k) {
+      for (k = 1; k <= nkeys; k++)
+        if (l ~ ("^[[:space:]]*" key[k] "[[:space:]]*=")) return k
+      return 0
+    }
+    function key_lines(indent,   k, out) {
+      out = ""
+      for (k = 1; k <= nkeys; k++) out = out (k > 1 ? "\n" : "") indent key[k] " = " val[k]
+      return out
+    }
+    { line[NR] = $0 }
+    END {
+      nkeys = 4
+      key[1] = "use_theme_colors"; val[1] = "False"
+      key[2] = "background_color"; val[2] = "\"" bg "\""
+      key[3] = "foreground_color"; val[3] = "\"" fg "\""
+      key[4] = "palette";          val[4] = "\"" palette "\""
+
+      section = ""; profiles = 0; target = 0; default_profile = 0
+      for (i = 1; i <= NR; i++) {
+        lv = level(line[i])
+        if (lv == 1) {
+          section = name(line[i])
+          if (section == "profiles" && !profiles) profiles = i
+        } else if (lv == 2 && section == "profiles") {
+          if (name(line[i]) == profile && !target) target = i
+          if (name(line[i]) == "default" && !default_profile) default_profile = i
+        }
+      }
+
+      if (target) {
+        # Existing profile: replace each key in place, add the missing ones
+        last = block_end(target, 2)
+        for (i = target + 1; i <= NR && i <= last; i++) {
+          k = is_key(line[i])
+          if (!k) continue
+          if (done[k]) { skip[i] = 1; continue }
+          indent = line[i]; sub(/[^[:space:]].*$/, "", indent)
+          line[i] = indent key[k] " = " val[k]
+          done[k] = 1
+        }
+        indent = line[target]; sub(/[^[:space:]].*$/, "", indent)
+        for (k = 1; k <= nkeys; k++)
+          if (!done[k]) line[target] = line[target] "\n" indent "  " key[k] " = " val[k]
+      } else {
+        block = "  [[" profile "]]"
+        if (copy == "yes" && default_profile) {
+          last = block_end(default_profile, 2)
+          for (i = default_profile + 1; i <= last; i++)
+            if (!is_key(line[i]) && line[i] ~ /[^[:space:]]/) block = block "\n" line[i]
+        }
+        block = block "\n" key_lines("    ")
+        if (profiles) {
+          # Add it after the last non-blank line of [profiles]
+          last = block_end(profiles, 1)
+          while (last > profiles && line[last] !~ /[^[:space:]]/) last--
+          line[last] = line[last] "\n" block
+        } else {
+          if (NR) line[NR] = line[NR] "\n"
+          else NR = 1
+          line[NR] = line[NR] "[profiles]\n" block
+        }
+      }
+
+      for (i = 1; i <= NR; i++) if (!skip[i]) print line[i]
+    }
+  ' "${config}"
+}
+
 createKonsoleEntry () {
   local   name="${1}"
   local  color="${2}"
   set --
-  # Word splitting here is intentional: hexRGBtoDecRGB's "R G B" output is
-  # deliberately split into three positional parameters below.
+  # Word splitting is intentional: "R G B" becomes three arguments.
   # shellcheck disable=SC2046
   set -- $(hexRGBtoDecRGB "${color}")
   R=${1}; shift; G=${1}; shift; B=${1}; shift
@@ -386,8 +705,10 @@ createKonsoleEntry () {
 
 createKonsoleTriple () {
   local   name="${1}"
-  local colorn="${2}"  # normal and faint
-  local colori="${3}"  # intense
+  # Normal and faint
+  local colorn="${2}"
+  # Intense
+  local colori="${3}"
 
   createKonsoleEntry "${name}" "${colorn}"
   createKonsoleEntry "${name}Faint" "${colorn}"
@@ -398,8 +719,7 @@ convertNameAndRGBtoITerm() {
   local  name="${1}"
   local color="${2}"
   set --
-  # Word splitting here is intentional: convertRGBtoMac's "R G B" output is
-  # deliberately split into three positional parameters below.
+  # Word splitting is intentional: "R G B" becomes three arguments.
   # shellcheck disable=SC2046
   set -- $(convertRGBtoMac "${color}")
   R=${1}; shift; G=${1}; shift; B=${1}; shift
@@ -407,6 +727,9 @@ convertNameAndRGBtoITerm() {
   echo "<key>${name}</key><dict><key>Blue Component</key><real>${B}</real><key>Green Component</key><real>${G}</real><key>Red Component</key><real>${R}</real></dict>"
 }
 
+# |
+# | dconf, gconf and gsettings helpers
+# | ===========================================
 dset() {
   local key="${1}"; shift
   local val="${1}"
@@ -414,7 +737,7 @@ dset() {
   "${DCONF}" write "${PROFILE_KEY}/${key}" "${val}"
 }
 
-# Because dconf still doesn't have "append"
+# Because `dconf` still doesn't have "append"
 dlist_append() {
   local key="${1}"; shift
   local val="${1}"; shift
@@ -431,11 +754,11 @@ dlist_append() {
 }
 
 # GNOME/MATE/Tilix all ship their profile list as a schema default, so it
-# reads back empty from dconf under the exact same conditions as the default
-# profile itself -- confirmed empirically (fresh installs of all three) that
-# both keys are empty together, not just the default one. Seed the list from
-# gsettings before dlist_append() reads it, or it silently drops the
-# pre-existing profile instead of appending to it.
+# reads back empty from `dconf` under the exact same conditions as the
+# default profile itself -- confirmed empirically (fresh installs of all
+# three) that both keys are empty together, not just the default one. Seed
+# the list from `gsettings` before `dlist_append()` reads it, or it silently
+# drops the pre-existing profile instead of appending to it.
 seed_profile_list_from_gsettings() {
   local dconf_key="${1}"
   local gs_schema="${2}"
@@ -457,7 +780,7 @@ gcset() {
   "${GCONF}" --set --type "${type}" "${PROFILE_KEY}/${key}" -- "${val}"
 }
 
-# Because gconftool doesn't have "append"
+# Because `gconftool` doesn't have "append"
 glist_append() {
   local type="${1}"; shift
   local key="${1}";  shift
@@ -528,25 +851,28 @@ legacy_set_theme() {
 }
 
 
+# | ===========================================
+# | COLOR PREVIEW
+# | ===========================================
 
 # |
-# | If terminal supports truecolor then we can show theme colors without applying the theme
+# | Preview theme colors without applying them on truecolor terminals
 # | ===========================================
 if [[ "${COLORTERM:-}" == "truecolor" ]] || [[ "${COLORTERM:-}" == "24bit" ]]; then
-  # gogh_colors have been moved here to avoid multiple definitions
+  # `gogh_colors` has been moved here to avoid multiple definitions
   function gogh_colors () {
     # Build up the color string to avoid visual rendering
     local color_str
-    # Note: {01..16} does not work on OSX
+    # Note: {01..16} does not work on macOS
     for c in $(seq -s " " -w 16); do
       local color="COLOR_$c"
-      # Word splitting here is intentional: hexRGBtoDecRGB's "R G B" output is
-      # deliberately split into three positional parameters below.
+      # Word splitting is intentional: "R G B" becomes three arguments.
       # shellcheck disable=SC2046
       set -- $(hexRGBtoDecRGB "${!color}")
       color_str+="\033[38;2;${1};${2};${3}m█████$(tput sgr0)"
       [[ ${GOGH_DRY_RUN:-0} -eq 1 ]] && export "DEMO_COLOR_$c=\033[38;2;${1};${2};${3}m"
-      [[ "$c" == "08" ]] && color_str+="\n" # new line
+      # New line
+      [[ "$c" == "08" ]] && color_str+="\n"
     done
     print '\n%b\n\n\n' "${color_str}"
     unset color_str
@@ -557,13 +883,13 @@ else
     local color_str
     for c in {0..15}; do
       color_str+="$(tput setaf "$c")█████$(tput sgr0)"
-      [[ $c == 7 ]] && color_str+="\n" # new line
+      # New line
+      [[ $c == 7 ]] && color_str+="\n"
     done
     print '\n%b\n\n' "${color_str}"
     unset color_str
   }
 fi
-
 
 # |
 # | Print theme colors
@@ -576,15 +902,19 @@ if [[ ${GOGH_DRY_RUN:-0} -eq 1 ]]; then
 fi
 
 
-apply_elementary() {
-  # |
-  # | Applying values on elementary/pantheon terminal
-  # | ===========================================
+# | ===========================================
+# | TERMINAL APPLY FUNCTIONS
+# | ===========================================
 
+# |
+# | Applying values on elementary/Pantheon Terminal
+# | ===========================================
+apply_elementary() {
   local BG_COLOR="${BACKGROUND_COLOR}"
 
-  # If the background color is in the format #rrggbb, convert it to rgba(r,g,b,0.95).
-  # This makes it 5% transparent, which is the default in elementary OS.
+  # If the background color is in the format #rrggbb, convert it to
+  # rgba(r,g,b,0.95). This makes it 5% transparent, which is the default in
+  # elementary OS.
   if [[ ${BACKGROUND_COLOR} =~ ^#[[:xdigit:]]{6}$ ]]; then
     local R="$((16#${BACKGROUND_COLOR:1:2}))"
     local G="$((16#${BACKGROUND_COLOR:3:2}))"
@@ -598,11 +928,10 @@ apply_elementary() {
   gset palette      "${COLOR_01}:${COLOR_02}:${COLOR_03}:${COLOR_04}:${COLOR_05}:${COLOR_06}:${COLOR_07}:${COLOR_08}:${COLOR_09}:${COLOR_10}:${COLOR_11}:${COLOR_12}:${COLOR_13}:${COLOR_14}:${COLOR_15}:${COLOR_16}"
 }
 
+# |
+# | Applying values on mintty (cygwin)
+# | ===========================================
 apply_cygwin() {
-  # |
-  # | Applying values on mintty (cygwin)
-  # | ===========================================
-
   prints "Patching mintty configuration file (${CFGFILE}) with new colors..."
 
   updateMinttyConfig "$CFGFILE" "$COLOR_01"         "Black"
@@ -630,89 +959,170 @@ apply_cygwin() {
   prints "Done - please reopen your Cygwin terminal to see the changes"
 }
 
+# |
+# | Applying values on Alacritty
+# | ===========================================
+# Alacritty can import other TOML files, so the theme goes into its own
+# gogh.toml next to alacritty.toml, and the user's configuration only gets
+# one import entry. The importing file is loaded after its imports, so color
+# tables left in alacritty.toml (e.g. by Gogh's old Python helper) would win
+# over the theme -- those get commented out, after a backup.
 apply_alacritty() {
-  # |
-  # | Applying values on Alacritty
-  # | ===========================================
+  local theme_file import_path import_key version new_config other_colors status
 
-  json_str="\
-  { \
-    \"colors\": \
-    {\
-      \"primary\":\
-      {\
-        \"background\": \"$BACKGROUND_COLOR\",\
-        \"foreground\": \"$FOREGROUND_COLOR\"\
-      },\
-      \"normal\":\
-      {\
-        \"black\": \"$COLOR_01\",\
-        \"red\": \"$COLOR_02\",\
-        \"green\": \"$COLOR_03\",\
-        \"yellow\":\"$COLOR_04\",\
-        \"blue\":\"$COLOR_05\",\
-        \"magenta\": \"$COLOR_06\",\
-        \"cyan\":\"$COLOR_07\",\
-        \"white\": \"$COLOR_08\"\
-      },\
-      \"bright\":\
-      {\
-        \"black\":\"$COLOR_09\",\
-        \"red\":\"$COLOR_10\",\
-        \"green\":\"$COLOR_11\",\
-        \"yellow\": \"$COLOR_12\",\
-        \"blue\": \"$COLOR_13\",\
-        \"magenta\":\"$COLOR_14\",\
-        \"cyan\": \"$COLOR_15\",\
-        \"white\":\"$COLOR_16\"\
-      } \
-    }\
-  }"
-
-  if [[ -e "${GOGH_ALACRITTY_SCRIPT}" ]]; then
-    python3 "${GOGH_ALACRITTY_SCRIPT}" "$json_str"
-  elif [[ -e "${SCRIPT_PATH}/apply-alacritty.py" ]]; then
-    python3 "${SCRIPT_PATH}/apply-alacritty.py" "$json_str"
+  theme_file="$(dirname "${CFGFILE}")/gogh.toml"
+  # Keep the import portable across machines when it lives under $HOME.
+  # The tilde is literal on purpose: Alacritty expands it when reading.
+  if [[ "${theme_file}" == "${HOME}/"* ]]; then
+    # shellcheck disable=SC2088
+    import_path="~/${theme_file#"${HOME}/"}"
   else
-    printerr '\n%s\n' "Error: Couldn't find apply-alacritty.py file."
+    import_path="${theme_file}"
+  fi
+
+  # Alacritty 0.14 moved `import` under [general]; 0.13 only reads it at
+  # the top level. Newer versions still read the top-level key, with a
+  # deprecation warning, so it's the fallback when the version can't be
+  # detected (e.g. when applying over SSH with TERMINAL=alacritty).
+  import_key="import"
+  version="$(alacritty --version 2>/dev/null || true)"
+  if [[ "${version}" =~ ([0-9]+)\.([0-9]+) ]]; then
+    if (( BASH_REMATCH[1] > 0 || BASH_REMATCH[2] >= 14 )); then
+      import_key="general.import"
+    fi
+  else
+    prints "Couldn't detect the Alacritty version: using the top-level import, read by every version (0.14+ reports it as deprecated)"
+  fi
+
+  prints "Writing Alacritty color theme file (${theme_file})..."
+
+  if ! {
+    echo "# Color theme: ${PROFILE_NAME}"
+    echo "# Auto-generated by Gogh (https://Gogh-Co.github.io/Gogh/)"
+    echo ""
+    echo "[colors.primary]"
+    echo "background = \"${BACKGROUND_COLOR}\""
+    echo "foreground = \"${FOREGROUND_COLOR}\""
+    echo ""
+    echo "[colors.normal]"
+    echo "black = \"${COLOR_01}\""
+    echo "red = \"${COLOR_02}\""
+    echo "green = \"${COLOR_03}\""
+    echo "yellow = \"${COLOR_04}\""
+    echo "blue = \"${COLOR_05}\""
+    echo "magenta = \"${COLOR_06}\""
+    echo "cyan = \"${COLOR_07}\""
+    echo "white = \"${COLOR_08}\""
+    echo ""
+    echo "[colors.bright]"
+    echo "black = \"${COLOR_09}\""
+    echo "red = \"${COLOR_10}\""
+    echo "green = \"${COLOR_11}\""
+    echo "yellow = \"${COLOR_12}\""
+    echo "blue = \"${COLOR_13}\""
+    echo "magenta = \"${COLOR_14}\""
+    echo "cyan = \"${COLOR_15}\""
+    echo "white = \"${COLOR_16}\""
+  } > "${theme_file}"; then
+    printerr '\n%s\n' "Error: Couldn't write ${theme_file}."
     exit 1
   fi
+
+  if ! new_config="$(mktemp -t gogh.alacritty.XXXXXX)" ||
+     ! disableAlacrittyColorTables "${CFGFILE}" > "${new_config}"; then
+    printerr '\n%s\n' "Error: Couldn't read ${CFGFILE}."
+    exit 1
+  fi
+
+  status=0
+  addAlacrittyImport "${new_config}" "\"${import_path}\"" "${import_key}" > "${new_config}.import" || status=$?
+  if (( status != 0 )); then
+    rm -f "${new_config}" "${new_config}.import"
+    printerr '\n%s\n' "Error: Couldn't add the theme import to ${CFGFILE} automatically."
+    printerr '%s\n\n' "Add \"${import_path}\" to ${import_key} in that file, then try again."
+    exit 1
+  fi
+  mv "${new_config}.import" "${new_config}"
+
+  if ! cmp -s "${CFGFILE}" "${new_config}"; then
+    if ! backupConfig "${CFGFILE}" || ! cat "${new_config}" > "${CFGFILE}"; then
+      rm -f "${new_config}"
+      printerr '\n%s\n' "Error: Couldn't update ${CFGFILE}."
+      exit 1
+    fi
+    prints "Updated ${CFGFILE} to import the theme"
+  fi
+  rm -f "${new_config}"
+
+  other_colors="$(findOtherAlacrittyColors "${CFGFILE}")"
+  if [[ -n "${other_colors}" ]]; then
+    print '\n%s\n%s\n\n' "Warning: ${CFGFILE} still sets colors that override the theme:" "${other_colors}"
+  fi
+
+  prints "Done - Alacritty reloads its configuration automatically"
 }
 
+# |
+# | Applying values on Terminator
+# | ===========================================
+# Terminator has no include mechanism, so the colors are written into one
+# profile of its config: `default` unless another one is chosen. A profile
+# that doesn't exist yet is created, optionally as a copy of `default`; an
+# existing one keeps all its other settings.
 apply_terminator() {
-  # |
-  # | Applying values on Terminator
-  # | ===========================================
+  local profile="default" copy_default="no" answer new_config
 
-  json_str="\
-  { \
-    \"colors\": \
-    {\
-      \"primary\":\
-      {\
-        \"background\": \"$BACKGROUND_COLOR\",\
-        \"foreground\": \"$FOREGROUND_COLOR\"\
-      },\
-      \"pallete\":\"${COLOR_01}:${COLOR_02}:${COLOR_03}:${COLOR_04}:${COLOR_05}:${COLOR_06}:${COLOR_07}:${COLOR_08}:${COLOR_09}:${COLOR_10}:${COLOR_11}:${COLOR_12}:${COLOR_13}:${COLOR_14}:${COLOR_15}:${COLOR_16}\"
-    }\
-  }"
+  if [[ -z "${GOGH_NONINTERACTIVE+no}" ]]; then
+    read -r -p "Enter profile to update/create [default]: " answer
+    # Profile names become [[section]] headers: drop accents and brackets
+    answer="$(printf '%s' "${answer}" | iconv -f UTF-8 -t ASCII//TRANSLIT 2>/dev/null || printf '%s' "${answer}")"
+    answer="${answer//[\[\]]/}"
+    answer="${answer#"${answer%%[![:space:]]*}"}"
+    answer="${answer%"${answer##*[![:space:]]}"}"
+    if [[ -n "${answer}" && "${answer,,}" != "default" ]]; then
+      profile="${answer}"
+    fi
+  fi
 
-  if [[ -e "${GOGH_TERMINATOR_SCRIPT}" ]]; then
-   python3 "${GOGH_TERMINATOR_SCRIPT}" "$json_str"
-  elif [[ -e "${SCRIPT_PATH}/apply-terminator.py" ]]; then
-    python3 "${SCRIPT_PATH}/apply-terminator.py" "$json_str"
-  else
-    printerr '\n%s\n' "Error: Couldn't find apply-terminator.py."
+  if [[ "${profile}" != "default" ]] && ! terminatorProfileExists "${CFGFILE}" "${profile}"; then
+    copy_default="yes"
+    if [[ -z "${GOGH_NONINTERACTIVE+no}" ]]; then
+      while true; do
+        read -r -p "Copy the rest of the settings from the default profile? [Y/n] " answer
+        case "${answer,,}" in
+          ""|y|yes) break ;;
+          n|no) copy_default="no"; break ;;
+          *) prints "Please answer Y or N." ;;
+        esac
+      done
+    fi
+  fi
+
+  if ! new_config="$(mktemp -t gogh.terminator.XXXXXX)" ||
+     ! updateTerminatorProfile "${CFGFILE}" "${profile}" "${copy_default}" \
+       "${BACKGROUND_COLOR}" "${FOREGROUND_COLOR}" \
+       "${COLOR_01}:${COLOR_02}:${COLOR_03}:${COLOR_04}:${COLOR_05}:${COLOR_06}:${COLOR_07}:${COLOR_08}:${COLOR_09}:${COLOR_10}:${COLOR_11}:${COLOR_12}:${COLOR_13}:${COLOR_14}:${COLOR_15}:${COLOR_16}" \
+       > "${new_config}"; then
+    printerr '\n%s\n' "Error: Couldn't read ${CFGFILE}."
     exit 1
   fi
 
+  if ! cmp -s "${CFGFILE}" "${new_config}"; then
+    if ! backupConfig "${CFGFILE}" || ! cat "${new_config}" > "${CFGFILE}"; then
+      rm -f "${new_config}"
+      printerr '\n%s\n' "Error: Couldn't update ${CFGFILE}."
+      exit 1
+    fi
+  fi
+  rm -f "${new_config}"
+
+  prints "Done - saved to the \"${profile}\" profile; close and reopen Terminator to see the changes"
 }
 
+# |
+# | Applying values on foot
+# | ===========================================
 apply_foot() {
-  # |
-  # | Applying values on foot
-  # | ===========================================
-
   prints "Patching foot configuration file (${CFGFILE}) with new colors..."
 
   updateFootConfig "$CFGFILE" "$COLOR_01" "regular0"
@@ -739,22 +1149,21 @@ apply_foot() {
   prints "Done - please reopen your foot terminal to see the changes"
 }
 
+# |
+# | Applying values on Ghostty
+# | ===========================================
+# Ghostty discovers themes by name from the `themes` directory of its
+# configuration directory, so installing a theme file there is all that is
+# needed to register it -- it shows up in `ghostty +list-themes` alongside
+# the built-in ones and can be used as `theme = <name>`. Lookup is flat, so
+# the file has to sit directly in `themes` rather than a subdirectory of it.
+#
+# Ghostty ships hundreds of themes of its own and 162 of them share a name
+# with a Gogh theme. A theme in the configuration directory wins over the
+# built-in of the same name, and the theme picker only ever records a name,
+# so installing under the bare name would make the built-in unreachable.
+# Prefixing keeps both available and groups the Gogh themes in the picker.
 apply_ghostty() {
-  # |
-  # | Applying values on Ghostty
-  # |
-  # | Ghostty discovers themes by name from the `themes' directory of its
-  # | configuration directory, so installing a theme file there is all that is
-  # | needed to register it - it shows up in `ghostty +list-themes' alongside the
-  # | built-in ones and can be used as `theme = <name>'. Lookup is flat, so the
-  # | file has to sit directly in `themes' rather than a subdirectory of it.
-  # |
-  # | Ghostty ships hundreds of themes of its own and 162 of them share a name
-  # | with a Gogh theme. A theme in the configuration directory wins over the
-  # | built-in of the same name, and the theme picker only ever records a name,
-  # | so installing under the bare name would make the built-in unreachable.
-  # | Prefixing keeps both available and groups the Gogh themes in the picker.
-  # | ===========================================
   THEME_DIR="${GHOSTTY_CONFIG_DIRECTORY}/themes"
   THEME_NAME="Gogh ${PROFILE_NAME}"
   THEME_FILE="${THEME_DIR}/${THEME_NAME}"
@@ -794,13 +1203,14 @@ apply_ghostty() {
   } > "${THEME_FILE}"
 
   # |
-  # | Selecting a theme is left to Ghostty. Its `+list-themes' picker writes the
-  # | chosen theme to `auto/theme.ghostty', which Ghostty only reads when the
-  # | configuration includes it - so make sure that one line is present, and
-  # | otherwise leave the user's configuration and their selection alone. The
-  # | leading `?' marks the include optional, so the configuration stays valid
-  # | even before anything has been selected.
+  # | Include the theme selected in Ghostty's picker
   # | ===========================================
+  # Selecting a theme is left to Ghostty. Its `+list-themes` picker writes the
+  # chosen theme to `auto/theme.ghostty`, which Ghostty only reads when the
+  # configuration includes it -- so make sure that one line is present, and
+  # otherwise leave the user's configuration and their selection alone. The
+  # leading `?` marks the include optional, so the configuration stays valid
+  # even before anything has been selected.
   if ! grep -qxF "${INCLUDE_LINE}" "${CFGFILE}"; then
     prints "Adding Ghostty's theme include to ${CFGFILE}..."
     {
@@ -818,11 +1228,10 @@ apply_ghostty() {
   prints "    theme = ${THEME_NAME}"
 }
 
+# |
+# | Applying values on Kitty
+# | ===========================================
 apply_kitty() {
-  # |
-  # | Applying values on Kitty
-  # | ===========================================
-
   prints "Patching kitty configuration file ($CFGFILE) with include of color theme file..."
 
   COLOR_FILE="colors.conf"
@@ -875,10 +1284,10 @@ apply_kitty() {
   killall -u "${USER}" -SIGUSR1 kitty || pkill --uid "$(id -u)" -SIGUSR1 kitty || prints "Reload failed. Please reopen your kitty terminal to see the changes."
 }
 
+# |
+# | Applying values on kmscon
+# | ===========================================
 apply_kmscon() {
-  # |
-  # | Applying values on kmscon | ===========================================
-
   prints "Patching kmscon configuration file (${CFGFILE}) with new colors..."
 
   updateKmsconConfig "$CFGFILE" "$COLOR_01"         "palette-black"
@@ -905,11 +1314,10 @@ apply_kmscon() {
   prints "Done - please restart your kmscon vt to see changes"
 }
 
+# |
+# | Applying values on Konsole
+# | ===========================================
 apply_konsole() {
-  # |
-  # | Applying values on Konsole
-  # | ===========================================
-
   PARENT=$(grep -o "^DefaultProfile=.*$" "${CFGFILE}" | cut -d '=' -f 2)
   if [[ -z "${PARENT}" ]]; then
     PARENT="FALLBACK/"
@@ -921,8 +1329,8 @@ apply_konsole() {
         KDIR="${XDG_DATA_HOME}/konsole"
   fi
 
-  # A fresh system (Konsole never launched, or ~/.local/share/konsole never
-  # created) doesn't have this directory yet -- the touch calls below fail
+  # A fresh system (Konsole never launched, or `~/.local/share/konsole` never
+  # created) doesn't have this directory yet -- the `touch` calls below fail
   # silently without it.
   [[ -d "${KDIR}" ]] || mkdir --parents "${KDIR}"
 
@@ -963,11 +1371,10 @@ apply_konsole() {
   } >> "${KCOLORSCHEME}"
 }
 
+# |
+# | Applying values on iTerm2
+# | ===========================================
 apply_darwin() {
-  # |
-  # | Applying values on iTerm2
-  # | ===========================================
-
   BACKGROUND_COLOR=$(convertNameAndRGBtoITerm "Background Color" "$BACKGROUND_COLOR")
   FOREGROUND_COLOR=$(convertNameAndRGBtoITerm "Foreground Color" "$FOREGROUND_COLOR")
   COLOR_01=$(convertNameAndRGBtoITerm "Ansi 0 Color"             "$COLOR_01")
@@ -996,11 +1403,10 @@ apply_darwin() {
   rm   "${PROFILE_NAME}.itermcolors"
 }
 
+# |
+# | Applying values on GNOME/MATE/Tilix
+# | ===========================================
 apply_gtk() {
-  # |
-  # | Applying values to gnome/mate/tilix
-  # | ===========================================
-
   local legacy="${1:-}"
 
   # This is to avoid doing the profile loop definition twice
@@ -1012,8 +1418,8 @@ apply_gtk() {
     VISIBLE_NAME="visible_name"
   fi
 
-  # Check first wether profile already exists
-  # Word splitting here is intentional: the tr output is a space-separated
+  # Check first whether the profile already exists.
+  # Word splitting is intentional: the `tr` output is a space-separated
   # list of profile hashes, deliberately split into array elements.
   # shellcheck disable=SC2207
   profile_hashes=($(${CONFTOOL} "${PROFILE_LIST_KEY}" | tr "[]'," " "))
@@ -1024,9 +1430,9 @@ apply_gtk() {
     fi
   done
 
-  # Fallback if there is no default profile
-  # Word splitting here is intentional: only the first field of the
-  # space-separated tr output is used, below, as the default slug.
+  # Fallback if there is no default profile.
+  # Word splitting is intentional: only the first field of the
+  # space-separated `tr` output is used, below, as the default slug.
   # shellcheck disable=SC2046
   set -- $(${CONFTOOL} "${PROFILE_LIST_KEY}" | tr "[]'," " ")
   : "${DEFAULT_SLUG:="$1"}"
@@ -1039,18 +1445,19 @@ apply_gtk() {
 
   if [[ -z "${legacy}" ]]; then
     # Every non-legacy caller (gnome-terminal, mate-terminal, tilix) already
-    # validates DEFAULT_SLUG itself before calling apply_gtk, via the same
-    # gsettings fallback -- so check that directly instead of re-deriving
+    # validates DEFAULT_SLUG itself before calling `apply_gtk`, via the same
+    # `gsettings` fallback -- so check that directly instead of re-deriving
     # "any profile exists" from `dconf list "${BASE_DIR%:}"`. That path-based
     # check happened to keep working for gnome-terminal/tilix only because
     # their PROFILE_LIST_KEY is a direct child of BASE_DIR (seeding the list
     # incidentally populates it); MATE's PROFILE_LIST_KEY lives under a
-    # sibling .../global/ subtree instead, so the same fresh-install case
+    # sibling `.../global/` subtree instead, so the same fresh-install case
     # that DEFAULT_SLUG's fallback already resolved still failed this
     # second, redundant check.
     if [[ -z "${DEFAULT_SLUG}" ]]; then
-      # Provide a user friendly error text if no saved profile exists, otherwise it will display "Error gconftool not found!"
-      #  it could happen on a newly installed system. (happened on CentOS 7)
+      # Provide a user-friendly error if no saved profile exists, otherwise
+      # it will display "Error gconftool not found!". This can happen on a
+      # newly installed system (happened on CentOS 7).
       printserr "Error, no saved profiles found!" \
       "Possible fix, new a profile (Terminal > Edit > Preferences > Profiles > New, then Close) and try again." \
       "You can safely delete the created profile after the installation."
@@ -1079,15 +1486,16 @@ apply_gtk() {
     COLOR_15=$(gnome_color           "$COLOR_15")
     COLOR_16=$(gnome_color           "$COLOR_16")
 
-    # copy existing settings from default profile
+    # Copy existing settings from the default profile
     $DCONF dump               "${DEFAULT_KEY}/" | $DCONF load "${PROFILE_KEY}/"
 
-    # add new copy to global list of profiles
+    # Add the new copy to the global list of profiles
     dlist_append              "${PROFILE_LIST_KEY}" "${PROFILE_SLUG#:}"
 
     set_theme
     dset palette              "${LEFT_WRAPPER:-}'${COLOR_01}${PALETTE_DELIM}${COLOR_02}${PALETTE_DELIM}${COLOR_03}${PALETTE_DELIM}${COLOR_04}${PALETTE_DELIM}${COLOR_05}${PALETTE_DELIM}${COLOR_06}${PALETTE_DELIM}${COLOR_07}${PALETTE_DELIM}${COLOR_08}${PALETTE_DELIM}${COLOR_09}${PALETTE_DELIM}${COLOR_10}${PALETTE_DELIM}${COLOR_11}${PALETTE_DELIM}${COLOR_12}${PALETTE_DELIM}${COLOR_13}${PALETTE_DELIM}${COLOR_14}${PALETTE_DELIM}${COLOR_15}${PALETTE_DELIM}${COLOR_16}'${RIGHT_WRAPPER:-}"
-    ${LEGACY_BOLD:-} && dset allow-bold "true" # mate
+    # MATE
+    ${LEGACY_BOLD:-} && dset allow-bold "true"
   else
     # Append the Base16 profile to the profile list
     glist_append string       "${PROFILE_LIST_KEY}" "${PROFILE_SLUG}"
@@ -1098,11 +1506,10 @@ apply_gtk() {
   fi
 }
 
+# |
+# | Applying values on Guake
+# | ===========================================
 apply_guake() {
-  # |
-  # | Applying values to guake
-  # | ===========================================
-
   local legacy="${1:-}"
 
   if [[ -z "${legacy}" ]]; then
@@ -1127,23 +1534,22 @@ apply_guake() {
   fi
 }
 
-appy_tilixschemes() {
-  # |
-  # | Applying values to tilix colorschemes
-  # | ===========================================
-
+# |
+# | Applying values on Tilix color schemes
+# | ===========================================
+apply_tilixschemes() {
   if [[ ${TILIX_RES::1} =~ ^(y|Y)$ ]]; then
     [[ -d "${HOME}/.config/tilix/schemes" ]] || mkdir -p "${HOME}/.config/tilix/schemes"
 
     TILIXCOLORS='{\n\t"name": "'${PROFILE_NAME}'",\n\t"comment": "Generated by Gogh",\n\t"foreground-color": "'${FOREGROUND_COLOR}'",\n\t"background-color":"'${BACKGROUND_COLOR}'",\n\t"cursor-background-color": "'${CURSOR_COLOR}'",\n\t"palette": [\n\t\t"'${COLOR_01}'",\n\t\t"'${COLOR_02}'",\n\t\t"'${COLOR_03}'",\n\t\t"'${COLOR_04}'",\n\t\t"'${COLOR_05}'",\n\t\t"'${COLOR_06}'",\n\t\t"'${COLOR_07}'",\n\t\t"'${COLOR_08}'",\n\t\t"'${COLOR_09}'",\n\t\t"'${COLOR_10}'",\n\t\t"'${COLOR_11}'",\n\t\t"'${COLOR_12}'",\n\t\t"'${COLOR_13}'",\n\t\t"'${COLOR_14}'",\n\t\t"'${COLOR_15}'",\n\t\t"'${COLOR_16}'"\n\t],\n\t"use-badge-color": false,\n\t"use-bold-color": false,\n\t"use-cursor-color": false,\n\t"use-highlight-color": false,\n\t"use-theme-colors": false\n}'
-    # scratchdir is exported by gogh.sh when TILIX_RES matches y/Y -- a
+    # `scratchdir` is exported by `gogh.sh` when TILIX_RES matches y/Y -- a
     # cross-script contract shellcheck can't see analyzing this file alone.
     # shellcheck disable=SC2154
     echo -e "${TILIXCOLORS}" > "${scratchdir}/${PROFILE_NAME}.json"
 
-    # Note: Tilix does not store color scheme name in dconf
-    # so we have to update color palette for the current profile in order to switch to the new theme
-    # but only set the palette on the last loop to avoid a flashing terminal
+    # Note: Tilix does not store the color scheme name in `dconf`, so we have
+    # to update the color palette of the current profile to switch to the new
+    # theme, but only on the last loop to avoid a flashing terminal.
     if ((LOOP == OPTLENGTH)); then
       cp -f "${scratchdir}"/* "$HOME/.config/tilix/schemes/"
       rm -rf "${scratchdir}"
@@ -1174,8 +1580,11 @@ appy_tilixschemes() {
   fi
 }
 
+# |
+# | Applying values on Xfce Terminal
+# | ===========================================
 apply_xfce4-terminal() {
-    # XFCE4 terminal has no profiles, instead it uses color presets
+    # Xfce Terminal has no profiles, instead it uses color presets
     SCHEMEDIR="${HOME}/.local/share/xfce4/terminal/colorschemes"
     CONFFILE="${HOME}/.config/xfce4/terminal/terminalrc"
 
@@ -1212,10 +1621,9 @@ apply_xfce4-terminal() {
         "${L_COLORPALETTE}" \
         "ColorCursorUseDefault=FALSE" > "${FF_NAME}"
 
-    # apply last theme in queue
-    # xfce4-terminal monitors its rc file and doesn't reference
-    # any of the themes in there. The color settings need to
-    # be written there directly.
+    # Apply the last theme in the queue. xfce4-terminal monitors its rc file
+    # and doesn't reference any of the themes in there, so the color settings
+    # need to be written there directly.
     if ((LOOP == OPTLENGTH)); then
         if [ -z "${GOGH_NONINTERACTIVE+no}" ] && [ -z "${GOGH_USE_NEW_THEME+no}" ]; then
             read -r -p "All done - apply new theme? [y/N] " -n 1 XFCE4_APPLY_CURR_THEME
@@ -1267,6 +1675,9 @@ apply_xfce4-terminal() {
     exit 0
 }
 
+# |
+# | Applying values on the Linux virtual console
+# | ===========================================
 apply_linux_vt () {
   local theme_dir
   if [[ "${USER}" = "root" ]]; then
@@ -1283,11 +1694,12 @@ apply_linux_vt () {
             local color=COLOR_${c}
             echo "${!color}" >> "${file_name}"
           done
-    # apply the theme if setvtrgb exists
+    # Apply the theme if `setvtrgb` exists
     if command -v setvtrgb >/dev/null 2>&1; then
             setvtrgb "${file_name}"
             echo setvtrgb "${file_name}"
-            gogh_colors # preview
+            # Preview
+            gogh_colors
     fi
   fi
 
@@ -1298,6 +1710,9 @@ apply_linux_vt () {
   fi
 }
 
+# |
+# | Applying values on Termux
+# | ===========================================
 apply_termux() {
 
   updateTermuxConfig "$CFGFILE" "$BACKGROUND_COLOR" "background"
@@ -1339,11 +1754,10 @@ apply_termux() {
   fi
 }
 
+# |
+# | Applying values on WezTerm using dynamic color escape sequences
+# | ===========================================
 apply_wezterm() {
-  # |
-  # | Applying values on Wezterm using Dynamic Color Escape Sequences
-  # | ===========================================
-
   prints "Applying Wezterm color theme using dynamic color escape sequences..."
 
   # Build the color palette escape sequence
@@ -1366,12 +1780,13 @@ apply_wezterm() {
   palette_seq="${palette_seq};14;${COLOR_15}"
   palette_seq="${palette_seq};15;${COLOR_16}\\007"
 
-  # Apply the color palette
-  # palette_seq's literal \033/\007 sequences need printf's own format-string
-  # escape processing to become real ESC/BEL bytes -- printf '%s' would print
-  # them as literal backslash-digit text instead (verified). The dynamic parts
-  # (COLOR_01..COLOR_16) are validated hex colors (tools/validate/validate_colors.py),
-  # never containing "%", so there's no real risk from using it as the format.
+  # Apply the color palette.
+  # The literal \033/\007 sequences in `palette_seq` need `printf`'s own
+  # format-string escape processing to become real ESC/BEL bytes --
+  # `printf '%s'` would print them as literal backslash-digit text instead
+  # (verified). The dynamic parts (COLOR_01..COLOR_16) are hex colors
+  # validated by `tools/validate/validate_colors.py`, never containing "%",
+  # so there's no real risk from using it as the format.
   # shellcheck disable=SC2059
   printf "${palette_seq}"
 
@@ -1388,6 +1803,14 @@ apply_wezterm() {
   prints "Theme: ${PROFILE_NAME}"
 }
 
+
+# | ===========================================
+# | MAIN
+# | ===========================================
+
+# |
+# | Apply the theme on the detected terminal
+# | ===========================================
 [[ -n "${UUIDGEN}" ]] && PROFILE_SLUG="$(uuidgen)"
 
 case "${TERMINAL}" in
@@ -1417,21 +1840,22 @@ case "${TERMINAL}" in
     ;;
 
   gnome-terminal* )
-    # Modern GNOME Terminal is detected by schema presence, not by dconf having
-    # written keys -- dconf list is empty for a never-customized default
-    # profile even on a fully modern install, which used to misroute here into
-    # the legacy gconftool-2 branch below.
+    # Modern GNOME Terminal is detected by schema presence, not by `dconf`
+    # having written keys -- `dconf list` is empty for a never-customized
+    # default profile even on a fully modern install, which used to misroute
+    # here into the legacy `gconftool-2` branch below.
     if [[ -n "$(${DCONF} list /org/gnome/terminal/)" ]] || { [[ -n "${GS}" ]] && ${GS} list-schemas 2>/dev/null | grep -qx "org.gnome.Terminal.ProfilesList"; }; then
       BASE_DIR="/org/gnome/terminal/legacy/profiles:/:"
       PROFILE_LIST_KEY="${BASE_DIR%:}list"
 
-      # Note -- ${BASE_DIR%s} is a workaround to avoid doing additional conditional testing for existing profiles
-      # if terminal is set to gnome-terminal
+      # Note: `${BASE_DIR%s}` is a workaround to avoid additional conditional
+      # testing for existing profiles if the terminal is gnome-terminal.
       : "${DEFAULT_SLUG:="$(${DCONF} read "${BASE_DIR%:}default" | tr -d \')"}"
 
-      # GNOME Terminal ships the default profile as a schema default, and dconf
-      # only reports values the user has set, so this reads back empty until a
-      # profile is added or renamed. gsettings does honour schema defaults.
+      # GNOME Terminal ships the default profile as a schema default, and
+      # `dconf` only reports values the user has set, so this reads back empty
+      # until a profile is added or renamed. `gsettings` does honour schema
+      # defaults.
       if [[ -z "${DEFAULT_SLUG}" ]] && [[ -n "${GS}" ]]; then
         DEFAULT_SLUG="$(${GS} get org.gnome.Terminal.ProfilesList default | tr -d \')"
       fi
@@ -1474,9 +1898,9 @@ case "${TERMINAL}" in
 
     : "${DEFAULT_SLUG:="$(${DCONF} read "${BASE_DIR/profiles/global}default-profile" | tr -d \')"}"
 
-    # MATE Terminal ships the default profile as a schema default, and dconf
+    # MATE Terminal ships the default profile as a schema default, and `dconf`
     # only reports values the user has set, so this reads back empty until a
-    # profile is added or renamed. gsettings does honour schema defaults.
+    # profile is added or renamed. `gsettings` does honour schema defaults.
     if [[ -z "${DEFAULT_SLUG}" ]] && [[ -n "${GS}" ]]; then
       DEFAULT_SLUG="$(${GS} get org.mate.terminal.global default-profile | tr -d \')"
     fi
@@ -1502,7 +1926,7 @@ case "${TERMINAL}" in
 
     # Tilix ships the default profile as a schema default, and dconf only
     # reports values the user has set, so this reads back empty until a
-    # profile is added or renamed. gsettings does honour schema defaults.
+    # profile is added or renamed. `gsettings` does honour schema defaults.
     if [[ -z "${DEFAULT_SLUG}" ]] && [[ -n "${GS}" ]]; then
       DEFAULT_SLUG="$(${GS} get com.gexperts.Tilix.ProfilesList default | tr -d \')"
     fi
@@ -1519,7 +1943,7 @@ case "${TERMINAL}" in
     RIGHT_WRAPPER="]"
     PALETTE_DELIM="', '"
 
-    appy_tilixschemes
+    apply_tilixschemes
     apply_gtk
     ;;
 
@@ -1572,7 +1996,7 @@ case "${TERMINAL}" in
     ""                                                        \
     "Supported terminals:"                                    \
     "   alacritty"                                            \
-    "   mintty (and deriviates)"                              \
+    "   mintty (and derivatives)"                             \
     "   guake"                                                \
     "   iTerm.app (iTerm2)"                                   \
     "   pantheon-terminal"                                    \

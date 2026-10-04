@@ -3742,6 +3742,32 @@
   cursor: '#968C83'
   hash: 35112016cac8188a9d0ab5195bc6341029ad3e82a3b5b37b0450b6cdd2c4b934
   hash_bg: 249ee5dcbdd08213c0d667ea000ada2da2f1f1ff96676c997553241c1ffadc2c
+- name: Berlin
+  author: xscriptor (https://github.com/xscriptor)
+  author_name: xscriptor
+  author_url: https://github.com/xscriptor
+  variant: dark
+  color_01: '#000000'
+  color_02: '#999999'
+  color_03: '#BBBBBB'
+  color_04: '#DDDDDD'
+  color_05: '#888888'
+  color_06: '#AAAAAA'
+  color_07: '#CCCCCC'
+  color_08: '#FFFFFF'
+  color_09: '#333333'
+  color_10: '#BBBBBB'
+  color_11: '#DDDDDD'
+  color_12: '#FFFFFF'
+  color_13: '#AAAAAA'
+  color_14: '#CCCCCC'
+  color_15: '#EEEEEE'
+  color_16: '#FFFFFF'
+  background: '#000000'
+  foreground: '#CCCCCC'
+  cursor: '#CCCCCC'
+  hash: d08aec8ca64d0b7731e3e5693acfbfe7b1cfec6775713f69edaeb10ee3f599ff
+  hash_bg: 7b2817bf9b80e66d07f28095dcd1244590692778dc617a53cbd666ad280872ed
 - name: Bespin
   author: Jan T. Sott
   author_name: Jan T. Sott
@@ -4548,6 +4574,32 @@
   cursor: '#383A42'
   hash: d981d486005af9ed92722ba72d387b302c948056332475fd661221950765877d
   hash_bg: 0142ea2bd1d1589ebb8c0b75a30f5e07e4868140fee5d8b5f78b44be07ffd3e9
+- name: Bogota
+  author: xscriptor (https://github.com/xscriptor)
+  author_name: xscriptor
+  author_url: https://github.com/xscriptor
+  variant: dark
+  color_01: '#200B0A'
+  color_02: '#FC618D'
+  color_03: '#7BD88F'
+  color_04: '#FFED89'
+  color_05: '#47E6FF'
+  color_06: '#FF9999'
+  color_07: '#47E6FF'
+  color_08: '#F7F1FF'
+  color_09: '#525053'
+  color_10: '#FC618D'
+  color_11: '#7BD88F'
+  color_12: '#FFED89'
+  color_13: '#47E6FF'
+  color_14: '#FF9999'
+  color_15: '#47E6FF'
+  color_16: '#F7F1FF'
+  background: '#200B0A'
+  foreground: '#F7F1FF'
+  cursor: '#F7F1FF'
+  hash: c1a7e061e37cdce6acea40ce7e371ed567f04577e45ba9e398bd97221db2614d
+  hash_bg: f18ef73ea7e255bdb5da387b20527076a3d6aafd1172ba8246724e8007a2e00a
 - name: Bogster Dark
   author: lhs
   author_name: lhs
@@ -7070,6 +7122,58 @@
   cursor: '#EFC4CD'
   hash: 91bf7f3ca012c24d8d6b3edf1b1a2c79723ac646c8a1cbaa354c05d22b51dc21
   hash_bg: 330bda57284bd4a09a8e98ca84ad20ab7907fd4f0858613d918fcb417510b28f
+- name: Cyan Day
+  author: Alex Bachlej (https://alexbachlej.com)
+  author_name: ''
+  author_url: ''
+  variant: light
+  color_01: '#12343B'
+  color_02: '#B3345C'
+  color_03: '#147C72'
+  color_04: '#9B6A00'
+  color_05: '#006D8F'
+  color_06: '#6F4AA8'
+  color_07: '#008CA8'
+  color_08: '#E8FBFF'
+  color_09: '#5B7E86'
+  color_10: '#D64B73'
+  color_11: '#1B9A8E'
+  color_12: '#C98300'
+  color_13: '#0088B8'
+  color_14: '#8964C8'
+  color_15: '#00AFCF'
+  color_16: '#FFFFFF'
+  background: '#E8FBFF'
+  foreground: '#12343B'
+  cursor: '#008CA8'
+  hash: 001ffb881689c75bae19e2ada8b54984afe200ef7db838786a46b19187b66aea
+  hash_bg: 5fde3dedc6a9cc39c5f0a850e3ec5770f05da6519a02ce43472f46f7be678aa9
+- name: Cyan Night
+  author: Alex Bachlej (https://alexbachlej.com)
+  author_name: ''
+  author_url: ''
+  variant: dark
+  color_01: '#06191F'
+  color_02: '#FF5F7A'
+  color_03: '#5AF2D5'
+  color_04: '#FFD166'
+  color_05: '#38BDF8'
+  color_06: '#B794F4'
+  color_07: '#22D3EE'
+  color_08: '#D5FBFF'
+  color_09: '#27525C'
+  color_10: '#FF7A90'
+  color_11: '#7DFFE5'
+  color_12: '#FFE08A'
+  color_13: '#67D8FF'
+  color_14: '#C4A7FF'
+  color_15: '#67E8F9'
+  color_16: '#F2FEFF'
+  background: '#031B22'
+  foreground: '#D5FBFF'
+  cursor: '#22D3EE'
+  hash: 0e6f2b99dab3ec52af23561d58cce940072d844f57cd6953714bbdbfb2548a35
+  hash_bg: 62bc93e0e13aae4f7e5297bb12a999c4d71ad29be87b21e66811257f22958c19
 - name: Cyberdyne
   author: ReagentX (https://github.com/ReagentX)
   author_name: ReagentX
@@ -13102,6 +13206,32 @@
   cursor: '#D5D5D5'
   hash: 79f14c7245f34f2e8f431a458a6cfa34ad9abe9ebe737639b2eea4c031e784ba
   hash_bg: 3934a4e8079e372a18fe53e3046e902052594a64d28d2b803fc97434197aa537
+- name: Helsinki
+  author: xscriptor (https://github.com/xscriptor)
+  author_name: xscriptor
+  author_url: https://github.com/xscriptor
+  variant: light
+  color_01: '#F8FAFE'
+  color_02: '#1FAA9E'
+  color_03: '#733D9A'
+  color_04: '#2E70AD'
+  color_05: '#B55A0F'
+  color_06: '#3E9D21'
+  color_07: '#BD4C3D'
+  color_08: '#544D40'
+  color_09: '#B0A999'
+  color_10: '#009E91'
+  color_11: '#5A1F8A'
+  color_12: '#0F5BA2'
+  color_13: '#B23B00'
+  color_14: '#218C00'
+  color_15: '#B32E1F'
+  color_16: '#000000'
+  background: '#F8FAFE'
+  foreground: '#544D40'
+  cursor: '#544D40'
+  hash: 1d09f59aaf8acb59f9da36c77d722ef3f9037b0fea8808507c19c541845e798b
+  hash_bg: 8bc122100107d6148b0e8780a57e2df749a9e77d18ae722d5d109ea97164e6e2
 - name: Hemisu Dark
   author: ''
   author_name: ''
@@ -15780,6 +15910,32 @@
   cursor: '#7F7F7F'
   hash: b49cf8bb15ad0be5023ef499d20e12ea9b0ea4670e91e9df3b317f25154d5ce4
   hash_bg: fe528cf3f8ccd34a1f468827c343042ff96539ea9ca3c2ef5167ab850334c0ea
+- name: Lahabana
+  author: xscriptor (https://github.com/xscriptor)
+  author_name: xscriptor
+  author_url: https://github.com/xscriptor
+  variant: dark
+  color_01: '#19191A'
+  color_02: '#FC618D'
+  color_03: '#7BD88F'
+  color_04: '#E5FF9D'
+  color_05: '#FD9353'
+  color_06: '#948AE3'
+  color_07: '#5AD4E6'
+  color_08: '#F7F1FF'
+  color_09: '#19191A'
+  color_10: '#FC618D'
+  color_11: '#7BD88F'
+  color_12: '#E5FF9D'
+  color_13: '#FD9353'
+  color_14: '#948AE3'
+  color_15: '#5AD4E6'
+  color_16: '#F7F1FF'
+  background: '#19191A'
+  foreground: '#F7F1FF'
+  cursor: '#F7F1FF'
+  hash: 31bba6c6c990c599f5fd4200905f78e233007b062946d2997be3a7fbb6c1a33b
+  hash_bg: c917fdb1cff0b3f94c926f88c0cdd75469ec59bcdefe7b72b39deb06611e6c54
 - name: Laser
   author: ReagentX (https://github.com/ReagentX)
   author_name: ReagentX
@@ -16196,6 +16352,32 @@
   cursor: '#AFC2C2'
   hash: 1169d1fe8b94e8a8fe5273f8e873b64174e21859abe6e02d1d31bf199d119d16
   hash_bg: 7b2817bf9b80e66d07f28095dcd1244590692778dc617a53cbd666ad280872ed
+- name: London
+  author: xscriptor (https://github.com/xscriptor)
+  author_name: xscriptor
+  author_url: https://github.com/xscriptor
+  variant: light
+  color_01: '#FFFFFF'
+  color_02: '#333333'
+  color_03: '#444444'
+  color_04: '#555555'
+  color_05: '#666666'
+  color_06: '#777777'
+  color_07: '#888888'
+  color_08: '#333333'
+  color_09: '#333333'
+  color_10: '#444444'
+  color_11: '#555555'
+  color_12: '#666666'
+  color_13: '#777777'
+  color_14: '#888888'
+  color_15: '#999999'
+  color_16: '#AAAAAA'
+  background: '#FFFFFF'
+  foreground: '#333333'
+  cursor: '#333333'
+  hash: e8d5103ecb8f66f091093210200fee9c02ecb48e8e77bdfdafa6f2d3536525a9
+  hash_bg: 07ee686b3ce29f11070f5edcd6f0da03659e67becfba76650c1c6b5ac079847a
 - name: London Bonfire Night
   author: Scott Matthews (https://github.com/scottmatthews7)
   author_name: Scott Matthews
@@ -16508,6 +16690,32 @@
   cursor: '#C0C0C0'
   hash: a3c1bbdc85d655d56a48b3c43ae349a7aba3000a87688db3ed3af3f4125461f3
   hash_bg: 7b2817bf9b80e66d07f28095dcd1244590692778dc617a53cbd666ad280872ed
+- name: Madrid
+  author: xscriptor (https://github.com/xscriptor)
+  author_name: xscriptor
+  author_url: https://github.com/xscriptor
+  variant: light
+  color_01: '#FAFAFA'
+  color_02: '#990026'
+  color_03: '#007A28'
+  color_04: '#8A6408'
+  color_05: '#007A9E'
+  color_06: '#4D2699'
+  color_07: '#007A9E'
+  color_08: '#1A1A1A'
+  color_09: '#4D4D4D'
+  color_10: '#990026'
+  color_11: '#007A28'
+  color_12: '#8A6408'
+  color_13: '#007A9E'
+  color_14: '#4D2699'
+  color_15: '#007A9E'
+  color_16: '#1A1A1A'
+  background: '#FAFAFA'
+  foreground: '#1A1A1A'
+  cursor: '#1A1A1A'
+  hash: fe2e1969e9a57a43d597e00891297dfade40d457bae62da7c74b62e6efaed065
+  hash_bg: 7f6fe813de8e07553a3eb71e309f1f710f53117b136cfaec174e6a04c653bc88
 - name: Maia
   author: ''
   author_name: ''
@@ -17444,6 +17652,32 @@
   cursor: '#E0D8C8'
   hash: 6f8d5c777e347b2ecf149f20483dc9dc1cfde88284ee252395c35e0f9d0d1ad4
   hash_bg: cd468272739766c6072d380eb95f98dc3905fe96cb17aed6cbff922124a19b2a
+- name: Miami
+  author: xscriptor (https://github.com/xscriptor)
+  author_name: xscriptor
+  author_url: https://github.com/xscriptor
+  variant: dark
+  color_01: '#000000'
+  color_02: '#FF4C8B'
+  color_03: '#7FFFD4'
+  color_04: '#FFD84C'
+  color_05: '#00FFA8'
+  color_06: '#D36CFF'
+  color_07: '#47CFFF'
+  color_08: '#F7F1FF'
+  color_09: '#69676C'
+  color_10: '#FF4C8B'
+  color_11: '#7FFFD4'
+  color_12: '#FFD84C'
+  color_13: '#00FFA8'
+  color_14: '#D36CFF'
+  color_15: '#47CFFF'
+  color_16: '#F7F1FF'
+  background: '#000000'
+  foreground: '#F7F1FF'
+  cursor: '#F7F1FF'
+  hash: b4af27f2558e8c4674f26f3ebd4fbde54ecf299120c1bcd0d57f91a03055ff09
+  hash_bg: 7b2817bf9b80e66d07f28095dcd1244590692778dc617a53cbd666ad280872ed
 - name: Miami Heat
   author: PoshPalette (https://github.com/livlign/posh-palette)
   author_name: PoshPalette
@@ -20876,6 +21110,32 @@
   cursor: '#C1C497'
   hash: 27ef62ecbb247ea9e5d5bae617978886878d1bba4483161796afaf318f6453ab
   hash_bg: dcb0c7fe2ea596a1a860db5059457f56e5f08cd2014d2ae9292fbf09d2421c7d
+- name: Oslo
+  author: xscriptor (https://github.com/xscriptor)
+  author_name: xscriptor
+  author_url: https://github.com/xscriptor
+  variant: dark
+  color_01: '#3F4451'
+  color_02: '#E05561'
+  color_03: '#8CC265'
+  color_04: '#D18F52'
+  color_05: '#4AA5F0'
+  color_06: '#C162DE'
+  color_07: '#42B3C2'
+  color_08: '#E6E6E6'
+  color_09: '#4F5666'
+  color_10: '#FF616E'
+  color_11: '#A5E075'
+  color_12: '#F0A45D'
+  color_13: '#4DC4FF'
+  color_14: '#DE73FF'
+  color_15: '#4CD1E0'
+  color_16: '#FFFFFF'
+  background: '#3F4451'
+  foreground: '#ABB2BF'
+  cursor: '#ABB2BF'
+  hash: d45c2b53db25c7f7f46c37b5f1e72e4d89f4cd75f5a1decbc897be22b8187e1d
+  hash_bg: d0c92503a4b37e3370148132ceaa1f096857918675e5e17815150d76e7385d38
 - name: Outrun Dark
   author: Hugo Delahousse (http://github.com/hugodelahousse/)
   author_name: Hugo Delahousse
@@ -21370,6 +21630,32 @@
   cursor: '#A39E9B'
   hash: cad219863a2b614a101d75920a66f5413dbc805040f158b4e4b760a0aca7cff7
   hash_bg: 83e51b73ab3ef6eedb14912b0137f802ee55640b4979c7ba991665f8b4993ac5
+- name: Paris
+  author: xscriptor (https://github.com/xscriptor)
+  author_name: xscriptor
+  author_url: https://github.com/xscriptor
+  variant: dark
+  color_01: '#1A0A30'
+  color_02: '#FC618D'
+  color_03: '#7BD88F'
+  color_04: '#FCE566'
+  color_05: '#A3F3FF'
+  color_06: '#C4BDFF'
+  color_07: '#A3F3FF'
+  color_08: '#1A0A30'
+  color_09: '#C4BDFF'
+  color_10: '#FC618D'
+  color_11: '#7BD88F'
+  color_12: '#FCE566'
+  color_13: '#A3F3FF'
+  color_14: '#C4BDFF'
+  color_15: '#A3F3FF'
+  color_16: '#F7F1FF'
+  background: '#1A0A30'
+  foreground: '#F7F1FF'
+  cursor: '#F7F1FF'
+  hash: d757ff0ef8f85381f4ee8b05e08e7ad88bf1f89e2b52f867db4d17aa654181df
+  hash_bg: 68ded65a3c47044d45f62112cf8604c136b055915e729e180ded7421328aa07c
 - name: Pasque
   author: Gabriel Fontes (https://github.com/Misterio77)
   author_name: Gabriel Fontes
@@ -22488,6 +22774,32 @@
   cursor: '#F6F6F7'
   hash: 0a1270b3cf77b4be7fa8a120cc58001dd266b34e1526f97f4558f63481d59663
   hash_bg: 92bdce04be9f73e491d87b45b22da71ffc3ae30ecb724ba271fd66f4d6114d21
+- name: Praha
+  author: xscriptor (https://github.com/xscriptor)
+  author_name: xscriptor
+  author_url: https://github.com/xscriptor
+  variant: dark
+  color_01: '#1A1A1A'
+  color_02: '#FF5555'
+  color_03: '#B8E6A0'
+  color_04: '#FFE4A3'
+  color_05: '#BD93F9'
+  color_06: '#FF9AA2'
+  color_07: '#8BE9FD'
+  color_08: '#FFFFFF'
+  color_09: '#6272A4'
+  color_10: '#FF6E6E'
+  color_11: '#B8E6A0'
+  color_12: '#FFE4A3'
+  color_13: '#D6ACFF'
+  color_14: '#FF9AA2'
+  color_15: '#A4FFFF'
+  color_16: '#FFFFFF'
+  background: '#1A1A1A'
+  foreground: '#FFFFFF'
+  cursor: '#FFFFFF'
+  hash: 936488797a0a0d626c767c177621301c80bf22c918cc6dc92c95b74950f6ca34
+  hash_bg: f70b776dd81bc5cf00513200646fe4e0452b12e474fda29388b12ed13738fb90
 - name: Precious Dark Eleven
   author: 4lex4
   author_name: 4lex4
@@ -24048,6 +24360,58 @@
   cursor: '#3E3220'
   hash: b289d562aedd30f0dc68472f67758204c3ddb330ec9625e1f12d01e8969ae80c
   hash_bg: c02ddc0b1de22591d77634b9fe04f3f45e7ed16a5f1bce7aed32babbcf6064e6
+- name: Sangdoist
+  author: Lee Yunjin (https://oborona.zip)
+  author_name: Lee Yunjin
+  author_url: https://oborona.zip
+  variant: dark
+  color_01: '#131417'
+  color_02: '#EC6029'
+  color_03: '#A1C246'
+  color_04: '#E5BD2B'
+  color_05: '#2D7AEC'
+  color_06: '#B95485'
+  color_07: '#A3CBC2'
+  color_08: '#E0E0DC'
+  color_09: '#62627A'
+  color_10: '#E43E1D'
+  color_11: '#75BF52'
+  color_12: '#E4C92E'
+  color_13: '#3641CF'
+  color_14: '#D3579D'
+  color_15: '#BFC9E1'
+  color_16: '#E7E7E4'
+  background: '#131417'
+  foreground: '#CECECC'
+  cursor: '#CECECC'
+  hash: 328e2d29c3dcf41ed845c749b6ef48924ee956dd1ed616978031e8c1c95c5fbb
+  hash_bg: 1b40d409d984497a7ceaaa4e5d62eeb886fe6efc1fd05991f2fc5a0daa097323
+- name: Sangdoist Light
+  author: Lee Yunjin (https://oborona.zip)
+  author_name: Lee Yunjin
+  author_url: https://oborona.zip
+  variant: light
+  color_01: '#131417'
+  color_02: '#C4481A'
+  color_03: '#5E7E1A'
+  color_04: '#9C7A08'
+  color_05: '#1F5FC4'
+  color_06: '#9A3F6C'
+  color_07: '#3A7F72'
+  color_08: '#C8C8C4'
+  color_09: '#62627A'
+  color_10: '#B8300F'
+  color_11: '#4A8A2C'
+  color_12: '#B0901A'
+  color_13: '#3641CF'
+  color_14: '#B3407E'
+  color_15: '#55689A'
+  color_16: '#E7E7E4'
+  background: '#F4F4F1'
+  foreground: '#26272B'
+  cursor: '#808080'
+  hash: 9890907d39df85e592568fa8ee8970649edbc00b59dc1f9be483140916f81fcf
+  hash_bg: 3e2e3ad7a46aa7d4fda73f906ff441101ce57207540ca354894d8321cd83dd96
 - name: Sat
   author: ''
   author_name: ''
@@ -24854,6 +25218,32 @@
   cursor: '#ECECE9'
   hash: efa3f35500062e043fc5c74577a194052d3206fbe6657bb0b89548d911462d48
   hash_bg: b178521f9ca8fe1b3d6f184d5a33ab7a08b1ae7d439c177100000dbf31e81189
+- name: Seoulism Light
+  author: Lee Yunjin (https://oborona.zip)
+  author_name: Lee Yunjin
+  author_url: https://oborona.zip
+  variant: light
+  color_01: '#101114'
+  color_02: '#C83024'
+  color_03: '#108C76'
+  color_04: '#C46E0A'
+  color_05: '#244CC8'
+  color_06: '#8040D2'
+  color_07: '#1880B4'
+  color_08: '#C8C8C4'
+  color_09: '#5A5C64'
+  color_10: '#E24E42'
+  color_11: '#1EA68C'
+  color_12: '#DE8A1E'
+  color_13: '#466CE2'
+  color_14: '#9E62E4'
+  color_15: '#3298CC'
+  color_16: '#ECECE9'
+  background: '#FAFAF7'
+  foreground: '#101114'
+  cursor: '#808080'
+  hash: 75ce702cbc55ff8d7baf97854cbd35586342844017be32530a67bf2769676211
+  hash_bg: 1497509b136e2fe45363f43505a7314b4e3ff15efc351a45a3439691ce3c0232
 - name: Sequoia Monochrome Dark
   author: Michael Andreuzza (https://github.com/michael-andreuzza)
   author_name: Michael Andreuzza
@@ -25452,6 +25842,136 @@
   cursor: '#385156'
   hash: 7a6ae9494c43c199bde6db446039ab83e5ecf18027976196ee1bd0a7bed87888
   hash_bg: f7a87c20d250c70a7d182767af80883e4f3c87a0de974866f9d29cbfb81e2cc7
+- name: SilkCircuit Dawn
+  author: Stefanie Jane (https://github.com/hyperb1iss/silkcircuit)
+  author_name: Stefanie Jane
+  author_url: https://github.com/hyperb1iss/silkcircuit
+  variant: light
+  color_01: '#2B2540'
+  color_02: '#C1272D'
+  color_03: '#1D6E46'
+  color_04: '#796100'
+  color_05: '#1454DC'
+  color_06: '#B40077'
+  color_07: '#006E72'
+  color_08: '#FAF8FF'
+  color_09: '#5A4D6E'
+  color_10: '#DC2626'
+  color_11: '#288855'
+  color_12: '#7F5F00'
+  color_13: '#2572EF'
+  color_14: '#D92A99'
+  color_15: '#048397'
+  color_16: '#FFFFFF'
+  background: '#FAF8FF'
+  foreground: '#2B2540'
+  cursor: '#006E72'
+  hash: 9e2cc40d3a368e6efc40492db2439732c0069c35d32ecaad398890c2d3b0f07b
+  hash_bg: e115f06df3bfe26ecedbb58f1895ae321360afcfbf7a41534b54812378edaa9f
+- name: SilkCircuit Glow
+  author: Stefanie Jane (https://github.com/hyperb1iss/silkcircuit)
+  author_name: Stefanie Jane
+  author_url: https://github.com/hyperb1iss/silkcircuit
+  variant: dark
+  color_01: '#000000'
+  color_02: '#FF2244'
+  color_03: '#00FF00'
+  color_04: '#FFFF00'
+  color_05: '#0099FF'
+  color_06: '#FF00FF'
+  color_07: '#00FFFF'
+  color_08: '#FFFFFF'
+  color_09: '#818181'
+  color_10: '#FF6666'
+  color_11: '#66FF66'
+  color_12: '#FFFF66'
+  color_13: '#66CCFF'
+  color_14: '#FF66FF'
+  color_15: '#66FFFF'
+  color_16: '#FFFFFF'
+  background: '#0A0816'
+  foreground: '#FFFFFF'
+  cursor: '#00FFFF'
+  hash: f5c2ac1d458ad4cad84885a7b3665d0f97a0f50a5de334f530fe5a9585752668
+  hash_bg: 6171434ffcefc49936e3edfa82ad29442ac4f2abf41655e126ec40c3745120f2
+- name: SilkCircuit Neon
+  author: Stefanie Jane (https://github.com/hyperb1iss/silkcircuit)
+  author_name: Stefanie Jane
+  author_url: https://github.com/hyperb1iss/silkcircuit
+  variant: dark
+  color_01: '#12101A'
+  color_02: '#FF6363'
+  color_03: '#50FA7B'
+  color_04: '#F1FA8C'
+  color_05: '#82AAFF'
+  color_06: '#FF00FF'
+  color_07: '#80FFEA'
+  color_08: '#F8F8F2'
+  color_09: '#768D8D'
+  color_10: '#FF8787'
+  color_11: '#86FBA8'
+  color_12: '#FFFFA5'
+  color_13: '#82B1FF'
+  color_14: '#FF69FF'
+  color_15: '#5FFFFF'
+  color_16: '#FFFFFF'
+  background: '#12101A'
+  foreground: '#F8F8F2'
+  cursor: '#80FFEA'
+  hash: b25e8a531641f00baa60cec65ba4c030ba03890e88fe93b408d0a98e7cbe84a0
+  hash_bg: 125a7088f006ce6d2fc08e840fd0a7f2ff21d72b2ffeec72058f1110d1690a6a
+- name: SilkCircuit Soft
+  author: Stefanie Jane (https://github.com/hyperb1iss/silkcircuit)
+  author_name: Stefanie Jane
+  author_url: https://github.com/hyperb1iss/silkcircuit
+  variant: dark
+  color_01: '#141220'
+  color_02: '#FF6677'
+  color_03: '#66FF99'
+  color_04: '#FFE699'
+  color_05: '#92AAFF'
+  color_06: '#FF99FF'
+  color_07: '#99FFEE'
+  color_08: '#F8F8F2'
+  color_09: '#6272A4'
+  color_10: '#FF7788'
+  color_11: '#80FFB3'
+  color_12: '#FFFFA5'
+  color_13: '#A2BBFF'
+  color_14: '#FFB3FF'
+  color_15: '#B3FFEA'
+  color_16: '#FFFFFF'
+  background: '#1A1626'
+  foreground: '#F8F8F2'
+  cursor: '#99FFEE'
+  hash: aeb8cf4cb08dfabace5959584db1a9c8c46b378d70743890f51b2cc668154a4e
+  hash_bg: 7559477e79af17b864457db4eb0fb1077b06320fefde93c733421e26634fab17
+- name: SilkCircuit Vibrant
+  author: Stefanie Jane (https://github.com/hyperb1iss/silkcircuit)
+  author_name: Stefanie Jane
+  author_url: https://github.com/hyperb1iss/silkcircuit
+  variant: dark
+  color_01: '#0F0C1A'
+  color_02: '#FF3366'
+  color_03: '#00FF66'
+  color_04: '#FFCC00'
+  color_05: '#6699FF'
+  color_06: '#FF00CC'
+  color_07: '#00FFCC'
+  color_08: '#F8F8F2'
+  color_09: '#728989'
+  color_10: '#FF6677'
+  color_11: '#66FF99'
+  color_12: '#FFFF66'
+  color_13: '#88AAFF'
+  color_14: '#FF66FF'
+  color_15: '#00FFFF'
+  color_16: '#FFFFFF'
+  background: '#0F0C1A'
+  foreground: '#F8F8F2'
+  cursor: '#00FFCC'
+  hash: dca1b4b5503368bb069d66c359a6cb50ed214b192e0e3a4310ed90025fa64f07
+  hash_bg: f716824337e352149427b1a87fe7aa07413d792e533a618cc97d97d7a9f7f3ab
 - name: Slate
   author: deneshshan (https://github.com/deneshshan)
   author_name: deneshshan
@@ -28468,6 +28988,32 @@
   cursor: '#2A2920'
   hash: a03bdb7928328621329b58db512a1d2c0078d4018b9e230ca7bf1d6345f203b7
   hash_bg: 03f7279ae1e812bc71eaedf8ebaba7932e01b1ae348b2ac354ffcde755bb19a8
+- name: Tokio
+  author: xscriptor (https://github.com/xscriptor)
+  author_name: xscriptor
+  author_url: https://github.com/xscriptor
+  variant: dark
+  color_01: '#1C1C1D'
+  color_02: '#FC618D'
+  color_03: '#7BD88F'
+  color_04: '#FCE566'
+  color_05: '#FD9353'
+  color_06: '#948AE3'
+  color_07: '#5AD4E6'
+  color_08: '#F7F1FF'
+  color_09: '#1C1C1D'
+  color_10: '#FC618D'
+  color_11: '#7BD88F'
+  color_12: '#FCE566'
+  color_13: '#FD9353'
+  color_14: '#948AE3'
+  color_15: '#5AD4E6'
+  color_16: '#F7F1FF'
+  background: '#1C1C1D'
+  foreground: '#F7F1FF'
+  cursor: '#F7F1FF'
+  hash: 49345d07cb73305b9f7d1d7ea38a2fc95a02146f7fd2bdb886bc32ffff4eff57
+  hash_bg: 82edfc79f8183c94c7e30f471254e7a35fae98ea211b03dfab82e2d210674bec
 - name: Tokyo City Dark
   author: Michaël Ball
   author_name: Michaël Ball
@@ -30678,6 +31224,32 @@
   cursor: '#FCFCFA'
   hash: 9812aadbfde6d08c19e1d4fb723a63a23dc57232b4c781d08ebb02bf7689f197
   hash_bg: 1b109385f94aff71ad227784252eff8f66b277ed9259f9aeba76bd72a7fd4d57
+- name: X
+  author: xscriptor (https://github.com/xscriptor)
+  author_name: xscriptor
+  author_url: https://github.com/xscriptor
+  variant: dark
+  color_01: '#0A0A0A'
+  color_02: '#FC618D'
+  color_03: '#7BD88F'
+  color_04: '#FCE566'
+  color_05: '#FD9353'
+  color_06: '#948AE3'
+  color_07: '#5AD4E6'
+  color_08: '#F7F1FF'
+  color_09: '#0F0F0F'
+  color_10: '#FC618D'
+  color_11: '#7BD88F'
+  color_12: '#FCE566'
+  color_13: '#FD9353'
+  color_14: '#948AE3'
+  color_15: '#5AD4E6'
+  color_16: '#F7F1FF'
+  background: '#050505'
+  foreground: '#F7F1FF'
+  cursor: '#F7F1FF'
+  hash: ecb7634b7438d82bccb0fe66f7c612320f7fa776fdf590f0659887a91c8d2a7a
+  hash_bg: c2081841e010bfec7f7d1564575ead5276f4feb4db62e290bfa94e029a4965f0
 - name: Xcode Dark
   author: lunacookies (https://github.com/lunacookies/vim-colors-xcode)
   author_name: lunacookies

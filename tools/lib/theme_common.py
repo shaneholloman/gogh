@@ -51,6 +51,27 @@ def slugify_theme_name(name):
     return slug.strip('-')
 
 
+def installer_slug(name):
+    """Slug for the public installer filename, installs/<slug>.sh (step 7
+    of the generate/ pipeline), and for the theme's entry in gogh.sh's
+    THEMES array (step 8): gogh.sh downloads installs/<entry>, so both must
+    always match. Differs from slugify_theme_name() for names with
+    underscores, so it's kept as its own rule."""
+    slug = re.sub(r'[^a-zA-Z0-9]+', '-', unidecode(name).lower().replace(' ', '-'))
+    return re.sub(r'[-]+', '-', slug).strip('-')
+
+
+def theme_file_slugs(name):
+    """Every slug a theme name becomes a file or list entry under, keyed by
+    where it's used. Two themes sharing any of them would collide: installs/
+    overwrites one (and gogh.sh's THEMES array silently drops it), and data/
+    renames one with a -1 suffix."""
+    return {
+        "gogh.sh THEMES and installs/": installer_slug(name),
+        "data/": slugify_theme_name(name),
+    }
+
+
 def unique_path(output_dir, slug, suffix):
     """Path in `output_dir` for `slug + suffix`, appending -1, -2, ... on
     collision so two themes that slugify the same never overwrite each other."""
